@@ -300,6 +300,9 @@ export * as 'notes/clips' from './endpoints/notes/clips.js';
 export * as 'notes/conversation' from './endpoints/notes/conversation.js';
 export * as 'notes/create' from './endpoints/notes/create.js';
 export * as 'notes/delete' from './endpoints/notes/delete.js';
+export * as 'notes/draft/delete' from './endpoints/notes/drafts/delete.js';
+export * as 'notes/draft/get' from './endpoints/notes/drafts/get.js';
+export * as 'notes/draft/save' from './endpoints/notes/drafts/save.js';
 export * as 'notes/favorites/create' from './endpoints/notes/favorites/create.js';
 export * as 'notes/favorites/delete' from './endpoints/notes/favorites/delete.js';
 export * as 'notes/featured' from './endpoints/notes/featured.js';
@@ -322,6 +325,7 @@ export * as 'notes/thread-muting/create' from './endpoints/notes/thread-muting/c
 export * as 'notes/thread-muting/delete' from './endpoints/notes/thread-muting/delete.js';
 export * as 'notes/timeline' from './endpoints/notes/timeline.js';
 export * as 'notes/translate' from './endpoints/notes/translate.js';
+export * as 'notes/update' from './endpoints/notes/update.js';
 export * as 'notes/unrenote' from './endpoints/notes/unrenote.js';
 export * as 'notes/user-list-timeline' from './endpoints/notes/user-list-timeline.js';
 export * as 'notifications/create' from './endpoints/notifications/create.js';
