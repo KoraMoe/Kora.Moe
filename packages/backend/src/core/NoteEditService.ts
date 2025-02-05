@@ -148,6 +148,7 @@ export class NoteEditService implements OnApplicationShutdown {
 	}, targetId: MiNote['id'], data: Option, silent = false, editor?: MiUser): Promise<MiNote> {
 		const targetNote = await this.notesRepository.findOneByOrFail({ id: targetId });
 
+		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 		if (targetNote == null) {
 			throw new Error('No such note');
 		}
