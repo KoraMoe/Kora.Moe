@@ -124,6 +124,7 @@ function showMenu(ev: MouseEvent) {
 	height: 32px;
 	border-radius: 8px;
 	font-size: 18px;
+	z-index: 50;
 }
 
 .mainFg {
