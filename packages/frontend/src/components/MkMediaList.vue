@@ -21,6 +21,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 			<template v-for="media in mediaList.filter(media => previewable(media))">
 				<XVideo v-if="media.type.startsWith('video')" :key="`video:${media.id}`" :class="$style.media" :video="media"/>
 				<XImage v-else-if="media.type.startsWith('image')" :key="`image:${media.id}`" :class="$style.media" class="image" :data-id="media.id" :image="media" :raw="raw"/>
+				<XFlashPlayer v-else-if="isFlash(media)" :key="`flash:${media.id}`" :class="$style.media" :flashFile="media"/>
 			</template>
 		</div>
 	</div>
@@ -36,6 +37,7 @@ import 'photoswipe/style.css';
 import XBanner from '@/components/MkMediaBanner.vue';
 import XImage from '@/components/MkMediaImage.vue';
 import XVideo from '@/components/MkMediaVideo.vue';
+import XFlashPlayer from '@/components/SkFlashPlayer.vue';
 import * as os from '@/os.js';
 import { FILE_TYPE_BROWSERSAFE } from '@@/js/const.js';
 import { defaultStore } from '@/store.js';
@@ -90,6 +92,12 @@ async function calcAspectRatio() {
 			break;
 	}
 }
+
+const isFlash = (file: Misskey.entities.DriveFile): boolean => {
+	return FILE_TYPE_FLASH_CONTENT.includes(file.type) || FILE_EXT_FLASH_CONTENT.some((ext) => {
+		return (file.name.toLowerCase().endsWith('.' + ext) || file.name.toLowerCase().endsWith('.' + ext + '.unknown'));
+	});
+};
 
 onMounted(() => {
 	calcAspectRatio();

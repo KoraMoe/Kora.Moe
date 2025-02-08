@@ -1310,7 +1310,15 @@ availableRoles: "利用可能なロール"
 acknowledgeNotesAndEnable: "注意事項を理解した上でオンにします。"
 federationSpecified: "このサーバーはホワイトリスト連合で運用されています。管理者が指定したサーバー以外とやり取りすることはできません。"
 federationDisabled: "このサーバーは連合が無効化されています。他のサーバーのユーザーとやり取りすることはできません。"
-
+_flash:
+  contentHidden: "Flashコンテンツ非表示"
+  poweredByRuffle: "Powered by Ruffle." # Doesn't need a translation, apparently.
+  arbitraryCodeExecutionWarning: "任意コード実行にご注意！"
+  failedToLoad: "Flashコンテンツ読込に失敗"
+  isLoading: "Flashコンテンツ読込中"
+  loadingRufflePlayer: "Ruffleプレイヤー読込中"
+  loadingFlashFile: "Flashファイル読込中"
+  cspError: "raw.esm.shにアクセスできませんでした。このサーバーのコンテンツセキュリティポリシー(CSP) が廃止されている可能性があり、サーバー管理者に連絡してください。"
 _accountSettings:
   requireSigninToViewContents: "コンテンツの表示にログインを必須にする"
   requireSigninToViewContentsDescription1: "あなたが作成した全てのノートなどのコンテンツを表示するのにログインを必須にします。クローラーに情報が収集されるのを防ぐ効果が期待できます。"

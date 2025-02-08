@@ -48,6 +48,12 @@ export const FILE_TYPE_BROWSERSAFE = [
 	'audio/x-flac',
 	'audio/vnd.wave',
 ];
+
+export const FILE_TYPE_FLASH_CONTENT = [
+	'application/x-shockwave-flash',
+	'application/vnd.adobe.flash.movie',
+];
+
 /*
 https://github.com/sindresorhus/file-type/blob/main/supported.js
 https://github.com/sindresorhus/file-type/blob/main/core.js

@@ -2,10 +2,6 @@
  * SPDX-FileCopyrightText: syuilo and misskey-project
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { url } from '@/config';
-import { query } from '@/scripts/url';
-import { instance } from '@/instance';
-
 import { MediaProxy } from '@@/js/media-proxy.js';
 import { url } from '@@/js/config.js';
 import { instance } from '@/instance.js';

@@ -5258,6 +5258,40 @@ export interface Locale extends ILocale {
      * このサーバーは連合が無効化されています。他のサーバーのユーザーとやり取りすることはできません。
      */
     "federationDisabled": string;
+    "_flash": {
+        /**
+         * Flashコンテンツ非表示
+         */
+        "contentHidden": string;
+        /**
+         * Powered by Ruffle.
+         */
+        "poweredByRuffle": string;
+        /**
+         * 任意コード実行にご注意！
+         */
+        "arbitraryCodeExecutionWarning": string;
+        /**
+         * Flashコンテンツ読込に失敗
+         */
+        "failedToLoad": string;
+        /**
+         * Flashコンテンツ読込中
+         */
+        "isLoading": string;
+        /**
+         * Ruffleプレイヤー読込中
+         */
+        "loadingRufflePlayer": string;
+        /**
+         * Flashファイル読込中
+         */
+        "loadingFlashFile": string;
+        /**
+         * raw.esm.shにアクセスできませんでした。このサーバーのコンテンツセキュリティポリシー(CSP) が廃止されている可能性があり、サーバー管理者に連絡してください。
+         */
+        "cspError": string;
+    };
     "_accountSettings": {
         /**
          * コンテンツの表示にログインを必須にする
