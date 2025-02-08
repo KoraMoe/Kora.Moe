@@ -54,6 +54,10 @@ export const FILE_TYPE_FLASH_CONTENT = [
 	'application/vnd.adobe.flash.movie',
 ];
 
+export const FILE_EXT_FLASH_CONTENT = [
+	'swf',
+];
+
 /*
 https://github.com/sindresorhus/file-type/blob/main/supported.js
 https://github.com/sindresorhus/file-type/blob/main/core.js

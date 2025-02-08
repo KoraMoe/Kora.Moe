@@ -34,12 +34,12 @@ import * as Misskey from 'misskey-js';
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import PhotoSwipe from 'photoswipe';
 import 'photoswipe/style.css';
+import { FILE_EXT_FLASH_CONTENT, FILE_TYPE_BROWSERSAFE, FILE_TYPE_FLASH_CONTENT } from '@@/js/const.js';
 import XBanner from '@/components/MkMediaBanner.vue';
 import XImage from '@/components/MkMediaImage.vue';
 import XVideo from '@/components/MkMediaVideo.vue';
-import XFlashPlayer from '@/components/SkFlashPlayer.vue';
+import XFlashPlayer from '@/components/SKFlashPlayer.vue';
 import * as os from '@/os.js';
-import { FILE_TYPE_BROWSERSAFE } from '@@/js/const.js';
 import { defaultStore } from '@/store.js';
 import { focusParent } from '@/scripts/focus.js';
 
