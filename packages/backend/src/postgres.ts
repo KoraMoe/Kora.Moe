@@ -94,7 +94,7 @@ const sqlLogger = dbLogger.createSubLogger('sql', 'gray');
 export type LoggerProps = {
 	disableQueryTruncation?: boolean;
 	enableQueryParamLogging?: boolean;
-}
+};
 
 function highlightSql(sql: string) {
 	return highlight.highlight(sql, {
