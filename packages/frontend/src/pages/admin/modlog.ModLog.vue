@@ -191,7 +191,7 @@ import JSON5 from 'json5';
 import { i18n } from '@/i18n.js';
 import MkFolder from '@/components/MkFolder.vue';
 
-const props = defineProps<{
+defineProps<{
 	log: Misskey.entities.ModerationLog;
 }>();
 </script>
