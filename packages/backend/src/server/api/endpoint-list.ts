@@ -306,6 +306,7 @@ export * as 'notes/drafts/save' from './endpoints/notes/drafts/save.js';
 export * as 'notes/favorites/create' from './endpoints/notes/favorites/create.js';
 export * as 'notes/favorites/delete' from './endpoints/notes/favorites/delete.js';
 export * as 'notes/featured' from './endpoints/notes/featured.js';
+export * as 'notes/histories' from './endpoints/notes/histories.js';
 export * as 'notes/global-timeline' from './endpoints/notes/global-timeline.js';
 export * as 'notes/hybrid-timeline' from './endpoints/notes/hybrid-timeline.js';
 export * as 'notes/local-timeline' from './endpoints/notes/local-timeline.js';
