@@ -121,7 +121,17 @@ async function updateLocaleRecursively(base, target, targetLang, currentPath = '
   return updated;
 }
 
-// Parse command-line arguments
+/**
+ * Parse command-line arguments
+ * Available options:
+ * -l <locale1> <locale2> ... : Specify target locales to update
+ *                             If not provided, all locales will be updated
+ *
+ * Example usage:
+ * node updateLocales.js -l en-US zh-CN fr-FR
+ *
+ * @returns {string[]} Array of target locale codes
+ */
 function parseArguments() {
   const args = process.argv.slice(2);
   const targetLocales = [];

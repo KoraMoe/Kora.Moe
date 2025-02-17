@@ -88,6 +88,7 @@ export * as 'admin/server-info' from './endpoints/admin/server-info.js';
 export * as 'admin/show-moderation-logs' from './endpoints/admin/show-moderation-logs.js';
 export * as 'admin/show-user' from './endpoints/admin/show-user.js';
 export * as 'admin/show-users' from './endpoints/admin/show-users.js';
+export * as 'admin/approve-user' from './endpoints/admin/approve-user.js';
 export * as 'admin/suspend-user' from './endpoints/admin/suspend-user.js';
 export * as 'admin/system-webhook/create' from './endpoints/admin/system-webhook/create.js';
 export * as 'admin/system-webhook/delete' from './endpoints/admin/system-webhook/delete.js';

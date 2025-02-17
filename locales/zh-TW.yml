@@ -1,1333 +1,1341 @@
----
-_lang_: "繁體中文（台灣）"
-headlineMisskey: "貼文連繫網路"
-introMisskey: "歡迎！Misskey 是一個開放原始碼且去中心化的社群網路服務。\n發布「貼文」向身邊的人分享您的想法！📡\n利用「反應」表達您對貼文的感覺！👍\n讓我們一起探索新的世界吧！🚀"
-poweredByMisskeyDescription: "{name}是開放原始碼平臺 <b>Misskey</b> 的伺服器之一。"
-monthAndDay: "{month} 月 {day} 日"
-search: "搜尋"
-reset: "重設"
-notifications: "通知"
-username: "使用者名稱"
-password: "密碼"
-initialPasswordForSetup: "啟動初始設定的密碼"
-initialPasswordIsIncorrect: "啟動初始設定的密碼錯誤。"
-initialPasswordForSetupDescription: "如果您自己安裝了 Misskey，請使用您在設定檔中輸入的密碼。\n如果您使用 Misskey 的託管服務之類的服務，請使用提供的密碼。\n如果您尚未設定密碼，請將其留空並繼續。"
-forgotPassword: "忘記密碼"
-fetchingAsApObject: "從聯邦宇宙取得中..."
-ok: "OK"
-gotIt: "知道了"
-cancel: "取消"
-noThankYou: "現在不要"
-enterUsername: "輸入使用者名稱"
-renotedBy: "{user} 轉發了"
-noNotes: "無貼文"
-noNotifications: "沒有通知"
-instance: "伺服器"
-settings: "設定"
-notificationSettings: "通知選項"
-basicSettings: "基本設定"
-otherSettings: "其他設定"
-openInWindow: "在新視窗開啟"
-profile: "個人檔案"
-timeline: "時間軸"
-noAccountDescription: "此使用者尚未自我介紹"
-login: "登入"
-loggingIn: "登入中"
-logout: "登出"
-signup: "註冊"
-uploading: "上傳中"
-save: "儲存"
-users: "使用者"
-addUser: "新增使用者"
-favorite: "我的最愛"
-favorites: "我的最愛"
-unfavorite: "從我的最愛中移除"
-favorited: "已添加至我的最愛"
-alreadyFavorited: "我的最愛中已存在。"
-cantFavorite: "無法加入至我的最愛。"
-pin: "置頂"
-unpin: "取消置頂"
-copyContent: "複製內容"
-copyLink: "複製連結"
-copyRemoteLink: "複製遠端的連結"
-copyLinkRenote: "複製轉發的連結"
-delete: "刪除"
-deleteAndEdit: "刪除並編輯"
-deleteAndEditConfirm: "要刪除並再次編輯嗎？此貼文的所有反應、轉發和回覆也將會消失。"
-addToList: "加入至清單"
-addToAntenna: "新增至天線"
-sendMessage: "發送訊息"
-copyRSS: "複製RSS"
-copyUsername: "複製使用者名稱"
-copyUserId: "複製使用者 ID"
-copyNoteId: "複製貼文 ID"
-copyFileId: "複製檔案 ID"
-copyFolderId: "複製資料夾ID"
-copyProfileUrl: "複製個人資料網址"
-searchUser: "搜尋使用者"
-searchThisUsersNotes: "搜尋這個使用者的貼文"
-reply: "回覆"
-loadMore: "載入更多"
-showMore: "載入更多"
-showLess: "關閉"
-youGotNewFollower: "您有新的追隨者"
-receiveFollowRequest: "您有新的追隨請求"
-followRequestAccepted: "追隨請求已被接受"
-mention: "提及"
-mentions: "提及"
-directNotes: "私訊"
-importAndExport: "匯入與匯出"
-import: "匯入"
-export: "匯出"
-files: "檔案"
-download: "下載"
-driveFileDeleteConfirm: "確定要刪除檔案「{name}」嗎？使用此檔案的貼文也會跟著被刪除。"
-unfollowConfirm: "確定要取消追隨{name}嗎？"
-exportRequested: "已請求匯出。這可能會花一點時間。匯出的檔案將會被放到雲端硬碟裡。"
-importRequested: "已請求匯入。這可能會花一點時間。"
-lists: "清單"
-noLists: "你沒有任何清單"
-note: "貼文"
-notes: "貼文"
-following: "追隨中"
-followers: "追隨者"
-followsYou: "追隨你的人"
-createList: "建立清單"
-manageLists: "管理清單"
-error: "錯誤"
-somethingHappened: "發生錯誤"
-retry: "重試"
-pageLoadError: "無法載入頁面。"
-pageLoadErrorDescription: "這通常是網路錯誤或瀏覽器快取殘留而引起的。請先清除瀏覽器快取，稍後再重試。"
-serverIsDead: "伺服器沒有回應。請稍等片刻再試。"
-youShouldUpgradeClient: "請重新載入以使用新版客戶端顯示此頁面。"
-enterListName: "輸入清單名稱"
-privacy: "隱私"
-makeFollowManuallyApprove: "手動審核追隨請求"
-defaultNoteVisibility: "預設可見性"
-follow: "追隨"
-followRequest: "追隨請求"
-followRequests: "追隨請求"
-unfollow: "取消追隨"
-followRequestPending: "追隨許可待批准"
-enterEmoji: "輸入表情符號"
-renote: "轉發"
-unrenote: "取消轉發"
-renoted: "轉發成功。"
-renotedToX: "轉發給 {name} 了。"
-cantRenote: "無法轉發此貼文。"
-cantReRenote: "無法轉發之前已經轉發過的內容。"
-quote: "引用"
-inChannelRenote: "在頻道內轉發"
-inChannelQuote: "在頻道內引用"
-renoteToChannel: "轉發至頻道"
-renoteToOtherChannel: "轉發至其他頻道"
-pinnedNote: "已置頂的貼文"
-pinned: "置頂"
-you: "您"
-clickToShow: "點擊查看"
-sensitive: "敏感內容"
-add: "新增"
-reaction: "反應"
-reactions: "反應"
-emojiPicker: "表情符號選擇器"
-pinnedEmojisForReactionSettingDescription: "選擇反應時可以設定要固定顯示在頂端的表情符號"
-pinnedEmojisSettingDescription: "輸入表情符號時可以設定要固定顯示在頂端的表情符號"
-emojiPickerDisplay: "顯示表情符號選擇器"
-overwriteFromPinnedEmojisForReaction: "從反應複寫設定"
-overwriteFromPinnedEmojis: "從一般複寫設定"
-reactionSettingDescription2: "拖動以交換，點擊以刪除，按下「+」以新增。"
-rememberNoteVisibility: "記住貼文可見性"
-attachCancel: "移除附件"
-deleteFile: "刪除檔案"
-markAsSensitive: "標記為敏感內容"
-unmarkAsSensitive: "取消標記為敏感內容"
-enterFileName: "請輸入檔案名稱"
-mute: "靜音"
-unmute: "解除靜音"
-renoteMute: "將轉發貼文靜音"
-renoteUnmute: "解除轉發貼文的靜音"
-block: "封鎖"
-unblock: "解除封鎖"
-suspend: "凍結"
-unsuspend: "解除凍結"
-blockConfirm: "確定要封鎖此使用者嗎？"
-unblockConfirm: "確定要解除封鎖此使用者嗎？"
-suspendConfirm: "確定凍結此使用者？"
-unsuspendConfirm: "確定解凍此使用者？"
-selectList: "選擇清單"
-editList: "編輯清單"
-selectChannel: "選擇頻道"
-selectAntenna: "選擇天線"
-editAntenna: "編輯天線"
-createAntenna: "建立天線"
-selectWidget: "選擇小工具"
-editWidgets: "編輯小工具"
-editWidgetsExit: "完成"
-customEmojis: "自訂表情符號"
-emoji: "表情符號"
-emojis: "表情符號"
-emojiName: "表情符號名稱"
-emojiUrl: "表情符號 URL"
-addEmoji: "新增表情符號"
-settingGuide: "推薦設定"
-cacheRemoteFiles: "快取遠端檔案"
-cacheRemoteFilesDescription: "啟用此設定後，遠端檔案會被快取在本伺服器的儲存空間中。雖然顯示圖片會變快，但會消耗較多伺服器的儲存空間。至於要快取遠端使用者到什麼程度，是依照角色的雲端硬碟容量而定。當超過這個限制時，從較舊的檔案開始自快取中刪除並改為連結。關閉這個設定時，遠端檔案從一開始就維持連結的方式，但建議將 default.yml 的 proxyRemoteFiles 設為 true，以便產生圖片的縮圖並保護使用者的隱私。"
-youCanCleanRemoteFilesCache: "按檔案管理的🗑️按鈕，可將快取全部刪除。"
-cacheRemoteSensitiveFiles: "快取遠端的敏感檔案"
-cacheRemoteSensitiveFilesDescription: "若停用這個設定，則不會快取遠端的敏感檔案，而是直接連結。"
-flagAsBot: "此使用者是機器人"
-flagAsBotDescription: "如果本帳戶是由程式控制，請啟用此選項。啟用後，會作為標示幫助其他開發者防止機器人之間產生無限互動的行為，並會調整 Misskey 內部系統將本帳戶識別為機器人。"
-flagAsCat: "此帳戶是一隻貓，喵～～～！！！"
-flagAsCatDescription: "喵喵喵？？"
-flagShowTimelineReplies: "在時間軸上顯示貼文的回覆"
-flagShowTimelineRepliesDescription: "啟用後，時間軸除了顯示使用者的貼文以外，還會顯示使用者對其他貼文的回覆。"
-autoAcceptFollowed: "自動允許來自追隨中使用者的追隨請求"
-addAccount: "新增帳戶"
-reloadAccountsList: "更新帳戶清單的資訊"
-loginFailed: "登入失敗"
-showOnRemote: "轉到所在實例顯示"
-continueOnRemote: "在遠端伺服器繼續"
-chooseServerOnMisskeyHub: "從 Misskey Hub 選擇伺服器"
-specifyServerHost: "直接指定伺服器網域"
-inputHostName: "請輸入域名"
-general: "一般"
-wallpaper: "桌布"
-setWallpaper: "設定桌布"
-removeWallpaper: "移除桌布"
-searchWith: "搜尋: {q}"
-youHaveNoLists: "你沒有任何清單"
-followConfirm: "你真的要追隨{name}嗎？"
-proxyAccount: "代理帳戶"
-proxyAccountDescription: "代理帳戶是在特定條件下充當遠端追隨者的帳戶。例如，當使用者新增遠端使用者至其列表時，若沒有本地使用者追隨該遠端使用者，則其活動將不會傳送至伺服器，此時便會由代理帳戶代為追隨以解決問題。"
-host: "主機"
-selectSelf: "選擇自己"
-selectUser: "選取使用者"
-recipient: "收件人"
-annotation: "註解"
-federation: "站台聯邦"
-instances: "伺服器"
-registeredAt: "初次觀測"
-latestRequestReceivedAt: "上次收到的請求"
-latestStatus: "最後狀態"
-storageUsage: "已使用容量"
-charts: "圖表"
-perHour: "每小時"
-perDay: "每日"
-stopActivityDelivery: "停止發送活動"
-blockThisInstance: "封鎖此伺服器"
-silenceThisInstance: "禁言此伺服器"
-mediaSilenceThisInstance: "將這個伺服器的媒體設為禁言"
-operations: "操作"
-software: "軟體"
-version: "版本"
-metadata: "詮釋資料"
-withNFiles: "{n} 個檔案"
-monitor: "監視器"
-jobQueue: "佇列"
-cpuAndMemory: "CPU 及記憶體"
-network: "網路"
-disk: "硬碟"
-instanceInfo: "伺服器資訊"
-statistics: "統計"
-clearQueue: "清除佇列"
-clearQueueConfirmTitle: "確定要清除佇列嗎？"
-clearQueueConfirmText: "未成功發佈的貼文將不會再嘗試發佈。通常不需要進行這項操作。"
-clearCachedFiles: "清除快取資料"
-clearCachedFilesConfirm: "確定要清除所有遠端暫存資料嗎？"
-blockedInstances: "已封鎖的伺服器"
-blockedInstancesDescription: "請逐行輸入需要封鎖的伺服器。已封鎖的伺服器將無法與本伺服器進行通訊。"
-silencedInstances: "被禁言的伺服器"
-silencedInstancesDescription: "設定要禁言的伺服器主機名稱，以換行分隔。隸屬於禁言伺服器的所有帳戶都將被視為「禁言帳戶」，只能發出「追隨請求」，而且無法提及未追隨的本地帳戶。這不會影響已封鎖的實例。"
-mediaSilencedInstances: "媒體被禁言的伺服器"
-mediaSilencedInstancesDescription: "設定您想要對媒體設定禁言的伺服器，以換行符號區隔。來自被媒體禁言的伺服器所屬帳戶的所有檔案都會被視為敏感檔案，且自訂表情符號不能使用。被封鎖的伺服器不受影響。"
-federationAllowedHosts: "允許聯邦通訊的伺服器"
-federationAllowedHostsDescription: "設定允許聯邦通訊的伺服器主機，以換行符號分隔。"
-muteAndBlock: "靜音和封鎖"
-mutedUsers: "被靜音的使用者"
-blockedUsers: "被封鎖的使用者"
-noUsers: "沒有任何使用者"
-editProfile: "編輯個人檔案"
-noteDeleteConfirm: "確定刪除此貼文嗎？"
-pinLimitExceeded: "不能置頂更多貼文了"
-intro: "Misskey 部署完成！請建立管理員帳戶。"
-done: "完成"
-processing: "處理中"
-preview: "預覽"
-default: "預設"
-defaultValueIs: "預設值：{value}"
-noCustomEmojis: "沒有自訂的表情符號"
-noJobs: "沒有任務"
-federating: "聯邦運作中"
-blocked: "已封鎖"
-suspended: "停止發送"
-all: "全部"
-subscribing: "訂閱中"
-publishing: "發送中"
-notResponding: "沒有回應"
-instanceFollowing: "追隨的伺服器"
-instanceFollowers: "伺服器的追隨者"
-instanceUsers: "伺服器使用者"
-changePassword: "修改密碼"
-security: "安全性"
-retypedNotMatch: "兩次輸入不一致。"
-currentPassword: "目前密碼"
-newPassword: "新密碼"
-newPasswordRetype: "確認密碼"
-attachFile: "上傳附件"
-more: "更多！"
-featured: "精選"
-usernameOrUserId: "使用者名稱或使用者 ID"
-noSuchUser: "使用者不存在"
-lookup: "查詢"
-announcements: "公告"
-imageUrl: "圖片URL"
-remove: "刪除"
-removed: "已刪除"
-removeAreYouSure: "確定要刪掉「{x}」嗎？"
-deleteAreYouSure: "確定要刪掉「{x}」嗎？"
-resetAreYouSure: "確定要重設嗎？"
-areYouSure: "是否確定？"
-saved: "已儲存"
-messaging: "聊天"
-upload: "上傳"
-keepOriginalUploading: "保留原圖"
-keepOriginalUploadingDescription: "上傳圖片時保留原始圖片。關閉時，瀏覽器會在上傳時生成適用於網路傳送的版本。"
-fromDrive: "從雲端空間中選擇"
-fromUrl: "從 URL 上傳"
-uploadFromUrl: "從網址上傳"
-uploadFromUrlDescription: "您要上傳的檔案網址"
-uploadFromUrlRequested: "已請求上傳"
-uploadFromUrlMayTakeTime: "還需要一些時間才能完成上傳。"
-explore: "探索"
-messageRead: "已讀"
-noMoreHistory: "沒有更多歷史紀錄"
-startMessaging: "開始聊天"
-nUsersRead: "{n} 人已讀"
-agreeTo: "我同意{0}"
-agree: "同意"
-agreeBelow: "同意以下內容"
-basicNotesBeforeCreateAccount: "基本注意事項"
-termsOfService: "服務條款"
-start: "開始"
-home: "首頁"
-remoteUserCaution: "由於該使用者來自其他實例，因此其資訊可能不完整。"
-activity: "動態"
-images: "圖片"
-image: "圖片"
-birthday: "生日"
-yearsOld: "{age} 歲"
-registeredDate: "註冊日期"
-location: "位置"
-theme: "佈景主題"
-themeForLightMode: "在淺色模式下使用的佈景主題"
-themeForDarkMode: "在深色模式下使用的佈景主題"
-light: "淺色"
-dark: "深色"
-lightThemes: "淺色佈景主題"
-darkThemes: "深色佈景主題"
-syncDeviceDarkMode: "與裝置的深色模式同步"
-drive: "雲端硬碟"
-fileName: "檔案名稱"
-selectFile: "選擇檔案"
-selectFiles: "選擇檔案"
-selectFolder: "選擇資料夾"
-selectFolders: "選擇資料夾"
-fileNotSelected: "尚未選擇檔案"
-renameFile: "重新命名檔案"
-folderName: "資料夾名稱"
-createFolder: "新增資料夾"
-renameFolder: "重新命名資料夾"
-deleteFolder: "刪除資料夾"
-folder: "資料夾"
-addFile: "加入附件"
-showFile: "瀏覽文件"
-emptyDrive: "雲端硬碟為空"
-emptyFolder: "資料夾為空"
-unableToDelete: "無法刪除"
-inputNewFileName: "輸入檔案名稱"
-inputNewDescription: "請輸入新標題 "
-inputNewFolderName: "輸入新資料夾的名稱"
-circularReferenceFolder: "目標文件夾是您要移動的文件夾的子文件夾。"
-hasChildFilesOrFolders: "此文件夾不是空的，無法刪除。"
-copyUrl: "複製URL"
-rename: "重新命名"
-avatar: "大頭貼"
-banner: "橫幅"
-displayOfSensitiveMedia: "敏感檔案的顯示"
-whenServerDisconnected: "與伺服器的連接中斷時"
-disconnectedFromServer: "與伺服器中斷連線"
-reload: "重新整理"
-doNothing: "無視"
-reloadConfirm: "確定要重新整理嗎？"
-watch: "關注"
-unwatch: "取消關注"
-accept: "接受"
-reject: "拒絕"
-normal: "正常"
-instanceName: "伺服器名稱"
-instanceDescription: "伺服器介紹"
-maintainerName: "管理員名稱"
-maintainerEmail: "管理員郵箱"
-tosUrl: "服務條款 URL"
-thisYear: "本年"
-thisMonth: "本月"
-today: "本日"
-dayX: "{day} 日"
-monthX: "{month} 月"
-yearX: "{year} 年"
-pages: "頁面"
-integration: "整合"
-connectService: "已連結"
-disconnectService: "已斷開 "
-enableLocalTimeline: "啟用本地時間軸"
-enableGlobalTimeline: "啟用全域時間軸"
-disablingTimelinesInfo: "為了方便，即使您關閉了時間軸功能，管理員和審查員仍可以繼續使用。"
-registration: "註冊"
-invite: "邀請"
-driveCapacityPerLocalAccount: "每個本地使用者的雲端硬碟容量"
-driveCapacityPerRemoteAccount: "每個非本地用戶的雲端空間大小"
-inMb: "以 MB 為單位"
-bannerUrl: "橫幅圖片URL"
-backgroundImageUrl: "背景圖片的來源網址 "
-basicInfo: "基本資訊"
-pinnedUsers: "置頂使用者"
-pinnedUsersDescription: "在「探索」頁面中使用換行標記想要置頂的使用者。"
-pinnedPages: "釘選頁面"
-pinnedPagesDescription: "輸入要固定至實例首頁的頁面路徑，以換行符分隔。"
-pinnedClipId: "置頂的摘錄ID"
-pinnedNotes: "已置頂的貼文"
-hcaptcha: "hCaptcha"
-enableHcaptcha: "啟用 hCaptcha"
-hcaptchaSiteKey: "hcaptchaSiteKey"
-hcaptchaSecretKey: "hcaptchaSecretKey"
-mcaptcha: "mCaptcha"
-enableMcaptcha: "啟用 mCaptcha"
-mcaptchaSiteKey: "網站金鑰"
-mcaptchaSecretKey: "私密金鑰"
-mcaptchaInstanceUrl: "mCaptcha 的實例網址"
-recaptcha: "reCAPTCHA"
-enableRecaptcha: "啟用 reCAPTCHA"
-recaptchaSiteKey: "網站金鑰"
-recaptchaSecretKey: "金鑰"
-turnstile: "Turnstile"
-enableTurnstile: "啟用 Turnstile"
-turnstileSiteKey: "turnstileSiteKey"
-turnstileSecretKey: "turnstileSecretKey"
-avoidMultiCaptchaConfirm: "使用多種驗證方式可能會造成干擾，您要關閉其他驗證方式嗎？您可以按「取消」保留多種驗證方式。"
-antennas: "天線"
-manageAntennas: "管理天線"
-name: "名稱"
-antennaSource: "接收來源"
-antennaKeywords: "包含關鍵字"
-antennaExcludeKeywords: "排除關鍵字"
-antennaExcludeBots: "排除機器人帳戶"
-antennaKeywordsDescription: "空格代表「以及」（AND），換行代表「或者」（OR）"
-notifyAntenna: "通知有新貼文"
-withFileAntenna: "僅帶有附件的貼文"
-enableServiceworker: "啟用瀏覽器的推播通知"
-antennaUsersDescription: "填寫使用者名稱，以換行分隔"
-caseSensitive: "區分大小寫"
-withReplies: "包含回覆"
-connectedTo: "您的帳戶已連接到以下社交帳戶"
-notesAndReplies: "貼文與回覆"
-withFiles: "附件"
-silence: "禁言"
-silenceConfirm: "確定要禁言此使用者嗎？"
-unsilence: "解除禁言"
-unsilenceConfirm: "確定要解除禁言嗎？"
-popularUsers: "熱門使用者"
-recentlyUpdatedUsers: "最近發文的使用者"
-recentlyRegisteredUsers: "新加入使用者"
-recentlyDiscoveredUsers: "最近發現的使用者"
-exploreUsersCount: "有{count}個使用者"
-exploreFediverse: "探索聯邦宇宙"
-popularTags: "熱門標籤"
-userList: "使用者清單"
-about: "關於"
-aboutMisskey: "關於 Misskey"
-administrator: "管理員"
-token: "權杖"
-2fa: "雙重驗證"
-setupOf2fa: "設定雙重驗證"
-totp: "驗證應用程式"
-totpDescription: "以驗證應用程式輸入一次性密碼"
-moderator: "審查員"
-moderation: "審查"
-moderationNote: "管理筆記"
-moderationNoteDescription: "您可以編寫僅在審查員之間共用的註解。"
-addModerationNote: "新增管理筆記"
-moderationLogs: "管理日誌"
-nUsersMentioned: "被 {n} 個人提及"
-securityKeyAndPasskey: "安全金鑰、Passkey"
-securityKey: "安全金鑰"
-lastUsed: "上次使用"
-lastUsedAt: "上次使用：{t}"
-unregister: "註銷"
-passwordLessLogin: "設置無密碼登入"
-passwordLessLoginDescription: "不使用密碼，以安全金鑰或 Passkey 登入"
-resetPassword: "重設密碼"
-newPasswordIs: "新密碼為「{password}」"
-reduceUiAnimation: "減少介面的動態視覺"
-share: "分享"
-notFound: "查無項目"
-notFoundDescription: "查無此頁"
-uploadFolder: "預設上傳資料夾"
-markAsReadAllNotifications: "標記所有通知為已讀"
-markAsReadAllUnreadNotes: "標記所有貼文為已讀"
-markAsReadAllTalkMessages: "標記所有訊息為已讀"
-help: "幫助"
-inputMessageHere: "在此輸入訊息"
-close: "關閉"
-invites: "邀請"
-members: "成員"
-transfer: "轉讓"
-title: "標題"
-text: "文字"
-enable: "啟用"
-next: "下一步"
-retype: "重新輸入"
-noteOf: "{user}的貼文"
-quoteAttached: "引用"
-quoteQuestion: "是否要引用？"
-attachAsFileQuestion: "剪貼簿的文字較長。請問是否要將其以文字檔的方式附加呢？"
-noMessagesYet: "沒有訊息"
-newMessageExists: "有新的訊息"
-onlyOneFileCanBeAttached: "只能加入一個附件"
-signinRequired: "請先登入"
-signinOrContinueOnRemote: "若要繼續，需前往您所在的伺服器，或者註冊並登入此伺服器"
-invitations: "邀請"
-invitationCode: "邀請碼"
-checking: "確認中"
-available: "可用的"
-unavailable: "不可用的"
-usernameInvalidFormat: "可使用大小寫英文字母、數字和底線"
-tooShort: "過短"
-tooLong: "過長"
-weakPassword: "密碼強度過弱"
-normalPassword: "密碼強度普通"
-strongPassword: "密碼強度高"
-passwordMatched: "密碼一致"
-passwordNotMatched: "密碼不一致"
-signinWith: "以{x}登錄"
-signinFailed: "登入失敗。 請檢查使用者名稱和密碼。"
-or: "或者"
-language: "語言"
-uiLanguage: "介面語言"
-aboutX: "關於{x}"
-emojiStyle: "表情符號的風格"
-native: "原生"
-menuStyle: "選單風格"
-style: "風格"
-drawer: "側邊欄"
-popup: "彈出式視窗"
-showNoteActionsOnlyHover: "僅在游標停留時顯示貼文的"
-showReactionsCount: "顯示貼文的反應數目"
-noHistory: "沒有歷史紀錄"
-signinHistory: "登入歷史"
-enableAdvancedMfm: "啟用進階 MFM"
-enableAnimatedMfm: "啟用 MFM 動畫"
-doing: "正在進行"
-category: "類別"
-tags: "標籤"
-docSource: "文件來源"
-createAccount: "建立帳戶"
-existingAccount: "現有帳戶"
-regenerate: "再次生成"
-fontSize: "字體大小"
-mediaListWithOneImageAppearance: "只有一張圖片時的檔案列表高度"
-limitTo: "上限為 {x}"
-noFollowRequests: "沒有追隨您的請求"
-openImageInNewTab: "於新分頁中開啟圖片"
-dashboard: "儀表板"
-local: "本地"
-remote: "遠端"
-total: "合計"
-weekOverWeekChanges: "與上週相比"
-dayOverDayChanges: "與昨日相比"
-appearance: "外觀"
-clientSettings: "客戶端設定"
-accountSettings: "帳戶設定"
-promotion: "推廣"
-promote: "推廣"
-numberOfDays: "有效天數"
-hideThisNote: "隱藏此貼文"
-showFeaturedNotesInTimeline: "在時間軸上顯示熱門推薦"
-objectStorage: "物件儲存"
-useObjectStorage: "使用物件儲存"
-objectStorageBaseUrl: "Base URL"
-objectStorageBaseUrlDesc: "用於引用的 URL。如果您使用的是 CDN 或反向代理，請指定其 URL，例如 S3（https://<bucket>.s3.amazonaws.com）、GCS（https://storage.googleapis.com/<bucket>）。"
-objectStorageBucket: "儲存空間（Bucket）"
-objectStorageBucketDesc: "請填寫所用服務的儲存空間（Bucket）名稱。 "
-objectStoragePrefix: "前綴"
-objectStoragePrefixDesc: "它儲存在此前綴目錄下。"
-objectStorageEndpoint: "端點（Endpoint）"
-objectStorageEndpointDesc: "如使用 AWS S3，請留空。如使用其他服務，請按照其說明文件以「<host>」或「<host>:<port>」的形式設定端點（Endpoint）。"
-objectStorageRegion: "地域（Region）"
-objectStorageRegionDesc: "請填寫一個分區，例如「xx-east-1」。 如果您使用的服務不設分區，請留空或填寫「us-east-1」。"
-objectStorageUseSSL: "使用 SSL"
-objectStorageUseSSLDesc: "請在不使用 https 連接 API 時關閉"
-objectStorageUseProxy: "使用網路代理"
-objectStorageUseProxyDesc: "請在不使用網路代理連接 API 時關閉"
-objectStorageSetPublicRead: "上傳時設定為「public-read」"
-s3ForcePathStyleDesc: "啟用 s3ForcePathStyle 將強制填寫儲存空間（Bucket）名稱至 URL 路徑內，而非寫入主機名。 使用如 Minio 等自行託管服務時可能需要啟用。"
-serverLogs: "伺服器日誌"
-deleteAll: "刪除所有記錄"
-showFixedPostForm: "於時間軸頁頂顯示「發送貼文」方框"
-showFixedPostFormInChannel: "於時間軸頁頂顯示「發送貼文」方框（頻道）"
-withRepliesByDefaultForNewlyFollowed: "在追隨其他人後，預設在時間軸納入回覆的貼文"
-newNoteRecived: "發現新貼文"
-sounds: "音效"
-sound: "音效"
-listen: "聆聽"
-none: "無"
-showInPage: "在頁面中顯示"
-popout: "彈出式視窗"
-volume: "音量"
-masterVolume: "主音量"
-notUseSound: "關閉音效"
-useSoundOnlyWhenActive: "瀏覽器在前景運作時，Misskey 才會發出音效"
-details: "詳細資訊"
-renoteDetails: "轉發貼文的細節"
-chooseEmoji: "選擇您的表情符號"
-unableToProcess: "操作無法完成"
-recentUsed: "最近使用"
-install: "安裝"
-uninstall: "解除安裝"
-installedApps: "已授權的應用程式"
-nothing: "查無項目"
-installedDate: "安裝時間"
-lastUsedDate: "最後上線日期"
-state: "狀態"
-sort: "排序"
-ascendingOrder: "昇冪"
-descendingOrder: "降冪"
-scratchpad: "暫存記憶體"
-scratchpadDescription: "AiScript 控制臺為 AiScript 的實驗環境。您可以在此編寫、執行和確認程式碼與 Misskey 互動的結果。"
-uiInspector: "UI 檢查"
-uiInspectorDescription: "您可以看到記憶體中存在的 UI 元件實例的清單。  UI 元件由 Ui:C: 系列函數產生。"
-output: "輸出"
-script: "腳本"
-disablePagesScript: "停用頁面的 AiScript 腳本"
-updateRemoteUser: "更新遠端使用者資訊"
-unsetUserAvatar: "移除使用者的大頭貼"
-unsetUserAvatarConfirm: "確定要移除使用者的大頭貼嗎？"
-unsetUserBanner: "移除使用者的橫幅圖像"
-unsetUserBannerConfirm: "確定要移除使用者的橫幅圖像嗎？"
-deleteAllFiles: "刪除所有檔案"
-deleteAllFilesConfirm: "要刪除所有檔案嗎？"
-removeAllFollowing: "解除所有追隨"
-removeAllFollowingDescription: "解除{host}所有的追隨。在伺服器不再存在時執行。"
-userSuspended: "該使用者已被停用。"
-userSilenced: "該使用者已被禁言。"
-yourAccountSuspendedTitle: "帳戶已被凍結"
-yourAccountSuspendedDescription: "該帳戶已因違反伺服器服務條款或其他原因而被凍結。您可以向管理員查詢更多資訊。請不要建立新帳戶。"
-tokenRevoked: "權杖無效"
-tokenRevokedDescription: "登入權杖失效，請重新登入。"
-accountDeleted: "帳戶已被刪除"
-accountDeletedDescription: "這個帳戶已被刪除。"
-menu: "選單"
-divider: "分隔線"
-addItem: "新增項目"
-rearrange: "排序方式"
-relays: "中繼器"
-addRelay: "新增中繼器"
-inboxUrl: "收件夾 URL"
-addedRelays: "已加入的中繼器"
-serviceworkerInfo: "如要使用推播通知，需要啟用此選項並設定金鑰。"
-deletedNote: "已刪除的貼文"
-invisibleNote: "私人貼文"
-enableInfiniteScroll: "啟用自動滾動頁面模式"
-visibility: "可見性"
-poll: "票選活動"
-useCw: "隱藏內容"
-enablePlayer: "開啟播放器"
-disablePlayer: "關閉播放器"
-expandTweet: "展開推文"
-themeEditor: "佈景主題編輯器"
-description: "描述"
-describeFile: "新增標題"
-enterFileDescription: "輸入標題"
-author: "作者"
-leaveConfirm: "尚未儲存修改。要放棄嗎？"
-manage: "管理"
-plugins: "外掛"
-preferencesBackups: "備份設定檔"
-deck: "多欄模式"
-undeck: "取消多欄模式"
-useBlurEffectForModal: "在對話框使用模糊效果"
-useFullReactionPicker: "使用全尺寸的反應選擇器"
-width: "寬度"
-height: "高度"
-large: "大"
-medium: "中"
-small: "小"
-generateAccessToken: "發行存取權杖"
-permission: "權限"
-adminPermission: "管理員權限"
-enableAll: "啟用全部"
-disableAll: "停用全部"
-tokenRequested: "允許存取帳戶"
-pluginTokenRequestedDescription: "此外掛將擁有在此設定的權限。"
-notificationType: "通知形式"
-edit: "編輯"
-emailServer: "電子郵件伺服器"
-enableEmail: "啟用發送電子郵件功能"
-emailConfigInfo: "用於確認電子郵件地址及密碼重置"
-email: "電子郵件"
-emailAddress: "電子郵件位址"
-smtpConfig: "SMTP 伺服器設定"
-smtpHost: "主機"
-smtpPort: "埠"
-smtpUser: "使用者名稱"
-smtpPass: "密碼"
-emptyToDisableSmtpAuth: "留空使用者名稱和密碼以關閉SMTP驗證。"
-smtpSecure: "在 SMTP 連接中使用隱式 SSL/TLS"
-smtpSecureInfo: "使用 STARTTLS 時關閉。"
-testEmail: "測試郵件發送"
-wordMute: "被靜音的文字"
-wordMuteDescription: "將包含指定語句的貼文最小化。 點擊最小化的貼文即可顯示。"
-hardWordMute: "硬文字靜音"
-showMutedWord: "顯示靜音字"
-hardWordMuteDescription: "隱藏含有指定語句的貼文。 與詞彙靜音不同的是，貼文將完全隱藏不見。"
-regexpError: "正規表達式錯誤"
-regexpErrorDescription: "{tab} 靜音文字的第 {line} 行的正規表達式有錯誤："
-instanceMute: "被靜音的實例"
-userSaysSomething: "{name}說了什麼"
-userSaysSomethingAbout: "{name} 說了一些關於「{word}」的話"
-makeActive: "啟用"
-display: "檢視"
-copy: "複製"
-metrics: "指標"
-overview: "概覽"
-logs: "日誌"
-delayed: "延遲"
-database: "資料庫"
-channel: "頻道"
-create: "新增"
-notificationSetting: "通知設定"
-notificationSettingDesc: "選擇顯示通知的類型"
-useGlobalSetting: "使用全域設定"
-useGlobalSettingDesc: "啟用時，將使用帳戶通知設定。停用時，則可以單獨設定。"
-other: "其他"
-regenerateLoginToken: "重新產生登入權杖"
-regenerateLoginTokenDescription: "重新產生用於登入的內部權杖。一般情況下是不需要這樣做的。重新產生後，所有裝置將會被登出。"
-theKeywordWhenSearchingForCustomEmoji: "這是搜尋自訂表情符號時的關鍵字"
-setMultipleBySeparatingWithSpace: "您可以使用空格分隔多個項目。"
-fileIdOrUrl: "檔案 ID 或 URL"
-behavior: "行為"
-sample: "範例"
-abuseReports: "檢舉"
-reportAbuse: "檢舉"
-reportAbuseRenote: "檢舉轉發貼文"
-reportAbuseOf: "檢舉{name}"
-fillAbuseReportDescription: "請填寫檢舉的詳細理由。如有需要，請附上相關 URL。"
-abuseReported: "檢舉完成。感謝您的報告。"
-reporter: "檢舉者"
-reporteeOrigin: "檢舉來源"
-reporterOrigin: "檢舉者來源"
-send: "發送"
-openInNewTab: "在新分頁中開啟"
-openInSideView: "在側欄中開啟"
-defaultNavigationBehaviour: "預設導航"
-editTheseSettingsMayBreakAccount: "修改這些設定可能會毀損您的帳戶"
-instanceTicker: "貼文的伺服器資訊"
-waitingFor: "等待{x}"
-random: "隨機"
-system: "系統"
-switchUi: "切換介面"
-desktop: "桌面"
-clip: "摘錄"
-createNew: "新建"
-optional: "可選"
-createNewClip: "建立新摘錄"
-unclip: "解除摘錄"
-confirmToUnclipAlreadyClippedNote: "此貼文已包含在摘錄「{name}」中。 你想將貼文從這個摘錄中排除嗎？"
-public: "公開"
-private: "私密"
-i18nInfo: "Misskey 已被志願者們翻譯成各種語言版本。您可以瀏覽 {link} 幫助翻譯。"
-manageAccessTokens: "管理存取權杖"
-accountInfo: "帳戶資訊"
-notesCount: "貼文數量"
-repliesCount: "回覆數量"
-renotesCount: "轉發數量"
-repliedCount: "回覆數量"
-renotedCount: "轉發次數"
-followingCount: "正在追隨的使用者數量"
-followersCount: "追隨者數量"
-sentReactionsCount: "反應發送次數"
-receivedReactionsCount: "收到反應次數"
-pollVotesCount: "已統計的投票數"
-pollVotedCount: "已投票數"
-yes: "是"
-no: "否"
-driveFilesCount: "雲端硬碟檔案數量"
-driveUsage: "雲端硬碟使用量"
-noCrawle: "拒絕搜尋引擎索引"
-noCrawleDescription: "要求網路搜尋引擎不要索引你的個人資料頁、貼文及頁面等。"
-lockedAccountInfo: "即使你通過了追隨者請求，除非你將貼文的可見性設定為 「追隨者」，否則任何人都能看見你的貼文。"
-alwaysMarkSensitive: "預設標記檔案為敏感內容"
-loadRawImages: "以原始圖檔顯示附件圖檔的縮圖"
-disableShowingAnimatedImages: "不播放動態圖檔"
-highlightSensitiveMedia: "強調敏感標記"
-verificationEmailSent: "已發送驗證電子郵件。請點擊進入電子郵件中的連結以完成驗證。"
-notSet: "未設定"
-emailVerified: "已成功驗證您的電子郵件地址"
-noteFavoritesCount: "我的最愛貼文的數目"
-pageLikesCount: "頁面被按讚次數"
-pageLikedCount: "頁面被按讚次數"
-contact: "聯絡人"
-useSystemFont: "使用系統預設的字型"
-clips: "摘錄"
-experimentalFeatures: "實驗中的功能"
-experimental: "實驗性"
-thisIsExperimentalFeature: "這是實驗性的功能。可能會有變更規格和不能正常動作的可能性。"
-developer: "開發者"
-makeExplorable: "使自己的帳戶更容易被找到"
-makeExplorableDescription: "如果關閉，帳戶將不會被顯示在「探索」頁面中。"
-showGapBetweenNotesInTimeline: "分開顯示時間軸上的貼文"
-duplicate: "複製"
-left: "左"
-center: "置中"
-wide: "寬"
-narrow: "窄"
-reloadToApplySetting: "設定將會在頁面重新載入之後生效。要現在就重載頁面嗎？"
-needReloadToApply: "必須重新載入才會生效。"
-showTitlebar: "顯示標題列"
-clearCache: "清除快取資料"
-onlineUsersCount: "{n} 人上線"
-nUsers: "{n} 使用者"
-nNotes: "{n} 貼文"
-sendErrorReports: "傳送錯誤報告"
-sendErrorReportsDescription: "傳送問題報告至開發者以提升軟體品質。問題報告可能包括作業系統版本，瀏覽器類型，行為歷史記錄等。"
-myTheme: "我的佈景主題"
-backgroundColor: "背景"
-accentColor: "重點色彩"
-textColor: "文字"
-saveAs: "另存新檔"
-advanced: "進階"
-advancedSettings: "進階設定"
-value: "數值"
-createdAt: "建立於"
-updatedAt: "最後更新"
-saveConfirm: "您要儲存變更嗎？"
-deleteConfirm: "你確定要刪除嗎？"
-invalidValue: "輸入值無效。"
-registry: "登錄表"
-closeAccount: "停用帳戶"
-currentVersion: "目前版本"
-latestVersion: "最新版本"
-youAreRunningUpToDateClient: "您所使用的客戶端已經是最新的。"
-newVersionOfClientAvailable: "新版本的客戶端可用。"
-usageAmount: "使用量"
-capacity: "容量"
-inUse: "已使用"
-editCode: "編輯程式碼"
-apply: "套用"
-receiveAnnouncementFromInstance: "接收來自伺服器的通知"
-emailNotification: "郵件通知"
-publish: "發布"
-inChannelSearch: "頻道內搜尋"
-useReactionPickerForContextMenu: "點擊右鍵開啟反應選擇器"
-typingUsers: "{users}輸入中"
-jumpToSpecifiedDate: "跳轉到特定日期"
-showingPastTimeline: "顯示過往的時間軸"
-clear: "清除"
-markAllAsRead: "全部標示為已讀"
-goBack: "返回"
-unlikeConfirm: "要取消按讚嗎？"
-fullView: "全螢幕顯示"
-quitFullView: "退出全螢幕顯示"
-addDescription: "新增描述"
-userPagePinTip: "在貼文的選單中選擇「置頂」，即可置頂該貼文至您的個人檔案頁面。"
-notSpecifiedMentionWarning: "此貼文有未指定的提及"
-info: "資訊"
-userInfo: "使用者資訊"
-unknown: "未知"
-onlineStatus: "上線狀態"
-hideOnlineStatus: "隱藏上線狀態"
-hideOnlineStatusDescription: "隱藏上線狀態後，可能會降低搜尋等功能的便利性。"
-online: "線上"
-active: "最近活躍"
-offline: "離線"
-notRecommended: "不推薦"
-botProtection: "Bot 防護"
-instanceBlocking: "已封鎖或禁言的伺服器"
-selectAccount: "選擇帳戶"
-switchAccount: "切換帳戶"
-enabled: "已啟用"
-disabled: "已停用"
-quickAction: "快捷操作"
-user: "使用者"
-administration: "管理"
-accounts: "帳戶"
-switch: "切換"
-noMaintainerInformationWarning: "尚未設定管理員訊息。"
-noInquiryUrlWarning: "尚未設定聯絡表單網址。"
-noBotProtectionWarning: "尚未設定 Bot 防護。"
-configure: "設定"
-postToGallery: "發佈到相簿"
-postToHashtag: "以此主題標籤發佈"
-gallery: "相簿"
-recentPosts: "最新貼文"
-popularPosts: "熱門的貼文"
-shareWithNote: "在貼文中分享"
-ads: "廣告"
-expiration: "期限"
-startingperiod: "開始期間"
-memo: "備忘錄"
-priority: "優先級"
-high: "高"
-middle: "中"
-low: "低"
-emailNotConfiguredWarning: "沒有設定電子郵件地址"
-ratio: "%"
-previewNoteText: "預覽文本"
-customCss: "自定義 CSS"
-customCssWarn: "這個設定必須由具備相關知識的人員操作，不當的設定可能導致客戶端無法正常使用。"
-global: "全域"
-squareAvatars: "大頭貼以方形顯示"
-sent: "發送"
-received: "收取"
-searchResult: "搜尋結果"
-hashtags: "標籤"
-troubleshooting: "故障排除"
-useBlurEffect: "在 UI 上使用模糊效果"
-learnMore: "更多資訊"
-misskeyUpdated: "Misskey 更新完成！"
-whatIsNew: "顯示更新資訊"
-translate: "翻譯"
-translatedFrom: "從 {x} 翻譯"
-accountDeletionInProgress: "正在刪除帳戶"
-usernameInfo: "在伺服器上您的帳戶是唯一的識別名稱。您可以使用字母 (a ~ z, A ~ Z)、數字 (0 ~ 9) 和下底線 (_)。之後帳戶名是不能更改的。"
-aiChanMode: "小藍模式"
-devMode: "開發者模式"
-keepCw: "保持隱藏內容"
-pubSub: "Pub/Sub 帳戶"
-lastCommunication: "最近的通信"
-resolved: "已解決"
-unresolved: "未解決"
-breakFollow: "解除追隨者"
-breakFollowConfirm: "確定要取消被追隨嗎？"
-itsOn: "已開啟"
-itsOff: "已關閉"
-on: "開啟"
-off: "關閉"
-emailRequiredForSignup: "註冊帳戶需要電子郵件地址"
-unread: "未讀"
-filter: "篩選"
-controlPanel: "控制臺"
-manageAccounts: "管理帳戶"
-makeReactionsPublic: "將反應設為公開"
-makeReactionsPublicDescription: "將您做過的反應設為公開可見。"
-classic: "經典"
-muteThread: "將貼文串設為靜音"
-unmuteThread: "將貼文串的靜音解除"
-followingVisibility: "追隨中的可見性"
-followersVisibility: "追隨者的可見性"
-continueThread: "查看更多貼文"
-deleteAccountConfirm: "將要刪除帳戶。是否確定？"
-incorrectPassword: "密碼錯誤。"
-incorrectTotp: "一次性密碼錯誤，或者已過期。"
-voteConfirm: "確定投給「{choice}」？"
-hide: "隱藏"
-useDrawerReactionPickerForMobile: "在行動裝置上使用抽屜顯示"
-welcomeBackWithName: "歡迎回來，{name}"
-clickToFinishEmailVerification: "點擊 [{ok}] 完成電子郵件地址認證。"
-overridedDeviceKind: "裝置類型"
-smartphone: "智慧型手機"
-tablet: "平板"
-auto: "自動"
-themeColor: "佈景主題顏色"
-size: "大小"
-numberOfColumn: "列數"
-searchByGoogle: "搜尋"
-instanceDefaultLightTheme: "實例預設的淺色佈景主題"
-instanceDefaultDarkTheme: "實例預設的深色佈景主題"
-instanceDefaultThemeDescription: "輸入物件形式的佈景主題代碼"
-mutePeriod: "靜音的期限"
-period: "期限"
-indefinitely: "無期限"
-tenMinutes: "十分鐘"
-oneHour: "一小時"
-oneDay: "一天"
-oneWeek: "一週"
-oneMonth: "一個月"
-threeMonths: "3 個月"
-oneYear: "1 年"
-threeDays: "3 日"
-reflectMayTakeTime: "可能需要一些時間才會出現效果。"
-failedToFetchAccountInformation: "取得帳戶資訊失敗"
-rateLimitExceeded: "已超過速率限制"
-cropImage: "圖片裁剪"
-cropImageAsk: "要剪裁圖片嗎？"
-cropYes: "裁剪"
-cropNo: "使用原圖"
-file: "檔案"
-recentNHours: "過去 {n} 小時"
-recentNDays: "過去 {n} 天"
-noEmailServerWarning: "尚未設定電子郵件伺服器。"
-thereIsUnresolvedAbuseReportWarning: "有尚未處理的檢舉。"
-recommended: "推薦"
-check: "檢查"
-driveCapOverrideLabel: "更改這個使用者的雲端硬碟容量上限"
-driveCapOverrideCaption: "如果指定 0 以下的值，就會被取消。"
-requireAdminForView: "必須以管理員帳戶登入才可以檢視。"
-isSystemAccount: "由系統自動建立與管理的帳戶。"
-typeToConfirm: "要執行這項操作，請輸入 {x} "
-deleteAccount: "刪除帳戶"
-document: "文件"
-numberOfPageCache: "快取頁面數"
-numberOfPageCacheDescription: "增加數量會提高便利性，但也會增加負荷與記憶體使用量。"
-logoutConfirm: "確定要登出嗎？"
-lastActiveDate: "上次使用日期及時間"
-statusbar: "狀態列"
-pleaseSelect: "請選擇"
-reverse: "翻轉"
-colored: "彩色"
-refreshInterval: "更新間隔"
-label: "標籤"
-type: "類型"
-speed: "速度"
-slow: "慢"
-fast: "快"
-sensitiveMediaDetection: "敏感檔案的檢測"
-localOnly: "僅限本地"
-remoteOnly: "僅限遠端"
-failedToUpload: "上傳失敗"
-cannotUploadBecauseInappropriate: "由於判定可能包含不適當的內容，因此無法上傳。"
-cannotUploadBecauseNoFreeSpace: "由於雲端硬碟沒有可用空間，因此無法上傳。"
-cannotUploadBecauseExceedsFileSizeLimit: "由於超過了檔案大小的限制，無法上傳。"
-beta: "測試版"
-enableAutoSensitive: "自動 NSFW 判定"
-enableAutoSensitiveDescription: "如果可行，它將使用機器學習技術判斷檔案是否需要標記為敏感。即使關閉此功能，也可能會依伺服器規則而自動啟用。"
-activeEmailValidationDescription: "主動地驗證使用者的電子郵件地址，以確定是否是一次性地址以及是否可以真正與其進行通訊。關閉時，僅檢查格式是否正確。"
-navbar: "導覽列"
-shuffle: "隨機"
-account: "帳戶"
-move: "移動 "
-pushNotification: "推播通知"
-subscribePushNotification: "啟用推播通知"
-unsubscribePushNotification: "停用推播通知"
-pushNotificationAlreadySubscribed: "推播通知啟用中"
-pushNotificationNotSupported: "瀏覽器或伺服器不支援推播通知"
-sendPushNotificationReadMessage: "如果已閱讀通知與訊息，就刪除推播通知"
-sendPushNotificationReadMessageCaption: "可能會導致裝置的電池消耗量增加。"
-windowMaximize: "最大化"
-windowMinimize: "最小化"
-windowRestore: "復原"
-caption: "標題"
-loggedInAsBot: "以機器人帳戶登入中"
-tools: "工具"
-cannotLoad: "無法載入"
-numberOfProfileView: "個人檔案檢視次數"
-like: "讚"
-unlike: "收回讚"
-numberOfLikes: "讚數"
-show: "檢視"
-neverShow: "不再顯示"
-remindMeLater: "以後再說"
-didYouLikeMisskey: "您喜歡 Misskey 嗎？"
-pleaseDonate: "Misskey是由{host}使用的免費軟體。請贊助我們，讓開發的工作能夠持續！"
-correspondingSourceIsAvailable: "對應的原始碼可以在 {anchor} 處找到。"
-roles: "角色"
-role: "角色"
-noRole: "沒有角色"
-normalUser: "一般使用者"
-undefined: "未定義"
-assign: "指派"
-unassign: "取消指派"
-color: "顏色"
-manageCustomEmojis: "管理自訂表情符號"
-manageAvatarDecorations: "管理頭像裝飾"
-youCannotCreateAnymore: "您無法再建立更多了。"
-cannotPerformTemporary: "暫時無法進行"
-cannotPerformTemporaryDescription: "由於超過操作次數限制，因此暫時無法進行。請稍後再嘗試。"
-invalidParamError: "參數錯誤"
-invalidParamErrorDescription: "請求參數有問題。這可能是漏洞或輸入過多字元所致。"
-permissionDeniedError: "操作被拒絕"
-permissionDeniedErrorDescription: "此帳戶沒有執行這個操作的權限。"
-preset: "預設值"
-selectFromPresets: "從預設值中選擇"
-achievements: "成就"
-gotInvalidResponseError: "伺服器的回應無效"
-gotInvalidResponseErrorDescription: "伺服器可能已關閉或者在維護中，請稍後再試。"
-thisPostMayBeAnnoying: "這篇貼文可能會造成別人的困擾。"
-thisPostMayBeAnnoyingHome: "發佈到首頁"
-thisPostMayBeAnnoyingCancel: "退出"
-thisPostMayBeAnnoyingIgnore: "直接發佈貼文"
-collapseRenotes: "省略顯示已看過的轉發貼文"
-collapseRenotesDescription: "將已做過反應和轉發的貼文折疊顯示。"
-internalServerError: "內部伺服器錯誤"
-internalServerErrorDescription: "內部伺服器出現意外錯誤。"
-copyErrorInfo: "複製錯誤資訊"
-joinThisServer: "在此伺服器上註冊"
-exploreOtherServers: "探索其他伺服器"
-letsLookAtTimeline: "看看時間軸"
-disableFederationConfirm: "要停止聯邦功能嗎？"
-disableFederationConfirmWarn: "即使停止了聯邦功能，貼文也不會變成私密的。在大部分的情況下，沒有必要停止聯邦功能。"
-disableFederationOk: "停止聯邦功能"
-invitationRequiredToRegister: "目前這個伺服器為邀請制，必須擁有邀請碼才能註冊。"
-emailNotSupported: "這個伺服器不支援寄送郵件"
-postToTheChannel: "發佈到頻道"
-cannotBeChangedLater: "之後不能變更。"
-reactionAcceptance: "接受表情反應"
-likeOnly: "僅限讚"
-likeOnlyForRemote: "遠端僅限讚"
-nonSensitiveOnly: "僅限非敏感"
-nonSensitiveOnlyForLocalLikeOnlyForRemote: "僅限非敏感（遠端僅限按讚）"
-rolesAssignedToMe: "指派給自己的角色"
-resetPasswordConfirm: "重設密碼？"
-sensitiveWords: "敏感詞"
-sensitiveWordsDescription: "將含有設定詞彙的貼文可見性設為發送至首頁。可以用換行來進行複數的設定。"
-sensitiveWordsDescription2: "空格代表「以及」（AND），斜線包圍關鍵字代表使用正規表達式。"
-prohibitedWords: "禁語"
-prohibitedWordsDescription: "當要發布包含禁語的貼文時，會出現錯誤。可以用換行分隔來設定多個禁語。"
-prohibitedWordsDescription2: "空格代表「以及」（AND），斜線包圍關鍵字代表使用正規表達式。"
-hiddenTags: "隱藏標籤"
-hiddenTagsDescription: "設定的標籤不會在趨勢中顯示，換行可以設定多個標籤。"
-notesSearchNotAvailable: "無法使用搜尋貼文功能。"
-license: "授權"
-unfavoriteConfirm: "要取消收錄我的最愛嗎？"
-myClips: "我的摘錄"
-drivecleaner: "雲端硬碟清掃器"
-retryAllQueuesNow: "立刻重試所有佇列"
-retryAllQueuesConfirmTitle: "要現在重試嗎？"
-retryAllQueuesConfirmText: "伺服器的負荷可能會暫時增加。"
-enableChartsForRemoteUser: "生成遠端使用者的圖表"
-enableChartsForFederatedInstances: "生成遠端伺服器的圖表"
-enableStatsForFederatedInstances: "取得遠端伺服器資訊"
-showClipButtonInNoteFooter: "新增摘錄按鈕至貼文"
-reactionsDisplaySize: "反應的顯示尺寸"
-limitWidthOfReaction: "限制反應的最大寬度，並縮小顯示尺寸。"
-noteIdOrUrl: "貼文 ID 或 URL"
-video: "影片"
-videos: "影片"
-audio: "音效"
-audioFiles: "音效檔案"
-dataSaver: "數據節省模式"
-accountMigration: "遷移帳戶"
-accountMoved: "這個使用者已遷移至新的帳戶："
-accountMovedShort: "此帳戶已遷移"
-operationForbidden: "不允許此操作"
-forceShowAds: "總是顯示廣告"
-addMemo: "新增備註"
-editMemo: "編輯備註"
-reactionsList: "反應列表"
-renotesList: "轉發貼文列表"
-notificationDisplay: "通知"
-leftTop: "左上"
-rightTop: "右上"
-leftBottom: "左下"
-rightBottom: "右下"
-stackAxis: "堆疊方向"
-vertical: "直向"
-horizontal: "橫向"
-position: "位置"
-serverRules: "伺服器規則"
-pleaseConfirmBelowBeforeSignup: "在本伺服器註冊之前，必須確認並同意以下內容。"
-pleaseAgreeAllToContinue: "必須全部勾選「同意」才能繼續。"
-continue: "繼續"
-preservedUsernames: "保留的使用者名稱"
-preservedUsernamesDescription: "換行列舉要保留的使用者名稱。此處出現的名稱將在註冊時禁用，但由管理者建立帳戶則不受此限。此外，既有的帳戶也不受影響。"
-createNoteFromTheFile: "由此檔案建立貼文"
-archive: "封存"
-archived: "已封存"
-unarchive: "取消封存"
-channelArchiveConfirmTitle: "要封存{name}嗎？"
-channelArchiveConfirmDescription: "封存後，將不會在頻道列表與搜尋結果中顯示，也無法發佈新貼文。"
-thisChannelArchived: "這個頻道已被封存。"
-displayOfNote: "顯示貼文"
-initialAccountSetting: "初始設定"
-youFollowing: "追隨中"
-preventAiLearning: "拒絕接受生成式AI的訓練"
-preventAiLearningDescription: "要求站外生成式 AI 不使用您發佈的內容訓練模型。此功能會使伺服器於 HTML 回應新增「noai」標籤，而因為要視乎 AI 會否遵守該標籤，所以此功能無法完全阻止所有 AI 使用您的內容。"
-options: "選項"
-specifyUser: "指定使用者"
-lookupConfirm: "要查詢嗎？"
-openTagPageConfirm: "要開啟標籤的頁面嗎？"
-specifyHost: "指定主機"
-failedToPreviewUrl: "無法預覽"
-update: "更新"
-rolesThatCanBeUsedThisEmojiAsReaction: "可以使用此表情符號為反應的角色"
-rolesThatCanBeUsedThisEmojiAsReactionEmptyDescription: "如沒有指定角色，任何人都可使用此表情回應。"
-rolesThatCanBeUsedThisEmojiAsReactionPublicRoleWarn: "必須為公開角色。"
-cancelReactionConfirm: "要取消此反應嗎？"
-changeReactionConfirm: "要更改反應嗎？"
-later: "稍後再說"
-goToMisskey: "往 Misskey"
-additionalEmojiDictionary: "表情符號的附加辭典"
-installed: "已安裝"
-branding: "品牌宣傳"
-enableServerMachineStats: "公佈伺服器的機器資訊"
-enableIdenticonGeneration: "啟用生成使用者的 Identicon "
-turnOffToImprovePerformance: "關閉時會提高性能。"
-createInviteCode: "建立邀請碼"
-createWithOptions: "使用選項建立"
-createCount: "建立數"
-inviteCodeCreated: "已建立邀請碼"
-inviteLimitExceeded: "可建立的邀請碼已達上限。"
-createLimitRemaining: "可建立的邀請碼：剩餘 {limit} 個"
-inviteLimitResetCycle: "可以在 {time} 內建立最多 {limit} 個邀請碼。"
-expirationDate: "有效日期"
-noExpirationDate: "不設有效日期"
-inviteCodeUsedAt: "使用邀請碼的日期和時間"
-registeredUserUsingInviteCode: "用了邀請碼的使用者"
-waitingForMailAuth: "等待電子郵件認證"
-inviteCodeCreator: "建立了邀請碼的使用者"
-usedAt: "使用的日期和時間"
-unused: "未使用"
-used: "已使用"
-expired: "過期"
-doYouAgree: "你同意嗎？"
-beSureToReadThisAsItIsImportant: "重要，請務必閱讀。"
-iHaveReadXCarefullyAndAgree: "我已仔細閱讀並同意「{x}」的內容。"
-dialog: "對話方塊"
-icon: "圖示"
-forYou: "給您"
-currentAnnouncements: "最新公告"
-pastAnnouncements: "歷史公告"
-youHaveUnreadAnnouncements: "有未讀的公告。"
-useSecurityKey: "請按照瀏覽器或裝置上的說明來使用安全金鑰或 Passkey。"
-replies: "回覆"
-renotes: "轉發"
-loadReplies: "閱覽回覆"
-loadConversation: "閱覽對話"
-pinnedList: "已置頂的清單"
-keepScreenOn: "保持裝置螢幕開啟"
-verifiedLink: "已驗證連結"
-notifyNotes: "開啟貼文通知"
-unnotifyNotes: "關閉貼文通知"
-authentication: "驗證"
-authenticationRequiredToContinue: "請於繼續前完成驗證"
-dateAndTime: "日期與時間"
-showRenotes: "顯示其他人的轉發貼文"
-edited: "已編輯"
-notificationRecieveConfig: "接受通知的設定"
-mutualFollow: "互相追隨"
-followingOrFollower: "追隨中或者追隨者"
-fileAttachedOnly: "只顯示包含附件的貼文"
-showRepliesToOthersInTimeline: "顯示給其他人的回覆"
-hideRepliesToOthersInTimeline: "在時間軸上隱藏給其他人的回覆"
-showRepliesToOthersInTimelineAll: "在時間軸包含追隨中所有人的回覆"
-hideRepliesToOthersInTimelineAll: "在時間軸不包含追隨中所有人的回覆"
-confirmShowRepliesAll: "進行此操作後無法復原。您真的希望時間軸「包含」您目前追隨的所有人的回覆嗎？"
-confirmHideRepliesAll: "進行此操作後無法復原。您真的希望時間軸「不包含」您目前追隨的所有人的回覆嗎？"
-externalServices: "外部服務"
-sourceCode: "原始碼"
-sourceCodeIsNotYetProvided: "尚未提供原始碼，請洽詢管理員解決這個問題。"
-repositoryUrl: "儲存庫 URL"
-repositoryUrlDescription: "如果存在可公開取得原始碼的儲存庫，請輸入其 URL。 如果您按原樣使用 Misskey（不對原始碼進行任何更改），請輸入 https://github.com/misskey-dev/misskey。"
-repositoryUrlOrTarballRequired: "如果儲存庫不是公開的，則必須提供 tarball。 詳細資訊請參閱 .config/example.yml。"
-feedback: "意見回饋"
-feedbackUrl: "意見回饋 URL"
-impressum: "營運者資訊"
-impressumUrl: "營運者資訊 URL"
-impressumDescription: "在德國與部份地區必須要明確顯示營運者資訊。"
-privacyPolicy: "隱私政策"
-privacyPolicyUrl: "隱私政策 URL"
-tosAndPrivacyPolicy: "服務條款和隱私政策"
-avatarDecorations: "頭像裝飾"
-attach: "裝上"
-detach: "取下"
-detachAll: "全部移除"
-angle: "角度"
-flip: "翻轉"
-showAvatarDecorations: "顯示頭像裝飾"
-releaseToRefresh: "放開以更新內容"
-refreshing: "載入更新中"
-pullDownToRefresh: "往下拉來更新內容"
-disableStreamingTimeline: "停用時間軸的即時更新"
-useGroupedNotifications: "分組顯示通知訊息"
-signupPendingError: "驗證您的電子郵件地址時出現問題。連結可能已過期。"
-cwNotationRequired: "如果開啟「隱藏內容」，則需要註解說明。"
-doReaction: "做出反應"
-code: "程式碼"
-reloadRequiredToApplySettings: "需要重新載入頁面設定才能生效。"
-remainingN: "剩餘：{n}"
-overwriteContentConfirm: "確定要覆蓋目前的內容嗎？"
-seasonalScreenEffect: "隨季節變換畫面的呈現"
-decorate: "設置頭像裝飾"
-addMfmFunction: "插入 MFM 功能語法"
-enableQuickAddMfmFunction: "顯示進階 MFM 選擇器"
-bubbleGame: "氣泡遊戲"
-sfx: "音效"
-soundWillBePlayed: "將播放音效"
-showReplay: "觀看重播"
-replay: "重播"
-replaying: "重播中"
-endReplay: "退出重播"
-copyReplayData: "複製重播資料"
-ranking: "排行榜"
-lastNDays: "過去 {n} 天"
-backToTitle: "回到遊戲標題頁"
-hemisphere: "您居住的地區"
-withSensitive: "顯示包含敏感檔案的貼文"
-userSaysSomethingSensitive: "包含 {name} 敏感檔案的貼文"
-enableHorizontalSwipe: "滑動切換時間軸"
-loading: "載入中"
-surrender: "退出"
-gameRetry: "再試一次"
-notUsePleaseLeaveBlank: "如果不使用的話請留白"
-useTotp: "使用一次性密碼"
-useBackupCode: "使用備用驗證碼"
-launchApp: "啟動 APP"
-useNativeUIForVideoAudioPlayer: "使用瀏覽器的 UI 播放影片與音訊"
-keepOriginalFilename: "保留原始檔名"
-keepOriginalFilenameDescription: "如果關閉此設置，上傳時檔案名稱會自動替換為隨機字串。"
-noDescription: "沒有說明文字"
-alwaysConfirmFollow: "追隨時總是確認"
-inquiry: "聯絡我們"
-tryAgain: "請再試一次。"
-confirmWhenRevealingSensitiveMedia: "要顯示敏感媒體時需確認"
-sensitiveMediaRevealConfirm: "這是敏感媒體。確定要顯示嗎？"
-createdLists: "已建立的清單"
-createdAntennas: "已建立的天線"
-fromX: "自 {x}"
-genEmbedCode: "產生嵌入程式碼"
-noteOfThisUser: "這個使用者的貼文列表"
-clipNoteLimitExceeded: "沒辦法在這個摘錄中增加更多貼文了。"
-performance: "性能"
-modified: "已變更"
-discard: "取消"
-thereAreNChanges: "有 {n} 處的變更"
-signinWithPasskey: "使用密碼金鑰登入"
-unknownWebAuthnKey: "未註冊的金鑰。"
-passkeyVerificationFailed: "驗證金鑰失敗。"
-passkeyVerificationSucceededButPasswordlessLoginDisabled: "雖然驗證金鑰成功，但是無密碼登入的方式是停用的。"
-messageToFollower: "給追隨者的訊息"
-target: "目標 "
-testCaptchaWarning: "此功能用於 CAPTCHA 的測試。<strong>請勿在正式環境中使用。</strong>"
-prohibitedWordsForNameOfUser: "禁止使用的字詞（使用者名稱）"
-prohibitedWordsForNameOfUserDescription: "如果使用者名稱包含此清單中的任何字串，則拒絕重新命名使用者。 具有審查員權限的使用者不受此限制的影響。"
-yourNameContainsProhibitedWords: "您嘗試更改的名稱包含禁止的字串"
-yourNameContainsProhibitedWordsDescription: "名稱中包含禁止使用的字串。 如果您想使用此名稱，請聯絡您的伺服器管理員。"
-thisContentsAreMarkedAsSigninRequiredByAuthor: "作者將其設定為需要登入才能顯示。"
-lockdown: "鎖定"
-pleaseSelectAccount: "請選擇帳戶"
-availableRoles: "可用角色"
-acknowledgeNotesAndEnable: "了解注意事項後再開啟。"
-federationSpecified: "此伺服器以白名單聯邦的方式運作。除了管理員指定的伺服器外，它無法與其他伺服器互動。"
-federationDisabled: "此伺服器未開啟站台聯邦。無法與其他伺服器上的使用者互動。"
+_lang_: 繁體中文（台灣）
+headlineMisskey: 貼文連繫網路
+introMisskey: |-
+  歡迎！Misskey 是一個開放原始碼且去中心化的社群網路服務。
+  發布「貼文」向身邊的人分享您的想法！📡
+  利用「反應」表達您對貼文的感覺！👍
+  讓我們一起探索新的世界吧！🚀
+poweredByMisskeyDescription: '{name}是開放原始碼平臺 <b>Misskey</b> 的伺服器之一。'
+monthAndDay: '{month} 月 {day} 日'
+search: 搜尋
+reset: 重設
+notifications: 通知
+username: 使用者名稱
+password: 密碼
+initialPasswordForSetup: 啟動初始設定的密碼
+initialPasswordIsIncorrect: 啟動初始設定的密碼錯誤。
+initialPasswordForSetupDescription: |-
+  如果您自己安裝了 Misskey，請使用您在設定檔中輸入的密碼。
+  如果您使用 Misskey 的託管服務之類的服務，請使用提供的密碼。
+  如果您尚未設定密碼，請將其留空並繼續。
+forgotPassword: 忘記密碼
+fetchingAsApObject: 從聯邦宇宙取得中...
+ok: OK
+gotIt: 知道了
+cancel: 取消
+noThankYou: 現在不要
+enterUsername: 輸入使用者名稱
+renotedBy: '{user} 轉發了'
+noNotes: 無貼文
+noNotifications: 沒有通知
+instance: 伺服器
+settings: 設定
+notificationSettings: 通知選項
+basicSettings: 基本設定
+otherSettings: 其他設定
+openInWindow: 在新視窗開啟
+profile: 個人檔案
+timeline: 時間軸
+noAccountDescription: 此使用者尚未自我介紹
+login: 登入
+loggingIn: 登入中
+logout: 登出
+signup: 註冊
+uploading: 上傳中
+save: 儲存
+users: 使用者
+addUser: 新增使用者
+favorite: 我的最愛
+favorites: 我的最愛
+unfavorite: 從我的最愛中移除
+favorited: 已添加至我的最愛
+alreadyFavorited: 我的最愛中已存在。
+cantFavorite: 無法加入至我的最愛。
+pin: 置頂
+unpin: 取消置頂
+copyContent: 複製內容
+copyLink: 複製連結
+copyRemoteLink: 複製遠端的連結
+copyLinkRenote: 複製轉發的連結
+delete: 刪除
+deleteAndEdit: 刪除並編輯
+deleteAndEditConfirm: 要刪除並再次編輯嗎？此貼文的所有反應、轉發和回覆也將會消失。
+addToList: 加入至清單
+addToAntenna: 新增至天線
+sendMessage: 發送訊息
+copyRSS: 複製RSS
+copyUsername: 複製使用者名稱
+copyUserId: 複製使用者 ID
+copyNoteId: 複製貼文 ID
+copyFileId: 複製檔案 ID
+copyFolderId: 複製資料夾ID
+copyProfileUrl: 複製個人資料網址
+searchUser: 搜尋使用者
+searchThisUsersNotes: 搜尋這個使用者的貼文
+reply: 回覆
+loadMore: 載入更多
+showMore: 載入更多
+showLess: 關閉
+youGotNewFollower: 您有新的追隨者
+receiveFollowRequest: 您有新的追隨請求
+followRequestAccepted: 追隨請求已被接受
+mention: 提及
+mentions: 提及
+directNotes: 私訊
+importAndExport: 匯入與匯出
+import: 匯入
+export: 匯出
+files: 檔案
+download: 下載
+driveFileDeleteConfirm: 確定要刪除檔案「{name}」嗎？使用此檔案的貼文也會跟著被刪除。
+unfollowConfirm: 確定要取消追隨{name}嗎？
+exportRequested: 已請求匯出。這可能會花一點時間。匯出的檔案將會被放到雲端硬碟裡。
+importRequested: 已請求匯入。這可能會花一點時間。
+lists: 清單
+noLists: 你沒有任何清單
+note: 貼文
+notes: 貼文
+following: 追隨中
+followers: 追隨者
+followsYou: 追隨你的人
+createList: 建立清單
+manageLists: 管理清單
+error: 錯誤
+somethingHappened: 發生錯誤
+retry: 重試
+pageLoadError: 無法載入頁面。
+pageLoadErrorDescription: 這通常是網路錯誤或瀏覽器快取殘留而引起的。請先清除瀏覽器快取，稍後再重試。
+serverIsDead: 伺服器沒有回應。請稍等片刻再試。
+youShouldUpgradeClient: 請重新載入以使用新版客戶端顯示此頁面。
+enterListName: 輸入清單名稱
+privacy: 隱私
+makeFollowManuallyApprove: 手動審核追隨請求
+defaultNoteVisibility: 預設可見性
+follow: 追隨
+followRequest: 追隨請求
+followRequests: 追隨請求
+unfollow: 取消追隨
+followRequestPending: 追隨許可待批准
+enterEmoji: 輸入表情符號
+renote: 轉發
+unrenote: 取消轉發
+renoted: 轉發成功。
+renotedToX: 轉發給 {name} 了。
+cantRenote: 無法轉發此貼文。
+cantReRenote: 無法轉發之前已經轉發過的內容。
+quote: 引用
+inChannelRenote: 在頻道內轉發
+inChannelQuote: 在頻道內引用
+renoteToChannel: 轉發至頻道
+renoteToOtherChannel: 轉發至其他頻道
+pinnedNote: 已置頂的貼文
+pinned: 置頂
+you: 您
+clickToShow: 點擊查看
+sensitive: 敏感內容
+add: 新增
+reaction: 反應
+reactions: 反應
+emojiPicker: 表情符號選擇器
+pinnedEmojisForReactionSettingDescription: 選擇反應時可以設定要固定顯示在頂端的表情符號
+pinnedEmojisSettingDescription: 輸入表情符號時可以設定要固定顯示在頂端的表情符號
+emojiPickerDisplay: 顯示表情符號選擇器
+overwriteFromPinnedEmojisForReaction: 從反應複寫設定
+overwriteFromPinnedEmojis: 從一般複寫設定
+reactionSettingDescription2: 拖動以交換，點擊以刪除，按下「+」以新增。
+rememberNoteVisibility: 記住貼文可見性
+attachCancel: 移除附件
+deleteFile: 刪除檔案
+markAsSensitive: 標記為敏感內容
+unmarkAsSensitive: 取消標記為敏感內容
+enterFileName: 請輸入檔案名稱
+mute: 靜音
+unmute: 解除靜音
+renoteMute: 將轉發貼文靜音
+renoteUnmute: 解除轉發貼文的靜音
+block: 封鎖
+unblock: 解除封鎖
+suspend: 凍結
+unsuspend: 解除凍結
+blockConfirm: 確定要封鎖此使用者嗎？
+unblockConfirm: 確定要解除封鎖此使用者嗎？
+suspendConfirm: 確定凍結此使用者？
+unsuspendConfirm: 確定解凍此使用者？
+selectList: 選擇清單
+editList: 編輯清單
+selectChannel: 選擇頻道
+selectAntenna: 選擇天線
+editAntenna: 編輯天線
+createAntenna: 建立天線
+selectWidget: 選擇小工具
+editWidgets: 編輯小工具
+editWidgetsExit: 完成
+customEmojis: 自訂表情符號
+emoji: 表情符號
+emojis: 表情符號
+emojiName: 表情符號名稱
+emojiUrl: 表情符號 URL
+addEmoji: 新增表情符號
+settingGuide: 推薦設定
+cacheRemoteFiles: 快取遠端檔案
+cacheRemoteFilesDescription: 啟用此設定後，遠端檔案會被快取在本伺服器的儲存空間中。雖然顯示圖片會變快，但會消耗較多伺服器的儲存空間。至於要快取遠端使用者到什麼程度，是依照角色的雲端硬碟容量而定。當超過這個限制時，從較舊的檔案開始自快取中刪除並改為連結。關閉這個設定時，遠端檔案從一開始就維持連結的方式，但建議將 default.yml 的 proxyRemoteFiles 設為 true，以便產生圖片的縮圖並保護使用者的隱私。
+youCanCleanRemoteFilesCache: 按檔案管理的🗑️按鈕，可將快取全部刪除。
+cacheRemoteSensitiveFiles: 快取遠端的敏感檔案
+cacheRemoteSensitiveFilesDescription: 若停用這個設定，則不會快取遠端的敏感檔案，而是直接連結。
+flagAsBot: 此使用者是機器人
+flagAsBotDescription: 如果本帳戶是由程式控制，請啟用此選項。啟用後，會作為標示幫助其他開發者防止機器人之間產生無限互動的行為，並會調整 Misskey 內部系統將本帳戶識別為機器人。
+flagAsCat: 此帳戶是一隻貓，喵～～～！！！
+flagAsCatDescription: 喵喵喵？？
+flagShowTimelineReplies: 在時間軸上顯示貼文的回覆
+flagShowTimelineRepliesDescription: 啟用後，時間軸除了顯示使用者的貼文以外，還會顯示使用者對其他貼文的回覆。
+autoAcceptFollowed: 自動允許來自追隨中使用者的追隨請求
+addAccount: 新增帳戶
+reloadAccountsList: 更新帳戶清單的資訊
+loginFailed: 登入失敗
+showOnRemote: 轉到所在實例顯示
+continueOnRemote: 在遠端伺服器繼續
+chooseServerOnMisskeyHub: 從 Misskey Hub 選擇伺服器
+specifyServerHost: 直接指定伺服器網域
+inputHostName: 請輸入域名
+general: 一般
+wallpaper: 桌布
+setWallpaper: 設定桌布
+removeWallpaper: 移除桌布
+searchWith: '搜尋: {q}'
+youHaveNoLists: 你沒有任何清單
+followConfirm: 你真的要追隨{name}嗎？
+proxyAccount: 代理帳戶
+proxyAccountDescription: 代理帳戶是在特定條件下充當遠端追隨者的帳戶。例如，當使用者新增遠端使用者至其列表時，若沒有本地使用者追隨該遠端使用者，則其活動將不會傳送至伺服器，此時便會由代理帳戶代為追隨以解決問題。
+host: 主機
+selectSelf: 選擇自己
+selectUser: 選取使用者
+recipient: 收件人
+annotation: 註解
+federation: 站台聯邦
+instances: 伺服器
+registeredAt: 初次觀測
+latestRequestReceivedAt: 上次收到的請求
+latestStatus: 最後狀態
+storageUsage: 已使用容量
+charts: 圖表
+perHour: 每小時
+perDay: 每日
+stopActivityDelivery: 停止發送活動
+blockThisInstance: 封鎖此伺服器
+silenceThisInstance: 禁言此伺服器
+mediaSilenceThisInstance: 將這個伺服器的媒體設為禁言
+operations: 操作
+software: 軟體
+version: 版本
+metadata: 詮釋資料
+withNFiles: '{n} 個檔案'
+monitor: 監視器
+jobQueue: 佇列
+cpuAndMemory: CPU 及記憶體
+network: 網路
+disk: 硬碟
+instanceInfo: 伺服器資訊
+statistics: 統計
+clearQueue: 清除佇列
+clearQueueConfirmTitle: 確定要清除佇列嗎？
+clearQueueConfirmText: 未成功發佈的貼文將不會再嘗試發佈。通常不需要進行這項操作。
+clearCachedFiles: 清除快取資料
+clearCachedFilesConfirm: 確定要清除所有遠端暫存資料嗎？
+blockedInstances: 已封鎖的伺服器
+blockedInstancesDescription: 請逐行輸入需要封鎖的伺服器。已封鎖的伺服器將無法與本伺服器進行通訊。
+silencedInstances: 被禁言的伺服器
+silencedInstancesDescription: 設定要禁言的伺服器主機名稱，以換行分隔。隸屬於禁言伺服器的所有帳戶都將被視為「禁言帳戶」，只能發出「追隨請求」，而且無法提及未追隨的本地帳戶。這不會影響已封鎖的實例。
+mediaSilencedInstances: 媒體被禁言的伺服器
+mediaSilencedInstancesDescription: 設定您想要對媒體設定禁言的伺服器，以換行符號區隔。來自被媒體禁言的伺服器所屬帳戶的所有檔案都會被視為敏感檔案，且自訂表情符號不能使用。被封鎖的伺服器不受影響。
+federationAllowedHosts: 允許聯邦通訊的伺服器
+federationAllowedHostsDescription: 設定允許聯邦通訊的伺服器主機，以換行符號分隔。
+muteAndBlock: 靜音和封鎖
+mutedUsers: 被靜音的使用者
+blockedUsers: 被封鎖的使用者
+noUsers: 沒有任何使用者
+editProfile: 編輯個人檔案
+noteDeleteConfirm: 確定刪除此貼文嗎？
+pinLimitExceeded: 不能置頂更多貼文了
+intro: Misskey 部署完成！請建立管理員帳戶。
+done: 完成
+processing: 處理中
+preview: 預覽
+default: 預設
+defaultValueIs: 預設值：{value}
+noCustomEmojis: 沒有自訂的表情符號
+noJobs: 沒有任務
+federating: 聯邦運作中
+blocked: 已封鎖
+suspended: 停止發送
+all: 全部
+subscribing: 訂閱中
+publishing: 發送中
+notResponding: 沒有回應
+instanceFollowing: 追隨的伺服器
+instanceFollowers: 伺服器的追隨者
+instanceUsers: 伺服器使用者
+changePassword: 修改密碼
+security: 安全性
+retypedNotMatch: 兩次輸入不一致。
+currentPassword: 目前密碼
+newPassword: 新密碼
+newPasswordRetype: 確認密碼
+attachFile: 上傳附件
+more: 更多！
+featured: 精選
+usernameOrUserId: 使用者名稱或使用者 ID
+noSuchUser: 使用者不存在
+lookup: 查詢
+announcements: 公告
+imageUrl: 圖片URL
+remove: 刪除
+removed: 已刪除
+removeAreYouSure: 確定要刪掉「{x}」嗎？
+deleteAreYouSure: 確定要刪掉「{x}」嗎？
+resetAreYouSure: 確定要重設嗎？
+areYouSure: 是否確定？
+saved: 已儲存
+messaging: 聊天
+upload: 上傳
+keepOriginalUploading: 保留原圖
+keepOriginalUploadingDescription: 上傳圖片時保留原始圖片。關閉時，瀏覽器會在上傳時生成適用於網路傳送的版本。
+fromDrive: 從雲端空間中選擇
+fromUrl: 從 URL 上傳
+uploadFromUrl: 從網址上傳
+uploadFromUrlDescription: 您要上傳的檔案網址
+uploadFromUrlRequested: 已請求上傳
+uploadFromUrlMayTakeTime: 還需要一些時間才能完成上傳。
+explore: 探索
+messageRead: 已讀
+noMoreHistory: 沒有更多歷史紀錄
+startMessaging: 開始聊天
+nUsersRead: '{n} 人已讀'
+agreeTo: 我同意{0}
+agree: 同意
+agreeBelow: 同意以下內容
+basicNotesBeforeCreateAccount: 基本注意事項
+termsOfService: 服務條款
+start: 開始
+home: 首頁
+remoteUserCaution: 由於該使用者來自其他實例，因此其資訊可能不完整。
+activity: 動態
+images: 圖片
+image: 圖片
+birthday: 生日
+yearsOld: '{age} 歲'
+registeredDate: 註冊日期
+location: 位置
+theme: 佈景主題
+themeForLightMode: 在淺色模式下使用的佈景主題
+themeForDarkMode: 在深色模式下使用的佈景主題
+light: 淺色
+dark: 深色
+lightThemes: 淺色佈景主題
+darkThemes: 深色佈景主題
+syncDeviceDarkMode: 與裝置的深色模式同步
+drive: 雲端硬碟
+fileName: 檔案名稱
+selectFile: 選擇檔案
+selectFiles: 選擇檔案
+selectFolder: 選擇資料夾
+selectFolders: 選擇資料夾
+fileNotSelected: 尚未選擇檔案
+renameFile: 重新命名檔案
+folderName: 資料夾名稱
+createFolder: 新增資料夾
+renameFolder: 重新命名資料夾
+deleteFolder: 刪除資料夾
+folder: 資料夾
+addFile: 加入附件
+showFile: 瀏覽文件
+emptyDrive: 雲端硬碟為空
+emptyFolder: 資料夾為空
+unableToDelete: 無法刪除
+inputNewFileName: 輸入檔案名稱
+inputNewDescription: '請輸入新標題 '
+inputNewFolderName: 輸入新資料夾的名稱
+circularReferenceFolder: 目標文件夾是您要移動的文件夾的子文件夾。
+hasChildFilesOrFolders: 此文件夾不是空的，無法刪除。
+copyUrl: 複製URL
+rename: 重新命名
+avatar: 大頭貼
+banner: 橫幅
+displayOfSensitiveMedia: 敏感檔案的顯示
+whenServerDisconnected: 與伺服器的連接中斷時
+disconnectedFromServer: 與伺服器中斷連線
+reload: 重新整理
+doNothing: 無視
+reloadConfirm: 確定要重新整理嗎？
+watch: 關注
+unwatch: 取消關注
+accept: 接受
+reject: 拒絕
+normal: 正常
+instanceName: 伺服器名稱
+instanceDescription: 伺服器介紹
+maintainerName: 管理員名稱
+maintainerEmail: 管理員郵箱
+tosUrl: 服務條款 URL
+thisYear: 本年
+thisMonth: 本月
+today: 本日
+dayX: '{day} 日'
+monthX: '{month} 月'
+yearX: '{year} 年'
+pages: 頁面
+integration: 整合
+connectService: 已連結
+disconnectService: '已斷開 '
+enableLocalTimeline: 啟用本地時間軸
+enableGlobalTimeline: 啟用全域時間軸
+disablingTimelinesInfo: 為了方便，即使您關閉了時間軸功能，管理員和審查員仍可以繼續使用。
+registration: 註冊
+invite: 邀請
+driveCapacityPerLocalAccount: 每個本地使用者的雲端硬碟容量
+driveCapacityPerRemoteAccount: 每個非本地用戶的雲端空間大小
+inMb: 以 MB 為單位
+bannerUrl: 橫幅圖片URL
+backgroundImageUrl: '背景圖片的來源網址 '
+basicInfo: 基本資訊
+pinnedUsers: 置頂使用者
+pinnedUsersDescription: 在「探索」頁面中使用換行標記想要置頂的使用者。
+pinnedPages: 釘選頁面
+pinnedPagesDescription: 輸入要固定至實例首頁的頁面路徑，以換行符分隔。
+pinnedClipId: 置頂的摘錄ID
+pinnedNotes: 已置頂的貼文
+hcaptcha: hCaptcha
+enableHcaptcha: 啟用 hCaptcha
+hcaptchaSiteKey: hcaptchaSiteKey
+hcaptchaSecretKey: hcaptchaSecretKey
+mcaptcha: mCaptcha
+enableMcaptcha: 啟用 mCaptcha
+mcaptchaSiteKey: 網站金鑰
+mcaptchaSecretKey: 私密金鑰
+mcaptchaInstanceUrl: mCaptcha 的實例網址
+recaptcha: reCAPTCHA
+enableRecaptcha: 啟用 reCAPTCHA
+recaptchaSiteKey: 網站金鑰
+recaptchaSecretKey: 金鑰
+turnstile: Turnstile
+enableTurnstile: 啟用 Turnstile
+turnstileSiteKey: turnstileSiteKey
+turnstileSecretKey: turnstileSecretKey
+avoidMultiCaptchaConfirm: 使用多種驗證方式可能會造成干擾，您要關閉其他驗證方式嗎？您可以按「取消」保留多種驗證方式。
+antennas: 天線
+manageAntennas: 管理天線
+name: 名稱
+antennaSource: 接收來源
+antennaKeywords: 包含關鍵字
+antennaExcludeKeywords: 排除關鍵字
+antennaExcludeBots: 排除機器人帳戶
+antennaKeywordsDescription: 空格代表「以及」（AND），換行代表「或者」（OR）
+notifyAntenna: 通知有新貼文
+withFileAntenna: 僅帶有附件的貼文
+enableServiceworker: 啟用瀏覽器的推播通知
+antennaUsersDescription: 填寫使用者名稱，以換行分隔
+caseSensitive: 區分大小寫
+withReplies: 包含回覆
+connectedTo: 您的帳戶已連接到以下社交帳戶
+notesAndReplies: 貼文與回覆
+withFiles: 附件
+silence: 禁言
+silenceConfirm: 確定要禁言此使用者嗎？
+unsilence: 解除禁言
+unsilenceConfirm: 確定要解除禁言嗎？
+popularUsers: 熱門使用者
+recentlyUpdatedUsers: 最近發文的使用者
+recentlyRegisteredUsers: 新加入使用者
+recentlyDiscoveredUsers: 最近發現的使用者
+exploreUsersCount: 有{count}個使用者
+exploreFediverse: 探索聯邦宇宙
+popularTags: 熱門標籤
+userList: 使用者清單
+about: 關於
+aboutMisskey: 關於 Misskey
+administrator: 管理員
+token: 權杖
+2fa: 雙重驗證
+setupOf2fa: 設定雙重驗證
+totp: 驗證應用程式
+totpDescription: 以驗證應用程式輸入一次性密碼
+moderator: 審查員
+moderation: 審查
+moderationNote: 管理筆記
+moderationNoteDescription: 您可以編寫僅在審查員之間共用的註解。
+addModerationNote: 新增管理筆記
+moderationLogs: 管理日誌
+nUsersMentioned: 被 {n} 個人提及
+securityKeyAndPasskey: 安全金鑰、Passkey
+securityKey: 安全金鑰
+lastUsed: 上次使用
+lastUsedAt: 上次使用：{t}
+unregister: 註銷
+passwordLessLogin: 設置無密碼登入
+passwordLessLoginDescription: 不使用密碼，以安全金鑰或 Passkey 登入
+resetPassword: 重設密碼
+newPasswordIs: 新密碼為「{password}」
+reduceUiAnimation: 減少介面的動態視覺
+share: 分享
+notFound: 查無項目
+notFoundDescription: 查無此頁
+uploadFolder: 預設上傳資料夾
+markAsReadAllNotifications: 標記所有通知為已讀
+markAsReadAllUnreadNotes: 標記所有貼文為已讀
+markAsReadAllTalkMessages: 標記所有訊息為已讀
+help: 幫助
+inputMessageHere: 在此輸入訊息
+close: 關閉
+invites: 邀請
+members: 成員
+transfer: 轉讓
+title: 標題
+text: 文字
+enable: 啟用
+next: 下一步
+retype: 重新輸入
+noteOf: '{user}的貼文'
+quoteAttached: 引用
+quoteQuestion: 是否要引用？
+attachAsFileQuestion: 剪貼簿的文字較長。請問是否要將其以文字檔的方式附加呢？
+noMessagesYet: 沒有訊息
+newMessageExists: 有新的訊息
+onlyOneFileCanBeAttached: 只能加入一個附件
+signinRequired: 請先登入
+signinOrContinueOnRemote: 若要繼續，需前往您所在的伺服器，或者註冊並登入此伺服器
+invitations: 邀請
+invitationCode: 邀請碼
+checking: 確認中
+available: 可用的
+unavailable: 不可用的
+usernameInvalidFormat: 可使用大小寫英文字母、數字和底線
+tooShort: 過短
+tooLong: 過長
+weakPassword: 密碼強度過弱
+normalPassword: 密碼強度普通
+strongPassword: 密碼強度高
+passwordMatched: 密碼一致
+passwordNotMatched: 密碼不一致
+signinWith: 以{x}登錄
+signinFailed: 登入失敗。 請檢查使用者名稱和密碼。
+or: 或者
+language: 語言
+uiLanguage: 介面語言
+aboutX: 關於{x}
+emojiStyle: 表情符號的風格
+native: 原生
+menuStyle: 選單風格
+style: 風格
+drawer: 側邊欄
+popup: 彈出式視窗
+showNoteActionsOnlyHover: 僅在游標停留時顯示貼文的
+showReactionsCount: 顯示貼文的反應數目
+noHistory: 沒有歷史紀錄
+signinHistory: 登入歷史
+enableAdvancedMfm: 啟用進階 MFM
+enableAnimatedMfm: 啟用 MFM 動畫
+doing: 正在進行
+category: 類別
+tags: 標籤
+docSource: 文件來源
+createAccount: 建立帳戶
+existingAccount: 現有帳戶
+regenerate: 再次生成
+fontSize: 字體大小
+mediaListWithOneImageAppearance: 只有一張圖片時的檔案列表高度
+limitTo: 上限為 {x}
+noFollowRequests: 沒有追隨您的請求
+openImageInNewTab: 於新分頁中開啟圖片
+dashboard: 儀表板
+local: 本地
+remote: 遠端
+total: 合計
+weekOverWeekChanges: 與上週相比
+dayOverDayChanges: 與昨日相比
+appearance: 外觀
+clientSettings: 客戶端設定
+accountSettings: 帳戶設定
+promotion: 推廣
+promote: 推廣
+numberOfDays: 有效天數
+hideThisNote: 隱藏此貼文
+showFeaturedNotesInTimeline: 在時間軸上顯示熱門推薦
+objectStorage: 物件儲存
+useObjectStorage: 使用物件儲存
+objectStorageBaseUrl: Base URL
+objectStorageBaseUrlDesc: 用於引用的 URL。如果您使用的是 CDN 或反向代理，請指定其 URL，例如 S3（https://<bucket>.s3.amazonaws.com）、GCS（https://storage.googleapis.com/<bucket>）。
+objectStorageBucket: 儲存空間（Bucket）
+objectStorageBucketDesc: '請填寫所用服務的儲存空間（Bucket）名稱。 '
+objectStoragePrefix: 前綴
+objectStoragePrefixDesc: 它儲存在此前綴目錄下。
+objectStorageEndpoint: 端點（Endpoint）
+objectStorageEndpointDesc: 如使用 AWS S3，請留空。如使用其他服務，請按照其說明文件以「<host>」或「<host>:<port>」的形式設定端點（Endpoint）。
+objectStorageRegion: 地域（Region）
+objectStorageRegionDesc: 請填寫一個分區，例如「xx-east-1」。 如果您使用的服務不設分區，請留空或填寫「us-east-1」。
+objectStorageUseSSL: 使用 SSL
+objectStorageUseSSLDesc: 請在不使用 https 連接 API 時關閉
+objectStorageUseProxy: 使用網路代理
+objectStorageUseProxyDesc: 請在不使用網路代理連接 API 時關閉
+objectStorageSetPublicRead: 上傳時設定為「public-read」
+s3ForcePathStyleDesc: 啟用 s3ForcePathStyle 將強制填寫儲存空間（Bucket）名稱至 URL 路徑內，而非寫入主機名。 使用如 Minio 等自行託管服務時可能需要啟用。
+serverLogs: 伺服器日誌
+deleteAll: 刪除所有記錄
+showFixedPostForm: 於時間軸頁頂顯示「發送貼文」方框
+showFixedPostFormInChannel: 於時間軸頁頂顯示「發送貼文」方框（頻道）
+withRepliesByDefaultForNewlyFollowed: 在追隨其他人後，預設在時間軸納入回覆的貼文
+newNoteRecived: 發現新貼文
+sounds: 音效
+sound: 音效
+listen: 聆聽
+none: 無
+showInPage: 在頁面中顯示
+popout: 彈出式視窗
+volume: 音量
+masterVolume: 主音量
+notUseSound: 關閉音效
+useSoundOnlyWhenActive: 瀏覽器在前景運作時，Misskey 才會發出音效
+details: 詳細資訊
+renoteDetails: 轉發貼文的細節
+chooseEmoji: 選擇您的表情符號
+unableToProcess: 操作無法完成
+recentUsed: 最近使用
+install: 安裝
+uninstall: 解除安裝
+installedApps: 已授權的應用程式
+nothing: 查無項目
+installedDate: 安裝時間
+lastUsedDate: 最後上線日期
+state: 狀態
+sort: 排序
+ascendingOrder: 昇冪
+descendingOrder: 降冪
+scratchpad: 暫存記憶體
+scratchpadDescription: AiScript 控制臺為 AiScript 的實驗環境。您可以在此編寫、執行和確認程式碼與 Misskey 互動的結果。
+uiInspector: UI 檢查
+uiInspectorDescription: '您可以看到記憶體中存在的 UI 元件實例的清單。  UI 元件由 Ui:C: 系列函數產生。'
+output: 輸出
+script: 腳本
+disablePagesScript: 停用頁面的 AiScript 腳本
+updateRemoteUser: 更新遠端使用者資訊
+unsetUserAvatar: 移除使用者的大頭貼
+unsetUserAvatarConfirm: 確定要移除使用者的大頭貼嗎？
+unsetUserBanner: 移除使用者的橫幅圖像
+unsetUserBannerConfirm: 確定要移除使用者的橫幅圖像嗎？
+deleteAllFiles: 刪除所有檔案
+deleteAllFilesConfirm: 要刪除所有檔案嗎？
+removeAllFollowing: 解除所有追隨
+removeAllFollowingDescription: 解除{host}所有的追隨。在伺服器不再存在時執行。
+userSuspended: 該使用者已被停用。
+userSilenced: 該使用者已被禁言。
+yourAccountSuspendedTitle: 帳戶已被凍結
+yourAccountSuspendedDescription: 該帳戶已因違反伺服器服務條款或其他原因而被凍結。您可以向管理員查詢更多資訊。請不要建立新帳戶。
+tokenRevoked: 權杖無效
+tokenRevokedDescription: 登入權杖失效，請重新登入。
+accountDeleted: 帳戶已被刪除
+accountDeletedDescription: 這個帳戶已被刪除。
+menu: 選單
+divider: 分隔線
+addItem: 新增項目
+rearrange: 排序方式
+relays: 中繼器
+addRelay: 新增中繼器
+inboxUrl: 收件夾 URL
+addedRelays: 已加入的中繼器
+serviceworkerInfo: 如要使用推播通知，需要啟用此選項並設定金鑰。
+deletedNote: 已刪除的貼文
+invisibleNote: 私人貼文
+enableInfiniteScroll: 啟用自動滾動頁面模式
+visibility: 可見性
+poll: 票選活動
+useCw: 隱藏內容
+enablePlayer: 開啟播放器
+disablePlayer: 關閉播放器
+expandTweet: 展開推文
+themeEditor: 佈景主題編輯器
+description: 描述
+describeFile: 新增標題
+enterFileDescription: 輸入標題
+author: 作者
+leaveConfirm: 尚未儲存修改。要放棄嗎？
+manage: 管理
+plugins: 外掛
+preferencesBackups: 備份設定檔
+deck: 多欄模式
+undeck: 取消多欄模式
+useBlurEffectForModal: 在對話框使用模糊效果
+useFullReactionPicker: 使用全尺寸的反應選擇器
+width: 寬度
+height: 高度
+large: 大
+medium: 中
+small: 小
+generateAccessToken: 發行存取權杖
+permission: 權限
+adminPermission: 管理員權限
+enableAll: 啟用全部
+disableAll: 停用全部
+tokenRequested: 允許存取帳戶
+pluginTokenRequestedDescription: 此外掛將擁有在此設定的權限。
+notificationType: 通知形式
+edit: 編輯
+emailServer: 電子郵件伺服器
+enableEmail: 啟用發送電子郵件功能
+emailConfigInfo: 用於確認電子郵件地址及密碼重置
+email: 電子郵件
+emailAddress: 電子郵件位址
+smtpConfig: SMTP 伺服器設定
+smtpHost: 主機
+smtpPort: 埠
+smtpUser: 使用者名稱
+smtpPass: 密碼
+emptyToDisableSmtpAuth: 留空使用者名稱和密碼以關閉SMTP驗證。
+smtpSecure: 在 SMTP 連接中使用隱式 SSL/TLS
+smtpSecureInfo: 使用 STARTTLS 時關閉。
+testEmail: 測試郵件發送
+wordMute: 被靜音的文字
+wordMuteDescription: 將包含指定語句的貼文最小化。 點擊最小化的貼文即可顯示。
+hardWordMute: 硬文字靜音
+showMutedWord: 顯示靜音字
+hardWordMuteDescription: 隱藏含有指定語句的貼文。 與詞彙靜音不同的是，貼文將完全隱藏不見。
+regexpError: 正規表達式錯誤
+regexpErrorDescription: '{tab} 靜音文字的第 {line} 行的正規表達式有錯誤：'
+instanceMute: 被靜音的實例
+userSaysSomething: '{name}說了什麼'
+userSaysSomethingAbout: '{name} 說了一些關於「{word}」的話'
+makeActive: 啟用
+display: 檢視
+copy: 複製
+metrics: 指標
+overview: 概覽
+logs: 日誌
+delayed: 延遲
+database: 資料庫
+channel: 頻道
+create: 新增
+notificationSetting: 通知設定
+notificationSettingDesc: 選擇顯示通知的類型
+useGlobalSetting: 使用全域設定
+useGlobalSettingDesc: 啟用時，將使用帳戶通知設定。停用時，則可以單獨設定。
+other: 其他
+regenerateLoginToken: 重新產生登入權杖
+regenerateLoginTokenDescription: 重新產生用於登入的內部權杖。一般情況下是不需要這樣做的。重新產生後，所有裝置將會被登出。
+theKeywordWhenSearchingForCustomEmoji: 這是搜尋自訂表情符號時的關鍵字
+setMultipleBySeparatingWithSpace: 您可以使用空格分隔多個項目。
+fileIdOrUrl: 檔案 ID 或 URL
+behavior: 行為
+sample: 範例
+abuseReports: 檢舉
+reportAbuse: 檢舉
+reportAbuseRenote: 檢舉轉發貼文
+reportAbuseOf: 檢舉{name}
+fillAbuseReportDescription: 請填寫檢舉的詳細理由。如有需要，請附上相關 URL。
+abuseReported: 檢舉完成。感謝您的報告。
+reporter: 檢舉者
+reporteeOrigin: 檢舉來源
+reporterOrigin: 檢舉者來源
+send: 發送
+openInNewTab: 在新分頁中開啟
+openInSideView: 在側欄中開啟
+defaultNavigationBehaviour: 預設導航
+editTheseSettingsMayBreakAccount: 修改這些設定可能會毀損您的帳戶
+instanceTicker: 貼文的伺服器資訊
+waitingFor: 等待{x}
+random: 隨機
+system: 系統
+switchUi: 切換介面
+desktop: 桌面
+clip: 摘錄
+createNew: 新建
+optional: 可選
+createNewClip: 建立新摘錄
+unclip: 解除摘錄
+confirmToUnclipAlreadyClippedNote: 此貼文已包含在摘錄「{name}」中。 你想將貼文從這個摘錄中排除嗎？
+public: 公開
+private: 私密
+i18nInfo: Misskey 已被志願者們翻譯成各種語言版本。您可以瀏覽 {link} 幫助翻譯。
+manageAccessTokens: 管理存取權杖
+accountInfo: 帳戶資訊
+notesCount: 貼文數量
+repliesCount: 回覆數量
+renotesCount: 轉發數量
+repliedCount: 回覆數量
+renotedCount: 轉發次數
+followingCount: 正在追隨的使用者數量
+followersCount: 追隨者數量
+sentReactionsCount: 反應發送次數
+receivedReactionsCount: 收到反應次數
+pollVotesCount: 已統計的投票數
+pollVotedCount: 已投票數
+'yes': 是
+'no': 否
+driveFilesCount: 雲端硬碟檔案數量
+driveUsage: 雲端硬碟使用量
+noCrawle: 拒絕搜尋引擎索引
+noCrawleDescription: 要求網路搜尋引擎不要索引你的個人資料頁、貼文及頁面等。
+lockedAccountInfo: 即使你通過了追隨者請求，除非你將貼文的可見性設定為 「追隨者」，否則任何人都能看見你的貼文。
+alwaysMarkSensitive: 預設標記檔案為敏感內容
+loadRawImages: 以原始圖檔顯示附件圖檔的縮圖
+disableShowingAnimatedImages: 不播放動態圖檔
+highlightSensitiveMedia: 強調敏感標記
+verificationEmailSent: 已發送驗證電子郵件。請點擊進入電子郵件中的連結以完成驗證。
+notSet: 未設定
+emailVerified: 已成功驗證您的電子郵件地址
+noteFavoritesCount: 我的最愛貼文的數目
+pageLikesCount: 頁面被按讚次數
+pageLikedCount: 頁面被按讚次數
+contact: 聯絡人
+useSystemFont: 使用系統預設的字型
+clips: 摘錄
+experimentalFeatures: 實驗中的功能
+experimental: 實驗性
+thisIsExperimentalFeature: 這是實驗性的功能。可能會有變更規格和不能正常動作的可能性。
+developer: 開發者
+makeExplorable: 使自己的帳戶更容易被找到
+makeExplorableDescription: 如果關閉，帳戶將不會被顯示在「探索」頁面中。
+showGapBetweenNotesInTimeline: 分開顯示時間軸上的貼文
+duplicate: 複製
+left: 左
+center: 置中
+wide: 寬
+narrow: 窄
+reloadToApplySetting: 設定將會在頁面重新載入之後生效。要現在就重載頁面嗎？
+needReloadToApply: 必須重新載入才會生效。
+showTitlebar: 顯示標題列
+clearCache: 清除快取資料
+onlineUsersCount: '{n} 人上線'
+nUsers: '{n} 使用者'
+nNotes: '{n} 貼文'
+sendErrorReports: 傳送錯誤報告
+sendErrorReportsDescription: 傳送問題報告至開發者以提升軟體品質。問題報告可能包括作業系統版本，瀏覽器類型，行為歷史記錄等。
+myTheme: 我的佈景主題
+backgroundColor: 背景
+accentColor: 重點色彩
+textColor: 文字
+saveAs: 另存新檔
+advanced: 進階
+advancedSettings: 進階設定
+value: 數值
+createdAt: 建立於
+updatedAt: 最後更新
+saveConfirm: 您要儲存變更嗎？
+deleteConfirm: 你確定要刪除嗎？
+invalidValue: 輸入值無效。
+registry: 登錄表
+closeAccount: 停用帳戶
+currentVersion: 目前版本
+latestVersion: 最新版本
+youAreRunningUpToDateClient: 您所使用的客戶端已經是最新的。
+newVersionOfClientAvailable: 新版本的客戶端可用。
+usageAmount: 使用量
+capacity: 容量
+inUse: 已使用
+editCode: 編輯程式碼
+apply: 套用
+receiveAnnouncementFromInstance: 接收來自伺服器的通知
+emailNotification: 郵件通知
+publish: 發布
+inChannelSearch: 頻道內搜尋
+useReactionPickerForContextMenu: 點擊右鍵開啟反應選擇器
+typingUsers: '{users}輸入中'
+jumpToSpecifiedDate: 跳轉到特定日期
+showingPastTimeline: 顯示過往的時間軸
+clear: 清除
+markAllAsRead: 全部標示為已讀
+goBack: 返回
+unlikeConfirm: 要取消按讚嗎？
+fullView: 全螢幕顯示
+quitFullView: 退出全螢幕顯示
+addDescription: 新增描述
+userPagePinTip: 在貼文的選單中選擇「置頂」，即可置頂該貼文至您的個人檔案頁面。
+notSpecifiedMentionWarning: 此貼文有未指定的提及
+info: 資訊
+userInfo: 使用者資訊
+unknown: 未知
+onlineStatus: 上線狀態
+hideOnlineStatus: 隱藏上線狀態
+hideOnlineStatusDescription: 隱藏上線狀態後，可能會降低搜尋等功能的便利性。
+online: 線上
+active: 最近活躍
+offline: 離線
+notRecommended: 不推薦
+botProtection: Bot 防護
+instanceBlocking: 已封鎖或禁言的伺服器
+selectAccount: 選擇帳戶
+switchAccount: 切換帳戶
+enabled: 已啟用
+disabled: 已停用
+quickAction: 快捷操作
+user: 使用者
+administration: 管理
+accounts: 帳戶
+switch: 切換
+noMaintainerInformationWarning: 尚未設定管理員訊息。
+noInquiryUrlWarning: 尚未設定聯絡表單網址。
+noBotProtectionWarning: 尚未設定 Bot 防護。
+configure: 設定
+postToGallery: 發佈到相簿
+postToHashtag: 以此主題標籤發佈
+gallery: 相簿
+recentPosts: 最新貼文
+popularPosts: 熱門的貼文
+shareWithNote: 在貼文中分享
+ads: 廣告
+expiration: 期限
+startingperiod: 開始期間
+memo: 備忘錄
+priority: 優先級
+high: 高
+middle: 中
+low: 低
+emailNotConfiguredWarning: 沒有設定電子郵件地址
+ratio: '%'
+previewNoteText: 預覽文本
+customCss: 自定義 CSS
+customCssWarn: 這個設定必須由具備相關知識的人員操作，不當的設定可能導致客戶端無法正常使用。
+global: 全域
+squareAvatars: 大頭貼以方形顯示
+sent: 發送
+received: 收取
+searchResult: 搜尋結果
+hashtags: 標籤
+troubleshooting: 故障排除
+useBlurEffect: 在 UI 上使用模糊效果
+learnMore: 更多資訊
+misskeyUpdated: Misskey 更新完成！
+whatIsNew: 顯示更新資訊
+translate: 翻譯
+translatedFrom: 從 {x} 翻譯
+accountDeletionInProgress: 正在刪除帳戶
+usernameInfo: 在伺服器上您的帳戶是唯一的識別名稱。您可以使用字母 (a ~ z, A ~ Z)、數字 (0 ~ 9) 和下底線 (_)。之後帳戶名是不能更改的。
+aiChanMode: 小藍模式
+devMode: 開發者模式
+keepCw: 保持隱藏內容
+pubSub: Pub/Sub 帳戶
+lastCommunication: 最近的通信
+resolved: 已解決
+unresolved: 未解決
+breakFollow: 解除追隨者
+breakFollowConfirm: 確定要取消被追隨嗎？
+itsOn: 已開啟
+itsOff: 已關閉
+'on': 開啟
+'off': 關閉
+emailRequiredForSignup: 註冊帳戶需要電子郵件地址
+unread: 未讀
+filter: 篩選
+controlPanel: 控制臺
+manageAccounts: 管理帳戶
+makeReactionsPublic: 將反應設為公開
+makeReactionsPublicDescription: 將您做過的反應設為公開可見。
+classic: 經典
+muteThread: 將貼文串設為靜音
+unmuteThread: 將貼文串的靜音解除
+followingVisibility: 追隨中的可見性
+followersVisibility: 追隨者的可見性
+continueThread: 查看更多貼文
+deleteAccountConfirm: 將要刪除帳戶。是否確定？
+incorrectPassword: 密碼錯誤。
+incorrectTotp: 一次性密碼錯誤，或者已過期。
+voteConfirm: 確定投給「{choice}」？
+hide: 隱藏
+useDrawerReactionPickerForMobile: 在行動裝置上使用抽屜顯示
+welcomeBackWithName: 歡迎回來，{name}
+clickToFinishEmailVerification: 點擊 [{ok}] 完成電子郵件地址認證。
+overridedDeviceKind: 裝置類型
+smartphone: 智慧型手機
+tablet: 平板
+auto: 自動
+themeColor: 佈景主題顏色
+size: 大小
+numberOfColumn: 列數
+searchByGoogle: 搜尋
+instanceDefaultLightTheme: 實例預設的淺色佈景主題
+instanceDefaultDarkTheme: 實例預設的深色佈景主題
+instanceDefaultThemeDescription: 輸入物件形式的佈景主題代碼
+mutePeriod: 靜音的期限
+period: 期限
+indefinitely: 無期限
+tenMinutes: 十分鐘
+oneHour: 一小時
+oneDay: 一天
+oneWeek: 一週
+oneMonth: 一個月
+threeMonths: 3 個月
+oneYear: 1 年
+threeDays: 3 日
+reflectMayTakeTime: 可能需要一些時間才會出現效果。
+failedToFetchAccountInformation: 取得帳戶資訊失敗
+rateLimitExceeded: 已超過速率限制
+cropImage: 圖片裁剪
+cropImageAsk: 要剪裁圖片嗎？
+cropYes: 裁剪
+cropNo: 使用原圖
+file: 檔案
+recentNHours: 過去 {n} 小時
+recentNDays: 過去 {n} 天
+noEmailServerWarning: 尚未設定電子郵件伺服器。
+thereIsUnresolvedAbuseReportWarning: 有尚未處理的檢舉。
+recommended: 推薦
+check: 檢查
+driveCapOverrideLabel: 更改這個使用者的雲端硬碟容量上限
+driveCapOverrideCaption: 如果指定 0 以下的值，就會被取消。
+requireAdminForView: 必須以管理員帳戶登入才可以檢視。
+isSystemAccount: 由系統自動建立與管理的帳戶。
+typeToConfirm: '要執行這項操作，請輸入 {x} '
+deleteAccount: 刪除帳戶
+document: 文件
+numberOfPageCache: 快取頁面數
+numberOfPageCacheDescription: 增加數量會提高便利性，但也會增加負荷與記憶體使用量。
+logoutConfirm: 確定要登出嗎？
+lastActiveDate: 上次使用日期及時間
+statusbar: 狀態列
+pleaseSelect: 請選擇
+reverse: 翻轉
+colored: 彩色
+refreshInterval: 更新間隔
+label: 標籤
+type: 類型
+speed: 速度
+slow: 慢
+fast: 快
+sensitiveMediaDetection: 敏感檔案的檢測
+localOnly: 僅限本地
+remoteOnly: 僅限遠端
+failedToUpload: 上傳失敗
+cannotUploadBecauseInappropriate: 由於判定可能包含不適當的內容，因此無法上傳。
+cannotUploadBecauseNoFreeSpace: 由於雲端硬碟沒有可用空間，因此無法上傳。
+cannotUploadBecauseExceedsFileSizeLimit: 由於超過了檔案大小的限制，無法上傳。
+beta: 測試版
+enableAutoSensitive: 自動 NSFW 判定
+enableAutoSensitiveDescription: 如果可行，它將使用機器學習技術判斷檔案是否需要標記為敏感。即使關閉此功能，也可能會依伺服器規則而自動啟用。
+activeEmailValidationDescription: 主動地驗證使用者的電子郵件地址，以確定是否是一次性地址以及是否可以真正與其進行通訊。關閉時，僅檢查格式是否正確。
+navbar: 導覽列
+shuffle: 隨機
+account: 帳戶
+move: '移動 '
+pushNotification: 推播通知
+subscribePushNotification: 啟用推播通知
+unsubscribePushNotification: 停用推播通知
+pushNotificationAlreadySubscribed: 推播通知啟用中
+pushNotificationNotSupported: 瀏覽器或伺服器不支援推播通知
+sendPushNotificationReadMessage: 如果已閱讀通知與訊息，就刪除推播通知
+sendPushNotificationReadMessageCaption: 可能會導致裝置的電池消耗量增加。
+windowMaximize: 最大化
+windowMinimize: 最小化
+windowRestore: 復原
+caption: 標題
+loggedInAsBot: 以機器人帳戶登入中
+tools: 工具
+cannotLoad: 無法載入
+numberOfProfileView: 個人檔案檢視次數
+like: 讚
+unlike: 收回讚
+numberOfLikes: 讚數
+show: 檢視
+neverShow: 不再顯示
+remindMeLater: 以後再說
+didYouLikeMisskey: 您喜歡 Misskey 嗎？
+pleaseDonate: Misskey是由{host}使用的免費軟體。請贊助我們，讓開發的工作能夠持續！
+correspondingSourceIsAvailable: 對應的原始碼可以在 {anchor} 處找到。
+roles: 角色
+role: 角色
+noRole: 沒有角色
+normalUser: 一般使用者
+undefined: 未定義
+assign: 指派
+unassign: 取消指派
+color: 顏色
+manageCustomEmojis: 管理自訂表情符號
+manageAvatarDecorations: 管理頭像裝飾
+youCannotCreateAnymore: 您無法再建立更多了。
+cannotPerformTemporary: 暫時無法進行
+cannotPerformTemporaryDescription: 由於超過操作次數限制，因此暫時無法進行。請稍後再嘗試。
+invalidParamError: 參數錯誤
+invalidParamErrorDescription: 請求參數有問題。這可能是漏洞或輸入過多字元所致。
+permissionDeniedError: 操作被拒絕
+permissionDeniedErrorDescription: 此帳戶沒有執行這個操作的權限。
+preset: 預設值
+selectFromPresets: 從預設值中選擇
+achievements: 成就
+gotInvalidResponseError: 伺服器的回應無效
+gotInvalidResponseErrorDescription: 伺服器可能已關閉或者在維護中，請稍後再試。
+thisPostMayBeAnnoying: 這篇貼文可能會造成別人的困擾。
+thisPostMayBeAnnoyingHome: 發佈到首頁
+thisPostMayBeAnnoyingCancel: 退出
+thisPostMayBeAnnoyingIgnore: 直接發佈貼文
+collapseRenotes: 省略顯示已看過的轉發貼文
+collapseRenotesDescription: 將已做過反應和轉發的貼文折疊顯示。
+internalServerError: 內部伺服器錯誤
+internalServerErrorDescription: 內部伺服器出現意外錯誤。
+copyErrorInfo: 複製錯誤資訊
+joinThisServer: 在此伺服器上註冊
+exploreOtherServers: 探索其他伺服器
+letsLookAtTimeline: 看看時間軸
+disableFederationConfirm: 要停止聯邦功能嗎？
+disableFederationConfirmWarn: 即使停止了聯邦功能，貼文也不會變成私密的。在大部分的情況下，沒有必要停止聯邦功能。
+disableFederationOk: 停止聯邦功能
+invitationRequiredToRegister: 目前這個伺服器為邀請制，必須擁有邀請碼才能註冊。
+emailNotSupported: 這個伺服器不支援寄送郵件
+postToTheChannel: 發佈到頻道
+cannotBeChangedLater: 之後不能變更。
+reactionAcceptance: 接受表情反應
+likeOnly: 僅限讚
+likeOnlyForRemote: 遠端僅限讚
+nonSensitiveOnly: 僅限非敏感
+nonSensitiveOnlyForLocalLikeOnlyForRemote: 僅限非敏感（遠端僅限按讚）
+rolesAssignedToMe: 指派給自己的角色
+resetPasswordConfirm: 重設密碼？
+sensitiveWords: 敏感詞
+sensitiveWordsDescription: 將含有設定詞彙的貼文可見性設為發送至首頁。可以用換行來進行複數的設定。
+sensitiveWordsDescription2: 空格代表「以及」（AND），斜線包圍關鍵字代表使用正規表達式。
+prohibitedWords: 禁語
+prohibitedWordsDescription: 當要發布包含禁語的貼文時，會出現錯誤。可以用換行分隔來設定多個禁語。
+prohibitedWordsDescription2: 空格代表「以及」（AND），斜線包圍關鍵字代表使用正規表達式。
+hiddenTags: 隱藏標籤
+hiddenTagsDescription: 設定的標籤不會在趨勢中顯示，換行可以設定多個標籤。
+notesSearchNotAvailable: 無法使用搜尋貼文功能。
+license: 授權
+unfavoriteConfirm: 要取消收錄我的最愛嗎？
+myClips: 我的摘錄
+drivecleaner: 雲端硬碟清掃器
+retryAllQueuesNow: 立刻重試所有佇列
+retryAllQueuesConfirmTitle: 要現在重試嗎？
+retryAllQueuesConfirmText: 伺服器的負荷可能會暫時增加。
+enableChartsForRemoteUser: 生成遠端使用者的圖表
+enableChartsForFederatedInstances: 生成遠端伺服器的圖表
+enableStatsForFederatedInstances: 取得遠端伺服器資訊
+showClipButtonInNoteFooter: 新增摘錄按鈕至貼文
+reactionsDisplaySize: 反應的顯示尺寸
+limitWidthOfReaction: 限制反應的最大寬度，並縮小顯示尺寸。
+noteIdOrUrl: 貼文 ID 或 URL
+video: 影片
+videos: 影片
+audio: 音效
+audioFiles: 音效檔案
+dataSaver: 數據節省模式
+accountMigration: 遷移帳戶
+accountMoved: 這個使用者已遷移至新的帳戶：
+accountMovedShort: 此帳戶已遷移
+operationForbidden: 不允許此操作
+forceShowAds: 總是顯示廣告
+addMemo: 新增備註
+editMemo: 編輯備註
+reactionsList: 反應列表
+renotesList: 轉發貼文列表
+notificationDisplay: 通知
+leftTop: 左上
+rightTop: 右上
+leftBottom: 左下
+rightBottom: 右下
+stackAxis: 堆疊方向
+vertical: 直向
+horizontal: 橫向
+position: 位置
+serverRules: 伺服器規則
+pleaseConfirmBelowBeforeSignup: 在本伺服器註冊之前，必須確認並同意以下內容。
+pleaseAgreeAllToContinue: 必須全部勾選「同意」才能繼續。
+continue: 繼續
+preservedUsernames: 保留的使用者名稱
+preservedUsernamesDescription: 換行列舉要保留的使用者名稱。此處出現的名稱將在註冊時禁用，但由管理者建立帳戶則不受此限。此外，既有的帳戶也不受影響。
+createNoteFromTheFile: 由此檔案建立貼文
+archive: 封存
+archived: 已封存
+unarchive: 取消封存
+channelArchiveConfirmTitle: 要封存{name}嗎？
+channelArchiveConfirmDescription: 封存後，將不會在頻道列表與搜尋結果中顯示，也無法發佈新貼文。
+thisChannelArchived: 這個頻道已被封存。
+displayOfNote: 顯示貼文
+initialAccountSetting: 初始設定
+youFollowing: 追隨中
+preventAiLearning: 拒絕接受生成式AI的訓練
+preventAiLearningDescription: 要求站外生成式 AI 不使用您發佈的內容訓練模型。此功能會使伺服器於 HTML 回應新增「noai」標籤，而因為要視乎 AI 會否遵守該標籤，所以此功能無法完全阻止所有 AI 使用您的內容。
+options: 選項
+specifyUser: 指定使用者
+lookupConfirm: 要查詢嗎？
+openTagPageConfirm: 要開啟標籤的頁面嗎？
+specifyHost: 指定主機
+failedToPreviewUrl: 無法預覽
+update: 更新
+rolesThatCanBeUsedThisEmojiAsReaction: 可以使用此表情符號為反應的角色
+rolesThatCanBeUsedThisEmojiAsReactionEmptyDescription: 如沒有指定角色，任何人都可使用此表情回應。
+rolesThatCanBeUsedThisEmojiAsReactionPublicRoleWarn: 必須為公開角色。
+cancelReactionConfirm: 要取消此反應嗎？
+changeReactionConfirm: 要更改反應嗎？
+later: 稍後再說
+goToMisskey: 往 Misskey
+additionalEmojiDictionary: 表情符號的附加辭典
+installed: 已安裝
+branding: 品牌宣傳
+enableServerMachineStats: 公佈伺服器的機器資訊
+enableIdenticonGeneration: '啟用生成使用者的 Identicon '
+turnOffToImprovePerformance: 關閉時會提高性能。
+createInviteCode: 建立邀請碼
+createWithOptions: 使用選項建立
+createCount: 建立數
+inviteCodeCreated: 已建立邀請碼
+inviteLimitExceeded: 可建立的邀請碼已達上限。
+createLimitRemaining: 可建立的邀請碼：剩餘 {limit} 個
+inviteLimitResetCycle: 可以在 {time} 內建立最多 {limit} 個邀請碼。
+expirationDate: 有效日期
+noExpirationDate: 不設有效日期
+inviteCodeUsedAt: 使用邀請碼的日期和時間
+registeredUserUsingInviteCode: 用了邀請碼的使用者
+waitingForMailAuth: 等待電子郵件認證
+inviteCodeCreator: 建立了邀請碼的使用者
+usedAt: 使用的日期和時間
+unused: 未使用
+used: 已使用
+expired: 過期
+doYouAgree: 你同意嗎？
+beSureToReadThisAsItIsImportant: 重要，請務必閱讀。
+iHaveReadXCarefullyAndAgree: 我已仔細閱讀並同意「{x}」的內容。
+dialog: 對話方塊
+icon: 圖示
+forYou: 給您
+currentAnnouncements: 最新公告
+pastAnnouncements: 歷史公告
+youHaveUnreadAnnouncements: 有未讀的公告。
+useSecurityKey: 請按照瀏覽器或裝置上的說明來使用安全金鑰或 Passkey。
+replies: 回覆
+renotes: 轉發
+loadReplies: 閱覽回覆
+loadConversation: 閱覽對話
+pinnedList: 已置頂的清單
+keepScreenOn: 保持裝置螢幕開啟
+verifiedLink: 已驗證連結
+notifyNotes: 開啟貼文通知
+unnotifyNotes: 關閉貼文通知
+authentication: 驗證
+authenticationRequiredToContinue: 請於繼續前完成驗證
+dateAndTime: 日期與時間
+showRenotes: 顯示其他人的轉發貼文
+edited: 已編輯
+notificationRecieveConfig: 接受通知的設定
+mutualFollow: 互相追隨
+followingOrFollower: 追隨中或者追隨者
+fileAttachedOnly: 只顯示包含附件的貼文
+showRepliesToOthersInTimeline: 顯示給其他人的回覆
+hideRepliesToOthersInTimeline: 在時間軸上隱藏給其他人的回覆
+showRepliesToOthersInTimelineAll: 在時間軸包含追隨中所有人的回覆
+hideRepliesToOthersInTimelineAll: 在時間軸不包含追隨中所有人的回覆
+confirmShowRepliesAll: 進行此操作後無法復原。您真的希望時間軸「包含」您目前追隨的所有人的回覆嗎？
+confirmHideRepliesAll: 進行此操作後無法復原。您真的希望時間軸「不包含」您目前追隨的所有人的回覆嗎？
+externalServices: 外部服務
+sourceCode: 原始碼
+sourceCodeIsNotYetProvided: 尚未提供原始碼，請洽詢管理員解決這個問題。
+repositoryUrl: 儲存庫 URL
+repositoryUrlDescription: 如果存在可公開取得原始碼的儲存庫，請輸入其 URL。 如果您按原樣使用 Misskey（不對原始碼進行任何更改），請輸入 https://github.com/misskey-dev/misskey。
+repositoryUrlOrTarballRequired: 如果儲存庫不是公開的，則必須提供 tarball。 詳細資訊請參閱 .config/example.yml。
+feedback: 意見回饋
+feedbackUrl: 意見回饋 URL
+impressum: 營運者資訊
+impressumUrl: 營運者資訊 URL
+impressumDescription: 在德國與部份地區必須要明確顯示營運者資訊。
+privacyPolicy: 隱私政策
+privacyPolicyUrl: 隱私政策 URL
+tosAndPrivacyPolicy: 服務條款和隱私政策
+avatarDecorations: 頭像裝飾
+attach: 裝上
+detach: 取下
+detachAll: 全部移除
+angle: 角度
+flip: 翻轉
+showAvatarDecorations: 顯示頭像裝飾
+releaseToRefresh: 放開以更新內容
+refreshing: 載入更新中
+pullDownToRefresh: 往下拉來更新內容
+disableStreamingTimeline: 停用時間軸的即時更新
+useGroupedNotifications: 分組顯示通知訊息
+signupPendingError: 驗證您的電子郵件地址時出現問題。連結可能已過期。
+cwNotationRequired: 如果開啟「隱藏內容」，則需要註解說明。
+doReaction: 做出反應
+code: 程式碼
+reloadRequiredToApplySettings: 需要重新載入頁面設定才能生效。
+remainingN: 剩餘：{n}
+overwriteContentConfirm: 確定要覆蓋目前的內容嗎？
+seasonalScreenEffect: 隨季節變換畫面的呈現
+decorate: 設置頭像裝飾
+addMfmFunction: 插入 MFM 功能語法
+enableQuickAddMfmFunction: 顯示進階 MFM 選擇器
+bubbleGame: 氣泡遊戲
+sfx: 音效
+soundWillBePlayed: 將播放音效
+showReplay: 觀看重播
+replay: 重播
+replaying: 重播中
+endReplay: 退出重播
+copyReplayData: 複製重播資料
+ranking: 排行榜
+lastNDays: 過去 {n} 天
+backToTitle: 回到遊戲標題頁
+hemisphere: 您居住的地區
+withSensitive: 顯示包含敏感檔案的貼文
+userSaysSomethingSensitive: 包含 {name} 敏感檔案的貼文
+enableHorizontalSwipe: 滑動切換時間軸
+loading: 載入中
+surrender: 退出
+gameRetry: 再試一次
+notUsePleaseLeaveBlank: 如果不使用的話請留白
+useTotp: 使用一次性密碼
+useBackupCode: 使用備用驗證碼
+launchApp: 啟動 APP
+useNativeUIForVideoAudioPlayer: 使用瀏覽器的 UI 播放影片與音訊
+keepOriginalFilename: 保留原始檔名
+keepOriginalFilenameDescription: 如果關閉此設置，上傳時檔案名稱會自動替換為隨機字串。
+noDescription: 沒有說明文字
+alwaysConfirmFollow: 追隨時總是確認
+inquiry: 聯絡我們
+tryAgain: 請再試一次。
+confirmWhenRevealingSensitiveMedia: 要顯示敏感媒體時需確認
+sensitiveMediaRevealConfirm: 這是敏感媒體。確定要顯示嗎？
+createdLists: 已建立的清單
+createdAntennas: 已建立的天線
+fromX: 自 {x}
+genEmbedCode: 產生嵌入程式碼
+noteOfThisUser: 這個使用者的貼文列表
+clipNoteLimitExceeded: 沒辦法在這個摘錄中增加更多貼文了。
+performance: 性能
+modified: 已變更
+discard: 取消
+thereAreNChanges: 有 {n} 處的變更
+signinWithPasskey: 使用密碼金鑰登入
+unknownWebAuthnKey: 未註冊的金鑰。
+passkeyVerificationFailed: 驗證金鑰失敗。
+passkeyVerificationSucceededButPasswordlessLoginDisabled: 雖然驗證金鑰成功，但是無密碼登入的方式是停用的。
+messageToFollower: 給追隨者的訊息
+target: '目標 '
+testCaptchaWarning: 此功能用於 CAPTCHA 的測試。<strong>請勿在正式環境中使用。</strong>
+prohibitedWordsForNameOfUser: 禁止使用的字詞（使用者名稱）
+prohibitedWordsForNameOfUserDescription: 如果使用者名稱包含此清單中的任何字串，則拒絕重新命名使用者。 具有審查員權限的使用者不受此限制的影響。
+yourNameContainsProhibitedWords: 您嘗試更改的名稱包含禁止的字串
+yourNameContainsProhibitedWordsDescription: 名稱中包含禁止使用的字串。 如果您想使用此名稱，請聯絡您的伺服器管理員。
+thisContentsAreMarkedAsSigninRequiredByAuthor: 作者將其設定為需要登入才能顯示。
+lockdown: 鎖定
+pleaseSelectAccount: 請選擇帳戶
+availableRoles: 可用角色
+acknowledgeNotesAndEnable: 了解注意事項後再開啟。
+federationSpecified: 此伺服器以白名單聯邦的方式運作。除了管理員指定的伺服器外，它無法與其他伺服器互動。
+federationDisabled: 此伺服器未開啟站台聯邦。無法與其他伺服器上的使用者互動。
 _accountSettings:
-  requireSigninToViewContents: "須登入以顯示內容"
-  requireSigninToViewContentsDescription1: "必須登入才會顯示您建立的貼文等內容。可望有效防止資訊被爬蟲蒐集。"
-  requireSigninToViewContentsDescription2: "來自不支援 URL 預覽 (OGP)、 網頁嵌入和引用貼文的伺服器，也將停止顯示。"
-  requireSigninToViewContentsDescription3: "這些限制可能不適用於被聯邦發送至遠端伺服器的內容。"
-  makeNotesFollowersOnlyBefore: "讓過去的貼文僅對追隨者顯示"
-  makeNotesFollowersOnlyBeforeDescription: "啟用此功能後，超過設定的日期和時間或超過設定時間的貼文將僅對追隨者顯示。 如果您再次停用它，貼文的公開狀態也會恢復原狀。"
-  makeNotesHiddenBefore: "隱藏過去的貼文"
-  makeNotesHiddenBeforeDescription: "啟用此功能後，超過設定的日期和時間或超過設定時間的貼文將僅對自己顯示（私密化）。 如果您再次停用它，貼文的公開狀態也會恢復原狀。"
-  mayNotEffectForFederatedNotes: "聯邦發送至遠端伺服器的貼文可能會不受影響。"
-  notesHavePassedSpecifiedPeriod: "早於指定時間的貼文"
-  notesOlderThanSpecifiedDateAndTime: "指定時間和日期之前的貼文"
+  requireSigninToViewContents: 須登入以顯示內容
+  requireSigninToViewContentsDescription1: 必須登入才會顯示您建立的貼文等內容。可望有效防止資訊被爬蟲蒐集。
+  requireSigninToViewContentsDescription2: 來自不支援 URL 預覽 (OGP)、 網頁嵌入和引用貼文的伺服器，也將停止顯示。
+  requireSigninToViewContentsDescription3: 這些限制可能不適用於被聯邦發送至遠端伺服器的內容。
+  makeNotesFollowersOnlyBefore: 讓過去的貼文僅對追隨者顯示
+  makeNotesFollowersOnlyBeforeDescription: 啟用此功能後，超過設定的日期和時間或超過設定時間的貼文將僅對追隨者顯示。 如果您再次停用它，貼文的公開狀態也會恢復原狀。
+  makeNotesHiddenBefore: 隱藏過去的貼文
+  makeNotesHiddenBeforeDescription: 啟用此功能後，超過設定的日期和時間或超過設定時間的貼文將僅對自己顯示（私密化）。 如果您再次停用它，貼文的公開狀態也會恢復原狀。
+  mayNotEffectForFederatedNotes: 聯邦發送至遠端伺服器的貼文可能會不受影響。
+  notesHavePassedSpecifiedPeriod: 早於指定時間的貼文
+  notesOlderThanSpecifiedDateAndTime: 指定時間和日期之前的貼文
 _abuseUserReport:
-  forward: "轉發"
-  forwardDescription: "以匿名系統帳戶將檢舉轉發至遠端伺服器。"
-  resolve: "解決"
-  accept: "接受"
-  reject: "拒絕"
-  resolveTutorial: "如果您已回覆正當的檢舉，請選擇「接受」以將案件標記為已解決。\n 如果檢舉的內容不正當，請選擇「拒絕」將案件標記為已解決。"
+  forward: 轉發
+  forwardDescription: 以匿名系統帳戶將檢舉轉發至遠端伺服器。
+  resolve: 解決
+  accept: 接受
+  reject: 拒絕
+  resolveTutorial: |-
+    如果您已回覆正當的檢舉，請選擇「接受」以將案件標記為已解決。
+     如果檢舉的內容不正當，請選擇「拒絕」將案件標記為已解決。
 _delivery:
   status: 傳送狀態
   stop: 停止發送
@@ -1366,21 +1374,21 @@ _announcement:
   silence: 不發送通知
   silenceDescription: 啟用此選項後，將不會發送此公告的通知，並且無需將其標記為已讀。
 _initialAccountSetting:
-  accountCreated: "帳戶已建立完成！"
-  letsStartAccountSetup: "來進行帳戶的初始設定吧。"
-  letsFillYourProfile: "首先，來設定您的個人檔案吧。"
-  profileSetting: "個人檔案設定"
-  privacySetting: "隱私設定"
-  theseSettingsCanEditLater: "這裡的設定可以在之後變更。"
-  youCanEditMoreSettingsInSettingsPageLater: "除此之外，還可以在「設定」頁面進行各種設定。之後請確認看看。"
-  followUsers: "為了構築時間軸，試著追隨您感興趣的使用者吧。"
-  pushNotificationDescription: "啟用推送通知後，就可以在裝置上接收來自{name}的通知了。"
-  initialAccountSettingCompleted: "初始設定完成了！"
-  haveFun: "盡情享受{name}吧！"
-  youCanContinueTutorial: "您可以繼續學習如何使用{name}(Misskey)，也可以就此打住，立即開始使用。"
-  startTutorial: "開始教學課程"
-  skipAreYouSure: "要略過初始設定嗎？"
-  laterAreYouSure: "稍後再重新進行初始設定嗎？"
+  accountCreated: 帳戶已建立完成！
+  letsStartAccountSetup: 來進行帳戶的初始設定吧。
+  letsFillYourProfile: 首先，來設定您的個人檔案吧。
+  profileSetting: 個人檔案設定
+  privacySetting: 隱私設定
+  theseSettingsCanEditLater: 這裡的設定可以在之後變更。
+  youCanEditMoreSettingsInSettingsPageLater: 除此之外，還可以在「設定」頁面進行各種設定。之後請確認看看。
+  followUsers: 為了構築時間軸，試著追隨您感興趣的使用者吧。
+  pushNotificationDescription: 啟用推送通知後，就可以在裝置上接收來自{name}的通知了。
+  initialAccountSettingCompleted: 初始設定完成了！
+  haveFun: 盡情享受{name}吧！
+  youCanContinueTutorial: 您可以繼續學習如何使用{name}(Misskey)，也可以就此打住，立即開始使用。
+  startTutorial: 開始教學課程
+  skipAreYouSure: 要略過初始設定嗎？
+  laterAreYouSure: 稍後再重新進行初始設定嗎？
 _initialTutorial:
   launchTutorial: 觀看教學課程
   title: 新手教學
@@ -1390,19 +1398,19 @@ _initialTutorial:
     title: 歡迎使用本教學課程
     description: 在這裡您可以查看 Misskey 的基本使用方法和功能。
   _note:
-    title: "什麼是貼文？"
-    description: "在Misskey上發布的內容稱為「貼文」。貼文在時間軸上按時間順序排列，並即時更新。"
-    reply: "您可以回覆貼文，並像討論串一樣繼續對話。"
-    renote: "您可以將此貼文分享到自己的時間軸。您也可以在引用時添加文字。"
-    reaction: "您可以加入反應。詳細資訊將在下一頁進行說明。"
-    menu: "可執行各種操作，如查看貼文詳細資訊和複製連結。"
+    title: 什麼是貼文？
+    description: 在Misskey上發布的內容稱為「貼文」。貼文在時間軸上按時間順序排列，並即時更新。
+    reply: 您可以回覆貼文，並像討論串一樣繼續對話。
+    renote: 您可以將此貼文分享到自己的時間軸。您也可以在引用時添加文字。
+    reaction: 您可以加入反應。詳細資訊將在下一頁進行說明。
+    menu: 可執行各種操作，如查看貼文詳細資訊和複製連結。
   _reaction:
-    title: "什麼是反應？"
-    description: "您可以在貼文中加上「反應」。有些用「最愛/大心」無法傳達的感想，可以用反應輕鬆地表達出來。"
-    letsTryReacting: "按一下貼文上的「+」按鈕即可加入反應。試著對此範例貼文加上反應！"
-    reactToContinue: "添加反應以繼續教學課程。"
-    reactNotification: "當有人對您的貼文做出反應時會即時接收到通知。"
-    reactDone: "按下「-」按鈕可以取消反應。"
+    title: 什麼是反應？
+    description: 您可以在貼文中加上「反應」。有些用「最愛/大心」無法傳達的感想，可以用反應輕鬆地表達出來。
+    letsTryReacting: 按一下貼文上的「+」按鈕即可加入反應。試著對此範例貼文加上反應！
+    reactToContinue: 添加反應以繼續教學課程。
+    reactNotification: 當有人對您的貼文做出反應時會即時接收到通知。
+    reactDone: 按下「-」按鈕可以取消反應。
   _timeline:
     title: 時間軸如何運作
     description1: Misskey根據使用方式提供了多個時間軸（伺服器可能會將部份時間軸停用）。
@@ -1452,38 +1460,55 @@ _timelineDescription:
 _serverRules:
   description: 設定在註冊頁面顯示的伺服器簡要規則。建議是服務條款的摘要。
 _serverSettings:
-  iconUrl: "圖示的 URL"
-  appIconDescription: "指定顯示 {host} 為應用程式時的圖示。"
-  appIconUsageExample: "例如：PWA 或是在手機桌面作為書籤等"
-  appIconStyleRecommendation: "因為可能會裁剪成圓形或圓角，所以建議用單色填滿邊框及背景。"
-  appIconResolutionMustBe: "解析度必須為 {resolution}。"
-  manifestJsonOverride: "覆寫 manifest.json"
-  shortName: "簡稱"
-  shortNameDescription: "如果伺服器的正式名稱很長，可用簡稱或通稱代替。"
-  fanoutTimelineDescription: "如果啟用的話，檢索各個時間軸的性能會顯著提昇，資料庫的負荷也會減少。不過，Redis 的記憶體使用量會增加。如果伺服器的記憶體容量比較少或者運行不穩定，可以停用。"
-  fanoutTimelineDbFallback: "資料庫的回退"
-  fanoutTimelineDbFallbackDescription: "若啟用，在時間軸沒有快取的情況下將執行回退處理以額外查詢資料庫。若停用，可以透過不執行回退處理來進一步減少伺服器的負荷，但會限制可取得的時間軸範圍。"
-  reactionsBufferingDescription: "啟用時，可以顯著提高建立反應時的效能並減少資料庫的負載。 但是，Redis 記憶體使用量會增加。"
-  inquiryUrl: "聯絡表單網址"
-  inquiryUrlDescription: "指定伺服器運營者的聯絡表單網址，或包含運營者聯絡資訊網頁的網址。"
-  openRegistration: "允許建立帳戶"
-  openRegistrationWarning: "開放註冊伴隨著風險。 建議只有在伺服器受到持續監控，並準備好在出現問題時能立即處理的情況下才開放註冊。"
-  thisSettingWillAutomaticallyOffWhenModeratorsInactive: "為了防止 spam，如果一段期間內沒有偵測到審查員的活動，此設定將自動關閉。"
+  iconUrl: 圖示的 URL
+  appIconDescription: 指定顯示 {host} 為應用程式時的圖示。
+  appIconUsageExample: 例如：PWA 或是在手機桌面作為書籤等
+  appIconStyleRecommendation: 因為可能會裁剪成圓形或圓角，所以建議用單色填滿邊框及背景。
+  appIconResolutionMustBe: 解析度必須為 {resolution}。
+  manifestJsonOverride: 覆寫 manifest.json
+  shortName: 簡稱
+  shortNameDescription: 如果伺服器的正式名稱很長，可用簡稱或通稱代替。
+  fanoutTimelineDescription: 如果啟用的話，檢索各個時間軸的性能會顯著提昇，資料庫的負荷也會減少。不過，Redis 的記憶體使用量會增加。如果伺服器的記憶體容量比較少或者運行不穩定，可以停用。
+  fanoutTimelineDbFallback: 資料庫的回退
+  fanoutTimelineDbFallbackDescription: 若啟用，在時間軸沒有快取的情況下將執行回退處理以額外查詢資料庫。若停用，可以透過不執行回退處理來進一步減少伺服器的負荷，但會限制可取得的時間軸範圍。
+  reactionsBufferingDescription: 啟用時，可以顯著提高建立反應時的效能並減少資料庫的負載。 但是，Redis 記憶體使用量會增加。
+  inquiryUrl: 聯絡表單網址
+  inquiryUrlDescription: 指定伺服器運營者的聯絡表單網址，或包含運營者聯絡資訊網頁的網址。
+  openRegistration: 允許建立帳戶
+  openRegistrationWarning: 開放註冊伴隨著風險。 建議只有在伺服器受到持續監控，並準備好在出現問題時能立即處理的情況下才開放註冊。
+  thisSettingWillAutomaticallyOffWhenModeratorsInactive: 為了防止 spam，如果一段期間內沒有偵測到審查員的活動，此設定將自動關閉。
 _accountMigration:
-  moveFrom: "從其他帳戶遷移到這個帳戶"
-  moveFromSub: "為另一個帳戶建立別名"
-  moveFromLabel: "要遷移過來的帳戶 #{n}"
-  moveFromDescription: "如果你想把追隨者從別的帳戶遷移過來，必須先在這裡建立別名。請務必在執行遷移之前建立別名！請像這樣輸入要遷移的帳戶：@person@instance.com"
-  moveTo: "將這個帳戶遷移至新的帳戶"
-  moveToLabel: "要遷移到的帳戶："
-  moveCannotBeUndone: "一旦遷移帳戶，就無法取消。"
-  moveAccountDescription: "遷移至新帳戶。\n　・此帳戶的追隨者將自動追隨新帳戶；\n　・此帳戶的所有追隨者將被取消追隨；\n　・此帳戶不能再發文。\n\n雖然會自動遷移您的追隨者，但必須手動遷移您追隨的帳戶。請在遷移前匯出此帳戶的「追隨中」名單，並在遷移後自行匯入。\n列表名單、靜音名單及封鎖名單也必須如此處理。\n\n（此說明適用於本伺服器，以及運行 Misskey v13.12.0 或更新版本的其他伺服器；如 Mastodon 等使用 ActivityPub 協定的其他軟體或有不同的處理方式。）"
-  moveAccountHowTo: "要遷移帳戶，首先要在目標帳戶中為此帳戶建立一個別名。\n 建立別名後，像這樣輸入目標帳戶：@username@server.example.com"
-  startMigration: "遷移"
-  migrationConfirm: "確定要將這個帳戶遷移至 {account} 嗎？一旦遷移就無法撤銷，也就無法以原來的狀態使用這個帳戶。\n另外，請確認在要遷移到的帳戶已經建立了一個別名。"
-  movedAndCannotBeUndone: "帳戶已遷移。\n遷移無法撤消。"
-  postMigrationNote: "將在完成遷移後的 24 小時取消追隨所有帳號。\n此帳戶的追隨中/追隨者人數將歸零。由於不會解除粉絲對您的追隨，因此他們仍然可以繼續閱覽此帳戶僅對追隨者公開的貼文。"
-  movedTo: "要遷移到的帳戶："
+  moveFrom: 從其他帳戶遷移到這個帳戶
+  moveFromSub: 為另一個帳戶建立別名
+  moveFromLabel: '要遷移過來的帳戶 #{n}'
+  moveFromDescription: 如果你想把追隨者從別的帳戶遷移過來，必須先在這裡建立別名。請務必在執行遷移之前建立別名！請像這樣輸入要遷移的帳戶：@person@instance.com
+  moveTo: 將這個帳戶遷移至新的帳戶
+  moveToLabel: 要遷移到的帳戶：
+  moveCannotBeUndone: 一旦遷移帳戶，就無法取消。
+  moveAccountDescription: |-
+    遷移至新帳戶。
+    　・此帳戶的追隨者將自動追隨新帳戶；
+    　・此帳戶的所有追隨者將被取消追隨；
+    　・此帳戶不能再發文。
+
+    雖然會自動遷移您的追隨者，但必須手動遷移您追隨的帳戶。請在遷移前匯出此帳戶的「追隨中」名單，並在遷移後自行匯入。
+    列表名單、靜音名單及封鎖名單也必須如此處理。
+
+    （此說明適用於本伺服器，以及運行 Misskey v13.12.0 或更新版本的其他伺服器；如 Mastodon 等使用 ActivityPub 協定的其他軟體或有不同的處理方式。）
+  moveAccountHowTo: |-
+    要遷移帳戶，首先要在目標帳戶中為此帳戶建立一個別名。
+     建立別名後，像這樣輸入目標帳戶：@username@server.example.com
+  startMigration: 遷移
+  migrationConfirm: |-
+    確定要將這個帳戶遷移至 {account} 嗎？一旦遷移就無法撤銷，也就無法以原來的狀態使用這個帳戶。
+    另外，請確認在要遷移到的帳戶已經建立了一個別名。
+  movedAndCannotBeUndone: |-
+    帳戶已遷移。
+    遷移無法撤消。
+  postMigrationNote: |-
+    將在完成遷移後的 24 小時取消追隨所有帳號。
+    此帳戶的追隨中/追隨者人數將歸零。由於不會解除粉絲對您的追隨，因此他們仍然可以繼續閱覽此帳戶僅對追隨者公開的貼文。
+  movedTo: 要遷移到的帳戶：
 _achievements:
   earnedAt: 獲得日期
   _types:
@@ -1600,9 +1625,9 @@ _achievements:
       title: 有備而來
       description: 設定了個人檔案
     _markedAsCat:
-      title: "我是貓"
-      description: "已將帳戶設定為貓"
-      flavor: "沒有名字。"
+      title: 我是貓
+      description: 已將帳戶設定為貓
+      flavor: 沒有名字。
     _following1:
       title: 首次追隨
       description: 首次追隨了
@@ -1616,8 +1641,8 @@ _achievements:
       title: 一百位朋友
       description: 追隨超過100人了
     _following300:
-      title: "朋友太多"
-      description: "追隨超過300人了"
+      title: 朋友太多
+      description: 追隨超過300人了
     _followers1:
       title: 第一個追隨者
       description: 第一次被追隨
@@ -1777,39 +1802,39 @@ _role:
     middle: 中
     high: 高
   _options:
-    gtlAvailable: "瀏覽全域時間軸"
-    ltlAvailable: "瀏覽本地時間軸"
-    canPublicNote: "允許公開貼文"
-    canEditNote: "允許編輯帖子"
-    mentionMax: "貼文內的最大提及數"
-    canInvite: "發行伺服器邀請碼"
-    inviteLimit: "可建立邀請碼的數量"
-    inviteLimitCycle: "邀請碼的發放間隔"
-    inviteExpirationTime: "邀請碼的有效日期"
-    canManageCustomEmojis: "管理自訂表情符號"
-    canManageAvatarDecorations: "管理頭像裝飾"
-    driveCapacity: "雲端硬碟容量"
-    alwaysMarkNsfw: "總是將檔案標記為NSFW"
-    canUpdateBioMedia: "允許更新大頭貼和橫幅"
-    pinMax: "置頂貼文的最大數量"
-    antennaMax: "可建立的天線數量"
-    wordMuteMax: "靜音文字的最大字數"
-    webhookMax: "可建立的 Webhook 數量"
-    clipMax: "可建立的摘錄數量"
-    noteEachClipsMax: "摘錄內貼文的最大數量"
-    userListMax: "可建立的使用者清單數量"
-    userEachUserListsMax: "使用者清單內使用者的最大數量"
-    rateLimitFactor: "速率限制"
-    descriptionOfRateLimitFactor: "值越小限制越少，值越大限制越多。"
-    canHideAds: "不顯示廣告"
-    canSearchNotes: "可否搜尋貼文"
-    canUseTranslator: "使用翻譯功能"
-    avatarDecorationLimit: "頭像裝飾的最大設置量"
-    canImportAntennas: "允許匯入天線"
-    canImportBlocking: "允許匯入封鎖名單"
-    canImportFollowing: "允許匯入追隨名單"
-    canImportMuting: "允許匯入靜音名單"
-    canImportUserLists: "允許匯入清單"
+    gtlAvailable: 瀏覽全域時間軸
+    ltlAvailable: 瀏覽本地時間軸
+    canPublicNote: 允許公開貼文
+    canEditNote: 允許編輯帖子
+    mentionMax: 貼文內的最大提及數
+    canInvite: 發行伺服器邀請碼
+    inviteLimit: 可建立邀請碼的數量
+    inviteLimitCycle: 邀請碼的發放間隔
+    inviteExpirationTime: 邀請碼的有效日期
+    canManageCustomEmojis: 管理自訂表情符號
+    canManageAvatarDecorations: 管理頭像裝飾
+    driveCapacity: 雲端硬碟容量
+    alwaysMarkNsfw: 總是將檔案標記為NSFW
+    canUpdateBioMedia: 允許更新大頭貼和橫幅
+    pinMax: 置頂貼文的最大數量
+    antennaMax: 可建立的天線數量
+    wordMuteMax: 靜音文字的最大字數
+    webhookMax: 可建立的 Webhook 數量
+    clipMax: 可建立的摘錄數量
+    noteEachClipsMax: 摘錄內貼文的最大數量
+    userListMax: 可建立的使用者清單數量
+    userEachUserListsMax: 使用者清單內使用者的最大數量
+    rateLimitFactor: 速率限制
+    descriptionOfRateLimitFactor: 值越小限制越少，值越大限制越多。
+    canHideAds: 不顯示廣告
+    canSearchNotes: 可否搜尋貼文
+    canUseTranslator: 使用翻譯功能
+    avatarDecorationLimit: 頭像裝飾的最大設置量
+    canImportAntennas: 允許匯入天線
+    canImportBlocking: 允許匯入封鎖名單
+    canImportFollowing: 允許匯入追隨名單
+    canImportMuting: 允許匯入靜音名單
+    canImportUserLists: 允許匯入清單
   _condition:
     roleAssignedTo: 手動指派角色完成
     isLocal: 本地使用者
@@ -1855,6 +1880,8 @@ _signup:
   almostThere: 即將完成
   emailAddressInfo: 請輸入您所使用的電子郵件地址。電子郵件地址不會被公開。
   emailSent: 已發送確認郵件至您輸入的電子郵件地址（{email}）。請開啟電子郵件中的連結完成註冊。
+  approvalPending: 帳戶已經建立，正在等待核准。
+  reasonInfo: 輸入您要加入此伺服器的原因。
 _accountDelete:
   accountDelete: 刪除帳戶
   mayTakeTime: 刪除帳戶的處理負荷較大，如果帳戶發佈的內容以及上傳的檔案數量較多，則需要一段時間才能完成。
@@ -1941,18 +1968,18 @@ _serverDisconnectedBehavior:
   quiet: 非侵入式警告
   silent: 不警告
 _channel:
-  create: "建立頻道"
-  edit: "編輯頻道"
-  setBanner: "設定橫幅圖像"
-  removeBanner: "移除橫幅圖像"
-  featured: "熱門貼文"
-  owned: "管理中"
-  following: "追隨中"
-  usersCount: "有 {n} 人參與"
-  notesCount: "有 {n} 篇貼文"
-  nameAndDescription: "名稱"
-  nameOnly: "僅名稱"
-  allowRenoteToExternal: "允許在頻道外轉發和引用"
+  create: 建立頻道
+  edit: 編輯頻道
+  setBanner: 設定橫幅圖像
+  removeBanner: 移除橫幅圖像
+  featured: 熱門貼文
+  owned: 管理中
+  following: 追隨中
+  usersCount: 有 {n} 人參與
+  notesCount: 有 {n} 篇貼文
+  nameAndDescription: 名稱
+  nameOnly: 僅名稱
+  allowRenoteToExternal: 允許在頻道外轉發和引用
 _menuDisplay:
   sideFull: 橫向
   sideIcon: 橫向（圖示）
@@ -1998,45 +2025,45 @@ _theme:
   importInfo: 您可以在此貼上佈景主題代碼，將其匯入編輯器中
   deleteConstantConfirm: 確定要刪除常數{const}嗎？
   keys:
-    accent: "重點色彩"
-    bg: "背景"
-    fg: "文本"
-    focus: "聚焦"
-    indicator: "指標"
-    panel: "面板"
-    shadow: "影子"
-    header: "標題"
-    navBg: "側邊欄的背景 "
-    navFg: "側邊欄的文字"
-    navHoverFg: "側邊欄文字（懸浮） "
-    navActive: "側邊欄文字（活動）"
-    navIndicator: "側邊欄指示符"
-    link: "連結"
-    hashtag: "標籤"
-    mention: "提到"
-    mentionMe: "提到了我"
-    renote: "轉發貼文"
-    modalBg: "對話框背景"
-    divider: "分隔線"
-    scrollbarHandle: "捲動條"
-    scrollbarHandleHover: "捲動條（懸浮）"
-    dateLabelFg: "日期標籤文字"
-    infoBg: "資訊背景"
-    infoFg: "資訊內容"
-    infoWarnBg: "警告背景"
-    infoWarnFg: "警告文字"
-    toastBg: "通知背景"
-    toastFg: "通知文本"
-    buttonBg: "按鈕背景"
-    buttonHoverBg: "按鈕背景 (漂浮)"
-    inputBorder: "輸入框邊框"
-    driveFolderBg: "雲端硬碟文件夾背景"
-    wallpaperOverlay: "壁紙覆蓋層"
-    badge: "徽章"
-    messageBg: "私訊背景"
-    accentDarken: "強調色（黑暗）"
-    accentLighten: "強調色（明亮）"
-    fgHighlighted: "突顯文字"
+    accent: 重點色彩
+    bg: 背景
+    fg: 文本
+    focus: 聚焦
+    indicator: 指標
+    panel: 面板
+    shadow: 影子
+    header: 標題
+    navBg: '側邊欄的背景 '
+    navFg: 側邊欄的文字
+    navHoverFg: '側邊欄文字（懸浮） '
+    navActive: 側邊欄文字（活動）
+    navIndicator: 側邊欄指示符
+    link: 連結
+    hashtag: 標籤
+    mention: 提到
+    mentionMe: 提到了我
+    renote: 轉發貼文
+    modalBg: 對話框背景
+    divider: 分隔線
+    scrollbarHandle: 捲動條
+    scrollbarHandleHover: 捲動條（懸浮）
+    dateLabelFg: 日期標籤文字
+    infoBg: 資訊背景
+    infoFg: 資訊內容
+    infoWarnBg: 警告背景
+    infoWarnFg: 警告文字
+    toastBg: 通知背景
+    toastFg: 通知文本
+    buttonBg: 按鈕背景
+    buttonHoverBg: 按鈕背景 (漂浮)
+    inputBorder: 輸入框邊框
+    driveFolderBg: 雲端硬碟文件夾背景
+    wallpaperOverlay: 壁紙覆蓋層
+    badge: 徽章
+    messageBg: 私訊背景
+    accentDarken: 強調色（黑暗）
+    accentLighten: 強調色（明亮）
+    fgHighlighted: 突顯文字
 _sfx:
   note: 貼文
   noteMy: 我的貼文
@@ -2075,34 +2102,34 @@ _time:
   hour: 小時
   day: 日
 _2fa:
-  alreadyRegistered: "此裝置已被註冊過了"
-  registerTOTP: "開始設定驗證應用程式"
-  step1: "首先，在您的裝置上安裝驗證程式，例如 {a} 或 {b}。"
-  step2: "然後，掃描螢幕上的 QR 碼。"
-  step2Uri: "使用桌面版應用程式時，請輸入以下的 URI"
-  step3Title: "輸入驗證碼"
-  step3: "輸入應用程式所提供的權杖以完成設定。"
-  setupCompleted: "設定完成"
-  step4: "從現在開始，任何登入操作都將要求您提供權杖。"
-  securityKeyNotSupported: "您的瀏覽器不支援安全金鑰。"
-  registerTOTPBeforeKey: "如要註冊安全金鑰或 Passkey，請先設定驗證應用程式。"
-  securityKeyInfo: "您可以設定使用支援 FIDO2 的硬體安全金鑰，以及裝置上的生物辨識、PIN 碼和密碼等來登入。"
-  registerSecurityKey: "註冊安全金鑰或 Passkey"
-  securityKeyName: "輸入金鑰名稱"
-  tapSecurityKey: "按照瀏覽器的說明註冊安全金鑰或 Passkey。"
-  removeKey: "刪除安全金鑰"
-  removeKeyConfirm: "要刪除{name}嗎？"
-  whyTOTPOnlyRenew: "如果註冊了安全金鑰，則無法解除驗證應用程式的設定。"
-  renewTOTP: "重設驗證應用程式"
-  renewTOTPConfirm: "目前驗證應用程式的驗證碼將無法使用。"
-  renewTOTPOk: "重設"
-  renewTOTPCancel: "現在不要"
-  checkBackupCodesBeforeCloseThisWizard: "請先確認下列備用驗證碼，再關閉此精靈視窗。"
-  backupCodes: "備用驗證碼"
-  backupCodesDescription: "如果驗證應用程式不能用了，可以使用以下的備用驗證碼存取您的帳戶。請務必妥善保管這個驗證碼。每個驗證碼只能使用一次。"
-  backupCodeUsedWarning: "已使用備用驗證碼。如果無法使用驗證應用程式，請盡快重新設定。"
-  backupCodesExhaustedWarning: "已使用所有備用驗證碼。如果無法使用驗證應用程式，則將無法再存取您的帳戶。請重新設定您的驗證應用程式。"
-  moreDetailedGuideHere: "請點擊此處查看詳細說明。"
+  alreadyRegistered: 此裝置已被註冊過了
+  registerTOTP: 開始設定驗證應用程式
+  step1: 首先，在您的裝置上安裝驗證程式，例如 {a} 或 {b}。
+  step2: 然後，掃描螢幕上的 QR 碼。
+  step2Uri: 使用桌面版應用程式時，請輸入以下的 URI
+  step3Title: 輸入驗證碼
+  step3: 輸入應用程式所提供的權杖以完成設定。
+  setupCompleted: 設定完成
+  step4: 從現在開始，任何登入操作都將要求您提供權杖。
+  securityKeyNotSupported: 您的瀏覽器不支援安全金鑰。
+  registerTOTPBeforeKey: 如要註冊安全金鑰或 Passkey，請先設定驗證應用程式。
+  securityKeyInfo: 您可以設定使用支援 FIDO2 的硬體安全金鑰，以及裝置上的生物辨識、PIN 碼和密碼等來登入。
+  registerSecurityKey: 註冊安全金鑰或 Passkey
+  securityKeyName: 輸入金鑰名稱
+  tapSecurityKey: 按照瀏覽器的說明註冊安全金鑰或 Passkey。
+  removeKey: 刪除安全金鑰
+  removeKeyConfirm: 要刪除{name}嗎？
+  whyTOTPOnlyRenew: 如果註冊了安全金鑰，則無法解除驗證應用程式的設定。
+  renewTOTP: 重設驗證應用程式
+  renewTOTPConfirm: 目前驗證應用程式的驗證碼將無法使用。
+  renewTOTPOk: 重設
+  renewTOTPCancel: 現在不要
+  checkBackupCodesBeforeCloseThisWizard: 請先確認下列備用驗證碼，再關閉此精靈視窗。
+  backupCodes: 備用驗證碼
+  backupCodesDescription: 如果驗證應用程式不能用了，可以使用以下的備用驗證碼存取您的帳戶。請務必妥善保管這個驗證碼。每個驗證碼只能使用一次。
+  backupCodeUsedWarning: 已使用備用驗證碼。如果無法使用驗證應用程式，請盡快重新設定。
+  backupCodesExhaustedWarning: 已使用所有備用驗證碼。如果無法使用驗證應用程式，則將無法再存取您的帳戶。請重新設定您的驗證應用程式。
+  moreDetailedGuideHere: 請點擊此處查看詳細說明。
 _permissions:
   read:account: 查看我的帳戶資訊
   write:account: 更改我的帳戶資訊
@@ -2189,18 +2216,18 @@ _permissions:
   read:federation: 查看站台聯邦的相關資訊
   write:report-abuse: 檢舉違規行為
 _auth:
-  shareAccessTitle: "應用程式的存取權限"
-  shareAccess: "要授權「“{name}”」存取您的帳戶嗎？"
-  shareAccessAsk: "您確定要授權這個應用程式存取您的帳戶嗎？"
-  permission: "{name}要求以下的權限"
-  permissionAsk: "此應用程式需要以下權限"
-  pleaseGoBack: "請返回至應用程式"
-  callback: "回到應用程式"
-  accepted: "已授予存取權限"
-  denied: "拒絕訪問"
-  scopeUser: "以下列使用者身分操作"
-  pleaseLogin: "必須登入以提供應用程式的存取權限。"
-  byClickingYouWillBeRedirectedToThisUrl: "如果授予存取權限，就會自動導向到以下的網址"
+  shareAccessTitle: 應用程式的存取權限
+  shareAccess: 要授權「“{name}”」存取您的帳戶嗎？
+  shareAccessAsk: 您確定要授權這個應用程式存取您的帳戶嗎？
+  permission: '{name}要求以下的權限'
+  permissionAsk: 此應用程式需要以下權限
+  pleaseGoBack: 請返回至應用程式
+  callback: 回到應用程式
+  accepted: 已授予存取權限
+  denied: 拒絕訪問
+  scopeUser: 以下列使用者身分操作
+  pleaseLogin: 必須登入以提供應用程式的存取權限。
+  byClickingYouWillBeRedirectedToThisUrl: 如果授予存取權限，就會自動導向到以下的網址
 _antennaSources:
   all: 全部貼文
   homeTimeline: 來自已追隨使用者的貼文
@@ -2298,22 +2325,22 @@ _postForm:
     e: 寫些什麼吧……
     f: 靜待發文……
 _profile:
-  name: "名字"
-  username: "使用者名稱"
-  description: "關於我"
-  youCanIncludeHashtags: "你也可以在「關於我」中加上 #tag"
-  metadata: "附加資訊"
-  metadataEdit: "編輯附加資訊"
-  metadataDescription: "可以在個人資料中以表格形式顯示其他資訊。"
-  metadataLabel: "標籤"
-  metadataContent: "內容"
-  changeAvatar: "更換大頭貼"
-  changeBanner: "變更橫幅圖像"
-  verifiedLinkDescription: "如果輸入包含您個人資料的網站 URL，欄位旁邊將出現驗證圖示。"
-  avatarDecorationMax: "最多可以設置 {max} 個裝飾。"
-  followedMessage: "被追隨時的訊息"
-  followedMessageDescription: "可以設定被追隨時顯示給對方的訊息。"
-  followedMessageDescriptionForLockedAccount: "如果追隨是需要審核的話，在允許追隨請求之後顯示。"
+  name: 名字
+  username: 使用者名稱
+  description: 關於我
+  youCanIncludeHashtags: '你也可以在「關於我」中加上 #tag'
+  metadata: 附加資訊
+  metadataEdit: 編輯附加資訊
+  metadataDescription: 可以在個人資料中以表格形式顯示其他資訊。
+  metadataLabel: 標籤
+  metadataContent: 內容
+  changeAvatar: 更換大頭貼
+  changeBanner: 變更橫幅圖像
+  verifiedLinkDescription: 如果輸入包含您個人資料的網站 URL，欄位旁邊將出現驗證圖示。
+  avatarDecorationMax: 最多可以設置 {max} 個裝飾。
+  followedMessage: 被追隨時的訊息
+  followedMessageDescription: 可以設定被追隨時顯示給對方的訊息。
+  followedMessageDescriptionForLockedAccount: 如果追隨是需要審核的話，在允許追隨請求之後顯示。
 _exportOrImport:
   allNotes: 所有貼文
   favoritedNotes: 「我的最愛」貼文
@@ -2373,41 +2400,41 @@ _play:
   summary: 描述
   visibilityDescription: 如果您將其設為私密，它將不再顯示在您的個人資料中，但知道該 URL 的人仍然可以存取它。
 _pages:
-  newPage: "建立頁面"
-  editPage: "編輯頁面"
-  readPage: "正在檢視原始碼"
-  pageSetting: "頁面設定"
-  nameAlreadyExists: "該頁面 URL 已存在"
-  invalidNameTitle: "無效的頁面 URL"
-  invalidNameText: "請確定是否為非空白"
-  editThisPage: "編輯此頁面"
-  viewSource: "檢視原始碼"
-  viewPage: "顯示頁面"
-  like: "讚好"
-  unlike: "收回讚好"
-  my: "我的頁面"
-  liked: "已讚好的頁面"
-  featured: "熱門"
-  inspector: "面板檢查"
-  contents: "內容"
-  content: "頁面方塊"
-  variables: "變數"
-  title: "標題"
-  url: "頁面網址"
-  summary: "頁面摘要"
-  alignCenter: "置中"
-  hideTitleWhenPinned: "被置頂於個人資料時隱藏頁面標題"
-  font: "字型"
-  fontSerif: "襯線體"
-  fontSansSerif: "黑體"
-  eyeCatchingImageSet: "設定封面影像"
-  eyeCatchingImageRemove: "刪除封面影像"
-  chooseBlock: "新增方塊"
-  enterSectionTitle: "輸入區段的標題"
-  selectType: "選擇類型"
-  contentBlocks: "內容"
-  inputBlocks: "輸入"
-  specialBlocks: "特殊"
+  newPage: 建立頁面
+  editPage: 編輯頁面
+  readPage: 正在檢視原始碼
+  pageSetting: 頁面設定
+  nameAlreadyExists: 該頁面 URL 已存在
+  invalidNameTitle: 無效的頁面 URL
+  invalidNameText: 請確定是否為非空白
+  editThisPage: 編輯此頁面
+  viewSource: 檢視原始碼
+  viewPage: 顯示頁面
+  like: 讚好
+  unlike: 收回讚好
+  my: 我的頁面
+  liked: 已讚好的頁面
+  featured: 熱門
+  inspector: 面板檢查
+  contents: 內容
+  content: 頁面方塊
+  variables: 變數
+  title: 標題
+  url: 頁面網址
+  summary: 頁面摘要
+  alignCenter: 置中
+  hideTitleWhenPinned: 被置頂於個人資料時隱藏頁面標題
+  font: 字型
+  fontSerif: 襯線體
+  fontSansSerif: 黑體
+  eyeCatchingImageSet: 設定封面影像
+  eyeCatchingImageRemove: 刪除封面影像
+  chooseBlock: 新增方塊
+  enterSectionTitle: 輸入區段的標題
+  selectType: 選擇類型
+  contentBlocks: 內容
+  inputBlocks: 輸入
+  specialBlocks: 特殊
   blocks:
     text: 文字
     textarea: 字串區域
@@ -2426,53 +2453,55 @@ _relayStatus:
   accepted: 已通過核准
   rejected: 已拒絕
 _notification:
-  fileUploaded: "上傳檔案成功。"
-  youGotMention: "{name}提及到您"
-  youGotReply: "{name}回覆了您"
-  youGotQuote: "{name}引用了您"
-  youRenoted: "{name} 轉發了你的貼文"
-  youWereFollowed: "您有新的追隨者"
-  youReceivedFollowRequest: "您有新的追隨請求"
-  yourFollowRequestAccepted: "您的追隨請求已通過"
-  pollEnded: "問卷調查已產生結果"
-  newNote: "新的貼文"
-  unreadAntennaNote: "天線 {name}"
-  roleAssigned: "已授予角色"
-  emptyPushNotificationMessage: "推送通知已更新"
-  achievementEarned: "獲得成就"
-  testNotification: "通知測試"
-  checkNotificationBehavior: "確認通知的顯示行為"
-  sendTestNotification: "發送測試通知"
-  notificationWillBeDisplayedLikeThis: "通知會以這樣的方式顯示"
-  reactedBySomeUsers: "{n}人做出了反應"
-  likedBySomeUsers: "{n} 人按了讚"
-  renotedBySomeUsers: "{n}人做了轉發"
-  followedBySomeUsers: "被{n}人追隨了"
-  flushNotification: "重置通知歷史紀錄"
-  exportOfXCompleted: "{x} 的匯出已完成。"
-  login: "已登入"
+  fileUploaded: 上傳檔案成功。
+  youGotMention: '{name}提及到您'
+  youGotReply: '{name}回覆了您'
+  youGotQuote: '{name}引用了您'
+  youRenoted: '{name} 轉發了你的貼文'
+  youWereFollowed: 您有新的追隨者
+  youReceivedFollowRequest: 您有新的追隨請求
+  yourFollowRequestAccepted: 您的追隨請求已通過
+  pollEnded: 問卷調查已產生結果
+  newNote: 新的貼文
+  unreadAntennaNote: 天線 {name}
+  roleAssigned: 已授予角色
+  emptyPushNotificationMessage: 推送通知已更新
+  achievementEarned: 獲得成就
+  testNotification: 通知測試
+  checkNotificationBehavior: 確認通知的顯示行為
+  sendTestNotification: 發送測試通知
+  notificationWillBeDisplayedLikeThis: 通知會以這樣的方式顯示
+  reactedBySomeUsers: '{n}人做出了反應'
+  likedBySomeUsers: '{n} 人按了讚'
+  renotedBySomeUsers: '{n}人做了轉發'
+  followedBySomeUsers: 被{n}人追隨了
+  flushNotification: 重置通知歷史紀錄
+  exportOfXCompleted: '{x} 的匯出已完成。'
+  login: 已登入
   _types:
-    all: "全部 "
-    note: "使用者的最新貼文"
-    follow: "追隨中"
-    mention: "提及"
-    reply: "回覆"
-    renote: "轉發"
-    quote: "引用"
-    reaction: "反應"
-    pollEnded: "問卷調查結束"
-    receiveFollowRequest: "已收到追隨請求"
-    followRequestAccepted: "追隨請求已接受"
-    roleAssigned: "已授予角色"
-    achievementEarned: "獲得成就"
-    exportCompleted: "已完成匯出。"
-    login: "登入"
-    test: "通知測試"
-    app: "應用程式通知"
+    all: '全部 '
+    note: 使用者的最新貼文
+    follow: 追隨中
+    mention: 提及
+    reply: 回覆
+    renote: 轉發
+    quote: 引用
+    reaction: 反應
+    pollEnded: 問卷調查結束
+    receiveFollowRequest: 已收到追隨請求
+    followRequestAccepted: 追隨請求已接受
+    roleAssigned: 已授予角色
+    achievementEarned: 獲得成就
+    exportCompleted: 已完成匯出。
+    login: 登入
+    test: 通知測試
+    app: 應用程式通知
   _actions:
     followBack: 追隨回去
     reply: 回覆
     renote: 轉發
+  createToken: 已建立存取權限。
+  createTokenDescription: 如果您不知道，請透過「{text}」刪除存取標記。
 _deck:
   alwaysShowMainColumn: 總是顯示主欄
   columnAlign: 對齊欄位
@@ -2530,13 +2559,13 @@ _webhookSettings:
     reaction: 當獲得反應時
     mention: 當被提到時
   _systemEvents:
-    abuseReport: "當使用者檢舉時"
-    abuseReportResolved: "當處理了使用者的檢舉時"
-    userCreated: "使用者被新增時"
-    inactiveModeratorsWarning: "當審查員在一段時間內沒有活動時"
-    inactiveModeratorsInvitationOnlyChanged: "當審查員在一段時間內不活動時，系統會將模式變更為邀請制"
-  deleteConfirm: "請問是否要刪除 Webhook？"
-  testRemarks: "按下切換開關右側的按鈕，就會將假資料發送至 Webhook。"
+    abuseReport: 當使用者檢舉時
+    abuseReportResolved: 當處理了使用者的檢舉時
+    userCreated: 使用者被新增時
+    inactiveModeratorsWarning: 當審查員在一段時間內沒有活動時
+    inactiveModeratorsInvitationOnlyChanged: 當審查員在一段時間內不活動時，系統會將模式變更為邀請制
+  deleteConfirm: 請問是否要刪除 Webhook？
+  testRemarks: 按下切換開關右側的按鈕，就會將假資料發送至 Webhook。
 _abuseReport:
   _notificationRecipient:
     createRecipient: 新增接收檢舉的通知對象
@@ -2546,61 +2575,62 @@ _abuseReport:
       mail: 電子郵件
       webhook: Webhook
       _captions:
-        mail: "寄送到擁有監察員權限的使用者電子郵件地址（僅在收到檢舉時）"
-        webhook: "向指定的 SystemWebhook 發送通知（在收到檢舉和解決檢舉時發送）"
-    keywords: "關鍵字"
-    notifiedUser: "通知的使用者"
-    notifiedWebhook: "使用的 Webhook"
-    deleteConfirm: "確定要刪除通知對象嗎？"
+        mail: 寄送到擁有監察員權限的使用者電子郵件地址（僅在收到檢舉時）
+        webhook: 向指定的 SystemWebhook 發送通知（在收到檢舉和解決檢舉時發送）
+    keywords: 關鍵字
+    notifiedUser: 通知的使用者
+    notifiedWebhook: 使用的 Webhook
+    deleteConfirm: 確定要刪除通知對象嗎？
 _moderationLogTypes:
-  createRole: "新增角色"
-  deleteRole: "刪除角色 "
-  updateRole: "更新角色設定"
-  assignRole: "指派角色"
-  unassignRole: "撤銷角色"
-  suspend: "凍結"
-  unsuspend: "解除凍結"
-  addCustomEmoji: "新增自訂表情符號"
-  updateCustomEmoji: "更新自訂表情符號"
-  deleteCustomEmoji: "刪除自訂表情符號"
-  updateServerSettings: "更新伺服器設定"
-  updateUserNote: "更新了使用者的管理筆記"
-  deleteDriveFile: "刪除檔案"
-  deleteNote: "刪除貼文"
-  createGlobalAnnouncement: "建立全網通知"
-  createUserAnnouncement: "建立使用者通知"
-  updateGlobalAnnouncement: "更新全部的公告"
-  updateUserAnnouncement: "更新使用者的公告"
-  deleteGlobalAnnouncement: "刪除全部的公告"
-  deleteUserAnnouncement: "刪除使用者的公告"
-  resetPassword: "重設密碼"
-  suspendRemoteInstance: "封鎖遠端伺服器"
-  unsuspendRemoteInstance: "解除封鎖遠端伺服器"
-  updateRemoteInstanceNote: "更新了遠端伺服器的管理筆記"
-  markSensitiveDriveFile: "標記為敏感檔案"
-  unmarkSensitiveDriveFile: "撤銷標記為敏感檔案"
-  resolveAbuseReport: "解決檢舉"
-  forwardAbuseReport: "轉發檢舉"
-  updateAbuseReportNote: "更新檢舉的審查備註"
-  createInvitation: "建立邀請碼"
-  createAd: "建立廣告"
-  deleteAd: "刪除廣告"
-  updateAd: "更新廣告"
-  createAvatarDecoration: "建立頭像裝飾"
-  updateAvatarDecoration: "更新頭像裝飾"
-  deleteAvatarDecoration: "刪除頭像裝飾"
-  unsetUserAvatar: "移除使用者的大頭貼"
-  unsetUserBanner: "移除使用者的橫幅圖像"
-  createSystemWebhook: "建立 SystemWebhook"
-  updateSystemWebhook: "更新 SystemWebhook"
-  deleteSystemWebhook: "刪除 SystemWebhook"
-  createAbuseReportNotificationRecipient: "建立接收檢舉的通知對象"
-  updateAbuseReportNotificationRecipient: "更新接收檢舉的通知對象"
-  deleteAbuseReportNotificationRecipient: "刪除接收檢舉的通知對象"
-  deleteAccount: "刪除帳戶"
-  deletePage: "刪除頁面"
-  deleteFlash: "刪除 Play"
-  deleteGalleryPost: "刪除相簿的貼文"
+  createRole: 新增角色
+  deleteRole: '刪除角色 '
+  updateRole: 更新角色設定
+  assignRole: 指派角色
+  unassignRole: 撤銷角色
+  suspend: 凍結
+  unsuspend: 解除凍結
+  addCustomEmoji: 新增自訂表情符號
+  updateCustomEmoji: 更新自訂表情符號
+  deleteCustomEmoji: 刪除自訂表情符號
+  updateServerSettings: 更新伺服器設定
+  updateUserNote: 更新了使用者的管理筆記
+  deleteDriveFile: 刪除檔案
+  deleteNote: 刪除貼文
+  createGlobalAnnouncement: 建立全網通知
+  createUserAnnouncement: 建立使用者通知
+  updateGlobalAnnouncement: 更新全部的公告
+  updateUserAnnouncement: 更新使用者的公告
+  deleteGlobalAnnouncement: 刪除全部的公告
+  deleteUserAnnouncement: 刪除使用者的公告
+  resetPassword: 重設密碼
+  suspendRemoteInstance: 封鎖遠端伺服器
+  unsuspendRemoteInstance: 解除封鎖遠端伺服器
+  updateRemoteInstanceNote: 更新了遠端伺服器的管理筆記
+  markSensitiveDriveFile: 標記為敏感檔案
+  unmarkSensitiveDriveFile: 撤銷標記為敏感檔案
+  resolveAbuseReport: 解決檢舉
+  forwardAbuseReport: 轉發檢舉
+  updateAbuseReportNote: 更新檢舉的審查備註
+  createInvitation: 建立邀請碼
+  createAd: 建立廣告
+  deleteAd: 刪除廣告
+  updateAd: 更新廣告
+  createAvatarDecoration: 建立頭像裝飾
+  updateAvatarDecoration: 更新頭像裝飾
+  deleteAvatarDecoration: 刪除頭像裝飾
+  unsetUserAvatar: 移除使用者的大頭貼
+  unsetUserBanner: 移除使用者的橫幅圖像
+  createSystemWebhook: 建立 SystemWebhook
+  updateSystemWebhook: 更新 SystemWebhook
+  deleteSystemWebhook: 刪除 SystemWebhook
+  createAbuseReportNotificationRecipient: 建立接收檢舉的通知對象
+  updateAbuseReportNotificationRecipient: 更新接收檢舉的通知對象
+  deleteAbuseReportNotificationRecipient: 刪除接收檢舉的通知對象
+  deleteAccount: 刪除帳戶
+  deletePage: 刪除頁面
+  deleteFlash: 刪除 Play
+  deleteGalleryPost: 刪除相簿的貼文
+  approve: 核准
 _fileViewer:
   title: 檔案詳細資訊
   type: '檔案類型 '
@@ -2642,8 +2672,8 @@ _externalResourceInstaller:
       title: AiScript 錯誤
       description: 已取得資料但解析 AiScript 時發生錯誤，導致無法載入。請聯絡外掛作者。請檢查 Javascript 控制台以取得錯誤詳細資訊。
     _pluginInstallFailed:
-      title: "外掛安裝失敗"
-      description: "安裝外掛時出現問題。請再試一次。可參閱 Javascript 控制台以取得錯誤詳細資訊。"
+      title: 外掛安裝失敗
+      description: 安裝外掛時出現問題。請再試一次。可參閱 Javascript 控制台以取得錯誤詳細資訊。
     _themeParseFailed:
       title: 佈景主題解析錯誤
       description: 已取得資料但解析佈景主題時發生錯誤，導致無法載入。請聯絡佈景主題的作者。請檢查 Javascript 控制台以取得錯誤詳細資訊。
@@ -2661,8 +2691,8 @@ _dataSaver:
     title: 網址預覽縮圖
     description: 將不再自動載入網址預覽縮圖。
   _code:
-    title: "程式碼突出顯示"
-    description: "如果使用了程式碼突顯語法（如 MFM），則在點擊之前不會被載入。由於需要為對應的程式語言下載突顯定義檔案，因此關閉自動載入有助於減少資料流量。"
+    title: 程式碼突出顯示
+    description: 如果使用了程式碼突顯語法（如 MFM），則在點擊之前不會被載入。由於需要為對應的程式語言下載突顯定義檔案，因此關閉自動載入有助於減少資料流量。
 _hemisphere:
   'N': 北半球
   S: 南半球
@@ -2733,121 +2763,150 @@ _mediaControls:
   playbackRate: 播放速度
   loop: 循環播放
 _contextMenu:
-  title: "內容功能表"
-  app: "應用程式"
-  appWithShift: "Shift 鍵應用程式"
-  native: "瀏覽器的使用者介面"
+  title: 內容功能表
+  app: 應用程式
+  appWithShift: Shift 鍵應用程式
+  native: 瀏覽器的使用者介面
 _gridComponent:
   _error:
-    requiredValue: "此值為必填欄位"
-    columnTypeNotSupport: "正規表達式驗證僅支援 type:text 的欄位。"
-    patternNotMatch: "此值不符合 {pattern} 中的樣式。"
-    notUnique: "此值必須是唯一的"
+    requiredValue: 此值為必填欄位
+    columnTypeNotSupport: 正規表達式驗證僅支援 type:text 的欄位。
+    patternNotMatch: 此值不符合 {pattern} 中的樣式。
+    notUnique: 此值必須是唯一的
 _roleSelectDialog:
-  notSelected: "未選擇"
+  notSelected: 未選擇
 _customEmojisManager:
   _gridCommon:
-    copySelectionRows: "複製選取的行"
-    copySelectionRanges: "複製選取的範圍"
-    deleteSelectionRows: "刪除所選的行"
-    deleteSelectionRanges: "刪除選取範圍的行"
-    searchSettings: "搜尋設定"
-    searchSettingCaption: "詳細設定搜尋條件。"
-    searchLimit: "顯示的數量"
-    sortOrder: "排序"
-    registrationLogs: "登錄日誌"
-    registrationLogsCaption: "會顯示更新或刪除表情符號時的日誌。進行更新或刪除操作，或切換頁面、重新載入後，日誌將會消失。"
-    alertEmojisRegisterFailedDescription: "更新或刪除表情符號失敗。詳情請查看登錄日誌。"
+    copySelectionRows: 複製選取的行
+    copySelectionRanges: 複製選取的範圍
+    deleteSelectionRows: 刪除所選的行
+    deleteSelectionRanges: 刪除選取範圍的行
+    searchSettings: 搜尋設定
+    searchSettingCaption: 詳細設定搜尋條件。
+    searchLimit: 顯示的數量
+    sortOrder: 排序
+    registrationLogs: 登錄日誌
+    registrationLogsCaption: 會顯示更新或刪除表情符號時的日誌。進行更新或刪除操作，或切換頁面、重新載入後，日誌將會消失。
+    alertEmojisRegisterFailedDescription: 更新或刪除表情符號失敗。詳情請查看登錄日誌。
   _logs:
-    showSuccessLogSwitch: "顯示成功日誌"
-    failureLogNothing: "沒有失敗的日誌。"
-    logNothing: "沒有日誌。"
+    showSuccessLogSwitch: 顯示成功日誌
+    failureLogNothing: 沒有失敗的日誌。
+    logNothing: 沒有日誌。
   _remote:
-    selectionRowDetail: "選取行的詳細資訊"
-    importSelectionRows: "匯入選取的行"
-    importSelectionRangesRows: "匯入選取範圍的行"
-    importEmojisButton: "匯入勾選的表情符號"
-    confirmImportEmojisTitle: "匯入表情符號"
-    confirmImportEmojisDescription: "將從遠端接收的{count}個表情符號進行匯入。請務必注意表情符號的授權。是否執行此操作？"
+    selectionRowDetail: 選取行的詳細資訊
+    importSelectionRows: 匯入選取的行
+    importSelectionRangesRows: 匯入選取範圍的行
+    importEmojisButton: 匯入勾選的表情符號
+    confirmImportEmojisTitle: 匯入表情符號
+    confirmImportEmojisDescription: 將從遠端接收的{count}個表情符號進行匯入。請務必注意表情符號的授權。是否執行此操作？
   _local:
-    tabTitleList: "已登錄的表情符號列表"
-    tabTitleRegister: "登錄表情符號"
+    tabTitleList: 已登錄的表情符號列表
+    tabTitleRegister: 登錄表情符號
     _list:
-      emojisNothing: "沒有登錄的表情符號。"
-      markAsDeleteTargetRows: "將選取的行設為刪除對象"
-      markAsDeleteTargetRanges: "將選取範圍的行設為刪除對象\n"
-      alertUpdateEmojisNothingDescription: "沒有選取需要變更的表情符號。"
-      alertDeleteEmojisNothingDescription: "沒有選取需要刪除的表情符號。"
-      confirmMovePage: "要移動到其他頁面嗎？"
-      confirmChangeView: "要更改顯示方式嗎？"
-      confirmUpdateEmojisDescription: "將更新{count}個表情符號。是否執行此操作？"
-      confirmDeleteEmojisDescription: "將刪除勾選的{count}個表情符號。是否執行此操作？"
-      confirmResetDescription: "目前所做的所有變更都會重設。"
-      confirmMovePageDesciption: "此頁面的表情符號已被更改。  \n若未儲存就直接離開此頁面，則在此頁面進行的所有更改將會被捨棄。"
-      dialogSelectRoleTitle: "根據表情符號設定的角色進行搜尋"
+      emojisNothing: 沒有登錄的表情符號。
+      markAsDeleteTargetRows: 將選取的行設為刪除對象
+      markAsDeleteTargetRanges: |
+        將選取範圍的行設為刪除對象
+      alertUpdateEmojisNothingDescription: 沒有選取需要變更的表情符號。
+      alertDeleteEmojisNothingDescription: 沒有選取需要刪除的表情符號。
+      confirmMovePage: 要移動到其他頁面嗎？
+      confirmChangeView: 要更改顯示方式嗎？
+      confirmUpdateEmojisDescription: 將更新{count}個表情符號。是否執行此操作？
+      confirmDeleteEmojisDescription: 將刪除勾選的{count}個表情符號。是否執行此操作？
+      confirmResetDescription: 目前所做的所有變更都會重設。
+      confirmMovePageDesciption: |-
+        此頁面的表情符號已被更改。
+        若未儲存就直接離開此頁面，則在此頁面進行的所有更改將會被捨棄。
+      dialogSelectRoleTitle: 根據表情符號設定的角色進行搜尋
     _register:
-      uploadSettingTitle: "上傳設定"
-      uploadSettingDescription: "您可以在此畫面設定表情符號上傳時的操作。"
-      directoryToCategoryLabel: "在「類別」欄位中輸入目錄名稱"
-      directoryToCategoryCaption: "拖放目錄時，請在「類別」欄位中輸入目錄名稱。"
-      emojiInputAreaCaption: "以下列其中一種方式選擇您想要註冊的表情符號"
-      emojiInputAreaList1: "將圖片檔案或目錄拖放到此框中"
-      emojiInputAreaList2: "點擊此連結從電腦中選擇"
-      emojiInputAreaList3: "點擊此連結從雲端硬碟中選擇"
-      confirmRegisterEmojisDescription: "將列表中顯示的表情符號登錄為新的自定表情符號。是否確定？（為避免過高負荷，每次操作最多可登錄{count}個表情符號）"
-      confirmClearEmojisDescription: "放棄編輯內容並清除列表中顯示的表情符號。是否確定？"
-      confirmUploadEmojisDescription: "將拖放的{count}個檔案上傳到雲端硬碟。是否執行此操作？"
+      uploadSettingTitle: 上傳設定
+      uploadSettingDescription: 您可以在此畫面設定表情符號上傳時的操作。
+      directoryToCategoryLabel: 在「類別」欄位中輸入目錄名稱
+      directoryToCategoryCaption: 拖放目錄時，請在「類別」欄位中輸入目錄名稱。
+      emojiInputAreaCaption: 以下列其中一種方式選擇您想要註冊的表情符號
+      emojiInputAreaList1: 將圖片檔案或目錄拖放到此框中
+      emojiInputAreaList2: 點擊此連結從電腦中選擇
+      emojiInputAreaList3: 點擊此連結從雲端硬碟中選擇
+      confirmRegisterEmojisDescription: 將列表中顯示的表情符號登錄為新的自定表情符號。是否確定？（為避免過高負荷，每次操作最多可登錄{count}個表情符號）
+      confirmClearEmojisDescription: 放棄編輯內容並清除列表中顯示的表情符號。是否確定？
+      confirmUploadEmojisDescription: 將拖放的{count}個檔案上傳到雲端硬碟。是否執行此操作？
 _embedCodeGen:
-  title: "自訂嵌入程式碼"
-  header: "檢視標頭 "
-  autoload: "自動繼續載入（不建議）"
-  maxHeight: "最大高度"
-  maxHeightDescription: "設定為 0 時代表沒有最大值。請指定某個值以避免小工具持續在縱向延伸。"
-  maxHeightWarn: "最大高度限制已停用（0）。如果這個變更不是您想要的，請將最大高度設定為某個值。"
-  previewIsNotActual: "由於超出了預覽畫面可顯示的範圍，因此顯示內容會與實際嵌入時有所不同。"
-  rounded: "圓角"
-  border: "給外框加上邊框"
-  applyToPreview: "反映在預覽中"
-  generateCode: "建立嵌入程式碼"
-  codeGenerated: "已產生程式碼"
-  codeGeneratedDescription: "請將產生的程式碼貼到您的網站上。"
+  title: 自訂嵌入程式碼
+  header: '檢視標頭 '
+  autoload: 自動繼續載入（不建議）
+  maxHeight: 最大高度
+  maxHeightDescription: 設定為 0 時代表沒有最大值。請指定某個值以避免小工具持續在縱向延伸。
+  maxHeightWarn: 最大高度限制已停用（0）。如果這個變更不是您想要的，請將最大高度設定為某個值。
+  previewIsNotActual: 由於超出了預覽畫面可顯示的範圍，因此顯示內容會與實際嵌入時有所不同。
+  rounded: 圓角
+  border: 給外框加上邊框
+  applyToPreview: 反映在預覽中
+  generateCode: 建立嵌入程式碼
+  codeGenerated: 已產生程式碼
+  codeGeneratedDescription: 請將產生的程式碼貼到您的網站上。
 _selfXssPrevention:
-  warning: "警告"
-  title: "「在此畫面貼上一些內容」完全是個騙局。"
-  description1: "如果您在此處貼上任何內容，惡意使用者可能會接管您的帳戶或竊取您的個人資訊。"
-  description2: "如果您不確切知道要貼上的內容，%c 請立即停止工作並關閉此視窗。"
-  description3: "細節請看這裡。{link}"
+  warning: 警告
+  title: 「在此畫面貼上一些內容」完全是個騙局。
+  description1: 如果您在此處貼上任何內容，惡意使用者可能會接管您的帳戶或竊取您的個人資訊。
+  description2: 如果您不確切知道要貼上的內容，%c 請立即停止工作並關閉此視窗。
+  description3: 細節請看這裡。{link}
 _followRequest:
-  recieved: "收到的請求"
-  sent: "送出的請求"
+  recieved: 收到的請求
+  sent: 送出的請求
 _remoteLookupErrors:
   _federationNotAllowed:
-    title: "無法與這個伺服器通訊"
-    description: "與此伺服器的通訊可能被停用、或封鎖了該伺服器，或被該伺服器封鎖。\n請聯繫您的伺服器管理員。"
+    title: 無法與這個伺服器通訊
+    description: |-
+      與此伺服器的通訊可能被停用、或封鎖了該伺服器，或被該伺服器封鎖。
+      請聯繫您的伺服器管理員。
   _uriInvalid:
-    title: "URI 不正確"
-    description: "輸入的 URI 有問題。請檢查是否輸入了 URI 中不能使用的字元。"
+    title: URI 不正確
+    description: 輸入的 URI 有問題。請檢查是否輸入了 URI 中不能使用的字元。
   _requestFailed:
-    title: "請求失敗"
-    description: "與此伺服器的通訊失敗。可能是對方伺服器斷線。 此外，請檢查是否輸入了不正確或不存在的 URI。"
+    title: 請求失敗
+    description: 與此伺服器的通訊失敗。可能是對方伺服器斷線。 此外，請檢查是否輸入了不正確或不存在的 URI。
   _responseInvalid:
-    title: "回應不正確"
-    description: "雖然能夠與這個伺服器通訊，但是取得的資料不正確。"
+    title: 回應不正確
+    description: 雖然能夠與這個伺服器通訊，但是取得的資料不正確。
   _responseInvalidIdHostNotMatch:
-    description: "輸入的 URI 的網域與最終取得的 URI 的網域不同。 如果您是透過第三方伺服器查詢遠端內容，請使用可在原始伺服器上取得的 URI 再次查詢。"
+    description: 輸入的 URI 的網域與最終取得的 URI 的網域不同。 如果您是透過第三方伺服器查詢遠端內容，請使用可在原始伺服器上取得的 URI 再次查詢。
   _noSuchObject:
-    title: "查無項目"
-    description: "無法找到所要求的資源，請再次檢查 URI。"
+    title: 查無項目
+    description: 無法找到所要求的資源，請再次檢查 URI。
 _captcha:
-  verify: "請通過 CAPTCHA 驗證"
-  testSiteKeyMessage: "可以輸入網站金鑰和秘密金鑰的測試值來檢查預覽。\n詳細資訊請參閱以下頁面。"
+  verify: 請通過 CAPTCHA 驗證
+  testSiteKeyMessage: |-
+    可以輸入網站金鑰和秘密金鑰的測試值來檢查預覽。
+    詳細資訊請參閱以下頁面。
   _error:
     _requestFailed:
-      title: "CAPTCHA 請求失敗"
-      text: "請過一段時間後再執行，或再次檢查設定。"
+      title: CAPTCHA 請求失敗
+      text: 請過一段時間後再執行，或再次檢查設定。
     _verificationFailed:
-      title: "CAPTCHA 驗證失敗"
-      text: "請再次檢查設定是否正確。"
+      title: CAPTCHA 驗證失敗
+      text: 請再次檢查設定是否正確。
     _unknown:
-      title: "CAPTCHA 錯誤"
-      text: "發生了意外的錯誤。"
+      title: CAPTCHA 錯誤
+      text: 發生了意外的錯誤。
+approvals: 審批
+histories: 歷史
+registerApproveConfirm: 您是否希望批准註冊？
+registerApproveConfirmDescription: 此操作不可撤銷。批准後，將向該使用者發送一封電子郵件，說明註冊已獲批准。
+approvalRequiredForSignup: 新使用者註冊需要審批
+signupPendingApprovals: 批准帳戶註冊
+pendingUserApprovals: 有新使用者正在等待審批
+approveAccount: 批准
+denyAccount: 拒絕並刪除帳戶
+approved: 已通過審批
+notApproved: 未通過審批
+approvalStatus: 審批情況
+approvalRequiredToRegister: 目前該伺服器啟用了註冊審批，您只有在提供了希望加入的理由並獲得批准後才能註冊。
+registerReason: 註冊原因
+registerHasNotBeenApprovedYet: 您在伺服器上的註冊尚未通過審核。請稍後再試。如果您在註冊時提供了電子郵件地址，您將在註冊通過後收到一封電子郵件。
+registerApprovalEmailRecommended: 強烈建議在註冊帳戶時也提供電子郵件地址，以便在伺服器註冊通過後收到通知。
+confirmOnReact: 回應需要確認
+reactAreYouSure: 您想對 {emoji} 作出回應嗎？
+_flash:
+  contentHidden: 隱藏 Flash 內容
+  poweredByRuffle: 由 Ruffle 提供技術支援
+  arbitraryCodeExecutionWarning: 謹防惡意程式碼執行！

@@ -18,6 +18,7 @@ import { createTemp } from '@/misc/create-temp.js';
 import { bindThis } from '@/decorators.js';
 import { RoleService } from '@/core/RoleService.js';
 import type { Config } from '@/config.js';
+import { MetaService } from '@/core/MetaService.js';
 import { ApiError } from './error.js';
 import { RateLimiterService } from './RateLimiterService.js';
 import { ApiLoggerService } from './ApiLoggerService.js';
@@ -49,6 +50,7 @@ export class ApiCallService implements OnApplicationShutdown {
 		private userIpsRepository: UserIpsRepository,
 
 		private authenticateService: AuthenticateService,
+		private metaService: MetaService,
 		private rateLimiterService: RateLimiterService,
 		private roleService: RoleService,
 		private apiLoggerService: ApiLoggerService,
@@ -342,6 +344,8 @@ export class ApiCallService implements OnApplicationShutdown {
 			}
 		}
 
+		const instance = await this.metaService.fetch(true);
+
 		if (ep.meta.requireCredential || ep.meta.requireModerator || ep.meta.requireAdmin) {
 			if (user == null) {
 				throw new ApiError({
@@ -356,6 +360,14 @@ export class ApiCallService implements OnApplicationShutdown {
 					code: 'YOUR_ACCOUNT_SUSPENDED',
 					kind: 'permission',
 					id: 'a8c724b3-6e9c-4b46-b1a8-bc3ed6258370',
+				});
+			} else if (instance.approvalRequiredForSignup && user!.approved === false) {
+				throw new ApiError({
+					message: 'Your account is not approved yet.',
+					code: 'YOUR_ACCOUNT_NOT_APPROVED',
+					kind: 'permission',
+					id: '2fe70810-0ed2-47db-a70b-dc3ecbf5f069',
+					httpStatusCode: 403,
 				});
 			}
 		}
