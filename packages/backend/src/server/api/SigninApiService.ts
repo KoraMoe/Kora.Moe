@@ -158,7 +158,7 @@ export class SigninApiService {
 			return;
 		}
 
-		if (user.approved === false && this.meta.approvalRequiredForSignup) {
+		if (user.approved === false && instance.approvalRequiredForSignup) {
 			reply.code(403);
 			return {
 				error: {
