@@ -24,6 +24,7 @@ import { WebAuthnService } from '@/core/WebAuthnService.js';
 import { UserAuthService } from '@/core/UserAuthService.js';
 import { CaptchaService } from '@/core/CaptchaService.js';
 import { FastifyReplyError } from '@/misc/fastify-reply-error.js';
+import { MetaService } from '@/core/MetaService.js';
 import { RateLimiterService } from './RateLimiterService.js';
 import { SigninService } from './SigninService.js';
 import type { AuthenticationResponseJSON } from '@simplewebauthn/types';
@@ -56,6 +57,7 @@ export class SigninApiService {
 		private userAuthService: UserAuthService,
 		private webAuthnService: WebAuthnService,
 		private captchaService: CaptchaService,
+		private metaService: MetaService,
 	) {
 	}
 

@@ -18,10 +18,11 @@ import { MiLocalUser } from '@/models/User.js';
 import { FastifyReplyError } from '@/misc/fastify-reply-error.js';
 import { bindThis } from '@/decorators.js';
 import { L_CHARS, secureRndstr } from '@/misc/secure-rndstr.js';
-import { SigninService } from './SigninService.js';
-import type { FastifyRequest, FastifyReply } from 'fastify';
-import instance from './endpoints/charts/instance.js';
 import { RoleService } from '@/core/RoleService.js';
+import { MetaService } from '@/core/MetaService.js';
+import { SigninService } from './SigninService.js';
+import instance from './endpoints/charts/instance.js';
+import type { FastifyRequest, FastifyReply } from 'fastify';
 
 @Injectable()
 export class SignupApiService {
@@ -54,6 +55,7 @@ export class SignupApiService {
 		private signinService: SigninService,
 		private emailService: EmailService,
 		private roleService: RoleService,
+		private metaService: MetaService,
 	) {
 	}
 

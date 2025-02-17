@@ -18,6 +18,7 @@ import { createTemp } from '@/misc/create-temp.js';
 import { bindThis } from '@/decorators.js';
 import { RoleService } from '@/core/RoleService.js';
 import type { Config } from '@/config.js';
+import { MetaService } from '@/core/MetaService.js';
 import { ApiError } from './error.js';
 import { RateLimiterService } from './RateLimiterService.js';
 import { ApiLoggerService } from './ApiLoggerService.js';
@@ -49,6 +50,7 @@ export class ApiCallService implements OnApplicationShutdown {
 		private userIpsRepository: UserIpsRepository,
 
 		private authenticateService: AuthenticateService,
+		private metaService: MetaService,
 		private rateLimiterService: RateLimiterService,
 		private roleService: RoleService,
 		private apiLoggerService: ApiLoggerService,

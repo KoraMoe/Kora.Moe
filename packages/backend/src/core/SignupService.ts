@@ -21,6 +21,7 @@ import { bindThis } from '@/decorators.js';
 import UsersChart from '@/core/chart/charts/users.js';
 import { UtilityService } from '@/core/UtilityService.js';
 import { UserService } from '@/core/UserService.js';
+import { MetaService } from './MetaService.js';
 
 @Injectable()
 export class SignupService {
@@ -43,6 +44,7 @@ export class SignupService {
 		private idService: IdService,
 		private instanceActorService: InstanceActorService,
 		private usersChart: UsersChart,
+		private metaService: MetaService,
 	) {
 	}
 
