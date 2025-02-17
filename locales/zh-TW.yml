@@ -2815,7 +2815,7 @@ _customEmojisManager:
       confirmDeleteEmojisDescription: 將刪除勾選的{count}個表情符號。是否執行此操作？
       confirmResetDescription: 目前所做的所有變更都會重設。
       confirmMovePageDesciption: |-
-        此頁面的表情符號已被更改。  
+        此頁面的表情符號已被更改。
         若未儲存就直接離開此頁面，則在此頁面進行的所有更改將會被捨棄。
       dialogSelectRoleTitle: 根據表情符號設定的角色進行搜尋
     _register:
@@ -2888,42 +2888,25 @@ _captcha:
     _unknown:
       title: CAPTCHA 錯誤
       text: 發生了意外的錯誤。
-approvals: 承認
+approvals: 審批
 histories: 歷史
 registerApproveConfirm: 您是否希望批准註冊？
-registerApproveConfirmDescription: 此操作無法撤銷。核准之後，將發送一封電子郵件給此使用者，說明註冊已經核准。
-approvalRequiredForSignup: 讓帳號註冊成為核准程序。
-signupPendingApprovals: 核准帳戶註冊
-pendingUserApprovals: 有使用者正在等待核准。
-approveAccount: 批准。
-denyAccount: 拒絕並刪除帳戶。
-approved: 核准
-notApproved: 未承認
-approvalStatus: 核准狀態
-approvalRequiredToRegister: 目前此伺服器僅接受核准。您必須提供想要加入的理由並獲得核准，才能註冊。
+registerApproveConfirmDescription: 此操作不可撤銷。批准後，將向該使用者發送一封電子郵件，說明註冊已獲批准。
+approvalRequiredForSignup: 新使用者註冊需要審批
+signupPendingApprovals: 批准帳戶註冊
+pendingUserApprovals: 有新使用者正在等待審批
+approveAccount: 批准
+denyAccount: 拒絕並刪除帳戶
+approved: 已通過審批
+notApproved: 未通過審批
+approvalStatus: 審批情況
+approvalRequiredToRegister: 目前該伺服器啟用了註冊審批，您只有在提供了希望加入的理由並獲得批准後才能註冊。
 registerReason: 註冊原因
-registerHasNotBeenApprovedYet: 您在伺服器上的註冊尚未通過審核。請稍後再試。如果您在註冊時提供了電子郵件地址，註冊通過後您會收到一封電子郵件。
-registerApprovalEmailRecommended: 強烈建議帳號註冊時也必須填寫電子郵件地址，以便在伺服器註冊通過後收到通知。
-confirmOnReact: 反應時檢查。
-reactAreYouSure: '"「您想對 {emoji} 作出回應嗎？'
+registerHasNotBeenApprovedYet: 您在伺服器上的註冊尚未通過審核。請稍後再試。如果您在註冊時提供了電子郵件地址，您將在註冊通過後收到一封電子郵件。
+registerApprovalEmailRecommended: 強烈建議在註冊帳戶時也提供電子郵件地址，以便在伺服器註冊通過後收到通知。
+confirmOnReact: 回應需要確認
+reactAreYouSure: 您想對 {emoji} 作出回應嗎？
 _flash:
   contentHidden: 隱藏 Flash 內容
-  poweredByRuffle: Powered by Ruffle.
-  arbitraryCodeExecutionWarning: 小心任意程式碼執行！
-  failedToLoad: 無法載入 Flash 內容。
-  isLoading: 載入 Flash 內容。
-  loadingRufflePlayer: Ruffle 播放器載入。
-  loadingFlashFile: 載入 Flash 檔案。
-  cspError: 無法存取 raw.esm.sh。此伺服器的內容安全政策 (CSP) 可能已過期，請聯絡伺服器管理員。
-_bootErrors:
-  title: 載入失敗。
-  serverError: 如果稍等一下並重新載入後問題仍未解決，請聯絡伺服器管理員並輸入下列錯誤 ID。
-  solution: 以下內容或許可以解決問題。
-  solution1: 將瀏覽器和作業系統更新至最新版本。
-  solution2: 停用廣告阻擋程式。
-  solution3: 清除瀏覽器快取。
-  solution4: (Tor 瀏覽器) 將 dom.webaudio.enabled 設為 true
-  otherOption: 其他選項。
-  otherOption1: 刪除用戶端設定和快取
-  otherOption2: 開始簡單的用戶端
-  otherOption3: 啟動修復工具。
+  poweredByRuffle: 由 Ruffle 提供技術支援
+  arbitraryCodeExecutionWarning: 謹防惡意程式碼執行！

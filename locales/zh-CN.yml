@@ -2901,28 +2901,28 @@ _captcha:
     _unknown:
       title: CAPTCHA 错误
       text: 发生意外错误。
-approvals: 承認
+approvals: 审批
 histories: 历史
 registerApproveConfirm: 您是否希望批准注册？
 registerApproveConfirmDescription: 此操作不可撤销。批准后，将向该用户发送一封电子邮件，说明注册已获批准。
-approvalRequiredForSignup: 使账户注册成为一个审批过程。
+approvalRequiredForSignup: 新用户注册需要审批
 signupPendingApprovals: 批准账户注册
-pendingUserApprovals: 有用户正在等待审批。
-approveAccount: 批准。
-denyAccount: 拒绝并删除账户。
-approved: 核准
-notApproved: 未承認
-approvalStatus: 批准情况
-approvalRequiredToRegister: 目前该服务器只接受审批。您只有在提供了希望加入的理由并获得批准后才能注册。
-registerReason: 登记原因
+pendingUserApprovals: 有新用户正在等待审批
+approveAccount: 批准
+denyAccount: 拒绝并删除账户
+approved: 已通过审批
+notApproved: 未通过审批
+approvalStatus: 审批情况
+approvalRequiredToRegister: 目前该服务器启用了注册审批，您只有在提供了希望加入的理由并获得批准后才能注册。
+registerReason: 注册原因
 registerHasNotBeenApprovedYet: 您在服务器上的注册尚未通过审核。请稍后再试。如果您在注册时提供了电子邮件地址，您将在注册通过后收到一封电子邮件。
 registerApprovalEmailRecommended: 强烈建议在注册账户时也提供电子邮件地址，以便在服务器注册通过后收到通知。
-confirmOnReact: 反应时检查。
+confirmOnReact: 反应需要确认
 reactAreYouSure: '"您想对 {emoji} 作出回应吗？'
 _flash:
   contentHidden: 隐藏 Flash 内容
   poweredByRuffle: 由 Ruffle 提供技术支持。
-  arbitraryCodeExecutionWarning: 谨防任意代码执行！
+  arbitraryCodeExecutionWarning: 谨防恶意代码执行！
   failedToLoad: 无法加载 Flash 内容。
   isLoading: 加载 Flash 内容。
   loadingRufflePlayer: Ruffle 播放器正在加载。
