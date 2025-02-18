@@ -2906,7 +2906,7 @@ histories: 历史
 registerApproveConfirm: 您是否希望批准注册？
 registerApproveConfirmDescription: 此操作不可撤销。批准后，将向该用户发送一封电子邮件，说明注册已获批准。
 approvalRequiredForSignup: 新用户注册需要审批
-signupPendingApprovals: 批准账户注册
+signupPendingApprovals: 待审批的注册
 pendingUserApprovals: 有新用户正在等待审批
 approveAccount: 批准
 denyAccount: 拒绝并删除账户

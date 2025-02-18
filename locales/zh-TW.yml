@@ -2893,7 +2893,7 @@ histories: 歷史
 registerApproveConfirm: 您是否希望批准註冊？
 registerApproveConfirmDescription: 此操作不可撤銷。批准後，將向該使用者發送一封電子郵件，說明註冊已獲批准。
 approvalRequiredForSignup: 新使用者註冊需要審批
-signupPendingApprovals: 批准帳戶註冊
+signupPendingApprovals: 待審批的註冊
 pendingUserApprovals: 有新使用者正在等待審批
 approveAccount: 批准
 denyAccount: 拒絕並刪除帳戶
