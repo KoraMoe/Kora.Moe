@@ -1,3 +1,4 @@
+---
 _lang_: 繁體中文（台灣）
 headlineMisskey: 貼文連繫網路
 introMisskey: |-
@@ -1440,9 +1441,9 @@ _initialTutorial:
         note: 我吃了一個巧克力甜甜圈🍩😋
       useCases: 伺服器的服務條款可能會規範特定的貼文需要使用隱藏內容，除此之外也會用在隱藏劇情洩漏與敏感內容的貼文。
   _howToMakeAttachmentsSensitive:
-    title: 如何標記上傳附件為敏感內容？
-    description: 如果伺服器服務條款有規範，又或者不希望上傳附件直接被看見，可以設置為「敏感內容」
-    tryThisFile: 試試看！把附加在發文表單的圖像檔案標記為敏感內容。
+    title: "如何標記上傳附件為敏感內容？"
+    description: "如果伺服器的服務條款有規範，又或者不適合直接展示的附件，請記得加上「敏感」標記。"
+    tryThisFile: "試試看！把附加在發文表單的圖像檔案標記為敏感內容。"
     _exampleNote:
       note: 打開納豆的包裝失敗了…
     method: 若要使上傳附件標記為敏感內容，請按一下該檔案以開啟選單，然後點擊「標記為敏感內容」。
@@ -1460,55 +1461,38 @@ _timelineDescription:
 _serverRules:
   description: 設定在註冊頁面顯示的伺服器簡要規則。建議是服務條款的摘要。
 _serverSettings:
-  iconUrl: 圖示的 URL
-  appIconDescription: 指定顯示 {host} 為應用程式時的圖示。
-  appIconUsageExample: 例如：PWA 或是在手機桌面作為書籤等
-  appIconStyleRecommendation: 因為可能會裁剪成圓形或圓角，所以建議用單色填滿邊框及背景。
-  appIconResolutionMustBe: 解析度必須為 {resolution}。
-  manifestJsonOverride: 覆寫 manifest.json
-  shortName: 簡稱
-  shortNameDescription: 如果伺服器的正式名稱很長，可用簡稱或通稱代替。
-  fanoutTimelineDescription: 如果啟用的話，檢索各個時間軸的性能會顯著提昇，資料庫的負荷也會減少。不過，Redis 的記憶體使用量會增加。如果伺服器的記憶體容量比較少或者運行不穩定，可以停用。
-  fanoutTimelineDbFallback: 資料庫的回退
-  fanoutTimelineDbFallbackDescription: 若啟用，在時間軸沒有快取的情況下將執行回退處理以額外查詢資料庫。若停用，可以透過不執行回退處理來進一步減少伺服器的負荷，但會限制可取得的時間軸範圍。
-  reactionsBufferingDescription: 啟用時，可以顯著提高建立反應時的效能並減少資料庫的負載。 但是，Redis 記憶體使用量會增加。
-  inquiryUrl: 聯絡表單網址
-  inquiryUrlDescription: 指定伺服器運營者的聯絡表單網址，或包含運營者聯絡資訊網頁的網址。
-  openRegistration: 允許建立帳戶
-  openRegistrationWarning: 開放註冊伴隨著風險。 建議只有在伺服器受到持續監控，並準備好在出現問題時能立即處理的情況下才開放註冊。
-  thisSettingWillAutomaticallyOffWhenModeratorsInactive: 為了防止 spam，如果一段期間內沒有偵測到審查員的活動，此設定將自動關閉。
+  iconUrl: "圖示的 URL"
+  appIconDescription: "指定顯示 {host} 為應用程式時的圖示。"
+  appIconUsageExample: "例如：PWA 或是在手機桌面作為書籤等"
+  appIconStyleRecommendation: "因為可能會裁剪成圓形或圓角，所以建議用單色填滿邊框及背景。"
+  appIconResolutionMustBe: "解析度必須為 {resolution}。"
+  manifestJsonOverride: "覆寫 manifest.json"
+  shortName: "簡稱"
+  shortNameDescription: "如果伺服器的正式名稱很長，可用簡稱或通稱代替。"
+  fanoutTimelineDescription: "如果啟用的話，檢索各個時間軸的性能會顯著提昇，資料庫的負荷也會減少。不過，Redis 的記憶體使用量會增加。如果伺服器的記憶體容量比較少或者運行不穩定，可以停用。"
+  fanoutTimelineDbFallback: "資料庫的回退"
+  fanoutTimelineDbFallbackDescription: "若啟用，在時間軸沒有快取的情況下將執行回退處理以額外查詢資料庫。若停用，可以透過不執行回退處理來進一步減少伺服器的負荷，但會限制可取得的時間軸範圍。"
+  reactionsBufferingDescription: "啟用時，可以顯著提高建立反應時的效能並減少資料庫的負載。 但是，Redis 記憶體使用量會增加。"
+  inquiryUrl: "聯絡表單網址"
+  inquiryUrlDescription: "指定伺服器運營者的聯絡表單網址，或包含運營者聯絡資訊網頁的網址。"
+  openRegistration: "允許建立帳戶"
+  openRegistrationWarning: "開放註冊伴隨著風險。 建議只有在伺服器受到持續監控，並準備好在出現問題時能立即處理的情況下才開放註冊。"
+  thisSettingWillAutomaticallyOffWhenModeratorsInactive: "如果在一段期間內沒有偵測到任何審查員活動，此設定將自動關閉，以防止垃圾內容。"
 _accountMigration:
-  moveFrom: 從其他帳戶遷移到這個帳戶
-  moveFromSub: 為另一個帳戶建立別名
-  moveFromLabel: '要遷移過來的帳戶 #{n}'
-  moveFromDescription: 如果你想把追隨者從別的帳戶遷移過來，必須先在這裡建立別名。請務必在執行遷移之前建立別名！請像這樣輸入要遷移的帳戶：@person@instance.com
-  moveTo: 將這個帳戶遷移至新的帳戶
-  moveToLabel: 要遷移到的帳戶：
-  moveCannotBeUndone: 一旦遷移帳戶，就無法取消。
-  moveAccountDescription: |-
-    遷移至新帳戶。
-    　・此帳戶的追隨者將自動追隨新帳戶；
-    　・此帳戶的所有追隨者將被取消追隨；
-    　・此帳戶不能再發文。
-
-    雖然會自動遷移您的追隨者，但必須手動遷移您追隨的帳戶。請在遷移前匯出此帳戶的「追隨中」名單，並在遷移後自行匯入。
-    列表名單、靜音名單及封鎖名單也必須如此處理。
-
-    （此說明適用於本伺服器，以及運行 Misskey v13.12.0 或更新版本的其他伺服器；如 Mastodon 等使用 ActivityPub 協定的其他軟體或有不同的處理方式。）
-  moveAccountHowTo: |-
-    要遷移帳戶，首先要在目標帳戶中為此帳戶建立一個別名。
-     建立別名後，像這樣輸入目標帳戶：@username@server.example.com
-  startMigration: 遷移
-  migrationConfirm: |-
-    確定要將這個帳戶遷移至 {account} 嗎？一旦遷移就無法撤銷，也就無法以原來的狀態使用這個帳戶。
-    另外，請確認在要遷移到的帳戶已經建立了一個別名。
-  movedAndCannotBeUndone: |-
-    帳戶已遷移。
-    遷移無法撤消。
-  postMigrationNote: |-
-    將在完成遷移後的 24 小時取消追隨所有帳號。
-    此帳戶的追隨中/追隨者人數將歸零。由於不會解除粉絲對您的追隨，因此他們仍然可以繼續閱覽此帳戶僅對追隨者公開的貼文。
-  movedTo: 要遷移到的帳戶：
+  moveFrom: "從其他帳戶遷移到這個帳戶"
+  moveFromSub: "為另一個帳戶建立別名"
+  moveFromLabel: "要遷移過來的帳戶 #{n}"
+  moveFromDescription: "如果你想把追隨者從別的帳戶遷移過來，必須先在這裡建立別名。請務必在執行遷移之前建立別名！請像這樣輸入要遷移的帳戶：@person@instance.com"
+  moveTo: "將這個帳戶遷移至新的帳戶"
+  moveToLabel: "要遷移到的帳戶："
+  moveCannotBeUndone: "一旦遷移帳戶，就無法取消。"
+  moveAccountDescription: "遷移至新帳戶。\n　・此帳戶的追隨者將自動追隨新帳戶；\n　・此帳戶的所有追隨者將被取消追隨；\n　・此帳戶不能再發文。\n\n雖然會自動遷移您的追隨者，但必須手動遷移您追隨的帳戶。請在遷移前匯出此帳戶的「追隨中」名單，並在遷移後自行匯入。\n列表名單、靜音名單及封鎖名單也必須如此處理。\n\n（此說明適用於本伺服器，以及運行 Misskey v13.12.0 或更新版本的其他伺服器；如 Mastodon 等使用 ActivityPub 協定的其他軟體或有不同的處理方式。）"
+  moveAccountHowTo: "要遷移帳戶，首先要在目標帳戶中為此帳戶建立一個別名。\n 建立別名後，像這樣輸入目標帳戶：@username@server.example.com"
+  startMigration: "遷移"
+  migrationConfirm: "確定要將這個帳戶遷移至 {account} 嗎？一旦遷移就無法撤銷，也就無法以原來的狀態使用這個帳戶。\n另外，請確認在要遷移到的帳戶已經建立了一個別名。"
+  movedAndCannotBeUndone: "帳戶已遷移。\n遷移無法撤消。"
+  postMigrationNote: "將在完成遷移的 24 小時後取消追隨所有帳號。\n此帳戶的追隨中/追隨者人數將歸零。由於不會解除粉絲對您的追隨，因此他們仍然可以繼續閱覽此帳戶內僅對追隨者公開的貼文。"
+  movedTo: "要遷移到的帳戶："
 _achievements:
   earnedAt: 獲得日期
   _types:
@@ -1802,39 +1786,38 @@ _role:
     middle: 中
     high: 高
   _options:
-    gtlAvailable: 瀏覽全域時間軸
-    ltlAvailable: 瀏覽本地時間軸
-    canPublicNote: 允許公開貼文
-    canEditNote: 允許編輯帖子
-    mentionMax: 貼文內的最大提及數
-    canInvite: 發行伺服器邀請碼
-    inviteLimit: 可建立邀請碼的數量
-    inviteLimitCycle: 邀請碼的發放間隔
-    inviteExpirationTime: 邀請碼的有效日期
-    canManageCustomEmojis: 管理自訂表情符號
-    canManageAvatarDecorations: 管理頭像裝飾
-    driveCapacity: 雲端硬碟容量
-    alwaysMarkNsfw: 總是將檔案標記為NSFW
-    canUpdateBioMedia: 允許更新大頭貼和橫幅
-    pinMax: 置頂貼文的最大數量
-    antennaMax: 可建立的天線數量
-    wordMuteMax: 靜音文字的最大字數
-    webhookMax: 可建立的 Webhook 數量
-    clipMax: 可建立的摘錄數量
-    noteEachClipsMax: 摘錄內貼文的最大數量
-    userListMax: 可建立的使用者清單數量
-    userEachUserListsMax: 使用者清單內使用者的最大數量
-    rateLimitFactor: 速率限制
-    descriptionOfRateLimitFactor: 值越小限制越少，值越大限制越多。
-    canHideAds: 不顯示廣告
-    canSearchNotes: 可否搜尋貼文
-    canUseTranslator: 使用翻譯功能
-    avatarDecorationLimit: 頭像裝飾的最大設置量
-    canImportAntennas: 允許匯入天線
-    canImportBlocking: 允許匯入封鎖名單
-    canImportFollowing: 允許匯入追隨名單
-    canImportMuting: 允許匯入靜音名單
-    canImportUserLists: 允許匯入清單
+    gtlAvailable: "瀏覽全域時間軸"
+    ltlAvailable: "瀏覽本地時間軸"
+    canPublicNote: "允許公開貼文"
+    mentionMax: "貼文內的最大提及數"
+    canInvite: "發行伺服器邀請碼"
+    inviteLimit: "可建立邀請碼的數量"
+    inviteLimitCycle: "邀請碼的發放間隔"
+    inviteExpirationTime: "邀請碼的有效日期"
+    canManageCustomEmojis: "管理自訂表情符號"
+    canManageAvatarDecorations: "管理頭像裝飾"
+    driveCapacity: "雲端硬碟容量"
+    alwaysMarkNsfw: "總是將檔案標記為NSFW"
+    canUpdateBioMedia: "允許更新大頭貼和橫幅"
+    pinMax: "置頂貼文的最大數量"
+    antennaMax: "可建立的天線數量"
+    wordMuteMax: "靜音文字的最大字數"
+    webhookMax: "可建立的 Webhook 數量"
+    clipMax: "可建立的摘錄數量"
+    noteEachClipsMax: "摘錄內貼文的最大數量"
+    userListMax: "可建立的使用者清單數量"
+    userEachUserListsMax: "使用者清單內使用者的最大數量"
+    rateLimitFactor: "速率限制"
+    descriptionOfRateLimitFactor: "值越小限制越少，值越大限制越多。"
+    canHideAds: "不顯示廣告"
+    canSearchNotes: "可否搜尋貼文"
+    canUseTranslator: "使用翻譯功能"
+    avatarDecorationLimit: "頭像可掛上的最大裝飾數量"
+    canImportAntennas: "允許匯入天線"
+    canImportBlocking: "允許匯入封鎖名單"
+    canImportFollowing: "允許匯入追隨名單"
+    canImportMuting: "允許匯入靜音名單"
+    canImportUserLists: "允許匯入清單"
   _condition:
     roleAssignedTo: 手動指派角色完成
     isLocal: 本地使用者
@@ -1990,10 +1973,10 @@ _wordMute:
   muteWordsDescription: 空格代表「以及」（AND），換行代表「或者」（OR）。
   muteWordsDescription2: 用斜線包圍關鍵字代表正規表達式。
 _instanceMute:
-  instanceMuteDescription: 包括對被靜音伺服器上的使用者的回覆，被設定的伺服器上所有貼文及轉發都會被靜音。
-  instanceMuteDescription2: 設定時以換行進行分隔
-  title: 將隱藏被設定的伺服器貼文。
-  heading: 將伺服器靜音
+  instanceMuteDescription: "包括對被靜音伺服器上的使用者的回覆，被設定的伺服器上所有貼文及轉發都會被靜音。"
+  instanceMuteDescription2: "設定時以換行進行分隔"
+  title: "將隱藏被設定的伺服器貼文。"
+  heading: "要靜音的伺服器"
 _theme:
   explore: 探索佈景主題
   install: 安裝佈景主題
@@ -2445,39 +2428,41 @@ _pages:
     dynamicDescription: 這個方塊已經廢止，現在開始請使用 {play}。
     note: 嵌式貼文
     _note:
-      id: 貼文ID
-      idDescription: '您也可以粘貼筆記 URL 並進行設置。 '
-      detailed: 顯示詳細內容
+      id: "貼文ID"
+      idDescription: "您也可以貼上貼文 URL 來進行設定。 "
+      detailed: "顯示詳細內容"
 _relayStatus:
   requesting: 等待核准
   accepted: 已通過核准
   rejected: 已拒絕
 _notification:
-  fileUploaded: 上傳檔案成功。
-  youGotMention: '{name}提及到您'
-  youGotReply: '{name}回覆了您'
-  youGotQuote: '{name}引用了您'
-  youRenoted: '{name} 轉發了你的貼文'
-  youWereFollowed: 您有新的追隨者
-  youReceivedFollowRequest: 您有新的追隨請求
-  yourFollowRequestAccepted: 您的追隨請求已通過
-  pollEnded: 問卷調查已產生結果
-  newNote: 新的貼文
-  unreadAntennaNote: 天線 {name}
-  roleAssigned: 已授予角色
-  emptyPushNotificationMessage: 推送通知已更新
-  achievementEarned: 獲得成就
-  testNotification: 通知測試
-  checkNotificationBehavior: 確認通知的顯示行為
-  sendTestNotification: 發送測試通知
-  notificationWillBeDisplayedLikeThis: 通知會以這樣的方式顯示
-  reactedBySomeUsers: '{n}人做出了反應'
-  likedBySomeUsers: '{n} 人按了讚'
-  renotedBySomeUsers: '{n}人做了轉發'
-  followedBySomeUsers: 被{n}人追隨了
-  flushNotification: 重置通知歷史紀錄
-  exportOfXCompleted: '{x} 的匯出已完成。'
-  login: 已登入
+  fileUploaded: "上傳檔案成功。"
+  youGotMention: "{name}提及到您"
+  youGotReply: "{name}回覆了您"
+  youGotQuote: "{name}引用了您"
+  youRenoted: "{name} 轉發了你的貼文"
+  youWereFollowed: "您有新的追隨者"
+  youReceivedFollowRequest: "您有新的追隨請求"
+  yourFollowRequestAccepted: "您的追隨請求已通過"
+  pollEnded: "問卷調查已產生結果"
+  newNote: "新的貼文"
+  unreadAntennaNote: "天線 {name}"
+  roleAssigned: "已授予角色"
+  emptyPushNotificationMessage: "推送通知已更新"
+  achievementEarned: "獲得成就"
+  testNotification: "通知測試"
+  checkNotificationBehavior: "確認通知的顯示行為"
+  sendTestNotification: "發送測試通知"
+  notificationWillBeDisplayedLikeThis: "通知會以這樣的方式顯示"
+  reactedBySomeUsers: "{n}人做出了反應"
+  likedBySomeUsers: "{n} 人按了讚"
+  renotedBySomeUsers: "{n}人做了轉發"
+  followedBySomeUsers: "被{n}人追隨了"
+  flushNotification: "重置通知歷史紀錄"
+  exportOfXCompleted: "{x} 的匯出已完成。"
+  login: "已登入"
+  createToken: "已產生存取權杖"
+  createTokenDescription: "如果您不知道，請透過「{text}」刪除存取權杖。"
   _types:
     all: '全部 '
     note: 使用者的最新貼文
@@ -2694,9 +2679,9 @@ _dataSaver:
     title: 程式碼突出顯示
     description: 如果使用了程式碼突顯語法（如 MFM），則在點擊之前不會被載入。由於需要為對應的程式語言下載突顯定義檔案，因此關閉自動載入有助於減少資料流量。
 _hemisphere:
-  'N': 北半球
-  S: 南半球
-  caption: 在某些客戶端的設定中，用於判斷季節。
+  N: "北半球"
+  S: "南半球"
+  caption: "某些客戶端的設定會用此來判斷季節。"
 _reversi:
   reversi: 黑白棋
   gameSettings: 對弈設定
@@ -2866,8 +2851,8 @@ _remoteLookupErrors:
     title: 請求失敗
     description: 與此伺服器的通訊失敗。可能是對方伺服器斷線。 此外，請檢查是否輸入了不正確或不存在的 URI。
   _responseInvalid:
-    title: 回應不正確
-    description: 雖然能夠與這個伺服器通訊，但是取得的資料不正確。
+    title: "回應不正確"
+    description: "雖然能夠與這個伺服器通訊，但是取得的資料不正確。"
   _responseInvalidIdHostNotMatch:
     description: 輸入的 URI 的網域與最終取得的 URI 的網域不同。 如果您是透過第三方伺服器查詢遠端內容，請使用可在原始伺服器上取得的 URI 再次查詢。
   _noSuchObject:
@@ -2910,3 +2895,19 @@ _flash:
   contentHidden: 隱藏 Flash 內容
   poweredByRuffle: 由 Ruffle 提供技術支援
   arbitraryCodeExecutionWarning: 謹防惡意程式碼執行！
+_bootErrors:
+  title: "載入失敗"
+  serverError: "如果稍等片刻並重新載入後問題仍然存在，請聯絡您的伺服器管理員並提供以下的錯誤 ID。"
+  solution: "執行以下操作或許可以解決問題。"
+  solution1: "將瀏覽器和作業系統更新至最新版本"
+  solution2: "停用廣告攔截器"
+  solution3: "清除瀏覽器的快取"
+  solution4: "（Tor 瀏覽器）將 dom.webaudio.enabled 設為 true"
+  otherOption: "其他選項"
+  otherOption1: "刪除用戶端設定和快取"
+  otherOption2: "啟動簡易用戶端"
+  otherOption3: "啟動修復工具"
+_search:
+  searchScopeAll: "全部"
+  searchScopeLocal: "本地"
+  searchScopeUser: "指定使用者"

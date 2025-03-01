@@ -1,3 +1,4 @@
+---
 _lang_: English
 headlineMisskey: A network connected by notes
 introMisskey: |-
@@ -2471,31 +2472,33 @@ _relayStatus:
   accepted: Accepted
   rejected: Rejected
 _notification:
-  fileUploaded: File successfully uploaded
-  youGotMention: '{name} mentioned you'
-  youGotReply: '{name} replied to you'
-  youGotQuote: '{name} quoted you'
-  youRenoted: Renote from {name}
-  youWereFollowed: followed you
-  youReceivedFollowRequest: You've received a follow request
-  yourFollowRequestAccepted: Your follow request was accepted
-  pollEnded: Poll results have become available
-  newNote: New note
-  unreadAntennaNote: Antenna {name}
-  roleAssigned: Role given
-  emptyPushNotificationMessage: Push notifications have been updated
-  achievementEarned: Achievement unlocked
-  testNotification: Test notification
-  checkNotificationBehavior: Check notification appearance
-  sendTestNotification: Send test notification
-  notificationWillBeDisplayedLikeThis: Notifications look like this
-  reactedBySomeUsers: '{n} users reacted'
-  likedBySomeUsers: '{n} users liked your note'
-  renotedBySomeUsers: Renote from {n} users
-  followedBySomeUsers: Followed by {n} users
-  flushNotification: Clear notifications
-  exportOfXCompleted: Export of {x} has been completed
-  login: Someone logged in
+  fileUploaded: "File successfully uploaded"
+  youGotMention: "{name} mentioned you"
+  youGotReply: "{name} replied to you"
+  youGotQuote: "{name} quoted you"
+  youRenoted: "Renote from {name}"
+  youWereFollowed: "followed you"
+  youReceivedFollowRequest: "You've received a follow request"
+  yourFollowRequestAccepted: "Your follow request was accepted"
+  pollEnded: "Poll results have become available"
+  newNote: "New note"
+  unreadAntennaNote: "Antenna {name}"
+  roleAssigned: "Role given"
+  emptyPushNotificationMessage: "Push notifications have been updated"
+  achievementEarned: "Achievement unlocked"
+  testNotification: "Test notification"
+  checkNotificationBehavior: "Check notification appearance"
+  sendTestNotification: "Send test notification"
+  notificationWillBeDisplayedLikeThis: "Notifications look like this"
+  reactedBySomeUsers: "{n} users reacted"
+  likedBySomeUsers: "{n} users liked your note"
+  renotedBySomeUsers: "Renote from {n} users"
+  followedBySomeUsers: "Followed by {n} users"
+  flushNotification: "Clear notifications"
+  exportOfXCompleted: "Export of {x} has been completed"
+  login: "Someone logged in"
+  createToken: "An access token has been created"
+  createTokenDescription: "If you have no idea, delete the access token through \"{text}\"."
   _types:
     all: All
     note: New notes
@@ -2883,8 +2886,8 @@ _remoteLookupErrors:
     title: Request failed
     description: Communication with this server failed. The server may be down. Also, please make sure that you have not entered an invalid or nonexistent URI.
   _responseInvalid:
-    title: Response is invalid
-    description: It could communicate with this server, but the data obtained was incorrect.
+    title: "Response is invalid"
+    description: "It could communicate with this server, but the data obtained was incorrect."
   _responseInvalidIdHostNotMatch:
     description: The domain of the entered URI differs from the domain of the final obtained URI. If you are looking up remote content through a third-party server, please look up again using a URI that can be obtained from the origin server.
   _noSuchObject:
@@ -2924,14 +2927,18 @@ registerApprovalEmailRecommended: It is strongly recommended that an email addre
 confirmOnReact: Check when reacting
 reactAreYouSure: '"Would you like to react to {emoji} "?'
 _bootErrors:
-  title: Failed to load.
-  serverError: If after waiting a few moments and reloading, the problem still persists, please contact the server administrator with the following Error ID
-  solution: The following may solve the problem
-  solution1: Update your browser and OS to the latest version
-  solution2: Disable Adblocker
-  solution3: Clear the browser cache
-  solution4: (Tor Browser) Set dom.webaudio.enabled to true
-  otherOption: Other Options
-  otherOption1: Delete client settings and cache
-  otherOption2: Start Simple Client
-  otherOption3: Launch the repair tool
+  title: "Failed to load"
+  serverError: "If the problem persists after waiting a moment and reloading, please contact the server administrator with the following Error ID."
+  solution: "The following may solve the problem."
+  solution1: "Update your browser and OS to the latest version"
+  solution2: "Disable ad blocker"
+  solution3: "Clear the browser cache"
+  solution4: "Set the dom.webaudio.enabled to true for Tor Browser"
+  otherOption: "Other options"
+  otherOption1: "Delete client settings and cache"
+  otherOption2: "Start the simple client"
+  otherOption3: "Launch the repair tool"
+_search:
+  searchScopeAll: "All"
+  searchScopeLocal: "Local"
+  searchScopeUser: "Specific user"

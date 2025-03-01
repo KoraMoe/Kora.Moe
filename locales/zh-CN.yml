@@ -1,3 +1,4 @@
+---
 _lang_: 中文(简体)
 headlineMisskey: 通过帖子连接在一起的网络
 introMisskey: |-
@@ -2465,31 +2466,33 @@ _relayStatus:
   accepted: 已批准
   rejected: 已拒绝
 _notification:
-  fileUploaded: 文件已上传
-  youGotMention: 来自{name}的提及
-  youGotReply: 来自{name}的回复
-  youGotQuote: 来自{name}的引用
-  youRenoted: 来自{name}的转发
-  youWereFollowed: 关注了你。
-  youReceivedFollowRequest: 您有新的关注请求
-  yourFollowRequestAccepted: 您的关注请求已通过
-  pollEnded: 问卷调查结果已生成。
-  newNote: 新的帖子
-  unreadAntennaNote: 天线 {name}
-  roleAssigned: 授予的角色
-  emptyPushNotificationMessage: 推送通知已更新
-  achievementEarned: 获得成就
-  testNotification: 测试通知
-  checkNotificationBehavior: 检查通知显示
-  sendTestNotification: 发送测试通知
-  notificationWillBeDisplayedLikeThis: 通知将会这样表示
-  reactedBySomeUsers: '{n} 人回应了'
-  likedBySomeUsers: '{n}人赞了你的帖子'
-  renotedBySomeUsers: '{n} 人转发了'
-  followedBySomeUsers: 被 {n} 人关注
-  flushNotification: 重置通知历史
-  exportOfXCompleted: 已完成 {x} 的导出
-  login: 有新的登录
+  fileUploaded: "文件已上传"
+  youGotMention: "来自{name}的提及"
+  youGotReply: "来自{name}的回复"
+  youGotQuote: "来自{name}的引用"
+  youRenoted: "来自{name}的转发"
+  youWereFollowed: "关注了你。"
+  youReceivedFollowRequest: "您有新的关注请求"
+  yourFollowRequestAccepted: "您的关注请求已通过"
+  pollEnded: "问卷调查结果已生成。"
+  newNote: "新的帖子"
+  unreadAntennaNote: "天线 {name}"
+  roleAssigned: "授予的角色"
+  emptyPushNotificationMessage: "推送通知已更新"
+  achievementEarned: "获得成就"
+  testNotification: "测试通知"
+  checkNotificationBehavior: "检查通知显示"
+  sendTestNotification: "发送测试通知"
+  notificationWillBeDisplayedLikeThis: "通知将会这样表示"
+  reactedBySomeUsers: "{n} 人回应了"
+  likedBySomeUsers: "{n}人赞了你的帖子"
+  renotedBySomeUsers: "{n} 人转发了"
+  followedBySomeUsers: "被 {n} 人关注"
+  flushNotification: "重置通知历史"
+  exportOfXCompleted: "已完成 {x} 的导出"
+  login: "有新的登录"
+  createToken: "访问令牌已创建"
+  createTokenDescription: "如果不明白其用途，请遵循「{text}」的指示删除访问令牌。"
   _types:
     all: 全部
     note: 用户的新帖子
@@ -2832,17 +2835,17 @@ _customEmojisManager:
         若不保存就离开此页，此页面上所有的更改都将丢失。
       dialogSelectRoleTitle: 按角色搜索表情符号
     _register:
-      uploadSettingTitle: 上传设置
-      uploadSettingDescription: 可以在此页面设置上传表情符号时的行为。
-      directoryToCategoryLabel: 目录名请输入「category」
-      directoryToCategoryCaption: 拖放目录时，目录名请输入「category」
-      emojiInputAreaCaption: 请使用其中一种方法选择要注册的表情符号。
-      emojiInputAreaList1: 在此区域内拖放图像文件或者目录
-      emojiInputAreaList2: 单击此链接以从电脑中选择
-      emojiInputAreaList3: 单击此链接以从网盘中选择
-      confirmRegisterEmojisDescription: 要将列表内显示的表情符号替换为新的自定义表情符号吗？（为降低服务器负载，一次操作最多只能注册 {count} 个表情符号）
-      confirmClearEmojisDescription: 要放弃编辑并将列表内表示的表情符号清空吗？
-      confirmUploadEmojisDescription: 要将拖放的 {count} 个文件上传到网盘上吗？
+      uploadSettingTitle: "上传设置"
+      uploadSettingDescription: "可以在此页面设置上传表情符号时的行为。"
+      directoryToCategoryLabel: "将目录名设为「category」"
+      directoryToCategoryCaption: "拖放目录时，将目录名设置为「category」"
+      emojiInputAreaCaption: "请使用其中一种方法选择要注册的表情符号。"
+      emojiInputAreaList1: "在此区域内拖放图像文件或者目录"
+      emojiInputAreaList2: "单击此链接以从电脑中选择"
+      emojiInputAreaList3: "单击此链接以从网盘中选择"
+      confirmRegisterEmojisDescription: "要将列表内显示的表情符号替换为新的自定义表情符号吗？（为降低服务器负载，一次操作最多只能注册 {count} 个表情符号）"
+      confirmClearEmojisDescription: "要放弃编辑并将列表内表示的表情符号清空吗？"
+      confirmUploadEmojisDescription: "要将拖放的 {count} 个文件上传到网盘上吗？"
 _embedCodeGen:
   title: 自定义嵌入代码
   header: 显示标题
@@ -2929,14 +2932,18 @@ _flash:
   loadingFlashFile: 加载 Flash 文件。
   cspError: 无法访问 raw.esm.sh。此服务器的内容安全策略 (CSP) 可能已过时，请联系服务器管理员。
 _bootErrors:
-  title: 加载失败。
-  serverError: 如果稍等片刻并重新加载后问题仍未解决，请联系服务器管理员并提供以下错误 ID。
-  solution: 以下方法可以解决问题。
-  solution1: 将浏览器和操作系统更新到最新版本。
-  solution2: 禁用广告拦截器
-  solution3: 清除浏览器缓存。
-  solution4: (Tor 浏览器）将 dom.webaudio.enabled 设为 true
-  otherOption: 其他选择
-  otherOption1: 删除客户端设置和缓存
-  otherOption2: 启动简单的客户端
-  otherOption3: 启动修复工具。
+  title: "加载失败"
+  serverError: "请稍等片刻再重试。若问题仍无法解决，请将以下 Error ID 一起发送给管理员。"
+  solution: "以下方法或许可以解决问题："
+  solution1: "将浏览器及操作系统更新到最新版本"
+  solution2: "禁用广告屏蔽插件"
+  solution3: "清除浏览器缓存"
+  solution4: "（Tor Browser）将 dom.webaudio.enabled 设定为 true"
+  otherOption: "其它选项"
+  otherOption1: "清除客户端设定与缓存"
+  otherOption2: "使用简易客户端"
+  otherOption3: "启动修复工具"
+_search:
+  searchScopeAll: "全部"
+  searchScopeLocal: "本地"
+  searchScopeUser: "用户指定"
