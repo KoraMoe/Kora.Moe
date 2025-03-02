@@ -2515,8 +2515,6 @@ _notification:
     followBack: 回关
     reply: 回复
     renote: 转发
-  createToken: 已创建访问令牌。
-  createTokenDescription: 如果不知道，请通过"{text}"删除访问令牌。
 _deck:
   alwaysShowMainColumn: 总是显示主列
   columnAlign: 列对齐

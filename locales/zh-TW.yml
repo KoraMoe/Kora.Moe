@@ -2485,8 +2485,6 @@ _notification:
     followBack: 追隨回去
     reply: 回覆
     renote: 轉發
-  createToken: 已建立存取權限。
-  createTokenDescription: 如果您不知道，請透過「{text}」刪除存取標記。
 _deck:
   alwaysShowMainColumn: 總是顯示主欄
   columnAlign: 對齊欄位
