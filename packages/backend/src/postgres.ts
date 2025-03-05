@@ -82,6 +82,7 @@ import { MiReversiGame } from '@/models/ReversiGame.js';
 import { Config } from '@/config.js';
 import MisskeyLogger from '@/logger.js';
 import { bindThis } from '@/decorators.js';
+import { MiSystemAccount } from './models/SystemAccount.js';
 import { MiNoteDraft } from './models/NoteDraft.js';
 import { MiNoteHistory } from './models/NoteHistory.js';
 
@@ -210,6 +211,7 @@ export const entities = [
 	MiEmoji,
 	MiHashtag,
 	MiSwSubscription,
+	MiSystemAccount,
 	MiAbuseUserReport,
 	MiAbuseReportNotificationRecipient,
 	MiRegistrationTicket,

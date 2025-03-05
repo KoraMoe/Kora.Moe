@@ -153,6 +153,7 @@ const props = withDefaults(defineProps<PostFormProps & {
 	autofocus: true,
 	mock: false,
 	initialLocalOnly: undefined,
+	deleteInitialNoteAfterPost: false,
 });
 
 provide('mock', props.mock);
@@ -873,7 +874,7 @@ async function post(ev?: MouseEvent) {
 	if (ev) {
 		const el = (ev.currentTarget ?? ev.target) as HTMLElement | null;
 
-		if (el) {
+		if (el && defaultStore.state.animation) {
 			const rect = el.getBoundingClientRect();
 			const x = rect.left + (el.offsetWidth / 2);
 			const y = rect.top + (el.offsetHeight / 2);
@@ -967,6 +968,12 @@ async function post(ev?: MouseEvent) {
 			clear();
 		}
 		nextTick(() => {
+			// 削除して編集の対象ノートを削除
+			if (props.initialNote && props.deleteInitialNoteAfterPost) {
+				misskeyApi('notes/delete', {
+					noteId: props.initialNote.id,
+				});
+			}
 			deleteDraft();
 			emit('posted');
 			if (postData.text && postData.text !== '') {
@@ -1017,6 +1024,11 @@ async function post(ev?: MouseEvent) {
 			}
 			if (m === 0 && s === 0) {
 				claimAchievement('postedAt0min0sec');
+			}
+			if (props.initialNote && props.deleteInitialNoteAfterPost) {
+				if (date.getTime() - new Date(props.initialNote.createdAt).getTime() < 1000 * 60 && props.initialNote.userId === $i.id) {
+					claimAchievement('noteDeletedWithin1min');
+				}
 			}
 		});
 	}).catch(err => {
@@ -1214,6 +1226,8 @@ defineExpose({
 	&.modal {
 		width: 100%;
 		max-width: 520px;
+		overflow-x: clip;
+		overflow-y: auto;
 	}
 }
 
