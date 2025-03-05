@@ -20,7 +20,6 @@ import { bindThis } from '@/decorators.js';
 import UsersChart from '@/core/chart/charts/users.js';
 import { UtilityService } from '@/core/UtilityService.js';
 import { UserService } from '@/core/UserService.js';
-import { SystemAccountService } from '@/core/SystemAccountService.js';
 import { MetaService } from '@/core/MetaService.js';
 
 @Injectable()
@@ -42,8 +41,6 @@ export class SignupService {
 		private userService: UserService,
 		private userEntityService: UserEntityService,
 		private idService: IdService,
-		private systemAccountService: SystemAccountService,
-		private metaService: MetaService,
 		private usersChart: UsersChart,
 		private metaService: MetaService,
 	) {
@@ -135,7 +132,6 @@ export class SignupService {
 				usernameLower: username.toLowerCase(),
 				host: this.utilityService.toPunyNullable(host),
 				token: secret,
-				isRoot: isTheFirstUser,
 				approved: defaultApproval,
 				signupReason: reason,
 			}));
