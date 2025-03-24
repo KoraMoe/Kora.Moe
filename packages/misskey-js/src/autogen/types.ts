@@ -10275,6 +10275,7 @@ export type operations = {
                 expiresAt: string | null;
                 roleId: string;
               })[];
+						signupReason: string | null;
           };
         };
       };

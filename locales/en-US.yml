@@ -1396,18 +1396,6 @@ _flash:
   loadingRufflePlayer: Loading Ruffle player
   loadingFlashFile: Loading Flash file
   cspError: raw.esm.sh could not be accessed, meaning this instance's Content Security Policy is likely out of date. Please contact your instance administrators.
-_accountSettings:
-  requireSigninToViewContents: Require sign-in to view contents
-  requireSigninToViewContentsDescription1: Require login to view all notes and other content you have created. This will have the effect of preventing crawlers from collecting your information.
-  requireSigninToViewContentsDescription2: Content will not be displayed in URL previews (OGP), embedded in web pages, or on servers that don't support note quotes.
-  requireSigninToViewContentsDescription3: These restrictions may not apply to federated content from other remote servers.
-  makeNotesFollowersOnlyBefore: Make past notes to be displayed only to followers
-  makeNotesFollowersOnlyBeforeDescription: While this feature is enabled, only followers can see notes past the set date and time or have been visible for a set time. When it is deactivated, the note publication status will also be restored.
-  makeNotesHiddenBefore: Make past notes private
-  makeNotesHiddenBeforeDescription: While this feature is enabled, notes that are past the set date and time or have been visible only to you. When it is deactivated, the note publication status will also be restored.
-  mayNotEffectForFederatedNotes: Notes federated to a remote server may not be affected.
-  notesHavePassedSpecifiedPeriod: Note that the specified time has passed
-  notesOlderThanSpecifiedDateAndTime: Notes before the specified date and time
 _abuseUserReport:
   forward: Forward
   forwardDescription: Forward the report to a remote server as an anonymous system account.
@@ -2985,8 +2973,6 @@ approvalRequiredToRegister: Currently this server is approval only. You can only
 registerReason: Reason for registration
 registerHasNotBeenApprovedYet: Your registration to the server has not yet been approved. Please try again in a while. If you entered your e-mail address during registration, you will be notified by e-mail when your registration has been approved.
 registerApprovalEmailRecommended: It is strongly recommended that an email address be required for account registration, as well as for notification of whether or not the registration to the server has been approved.
-confirmOnReact: Check when reacting
-reactAreYouSure: '"Would you like to react to {emoji} "?'
 _bootErrors:
   title: "Failed to load"
   serverError: "If the problem persists after waiting a moment and reloading, please contact the server administrator with the following Error ID."

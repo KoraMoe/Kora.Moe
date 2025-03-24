@@ -42,8 +42,6 @@ import XFlashPlayer from '@/components/SKFlashPlayer.vue';
 import * as os from '@/os.js';
 import { focusParent } from '@/utility/focus.js';
 import { prefer } from '@/preferences.js';
-import { defaultStore } from '@/store.js';
-import { focusParent } from '@/scripts/focus.js';
 
 const props = defineProps<{
 	mediaList: Misskey.entities.DriveFile[];

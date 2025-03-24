@@ -2975,8 +2975,6 @@ approvalRequiredToRegister: 目前该服务器启用了注册审批，您只有�
 registerReason: 注册原因
 registerHasNotBeenApprovedYet: 您在服务器上的注册尚未通过审核。请稍后再试。如果您在注册时提供了电子邮件地址，您将在注册通过后收到一封电子邮件。
 registerApprovalEmailRecommended: 强烈建议在注册账户时也提供电子邮件地址，以便在服务器注册通过后收到通知。
-confirmOnReact: 反应需要确认
-reactAreYouSure: '"您想对 {emoji} 作出回应吗？'
 _flash:
   contentHidden: 隐藏 Flash 内容
   poweredByRuffle: 由 Ruffle 提供技术支持。

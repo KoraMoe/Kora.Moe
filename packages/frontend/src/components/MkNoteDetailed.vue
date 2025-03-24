@@ -196,7 +196,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 		<div v-else-if="tab === 'histories'">
 			<MkPagination :pagination="historiesPagination" :disableAutoLoad="true">
 				<template #default="{ items }">
-					<MkNoteHistory v-for="item in items" :updatedAt="new Date(item.createdAt)" :text="item.text" :cw="item.cw" :files="item.files" :poll="item.poll" :user="appearNote.user"/>
+					<MkNoteHistory v-for="item in items" :key="item.id" :updatedAt="new Date(item.createdAt)" :text="item.text" :cw="item.cw" :files="item.files" :poll="item.poll" :user="appearNote.user"/>
 				</template>
 			</MkPagination>
 		</div>

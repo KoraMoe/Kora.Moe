@@ -5710,6 +5710,7 @@ export interface Locale extends ILocale {
          * 設定のバックアップが見つかりました
          */
         "backupFound": string;
+    };
     "_flash": {
         /**
          * Flashコンテンツ非表示

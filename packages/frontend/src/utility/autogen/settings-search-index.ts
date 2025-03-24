@@ -512,22 +512,22 @@ export const searchIndexes: SearchIndexItem[] = [
 						keywords: ['server', 'disconnect', 'reconnect', 'reload', 'streaming'],
 					},
 					{
-						id: 'dlQjnWBVU',
+						id: 'EosiWZvak',
 						label: i18n.ts.numberOfPageCache,
 						keywords: ['cache', 'page'],
 					},
 					{
-						id: 'qY5xTzl35',
+						id: '4p84ZkZvO',
 						label: i18n.ts.forceShowAds,
 						keywords: ['ad', 'show'],
 					},
 					{
-						id: '2VSnj81vC',
+						id: '41Bh3hB5e',
 						label: i18n.ts.hemisphere,
 						keywords: [],
 					},
 					{
-						id: 'vuG3aG3IE',
+						id: 'xNsLokqeA',
 						label: i18n.ts.additionalEmojiDictionary,
 						keywords: ['emoji', 'dictionary', 'additional', 'extra'],
 					},

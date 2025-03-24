@@ -122,9 +122,9 @@ import { extractMentions } from '@/utility/extract-mentions.js';
 import { formatTimeString } from '@/utility/format-time-string.js';
 import { Autocomplete } from '@/utility/autocomplete.js';
 import * as os from '@/os.js';
-import { misskeyApi, misskeyApiGet } from '@/scripts/misskey-api.js';
-import { selectFiles } from '@/scripts/select-file.js';
-import { store, notePostInterruptors, postFormActions } from '@/store.js';
+import { misskeyApi, misskeyApiGet } from '@/utility/misskey-api.js';
+import { selectFiles } from '@/utility/select-file.js';
+import { store } from '@/store.js';
 import MkInfo from '@/components/MkInfo.vue';
 import { i18n } from '@/i18n.js';
 import { instance } from '@/instance.js';
@@ -488,7 +488,7 @@ function setVisibility() {
 		currentVisibility: visibility.value,
 		isSilenced: $i.isSilenced,
 		localOnly: localOnly.value,
-		src: visibilityButton.value,
+		src: visibilityButton.value ?? undefined,
 		...(props.reply ? { isReplyVisibilitySpecified: props.reply.visibility === 'specified' } : {}),
 	}, {
 		changeVisibility: v => {
@@ -1002,7 +1002,7 @@ async function post(ev?: MouseEvent) {
 
 	if (postAccount.value) {
 		const storedAccounts = await getAccounts();
-		token = storedAccounts.find(x => x.user.id === postAccount.value?.id)?.token;
+		token = storedAccounts.find(x => x.user.id === postAccount.value?.id)?.token ?? undefined;
 	}
 
 	posting.value = true;
@@ -1151,7 +1151,7 @@ function openAccountMenu(ev: MouseEvent) {
 			if (account.id === $i.id) {
 				postAccount.value = null;
 			} else {
-				postAccount.value = account;
+				postAccount.value = account as Misskey.entities.UserDetailed;
 			}
 		},
 	}, ev);

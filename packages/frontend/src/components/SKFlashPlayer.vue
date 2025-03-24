@@ -66,7 +66,7 @@ import type { PlayerElement } from '@/types/ruffle/player';
 import MkEllipsis from '@/components/global/MkEllipsis.vue';
 import MkLoading from '@/components/global/MkLoading.vue';
 import { i18n } from '@/i18n.js';
-import { defaultStore } from '@/store.js';
+import { store } from '@/store.js';
 
 const props = defineProps<{
 	flashFile: Misskey.entities.DriveFile
@@ -75,7 +75,7 @@ const props = defineProps<{
 const isSensitive = props.flashFile.isSensitive;
 const url = props.flashFile.url;
 const comment = props.flashFile.comment ?? '';
-let hide = ref((defaultStore.state.nsfw === 'force') || isSensitive && (defaultStore.state.nsfw !== 'ignore'));
+let hide = ref((store.s.nsfw === 'force') || isSensitive && (store.s.nsfw !== 'ignore'));
 let playerHide = ref(true);
 let ruffleContainer = ref<HTMLDivElement>();
 let playPauseButtonKey = ref<number>(0);
@@ -179,6 +179,7 @@ async function loadContent() {
 		loadingStatus.value = undefined;
 	} catch (error) {
 		try {
+			// eslint-disable-next-line no-restricted-globals
 			await fetch('https://raw.esm.sh/', {
 				mode: 'cors',
 			});
