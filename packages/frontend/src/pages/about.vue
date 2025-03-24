@@ -4,7 +4,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 -->
 
 <template>
-<MkStickyContainer>
+<PageWithHeader v-model:tab="tab" :actions="headerActions" :tabs="headerTabs">
 	<MkHorizontalSwipe v-model:tab="tab" :tabs="headerTabs">
 		<MkSpacer v-if="tab === 'overview'" :contentMax="600" :marginMin="20">
 			<XOverview/>
@@ -16,15 +16,15 @@ SPDX-License-Identifier: AGPL-3.0-only
 			<MkInstanceStats/>
 		</MkSpacer>
 	</MkHorizontalSwipe>
-</MkStickyContainer>
+</PageWithHeader>
 </template>
 
 <script lang="ts" setup>
 import { computed, defineAsyncComponent, ref, watch } from 'vue';
 import { instance } from '@/instance.js';
 import { i18n } from '@/i18n.js';
-import { claimAchievement } from '@/scripts/achievements.js';
-import { definePageMetadata } from '@/scripts/page-metadata.js';
+import { claimAchievement } from '@/utility/achievements.js';
+import { definePage } from '@/page.js';
 import MkHorizontalSwipe from '@/components/MkHorizontalSwipe.vue';
 
 const XOverview = defineAsyncComponent(() => import('@/pages/about.overview.vue'));
@@ -60,7 +60,7 @@ const headerTabs = computed(() => [{
 	icon: 'ti ti-chart-line',
 }]);
 
-definePageMetadata(() => ({
+definePage(() => ({
 	title: i18n.ts.instanceInfo,
 	icon: 'ti ti-info-circle',
 }));

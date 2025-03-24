@@ -1,1335 +1,1391 @@
 ---
-_lang_: 中文(简体)
-headlineMisskey: 通过帖子连接在一起的网络
-introMisskey: |-
-  欢迎！Misskey是一个开源的、去中心化的“微博客”服务。
-  通过编写「帖文」来和大家分享你的以及你周围的事情吧！📡
-  通过「回应」功能，可以让你快速地对大家的帖文表达反馈👍
-  来探索新的世界吧！🚀
-poweredByMisskeyDescription: '{name} 是开源平台 <b>Misskey</b> 的服务器之一。'
-monthAndDay: '{month}月 {day}日'
-search: 搜索
-reset: 重置
-notifications: 通知
-username: 用户名
-password: 密码
-initialPasswordForSetup: 初始化密码
-initialPasswordIsIncorrect: 初始化密码不正确
-initialPasswordForSetupDescription: |-
-  如果是自己安装的 Misskey，请输入配置文件里设好的密码。
-  如果使用的是 Misskey 的托管服务等，请输入服务商提供的密码。
-  如果没有设置密码，请留空并继续。
-forgotPassword: 忘记密码
-fetchingAsApObject: 在联邦宇宙查询中...
-ok: OK
-gotIt: 好
-cancel: 取消
-noThankYou: 不用，谢谢
-enterUsername: 输入用户名
-renotedBy: '{user} 转发了'
-noNotes: 没有帖文
-noNotifications: 无通知
-instance: 服务器
-settings: 设置
-notificationSettings: 通知设置
-basicSettings: 基本设置
-otherSettings: 其他设置
-openInWindow: 在新窗口中打开
-profile: 个人资料
-timeline: 时间线
-noAccountDescription: 此用户尚无自我介绍
-login: 登录
-loggingIn: 正在登录...
-logout: 登出
-signup: 新用户注册
-uploading: 正在上传
-save: 保存
-users: 用户
-addUser: 添加用户
-favorite: 收藏
-favorites: 收藏
-unfavorite: 取消收藏
-favorited: 已加入收藏夹。
-alreadyFavorited: 收藏夹中已存在。
-cantFavorite: 无法添加到收藏夹。
-pin: 置顶
-unpin: 取消置顶
-copyContent: 复制内容
-copyLink: 复制链接
-copyRemoteLink: 复制远程链接
-copyLinkRenote: 复制转帖链接
-delete: 删除
-deleteAndEdit: 删除并编辑
-deleteAndEditConfirm: 要删除此帖并再次编辑吗？对此帖的所有回应、转发和回复也将被删除。
-addToList: 添加至列表
-addToAntenna: 添加到天线
-sendMessage: 发送
-copyRSS: 复制RSS
-copyUsername: 复制用户名
-copyUserId: 复制用户 ID
-copyNoteId: 复制帖子 ID
-copyFileId: 复制文件ID
-copyFolderId: 复制文件夹ID
-copyProfileUrl: 复制个人资料URL
-searchUser: 搜索用户
-searchThisUsersNotes: 搜索用户帖子
-reply: 回复
-loadMore: 查看更多
-showMore: 查看更多
-showLess: 关闭
-youGotNewFollower: 你有新的关注者
-receiveFollowRequest: 您收到了关注请求
-followRequestAccepted: 您的关注请求被通过了
-mention: 提及
-mentions: 提到我的
-directNotes: 私信
-importAndExport: 导入和导出
-import: 导入
-export: 导出
-files: 文件
-download: 下载
-driveFileDeleteConfirm: 要删除「{name}」文件吗？附加此文件的帖子也会被删除。
-unfollowConfirm: 要取消对 {name} 的关注吗？
-exportRequested: 导出请求已提交，这可能需要花一些时间，导出的文件将保存到网盘中。
-importRequested: 导入请求已提交，这可能需要花一点时间。
-lists: 列表
-noLists: 列表为空
-note: 帖子
-notes: 帖子
-following: 关注中
-followers: 关注者
-followsYou: 正在关注你
-createList: 创建列表
-manageLists: 管理列表
-error: 错误
-somethingHappened: 出错了
-retry: 重试
-pageLoadError: 页面加载失败。
-pageLoadErrorDescription: 这通常是由于网络或浏览器缓存的原因。请清除缓存或等待片刻后重试。
-serverIsDead: 没有服务器响应。 请稍后再试。
-youShouldUpgradeClient: 请重新加载并使用新版本的客户端查看此页面。
-enterListName: 输入列表名称
-privacy: 隐私
-makeFollowManuallyApprove: 关注请求需要批准
-defaultNoteVisibility: 默认可见性
-follow: 关注
-followRequest: 关注申请
-followRequests: 关注申请
-unfollow: 取消关注
-followRequestPending: 关注请求待批准
-enterEmoji: 输入表情符号
-renote: 转发
-unrenote: 取消转发
-renoted: 已转发。
-renotedToX: 转帖给 {name}
-cantRenote: 该帖无法转发。
-cantReRenote: 转发无法被再次转发。
-quote: 引用
-inChannelRenote: 在频道内转发
-inChannelQuote: 在频道内引用
-renoteToChannel: 转帖至频道
-renoteToOtherChannel: 转帖至其它频道
-pinnedNote: 已置顶的帖子
-pinned: 置顶
-you: 您
-clickToShow: 点击以显示
-sensitive: 敏感内容
-add: 添加
-reaction: 回应
-reactions: 回应
-emojiPicker: 表情符号选择器
-pinnedEmojisForReactionSettingDescription: 可以设置发表回应时置顶显示的表情符号
-pinnedEmojisSettingDescription: 可以设置输入表情符号时置顶显示的表情符号
-emojiPickerDisplay: 选择器显示设置
-overwriteFromPinnedEmojisForReaction: 从「置顶（回应）」设置覆盖
-overwriteFromPinnedEmojis: 从全局设置覆盖
-reactionSettingDescription2: 拖动重新排序，单击删除，点击 + 添加。
-rememberNoteVisibility: 保存上次设置的可见性
-attachCancel: 取消添加附件
-deleteFile: 删除文件
-markAsSensitive: 标记为敏感内容
-unmarkAsSensitive: 取消标记为敏感内容
-enterFileName: 输入文件名
-mute: 屏蔽
-unmute: 取消隐藏
-renoteMute: 隐藏转帖
-renoteUnmute: 解除隐藏转帖
-block: 屏蔽
-unblock: 取消屏蔽
-suspend: 冻结
-unsuspend: 解除冻结
-blockConfirm: 确定要屏蔽吗？
-unblockConfirm: 确定要取消屏蔽吗？
-suspendConfirm: 要冻结吗？
-unsuspendConfirm: 要解除冻结吗？
-selectList: 选择列表
-editList: 编辑列表
-selectChannel: 选择频道
-selectAntenna: 选择天线
-editAntenna: 编辑天线
-createAntenna: 创建天线
-selectWidget: 选择小工具
-editWidgets: 编辑部件
-editWidgetsExit: 完成编辑
-customEmojis: 自定义表情符号
-emoji: 表情符号
-emojis: 表情符号
-emojiName: 表情符号名称
-emojiUrl: emoji 地址
-addEmoji: 添加表情符号
-settingGuide: 推荐配置
-cacheRemoteFiles: 缓存远程文件
-cacheRemoteFilesDescription: 启用此设定时，将在此服务器上缓存远程文件。虽然可以加快图片显示的速度，但是相对的会消耗大量的服务器存储空间。用户角色内的网盘容量决定了这个远程用户能在服务器上保留多少缓存。当超出了这个限制时，旧的文件将从缓存中被删除，成为链接。当禁用此设定时，则是从一开始就将远程文件保留为链接。此时推荐将 default.yml 的 proxyRemoteFiles 设置为 true 以优化缩略图生成及保护用户隐私。
-youCanCleanRemoteFilesCache: 可以使用文件管理的🗑️按钮来删除所有的缓存。
-cacheRemoteSensitiveFiles: 缓存远程敏感媒体文件
-cacheRemoteSensitiveFilesDescription: 如果禁用这项设定，远程服务器的敏感媒体将不会被缓存，而是直接链接。
-flagAsBot: 这是一个机器人账号
-flagAsBotDescription: 如果此账户由程序控制，请启用此项。启用后，此标志可以帮助其他开发人员防止机器人之间产生无限互动的行为，并让 Misskey 的内部系统将此账户识别为机器人。
-flagAsCat: 喵！！！！！！！！！！！！
-flagAsCatDescription: 喵喵喵？？
-flagShowTimelineReplies: 在时间线上显示帖子的回复
-flagShowTimelineRepliesDescription: 启用时，时间线除了显示用户的帖子外，还会显示其他用户对帖子的回复。
-autoAcceptFollowed: 自动允许来自我关注的用户对我的关注请求
-addAccount: 添加账户
-reloadAccountsList: 更新账户列表
-loginFailed: 登录失败
-showOnRemote: 转到所在服务器显示
-continueOnRemote: 转到所在服务器继续
-chooseServerOnMisskeyHub: 从 Misskey Hub 选择服务器
-specifyServerHost: 直接输入服务器域名
-inputHostName: 请输入域名
-general: 常规设置
-wallpaper: 壁纸
-setWallpaper: 设置壁纸
-removeWallpaper: 移除壁纸
-searchWith: 搜索:{q}
-youHaveNoLists: 列表为空
-followConfirm: 确定要关注 {name} 吗？
-proxyAccount: 代理账户
-proxyAccountDescription: 代理账户是在某些情况下替代用户进行远程关注用的账户。 例如说，当用户将一位远程用户放入一个列表中时，如果本地服务器上没有任何人关注这位远程用户，则这位远程用户的账户活动将不会被送到本地服务器上。作为替代，此时将使用代理账户进行关注。
-host: 主机名
-selectSelf: 选择自己
-selectUser: 选择用户
-recipient: 收件人
-annotation: 注解
-federation: 联合
-instances: 服务器
-registeredAt: 初次观测
-latestRequestReceivedAt: 上次收到的请求
-latestStatus: 最后状态
-storageUsage: 已用存储
-charts: 图表
-perHour: 每小时
-perDay: 每天
-stopActivityDelivery: 停止发送活动
-blockThisInstance: 屏蔽此服务器
-silenceThisInstance: 静音此服务器
-mediaSilenceThisInstance: 隐藏此服务器的媒体文件
-operations: 操作
-software: 软件
-version: 版本
-metadata: 元数据
-withNFiles: '{n} 个文件'
-monitor: 服务器状态
-jobQueue: 作业队列
-cpuAndMemory: CPU和内存
-network: 网络
-disk: 存储
-instanceInfo: 服务器信息
-statistics: 统计
-clearQueue: 清除队列
-clearQueueConfirmTitle: 确定要清除队列吗？
-clearQueueConfirmText: 未送达的帖子将不会被投递。 通常无需执行此操作。
-clearCachedFiles: 清除缓存
-clearCachedFilesConfirm: 确定要清除所有缓存的远程文件吗？
-blockedInstances: 被屏蔽的服务器
-blockedInstancesDescription: 设定要屏蔽的服务器，以换行分隔。被屏蔽的服务器将无法与本服务器进行交换通讯。子域名也同样会被屏蔽。
-silencedInstances: 被静音的服务器
-silencedInstancesDescription: 设置要静音的服务器，以换行分隔。被静音的服务器内所有的账户将默认处于「静音」状态，仅能发送关注请求，并且在未关注状态下无法提及本地账户。被阻止的实例不受影响。
-mediaSilencedInstances: 已隐藏媒体文件的服务器
-mediaSilencedInstancesDescription: 设置要隐藏媒体文件的服务器，以换行分隔。被设置为隐藏媒体文件服务器内所有账号的文件均按照「敏感内容」处理，且将无法使用自定义表情符号。被阻止的实例不受影响。
-federationAllowedHosts: 允许联合的服务器
-federationAllowedHostsDescription: 设定允许联合的服务器，以换行分隔。
-muteAndBlock: 隐藏和屏蔽
-mutedUsers: 已隐藏用户
-blockedUsers: 已屏蔽的用户
-noUsers: 无用户
-editProfile: 编辑资料
-noteDeleteConfirm: 确定要删除该帖子吗？
-pinLimitExceeded: 无法置顶更多了
-intro: Misskey 的部署结束啦！创建管理员账号吧！
-done: 完成
-processing: 正在处理
-preview: 预览
-default: 默认
-defaultValueIs: '默认值: {value}'
-noCustomEmojis: 没有自定义表情符号
-noJobs: 没有任务
-federating: 联合中
-blocked: 已屏蔽
-suspended: 停止投递
-all: 全部
-subscribing: 已订阅
-publishing: 投递中
-notResponding: 没有响应
-instanceFollowing: 关注服务器
-instanceFollowers: 关注的服务器
-instanceUsers: 服务器用户
-changePassword: 修改密码
-security: 安全
-retypedNotMatch: 两次输入不一致！
-currentPassword: 现在的密码
-newPassword: 新密码
-newPasswordRetype: 重新输入密码：
-attachFile: 插入附件
-more: 更多！
-featured: 热门
-usernameOrUserId: 用户名或用户 ID
-noSuchUser: 用户不存在
-lookup: 查询
-announcements: 公告
-imageUrl: 图片 URL
-remove: 删除
-removed: 已删除
-removeAreYouSure: 要删掉「{x}」吗？
-deleteAreYouSure: 要删掉「{x}」吗？
-resetAreYouSure: 恢复默认设置？
-areYouSure: 你确定吗？
-saved: 已保存
-messaging: 聊天
-upload: 本地上传
-keepOriginalUploading: 保留原图
-keepOriginalUploadingDescription: 上传图片时保留原始图片。关闭时，浏览器会在上传时生成一张用于web发布的图片。
-fromDrive: 从网盘中
-fromUrl: 从 URL
-uploadFromUrl: 从网址上传
-uploadFromUrlDescription: 输入文件的 URL
-uploadFromUrlRequested: 请求上传
-uploadFromUrlMayTakeTime: 上传可能需要一些时间完成。
-explore: 发现
-messageRead: 已读
-noMoreHistory: 没有更多的历史记录
-startMessaging: 添加聊天
-nUsersRead: '{n} 人已读'
-agreeTo: 勾选则表示已阅读并同意 {0}
-agree: 同意
-agreeBelow: 同意以下内容
-basicNotesBeforeCreateAccount: 基本注意事项
-termsOfService: 服务条款
-start: 开始
-home: 首页
-remoteUserCaution: 由于此用户来自其它服务器，显示的信息可能不完整。
-activity: 活动
-images: 图片
-image: 图片
-birthday: 生日
-yearsOld: '{age}岁'
-registeredDate: 注册于
-location: 位置
-theme: 主题
-themeForLightMode: 在浅色模式下使用的主题
-themeForDarkMode: 在深色模式下使用的主题
-light: 浅色
-dark: 深色
-lightThemes: 浅色主题
-darkThemes: 深色主题
-syncDeviceDarkMode: 将深色模式与设备设置同步
-drive: 网盘
-fileName: 文件名称
-selectFile: 选择文件
-selectFiles: 选择文件
-selectFolder: 选择文件夹
-selectFolders: 选择多个文件夹
-fileNotSelected: 未选择文件
-renameFile: 重命名文件
-folderName: 文件夹名称
-createFolder: 创建文件夹
-renameFolder: 重命名文件夹
-deleteFolder: 删除文件夹
-folder: 文件夹
-addFile: 添加文件
-showFile: 显示文件
-emptyDrive: 网盘中无文件
-emptyFolder: 此文件夹中无文件
-unableToDelete: 无法删除
-inputNewFileName: 请输入新文件名
-inputNewDescription: 请输入新标题
-inputNewFolderName: 请输入新文件夹名
-circularReferenceFolder: 目标文件夹是要移动的文件夹的子文件夹。
-hasChildFilesOrFolders: 此文件夹中有文件，无法删除。
-copyUrl: 复制链接
-rename: 重命名
-avatar: 头像
-banner: 横幅
-displayOfSensitiveMedia: 显示敏感媒体
-whenServerDisconnected: 与服务器连接中断时
-disconnectedFromServer: 已和服务器断开连接
-reload: 重新加载
-doNothing: 关闭
-reloadConfirm: 确定要重新加载吗？
-watch: 关注
-unwatch: 取消关注
-accept: 允许
-reject: 拒绝
-normal: 正常
-instanceName: 服务器名称
-instanceDescription: 服务器简介
-maintainerName: 管理员名称
-maintainerEmail: 管理员电子邮箱
-tosUrl: 服务条款地址
-thisYear: 今年
-thisMonth: 本月
-today: 今天
-dayX: '{day}日'
-monthX: '{month}月'
-yearX: '{year}年'
-pages: 页面
-integration: 关联
-connectService: 连接
-disconnectService: 断开连接
-enableLocalTimeline: 启用本地时间线
-enableGlobalTimeline: 启用全局时间线
-disablingTimelinesInfo: 即使时间线功能被禁用，出于方便，管理员和监察员也可以继续使用。
-registration: 注册
-invite: 邀请
-driveCapacityPerLocalAccount: 每个用户的网盘容量
-driveCapacityPerRemoteAccount: 每个远程用户的网盘容量
-inMb: 以兆字节(MegaByte)为单位
-bannerUrl: 横幅 URL
-backgroundImageUrl: 背景图 URL
-basicInfo: 基本信息
-pinnedUsers: 置顶用户
-pinnedUsersDescription: 输入您想要固定到“发现”页面的用户，一行一个。
-pinnedPages: 固定页面
-pinnedPagesDescription: 输入您要固定到服务器首页的页面路径，一行一个。
-pinnedClipId: 置顶的便签 ID
-pinnedNotes: 已置顶的帖子
-hcaptcha: hCaptcha
-enableHcaptcha: 启用 hCaptcha
-hcaptchaSiteKey: 网站密钥
-hcaptchaSecretKey: hCaptcha 密钥(SecretKey)
-mcaptcha: mCaptcha
-enableMcaptcha: 启用 mCaptcha
-mcaptchaSiteKey: 网站密钥
-mcaptchaSecretKey: mCaptcha 密钥(SecretKey)
-mcaptchaInstanceUrl: mCaptcha 实例地址
-recaptcha: reCAPTCHA
-enableRecaptcha: |-
-  启用 reCAPTCHA
-  (请注意, 此功能在中国大陆不可用. 如果启用, 可能导致无法正常使用登录或注册等功能)
-recaptchaSiteKey: 网站密钥
-recaptchaSecretKey: mCaptcha 密钥(SecretKey)
-turnstile: Turnstile
-enableTurnstile: 启用 Turnstile
-turnstileSiteKey: 网站密钥
-turnstileSecretKey: Turnstile 密钥(SecretKey)
-avoidMultiCaptchaConfirm: 使用多个 Captcha 可能会互相干扰，您要禁用其它 Captcha 吗？您可以按“取消”按钮，继续保持启用多种验证方式。
-antennas: 天线
-manageAntennas: 天线管理
-name: 名称
-antennaSource: 接收来源
-antennaKeywords: 包含关键字
-antennaExcludeKeywords: 排除关键字
-antennaExcludeBots: 排除机器人账户
-antennaKeywordsDescription: AND 条件用空格分隔，OR 条件用换行符分隔。
-notifyAntenna: 开启通知
-withFileAntenna: 仅带有附件的帖子
-enableServiceworker: 启用 ServiceWorker
-antennaUsersDescription: 指定用户名，一行一个
-caseSensitive: 区分大小写
-withReplies: 包括回复
-connectedTo: 您的账号已连到接以下第三方账号
-notesAndReplies: 帖子与回复
-withFiles: 附件
-silence: 禁言
-silenceConfirm: 确认要禁言吗？
-unsilence: 解除禁言
-unsilenceConfirm: 要解除禁言吗？
-popularUsers: 热门用户
-recentlyUpdatedUsers: 最近投稿的用户
-recentlyRegisteredUsers: 最近登录的用户
-recentlyDiscoveredUsers: 最近发现的用户
-exploreUsersCount: 有 {count} 个用户
-exploreFediverse: 探索联邦宇宙
-popularTags: 热门标签
-userList: 列表
-about: 关于
-aboutMisskey: 关于 Misskey
-administrator: 管理员
-token: Token (令牌)
-2fa: 双因素认证
-setupOf2fa: 设置双因素认证
-totp: 验证器
-totpDescription: 使用验证器输入一次性密码
-moderator: 监察员
-moderation: 管理
-moderationNote: 管理笔记
-moderationNoteDescription: 可以用来记录仅在管理员之间共享的笔记。
-addModerationNote: 添加管理笔记
-moderationLogs: 管理日志
-nUsersMentioned: '{n} 被提到'
-securityKeyAndPasskey: 安全密钥或 Passkey
-securityKey: 安全密钥
-lastUsed: 最后使用：
-lastUsedAt: '最后使用: {t}'
-unregister: 删除账户
-passwordLessLogin: 无密码登录
-passwordLessLoginDescription: 不使用密码，仅使用安全密钥或 Passkey 登录
-resetPassword: 重置密码
-newPasswordIs: 新的密码是「{password}」
-reduceUiAnimation: 减少UI动画
-share: 分享
-notFound: 未找到
-notFoundDescription: 没有与指定 URL 对应的页面。
-uploadFolder: 默认上传文件夹
-markAsReadAllNotifications: 将所有通知标为已读
-markAsReadAllUnreadNotes: 将所有帖子标记为已读
-markAsReadAllTalkMessages: 将所有聊天标记为已读
-help: 帮助
-inputMessageHere: 在此键入信息
-close: 关闭
-invites: 邀请
-members: 成员
-transfer: 转让
-title: 标题
-text: 文本
-enable: 启用
-next: 下一个
-retype: 重新输入
-noteOf: '{user} 的帖子'
-quoteAttached: 已引用
-quoteQuestion: 是否引用此链接内容？
-attachAsFileQuestion: 剪贴板内的文字过长。要转换为文本文件并添加吗？
-noMessagesYet: 现在没有新的聊天
-newMessageExists: 新信息
-onlyOneFileCanBeAttached: 只能添加一个附件
-signinRequired: 请先登录
-signinOrContinueOnRemote: 若要继续，需要转到您所使用的实例，或者在此服务器上注册或登录。
-invitations: 邀请
-invitationCode: 邀请码
-checking: 正在确认
-available: 可用
-unavailable: 不可用
-usernameInvalidFormat: 可使用大小写英文字母、数字和下划线。
-tooShort: 过短
-tooLong: 过长
-weakPassword: 密码强度：弱
-normalPassword: 密码强度：中等
-strongPassword: 密码强度：强
-passwordMatched: 密码一致
-passwordNotMatched: 密码不一致
-signinWith: 以{x}登录
-signinFailed: 无法登录，请检查您的用户名和密码是否正确。
-or: 或者
-language: 语言
-uiLanguage: 显示语言
-aboutX: 关于 {x}
-emojiStyle: 表情符号的样式
-native: 原生
-menuStyle: 菜单样式
-style: 样式
-drawer: 抽屉
-popup: 弹窗
-showNoteActionsOnlyHover: 仅在悬停时显示帖子操作
-showReactionsCount: 显示帖子的回应数
-noHistory: 没有历史记录
-signinHistory: 登录历史
-enableAdvancedMfm: 启用扩展 MFM
-enableAnimatedMfm: 启用 MFM 动画
-doing: 正在进行
-category: 类别
-tags: 标签
-docSource: 文件来源
-createAccount: 注册账户
-existingAccount: 现有的账户
-regenerate: 重新生成
-fontSize: 字体大小
-mediaListWithOneImageAppearance: 仅一张图片的媒体列表高度
-limitTo: 上限为 {x}
-noFollowRequests: 没有关注申请
-openImageInNewTab: 在新标签页中打开图片
-dashboard: 管理面板
-local: 本地
-remote: 远程
-total: 总计
-weekOverWeekChanges: 与前一周相比
-dayOverDayChanges: 与前一日相比
-appearance: 外观
-clientSettings: 客户端设置
-accountSettings: 账户设置
-promotion: 推广
-promote: 推广
-numberOfDays: 天数
-hideThisNote: 隐藏这条帖子
-showFeaturedNotesInTimeline: 在时间线上显示热门推荐
-objectStorage: 对象存储
-useObjectStorage: 使用对象存储
-objectStorageBaseUrl: Base URL
-objectStorageBaseUrlDesc: 用于参考的 URL，如果您正在使用 CDN 或 Proxy，请填入服务商提供的 URL；S3：“https://<bucket>.s3.amazonaws.com”；GCS：“https://storage.googleapis.com/<bucket>”
-objectStorageBucket: 存储桶
-objectStorageBucketDesc: 请指定使用的对象存储服务的存储桶名称。
-objectStoragePrefix: 前缀
-objectStoragePrefixDesc: 文件将存储在此前缀的目录下。
-objectStorageEndpoint: 端点
-objectStorageEndpointDesc: 如果你使用 AWS S3 请留空。否则请根据你使用的服务商的说明来进行设置，指定端点形式为“<host>”或“<host>:<port>”。
-objectStorageRegion: 可用区
-objectStorageRegionDesc: 指定一个可用区，例如“xx-east-1”。 如果您的对象存储服务没有可用区概念，请将其留空或填写“us-east-1”。如果引用 AWS 的配置文件或环境变量，则留空。
-objectStorageUseSSL: 使用 SSL
-objectStorageUseSSLDesc: 如果不使用 https 进行 API 连接，请关闭。
-objectStorageUseProxy: 使用代理
-objectStorageUseProxyDesc: 如果不使用代理进行 API 连接，请关闭。
-objectStorageSetPublicRead: 上传时设置为 public-read
-s3ForcePathStyleDesc: 启用 s3ForcePathStyle 会强制将存储桶名称指定为 URL 中路径的一部分，而不是主机名。使用自托管 Minio 等时可能需要启用。
-serverLogs: 服务器日志
-deleteAll: 全部删除
-showFixedPostForm: 在时间线顶部显示发帖框
-showFixedPostFormInChannel: 在时间线顶部显示发帖对话框（频道）
-withRepliesByDefaultForNewlyFollowed: 在时间线中默认包含新关注用户的回复
-newNoteRecived: 有新的帖子
-sounds: 提示音
-sound: 提示音
-listen: 试听
-none: 无
-showInPage: 在页面中显示
-popout: 弹窗
-volume: 音量
-masterVolume: 主音量
-notUseSound: 静音
-useSoundOnlyWhenActive: 仅在 Misskey 活跃时输出声音
-details: 详情
-renoteDetails: 转帖详情
-chooseEmoji: 选择表情符号
-unableToProcess: 操作无法完成
-recentUsed: 最近使用
-install: 安装
-uninstall: 卸载
-installedApps: 已授权的应用
-nothing: 没有
-installedDate: 授权日期
-lastUsedDate: 最近使用
-state: 状态
-sort: 排序
-ascendingOrder: 升序
-descendingOrder: 降序
-scratchpad: AiScript 控制台
-scratchpadDescription: AiScript 控制台为 AiScript 提供了实验环境。您可以编写代码与 Misskey 交互，运行并查看结果。
-uiInspector: UI 检查器
-uiInspectorDescription: 查看内存中所有由 UI 组件生成出的实例。UI 组件由 UI:C 系列函数所生成。
-output: 输出
-script: 脚本
-disablePagesScript: 禁用页面脚本
-updateRemoteUser: 更新远程用户信息
-unsetUserAvatar: 清除头像
-unsetUserAvatarConfirm: 要清除头像吗？
-unsetUserBanner: 清除横幅
-unsetUserBannerConfirm: 要清除横幅吗？
-deleteAllFiles: 删除所有文件
-deleteAllFilesConfirm: 要删除所有文件吗？
-removeAllFollowing: 取消所有关注
-removeAllFollowingDescription: 取消来自 {host} 的所有关注者。当服务器不再存在时执行。
-userSuspended: 该用户已被冻结。
-userSilenced: 该用户已被禁言。
-yourAccountSuspendedTitle: 账户已被冻结
-yourAccountSuspendedDescription: 由于违反了服务器的服务条款或其他原因，该账户已被冻结。 您可以与管理员联系以了解更多信息。 请不要创建一个新的账户。
-tokenRevoked: 令牌无效
-tokenRevokedDescription: 登录令牌已经失效。请重新登录。
-accountDeleted: 帐户已删除
-accountDeletedDescription: 此帐户已经被删除。
-menu: 菜单
-divider: 分割线
-addItem: 添加项目
-rearrange: 排序方式
-relays: 中继
-addRelay: 添加中继
-inboxUrl: Inbox URL
-addedRelays: 已添加的中继
-serviceworkerInfo: 您需要启用推送通知
-deletedNote: 已删除的帖子
-invisibleNote: 隐藏的帖子
-enableInfiniteScroll: 启用自动滚动页面模式
-visibility: 可见性
-poll: 投票
-useCw: 隐藏内容
-enablePlayer: 打开播放器
-disablePlayer: 关闭播放器
-expandTweet: 展开帖子
-themeEditor: 主题编辑器
-description: 描述
-describeFile: 添加描述
-enterFileDescription: 输入标题
-author: 作者
-leaveConfirm: 存在未保存的更改。要放弃更改吗？
-manage: 管理
-plugins: 插件
-preferencesBackups: 备份设置
-deck: Deck
-undeck: 取消 Deck
-useBlurEffectForModal: 对话框使用模糊效果
-useFullReactionPicker: 使用全功能的回应工具栏
-width: 宽度
-height: 高度
-large: 大
-medium: 中
-small: 小
-generateAccessToken: 生成访问令牌
-permission: 权限
-adminPermission: 管理员权限
-enableAll: 启用全部
-disableAll: 禁用全部
-tokenRequested: 允许访问账户
-pluginTokenRequestedDescription: 此插件将能够拥有这里设置的权限
-notificationType: 通知类型
-edit: 编辑
-emailServer: 邮件服务器
-enableEmail: 启用发送邮件功能
-emailConfigInfo: 用于确认电子邮件和密码重置
-email: 邮箱
-emailAddress: 电子邮件地址
-smtpConfig: SMTP 服务器设置
-smtpHost: 主机名
-smtpPort: 端口
-smtpUser: 用户名
-smtpPass: 密码
-emptyToDisableSmtpAuth: 用户名和密码留空可以禁用 SMTP 验证
-smtpSecure: 在 SMTP 连接中使用隐式 SSL / TLS
-smtpSecureInfo: 使用 STARTTLS 时关闭。
-testEmail: 邮件发送测试
-wordMute: 隐藏关键词
-wordMuteDescription: 折叠包含指定关键词的帖子。被折叠的帖子可单击展开。
-hardWordMute: 隐藏硬关键词
-showMutedWord: 显示已隐藏的关键词
-hardWordMuteDescription: 隐藏包含指定关键词的帖子。与隐藏关键词不同，帖子将完全不会显示。
-regexpError: 正则表达式错误
-regexpErrorDescription: '{tab} 隐藏文字的第 {line} 行的正则表达式有错误：'
-instanceMute: 已隐藏的服务器
-userSaysSomething: '{name} 说了什么,但是被屏蔽词过滤了'
-userSaysSomethingAbout: '{name} 说了关于「{word}」的什么'
-makeActive: 启用
-display: 显示
-copy: 复制
-metrics: 指标
-overview: 概览
-logs: 日志
-delayed: 滞后
-database: 数据库
-channel: 频道
-create: 创建
-notificationSetting: 通知设置
-notificationSettingDesc: 选择要显示的通知类型。
-useGlobalSetting: 使用全局设置
-useGlobalSettingDesc: 启用时，将使用账户通知设置。关闭时，则可以单独设置。
-other: 其他
-regenerateLoginToken: 重新生成登录令牌
-regenerateLoginTokenDescription: 重新生成用于登录的内部令牌。通常您不需要这样做。重新生成后，您将在所有设备上登出。
-theKeywordWhenSearchingForCustomEmoji: 这将是搜索自定义表情符号时的关键词。
-setMultipleBySeparatingWithSpace: 您可以使用空格分隔多个项目。
-fileIdOrUrl: 文件 ID 或者 URL
-behavior: 行为
-sample: 示例
-abuseReports: 举报
-reportAbuse: 举报
-reportAbuseRenote: 举报转帖
-reportAbuseOf: 举报 {name}
-fillAbuseReportDescription: 请填写举报的详细原因。如果有对方发的帖子，请同时填写 URL 地址。
-abuseReported: 内容已发送。感谢您提交信息。
-reporter: 举报者
-reporteeOrigin: 举报来源
-reporterOrigin: 举报者来源
-send: 发送
-openInNewTab: 在新标签页中打开
-openInSideView: 在侧边栏中打开
-defaultNavigationBehaviour: 默认导航
-editTheseSettingsMayBreakAccount: 编辑这些设置可以会损坏您的账号
-instanceTicker: 帖子的服务器来源
-waitingFor: 等待 {x}
-random: 随机
-system: 系统
-switchUi: 切换界面
-desktop: 桌面
-clip: 便签
-createNew: 新建
-optional: 可选
-createNewClip: 新建便签
-unclip: 移除便签
-confirmToUnclipAlreadyClippedNote: 本帖已包含在便签 "{name}" 里。您想要将本帖从该便签中移除吗？
-public: 公开
-private: 私密
-i18nInfo: Misskey 已经被志愿者们翻译成了各种语言。如果你也有兴趣，可以通过 {link} 帮助翻译。
-manageAccessTokens: 管理 Access Tokens
-accountInfo: 账户信息
-notesCount: 帖子数量
-repliesCount: 回复数量
-renotesCount: 转帖数量
-repliedCount: 回复数
-renotedCount: 转发数
-followingCount: 正在关注数量
-followersCount: 关注者数量
-sentReactionsCount: 发送回应数
-receivedReactionsCount: 收到回应数
-pollVotesCount: 问卷调查的投票数
-pollVotedCount: 问卷调查的被投票数
-'yes': 是
-'no': 否
-driveFilesCount: 网盘的文件数
-driveUsage: 网盘的空间用量
-noCrawle: 要求搜索引擎不索引该用户
-noCrawleDescription: 要求搜索引擎不要收录（索引）您的用户页面，帖子，页面等。
-lockedAccountInfo: 即使启用该功能，只要帖子可见范围不是「仅关注者」，任何人都可以看到您的帖子。
-alwaysMarkSensitive: 默认将媒体文件标记为敏感内容
-loadRawImages: 添加附件图像的缩略图时使用原始图像质量
-disableShowingAnimatedImages: 不播放动画
-highlightSensitiveMedia: 高亮显示敏感媒体
-verificationEmailSent: 已发送确认电子邮件。请访问电子邮件中的链接以完成设置。
-notSet: 未设置
-emailVerified: 电子邮件地址已验证
-noteFavoritesCount: 收藏的帖子数
-pageLikesCount: 页面点赞次数
-pageLikedCount: 页面被点赞次数
-contact: 联系人
-useSystemFont: 使用系统默认字体
-clips: 便签
-experimentalFeatures: 实验性功能
-experimental: 实验性的
-thisIsExperimentalFeature: 这是一项实验性功能。规范可能会变更，或者可能无法正常工作。
-developer: 开发者
-makeExplorable: 使账号可见。
-makeExplorableDescription: 关闭时，账号不会显示在"发现"中。
-showGapBetweenNotesInTimeline: 时间线上的帖子分开显示。
-duplicate: 复制
-left: 左
-center: 中央
-wide: 宽
-narrow: 窄
-reloadToApplySetting: 页面刷新后设置才会生效。是否现在刷新页面？
-needReloadToApply: 重新载入后应用才会生效。
-showTitlebar: 显示标题栏
-clearCache: 清除缓存
-onlineUsersCount: '{n} 人在线'
-nUsers: '{n} 用户'
-nNotes: '{n}  帖子'
-sendErrorReports: 发送错误报告
-sendErrorReportsDescription: 启用后，如果出现问题，可以与 Misskey 共享详细的错误信息，从而帮助提高软件的质量。错误信息包括操作系统版本、浏览器类型、行为历史记录等。
-myTheme: 我的主题
-backgroundColor: 背景
-accentColor: 强调色
-textColor: 文本
-saveAs: 另存为
-advanced: 高级
-advancedSettings: 高级设置
-value: 值
-createdAt: 创建日期
-updatedAt: 更新时间
-saveConfirm: 确定保存？
-deleteConfirm: 确定删除?
-invalidValue: 无效值。
-registry: 注册表
-closeAccount: 永久注销账户
-currentVersion: 当前版本
-latestVersion: 最新版本
-youAreRunningUpToDateClient: 您所使用的客户端已经是最新的。
-newVersionOfClientAvailable: 新版本的客户端可用。
-usageAmount: 使用量
-capacity: 容量
-inUse: 已使用
-editCode: 编辑代码
-apply: 应用
-receiveAnnouncementFromInstance: 从服务器接收通知
-emailNotification: 邮件通知
-publish: 发布
-inChannelSearch: 频道内搜索
-useReactionPickerForContextMenu: 单击右键打开回应工具栏
-typingUsers: '{users} 正在输入'
-jumpToSpecifiedDate: 跳转到特定日期
-showingPastTimeline: 显示过去的时间线
-clear: 清除
-markAllAsRead: 全部标记为已读
-goBack: 返回
-unlikeConfirm: 取消赞？
-fullView: 全屏
-quitFullView: 退出全屏
-addDescription: 添加描述
-userPagePinTip: 在帖子的菜单中选择“置顶”，即可显示该条帖子。
-notSpecifiedMentionWarning: 有未指定的提及
-info: 关于
-userInfo: 用户信息
-unknown: 未知
-onlineStatus: 在线状态
-hideOnlineStatus: 隐藏在线状态
-hideOnlineStatusDescription: 隐藏在线状态后，可能会降低搜索等功能的便利性。
-online: 在线
-active: 活动
-offline: 离线
-notRecommended: 不推荐
-botProtection: Bot防御
-instanceBlocking: 屏蔽/静音的服务器
-selectAccount: 选择账户
-switchAccount: 切换账户
-enabled: 已启用
-disabled: '已禁用 '
-quickAction: 快捷操作
-user: 用户
-administration: 管理
-accounts: 账户
-switch: 切换
-noMaintainerInformationWarning: 尚未设置管理员信息。
-noInquiryUrlWarning: 尚未设置联络地址。
-noBotProtectionWarning: 尚未设置 Bot 防御。
-configure: 设置
-postToGallery: 发送到图库
-postToHashtag: 投稿到这个标签
-gallery: 图库
-recentPosts: 最新发布
-popularPosts: 热门投稿
-shareWithNote: 在帖子中分享
-ads: 广告
-expiration: 截止时间
-startingperiod: 开始时间
-memo: 备注
-priority: 优先级
-high: 高
-middle: 中
-low: 低
-emailNotConfiguredWarning: 尚未设置电子邮件地址。
-ratio: 比率
-previewNoteText: 预览文本
-customCss: 自定义 CSS
-customCssWarn: 这些设置必须有相关的基础知识，不当的配置可能导致客户端无法正常使用。
-global: 全局
-squareAvatars: 显示方形头像图标
-sent: 发送
-received: 收取
-searchResult: 搜索结果
-hashtags: 话题标签
-troubleshooting: 故障排除
-useBlurEffect: 在 UI 上使用模糊效果
-learnMore: 更多信息
-misskeyUpdated: Misskey 更新完成！
-whatIsNew: 显示更新信息
-translate: 翻译
-translatedFrom: 从 {x} 翻译
-accountDeletionInProgress: 正在删除账户
-usernameInfo: 在服务器上唯一标识您的帐户的名称。您可以使用字母 (a ~ z, A ~ Z)、数字 (0 ~ 9) 和下划线 (_)。用户名以后不能更改。
-aiChanMode: 小蓝模式
-devMode: 开发者模式
-keepCw: 回复时维持隐藏内容
-pubSub: Pub/Sub 账户
-lastCommunication: 最近通信
-resolved: 已解决
-unresolved: 未解决
-breakFollow: 移除关注者
-breakFollowConfirm: 你想取消关注吗？
-itsOn: 已开启
-itsOff: 已关闭
-'on': 开启
-'off': 关闭
-emailRequiredForSignup: 注册账户需要电子邮件地址
-unread: 未读
-filter: 筛选
-controlPanel: 控制面板
-manageAccounts: 管理账户
-makeReactionsPublic: 将回应设置为公开
-makeReactionsPublicDescription: 将您发表过的回应设置成公开可见。
-classic: 经典
-muteThread: 隐藏帖子列表
-unmuteThread: 取消隐藏帖子列表
-followingVisibility: 关注的人的公开范围
-followersVisibility: 关注者的公开范围
-continueThread: 查看更多帖子
-deleteAccountConfirm: 将要删除账户。是否确认？
-incorrectPassword: 密码错误
-incorrectTotp: 一次性密码不正确或已过期
-voteConfirm: 确定投给 “{choice}” ？
-hide: 隐藏
-useDrawerReactionPickerForMobile: 在移动设备上使用抽屉显示
-welcomeBackWithName: 欢迎回来，{name}
-clickToFinishEmailVerification: 点击 [{ok}] 完成电子邮件地址认证。
-overridedDeviceKind: 设备类型
-smartphone: 智能手机
-tablet: 平板
-auto: 自动
-themeColor: 主题颜色
-size: 大小
-numberOfColumn: 列数
-searchByGoogle: Google
-instanceDefaultLightTheme: 服务器默认浅色主题
-instanceDefaultDarkTheme: 服务器默认深色主题
-instanceDefaultThemeDescription: 以对象格式输入主题代码
-mutePeriod: 隐藏期限
-period: 截止时间
-indefinitely: 永久
-tenMinutes: 10 分钟
-oneHour: 1 小时
-oneDay: 1 天
-oneWeek: 1 周
-oneMonth: 1 个月
-threeMonths: 3 个月
-oneYear: 1 年
-threeDays: 3 天
-reflectMayTakeTime: 可能需要一些时间才能体现出效果。
-failedToFetchAccountInformation: 获取账户信息失败
-rateLimitExceeded: 已超过速率限制
-cropImage: 裁剪图像
-cropImageAsk: 是否要裁剪图像？
-cropYes: 去裁剪
-cropNo: 就这样吧！
-file: 文件
-recentNHours: 最近 {n} 小时
-recentNDays: 最近 {n} 天
-noEmailServerWarning: 电子邮件服务器未设置。
-thereIsUnresolvedAbuseReportWarning: 有未解决的报告
-recommended: 推荐
-check: 检查
-driveCapOverrideLabel: 更改此用户的网盘容量上限
-driveCapOverrideCaption: 设定为 0 以下则会解除此限制。
-requireAdminForView: 需要使用管理员账户登录才能查看。
-isSystemAccount: 该账号由系统自动创建和管理。
-typeToConfirm: 输入 {x} 以确认操作。
-deleteAccount: 删除账户
-document: 文档
-numberOfPageCache: 缓存页数
-numberOfPageCacheDescription: 设置较高的值会更方便用户，但设备的负载和内存使用量会增加。
-logoutConfirm: 是否确认登出？
-lastActiveDate: 最后活跃时间
-statusbar: 状态栏
-pleaseSelect: 请选择
-reverse: 翻转
-colored: 彩色
-refreshInterval: 刷新间隔
-label: 标签
-type: 类型
-speed: 速度
-slow: 慢
-fast: 快
-sensitiveMediaDetection: 检测到敏感媒体
-localOnly: 仅限本地
-remoteOnly: 仅远程
-failedToUpload: 上传失败
-cannotUploadBecauseInappropriate: 因为可能含有不适宜的内容，无法上传。
-cannotUploadBecauseNoFreeSpace: 因为已无可用空间，无法上传。
-cannotUploadBecauseExceedsFileSizeLimit: 无法上传文件，超过文件大小限制。
-beta: 测试
-enableAutoSensitive: 自动 NSFW 识别
-enableAutoSensitiveDescription: 使用机器学习在可用时自动使用 NSFW 标记来标记媒体。即使您关闭此功能，根据服务器的不同，它仍然可能会自动设置。
-activeEmailValidationDescription: 开启用户的电子邮件地址验证，判断它是一次性的电子邮件地址，还是可以实际通信的地址。关闭时，则只检查字符串是否正确。
-navbar: 导航栏
-shuffle: 随机
-account: 账户
-move: 移动
-pushNotification: 推送通知
-subscribePushNotification: 启用推送通知消息
-unsubscribePushNotification: 停用推送通知消息
-pushNotificationAlreadySubscribed: 推送通知消息已启用
-pushNotificationNotSupported: 浏览器或服务器不支持推送通知消息
-sendPushNotificationReadMessage: 删除已读推送通知消息
-sendPushNotificationReadMessageCaption: 您终端设备的电池消耗可能会增加。
-windowMaximize: 最大化
-windowMinimize: 最小化
-windowRestore: 还原
-caption: 标题
-loggedInAsBot: 以 Bot 账户登录
-tools: 工具
-cannotLoad: 无法加载
-numberOfProfileView: 个人资料展示次数
-like: 点赞！
-unlike: 取消赞
-numberOfLikes: 点赞数
-show: 显示
-neverShow: 不再显示
-remindMeLater: 稍后提醒我
-didYouLikeMisskey: 您喜欢 Misskey 吗？
-pleaseDonate: Misskey 是 {host} 所使用的免费软件。为了今后也能够维持 Misskey 的开发，请在有余力的情况下进行捐助！
-correspondingSourceIsAvailable: 对应的源代码可在{anchor}找到
-roles: 角色
-role: 角色
-noRole: 角色不存在
-normalUser: 普通用户
-undefined: 未定义
-assign: 分配
-unassign: 取消分配
-color: 颜色
-manageCustomEmojis: 管理自定义表情符号
-manageAvatarDecorations: 管理头像挂件
-youCannotCreateAnymore: 抱歉，您无法再创建更多了。
-cannotPerformTemporary: 暂时不可用
-cannotPerformTemporaryDescription: 因操作过于频繁，暂时不可用，请稍后再试。
-invalidParamError: 参数错误
-invalidParamErrorDescription: 请求参数出现问题。通常是因为 bug 造成的，但也可能是输入文字数量过多之类的原因。
-permissionDeniedError: 操作被拒绝
-permissionDeniedErrorDescription: 本账户没有执行该操作的权限。
-preset: 预设值
-selectFromPresets: 从预设值中选择
-achievements: 成就
-gotInvalidResponseError: 服务器无应答
-gotInvalidResponseErrorDescription: 您的网络连接可能出现了问题, 或是远程服务器暂时不可用. 请稍后重试。
-thisPostMayBeAnnoying: 这个帖子可能会让其他人感到困扰。
-thisPostMayBeAnnoyingHome: 发到首页
-thisPostMayBeAnnoyingCancel: 取消
-thisPostMayBeAnnoyingIgnore: 就这样发布
-collapseRenotes: 省略显示已经看过的转发内容
-collapseRenotesDescription: 将回应过或转贴过的贴子折叠表示。
-internalServerError: 内部服务器错误
-internalServerErrorDescription: 内部服务器发生了预期外的错误
-copyErrorInfo: 复制错误信息
-joinThisServer: 在本服务器上注册
-exploreOtherServers: 探索其他服务器
-letsLookAtTimeline: 看看时间线
-disableFederationConfirm: 确定要禁用联合？
-disableFederationConfirmWarn: 禁用联合不会将帖子设为私有。在大多数情况下，不需要禁用联合。
-disableFederationOk: 联合禁用
-invitationRequiredToRegister: 此服务器目前只允许拥有邀请码的人注册。
-emailNotSupported: 此服务器不支持发送邮件
-postToTheChannel: 发布到频道
-cannotBeChangedLater: 之后不能再更改。
-reactionAcceptance: 接受表情回应
-likeOnly: 仅点赞
-likeOnlyForRemote: 远程仅点赞
-nonSensitiveOnly: 仅限非敏感内容
-nonSensitiveOnlyForLocalLikeOnlyForRemote: 仅限非敏感内容（远程仅点赞）
-rolesAssignedToMe: 指派给自己的角色
-resetPasswordConfirm: 确定重置密码？
-sensitiveWords: 敏感词
-sensitiveWordsDescription: 包含这些词的帖子将只在首页可见。可用换行来设定多个词。
-sensitiveWordsDescription2: AND 条件用空格分隔，正则表达式用斜线包裹。
-prohibitedWords: 禁用词
-prohibitedWordsDescription: 发布包含设定词汇的帖子时将出错。可用换行设定多个关键字。
-prohibitedWordsDescription2: AND 条件用空格分隔，正则表达式用斜线包裹。
-hiddenTags: 隐藏标签
-hiddenTagsDescription: 设定的标签将不会在时间线上显示。可使用换行来设置多个标签。
-notesSearchNotAvailable: 帖子检索不可用
-license: 许可信息
-unfavoriteConfirm: 确定要取消收藏吗？
-myClips: 我的便签
-drivecleaner: 网盘整理
-retryAllQueuesNow: 立刻重试所有队列
-retryAllQueuesConfirmTitle: 要再尝试一次吗？
-retryAllQueuesConfirmText: 可能会使服务器负荷在一定时间内增加
-enableChartsForRemoteUser: 生成远程用户的图表
-enableChartsForFederatedInstances: 生成远程服务器的图表
-enableStatsForFederatedInstances: 获取远程服务器的信息
-showClipButtonInNoteFooter: 在贴文下方显示便签按钮
-reactionsDisplaySize: 回应显示大小
-limitWidthOfReaction: 限制回应的最大宽度，并将其缩小显示
-noteIdOrUrl: 帖子 ID 或 URL
-video: 视频
-videos: 视频
-audio: 音频
-audioFiles: 音频
-dataSaver: 省流量模式
-accountMigration: 账户迁移
-accountMoved: 此用户已迁移账户
-accountMovedShort: 此帐户已迁移
-operationForbidden: 不允许此操作
-forceShowAds: 总是显示广告
-addMemo: 添加备注
-editMemo: 编辑备注
-reactionsList: 回应列表
-renotesList: 转发列表
-notificationDisplay: 显示通知
-leftTop: 屏幕左上方
-rightTop: 屏幕右上方
-leftBottom: 屏幕左下方
-rightBottom: 屏幕右下方
-stackAxis: 堆叠方向
-vertical: 纵向
-horizontal: 横向
-position: 位置
-serverRules: 服务器规则
-pleaseConfirmBelowBeforeSignup: 如果要在此服务器上注册，需要确认并同意以下内容。
-pleaseAgreeAllToContinue: 必须全部勾选「同意」才能够继续。
-continue: 继续
-preservedUsernames: 保留的用户名
-preservedUsernamesDescription: 列出需要保留的用户名，使用换行来作为分割。被指定的用户名在建立账户时无法使用，但由管理员所创建的账户不受该限制。此外，现有的账户也不会受到影响。
-createNoteFromTheFile: 从文件创建帖子
-archive: 归档
-archived: 已归档
-unarchive: 取消归档
-channelArchiveConfirmTitle: 要将 {name} 归档吗？
-channelArchiveConfirmDescription: 归档后，在频道列表与搜索结果中不会显示，也无法发布新的贴文。
-thisChannelArchived: 该频道已被归档。
-displayOfNote: 显示帖子
-initialAccountSetting: 初始设置
-youFollowing: 正在关注
-preventAiLearning: 拒绝接受生成式 AI 的学习
-preventAiLearningDescription: 要求文章生成 AI 或图像生成 AI 不能够以发布的帖子和图像等内容作为学习对象。这是通过在 HTML 响应中包含 noai 标志来实现的，这不能完全阻止 AI 学习你的发布内容，并不是所有 AI 都会遵守这类请求。
-options: 选项
-specifyUser: 用户指定
-lookupConfirm: 确定查询？
-openTagPageConfirm: 确定打开话题标签页面？
-specifyHost: 指定主机名
-failedToPreviewUrl: 无法预览
-update: 更新
-rolesThatCanBeUsedThisEmojiAsReaction: 可以使用表情作为回应的角色
-rolesThatCanBeUsedThisEmojiAsReactionEmptyDescription: 在没有指定角色的情况下，任何人都可以使用表情作为回应。
-rolesThatCanBeUsedThisEmojiAsReactionPublicRoleWarn: 角色必须是公开的。
-cancelReactionConfirm: 要取消回应吗？
-changeReactionConfirm: 要更改回应吗？
-later: 一会再说
-goToMisskey: 去往 Misskey
-additionalEmojiDictionary: 表情符号追加字典
-installed: 已安装
-branding: 品牌
-enableServerMachineStats: 公开服务器硬件统计信息
-enableIdenticonGeneration: 启用生成用户 Identicon
-turnOffToImprovePerformance: 关闭该选项可以提高性能。
-createInviteCode: 生成邀请码
-createWithOptions: 使用选项来创建
-createCount: 发行数
-inviteCodeCreated: 已生成邀请码
-inviteLimitExceeded: 可供生成的邀请码已达上限。
-createLimitRemaining: 可供生成的邀请码：剩余 {limit} 个
-inviteLimitResetCycle: 可以在 {time} 内生成最多 {limit} 个邀请码。
-expirationDate: 有效日期
-noExpirationDate: 不设置有效日期
-inviteCodeUsedAt: 邀请码被使用的日期和时间
-registeredUserUsingInviteCode: 使用了邀请码的用户
-waitingForMailAuth: 等待验证电子邮件
-inviteCodeCreator: 生成邀请码的用户
-usedAt: 使用时间
-unused: 未使用
-used: 已使用
-expired: 已过期
-doYouAgree: 你同意吗？
-beSureToReadThisAsItIsImportant: 请好好阅读，这真的很重要。
-iHaveReadXCarefullyAndAgree: 我已经仔细阅读并同意了「{x}」的内容。
-dialog: 对话框
-icon: 头像
-forYou: 您的
-currentAnnouncements: 现在的公告
-pastAnnouncements: 过去的公告
-youHaveUnreadAnnouncements: 您有未读的公告
-useSecurityKey: 请根据浏览器或设备的提示，使用安全密钥或通行密钥。
-replies: 回复
-renotes: 转发
-loadReplies: 查看回复
-loadConversation: 查看对话
-pinnedList: 已置顶的列表
-keepScreenOn: 保持设备屏幕开启
-verifiedLink: 已验证的链接
-notifyNotes: 打开发帖通知
-unnotifyNotes: 关闭发帖通知
-authentication: 验证
-authenticationRequiredToContinue: 要继续，请先进行验证
-dateAndTime: 日期和时间
-showRenotes: 显示转帖
-edited: 已编辑
-notificationRecieveConfig: 通知接收设置
-mutualFollow: 互相关注
-followingOrFollower: 关注中或关注者
-fileAttachedOnly: 仅限媒体
-showRepliesToOthersInTimeline: 在时间线中包含给别人的回复
-hideRepliesToOthersInTimeline: 在时间线中隐藏给别人的回复
-showRepliesToOthersInTimelineAll: 在时间线中显示所有现在关注的人的回复
-hideRepliesToOthersInTimelineAll: 在时间线中隐藏所有现在关注的人的回复
-confirmShowRepliesAll: 此操作不可撤销。确认要在时间线中显示所有现在关注的人的回复吗？
-confirmHideRepliesAll: 此操作不可撤销。确认要在时间线中隐藏所有现在关注的人的回复吗？
-externalServices: 外部服务
-sourceCode: 源代码
-sourceCodeIsNotYetProvided: 还未提供源代码。要解决此问题请联系管理员。
-repositoryUrl: 仓库地址
-repositoryUrlDescription: 若源代码所在的仓库是公开的，请填入对应的 URL。若并未追加或者修改 Misskey 的代码，请填入 https://github.com/misskey-dev/misskey。
-repositoryUrlOrTarballRequired: 若仓库并未公开，则需要提供 tarball 作为替代。详情请看 .config/example.yml。
-feedback: 反馈
-feedbackUrl: 反馈地址
-impressum: 运营商信息
-impressumUrl: 运营商信息地址
-impressumDescription: 德国等国家和地区有义务展示此类信息（Impressum）。
-privacyPolicy: 隐私政策
-privacyPolicyUrl: 隐私政策地址
-tosAndPrivacyPolicy: 服务条款及隐私政策
-avatarDecorations: 头像挂件
-attach: 佩戴
-detach: 卸下
-detachAll: 全部卸下
-angle: 角度
-flip: 翻转
-showAvatarDecorations: 显示头像挂件
-releaseToRefresh: 松开以刷新
-refreshing: 刷新中
-pullDownToRefresh: 下拉以刷新
-disableStreamingTimeline: 禁止实时更新时间线
-useGroupedNotifications: 分组显示通知
-signupPendingError: 确认电子邮件时出现错误。链接可能已过期。
-cwNotationRequired: 在启用「隐藏内容」时必须输入注释
-doReaction: 回应
-code: 代码
-reloadRequiredToApplySettings: 需要重新载入来使设置生效
-remainingN: 剩余：{n}
-overwriteContentConfirm: 将覆盖现有内容。确定吗？
-seasonalScreenEffect: 符合当前季节的画面效果
-decorate: 装饰
-addMfmFunction: 添加装饰
-enableQuickAddMfmFunction: 显示高级 MFM 选择器
-bubbleGame: 泡泡游戏
-sfx: 音效
-soundWillBePlayed: 声音将会播放
-showReplay: 观看回放
-replay: 重播
-replaying: 重播中
-endReplay: 结束回放
-copyReplayData: 复制回放数据
-ranking: 排行榜
-lastNDays: 最近 {n} 天
-backToTitle: 返回标题
-hemisphere: 居住地区
-withSensitive: 显示包含敏感媒体的帖子
-userSaysSomethingSensitive: 含 {name} 敏感文件的帖子
-enableHorizontalSwipe: 滑动切换标签页
-loading: 读取中
-surrender: 取消
-gameRetry: 重试
-notUsePleaseLeaveBlank: 如不使用请留空
-useTotp: 使用一次性代码
-useBackupCode: 使用备用代码
-launchApp: 启动应用
-useNativeUIForVideoAudioPlayer: 使用浏览器的 UI 播放动画及音频
-keepOriginalFilename: 保持原文件名
-keepOriginalFilenameDescription: 若关闭此设置，上传文件时文件名将被替换为随机字符。
-noDescription: 没有描述
-alwaysConfirmFollow: 总是确认关注
-inquiry: 联系我们
-tryAgain: 请再试一次
-confirmWhenRevealingSensitiveMedia: 显示敏感内容前需要确认
-sensitiveMediaRevealConfirm: 这是敏感内容。是否显示？
-createdLists: 已创建的列表
-createdAntennas: 已创建的天线
-fromX: 从 {x}
-genEmbedCode: 生成嵌入代码
-noteOfThisUser: 此用户的帖子
-clipNoteLimitExceeded: 无法再往此便签内添加更多帖子
-performance: 性能
-modified: 有变更
-discard: 取消
-thereAreNChanges: 有 {n} 处更改
-signinWithPasskey: 使用通行密钥登录
-unknownWebAuthnKey: 此通行密钥未注册。
-passkeyVerificationFailed: 验证通行密钥失败。
-passkeyVerificationSucceededButPasswordlessLoginDisabled: 通行密钥验证成功，但账户未开启无密码登录。
-messageToFollower: 给关注者的消息
-target: 对象
-testCaptchaWarning: 此功能为测试 CAPTCHA 用。<strong>请勿在正式环境中使用。</strong>
-prohibitedWordsForNameOfUser: 用户名中禁止的词
-prohibitedWordsForNameOfUserDescription: 更改用户名时，如果用户名中包含此列表里的词汇，用户的改名请求将被拒绝。持有管理员权限的用户不受此限制。
-yourNameContainsProhibitedWords: 目标用户名包含违禁词
-yourNameContainsProhibitedWordsDescription: 用户名内含有违禁词。若想使用此用户名，请联系服务器管理员。
-thisContentsAreMarkedAsSigninRequiredByAuthor: 根据发帖者的设定，需要登录才能显示
-lockdown: 锁定
-pleaseSelectAccount: 请选择帐户
-availableRoles: 可用角色
-acknowledgeNotesAndEnable: 理解注意事项后再开启。
-federationSpecified: 此服务器已开启联合白名单。只能与管理员指定的服务器通信。
-federationDisabled: 此服务器已禁用联合。无法与其它服务器上的用户通信。
+_lang_: "中文(简体)"
+headlineMisskey: "通过帖子连接在一起的网络"
+introMisskey: "欢迎！Misskey是一个开源的、去中心化的“微博客”服务。\n通过编写「帖文」来和大家分享你的以及你周围的事情吧！📡\n通过「回应」功能，可以让你快速地对大家的帖文表达反馈👍\n来探索新的世界吧！🚀"
+poweredByMisskeyDescription: "{name} 是开源平台 <b>Misskey</b> 的服务器之一。"
+monthAndDay: "{month}月 {day}日"
+search: "搜索"
+reset: "重置"
+notifications: "通知"
+username: "用户名"
+password: "密码"
+initialPasswordForSetup: "初始化密码"
+initialPasswordIsIncorrect: "初始化密码不正确"
+initialPasswordForSetupDescription: "如果是自己安装的 Misskey，请输入配置文件里设好的密码。\n如果使用的是 Misskey 的托管服务等，请输入服务商提供的密码。\n如果没有设置密码，请留空并继续。"
+forgotPassword: "忘记密码"
+fetchingAsApObject: "在联邦宇宙查询中..."
+ok: "OK"
+gotIt: "好"
+cancel: "取消"
+noThankYou: "不用，谢谢"
+enterUsername: "输入用户名"
+renotedBy: "{user} 转发了"
+noNotes: "没有帖文"
+noNotifications: "无通知"
+instance: "服务器"
+settings: "设置"
+notificationSettings: "通知设置"
+basicSettings: "基本设置"
+otherSettings: "其他设置"
+openInWindow: "在新窗口中打开"
+profile: "个人资料"
+timeline: "时间线"
+noAccountDescription: "此用户尚无自我介绍"
+login: "登录"
+loggingIn: "正在登录..."
+logout: "登出"
+signup: "新用户注册"
+uploading: "正在上传"
+save: "保存"
+users: "用户"
+addUser: "添加用户"
+favorite: "收藏"
+favorites: "收藏"
+unfavorite: "取消收藏"
+favorited: "已加入收藏夹。"
+alreadyFavorited: "收藏夹中已存在。"
+cantFavorite: "无法添加到收藏夹。"
+pin: "置顶"
+unpin: "取消置顶"
+copyContent: "复制内容"
+copyLink: "复制链接"
+copyRemoteLink: "复制远程链接"
+copyLinkRenote: "复制转帖链接"
+delete: "删除"
+deleteAndEdit: "删除并编辑"
+deleteAndEditConfirm: "要删除此帖并再次编辑吗？对此帖的所有回应、转发和回复也将被删除。"
+addToList: "添加至列表"
+addToAntenna: "添加到天线"
+sendMessage: "发送"
+copyRSS: "复制RSS"
+copyUsername: "复制用户名"
+copyUserId: "复制用户 ID"
+copyNoteId: "复制帖子 ID"
+copyFileId: "复制文件ID"
+copyFolderId: "复制文件夹ID"
+copyProfileUrl: "复制个人资料URL"
+searchUser: "搜索用户"
+searchThisUsersNotes: "搜索用户帖子"
+reply: "回复"
+loadMore: "查看更多"
+showMore: "查看更多"
+showLess: "关闭"
+youGotNewFollower: "你有新的关注者"
+receiveFollowRequest: "您收到了关注请求"
+followRequestAccepted: "您的关注请求被通过了"
+mention: "提及"
+mentions: "提到我的"
+directNotes: "私信"
+importAndExport: "导入和导出"
+import: "导入"
+export: "导出"
+files: "文件"
+download: "下载"
+driveFileDeleteConfirm: "要删除「{name}」文件吗？附加此文件的帖子也会被删除。"
+unfollowConfirm: "要取消对 {name} 的关注吗？"
+exportRequested: "导出请求已提交，这可能需要花一些时间，导出的文件将保存到网盘中。"
+importRequested: "导入请求已提交，这可能需要花一点时间。"
+lists: "列表"
+noLists: "列表为空"
+note: "帖子"
+notes: "帖子"
+following: "关注中"
+followers: "关注者"
+followsYou: "正在关注你"
+createList: "创建列表"
+manageLists: "管理列表"
+error: "错误"
+somethingHappened: "出错了"
+retry: "重试"
+pageLoadError: "页面加载失败。"
+pageLoadErrorDescription: "这通常是由于网络或浏览器缓存的原因。请清除缓存或等待片刻后重试。"
+serverIsDead: "没有服务器响应。 请稍后再试。"
+youShouldUpgradeClient: "请重新加载并使用新版本的客户端查看此页面。"
+enterListName: "输入列表名称"
+privacy: "隐私"
+makeFollowManuallyApprove: "关注请求需要批准"
+defaultNoteVisibility: "默认可见性"
+follow: "关注"
+followRequest: "关注申请"
+followRequests: "关注申请"
+unfollow: "取消关注"
+followRequestPending: "关注请求待批准"
+enterEmoji: "输入表情符号"
+renote: "转发"
+unrenote: "取消转发"
+renoted: "已转发。"
+renotedToX: "转帖给 {name}"
+cantRenote: "该帖无法转发。"
+cantReRenote: "转发无法被再次转发。"
+quote: "引用"
+inChannelRenote: "在频道内转发"
+inChannelQuote: "在频道内引用"
+renoteToChannel: "转帖至频道"
+renoteToOtherChannel: "转帖至其它频道"
+pinnedNote: "已置顶的帖子"
+pinned: "置顶"
+you: "您"
+clickToShow: "点击以显示"
+sensitive: "敏感内容"
+add: "添加"
+reaction: "回应"
+reactions: "回应"
+emojiPicker: "表情符号选择器"
+pinnedEmojisForReactionSettingDescription: "可以设置发表回应时置顶显示的表情符号"
+pinnedEmojisSettingDescription: "可以设置输入表情符号时置顶显示的表情符号"
+emojiPickerDisplay: "选择器显示设置"
+overwriteFromPinnedEmojisForReaction: "从「置顶（回应）」设置覆盖"
+overwriteFromPinnedEmojis: "从全局设置覆盖"
+reactionSettingDescription2: "拖动重新排序，单击删除，点击 + 添加。"
+rememberNoteVisibility: "保存上次设置的可见性"
+attachCancel: "取消添加附件"
+deleteFile: "删除文件"
+markAsSensitive: "标记为敏感内容"
+unmarkAsSensitive: "取消标记为敏感内容"
+enterFileName: "输入文件名"
+mute: "屏蔽"
+unmute: "取消隐藏"
+renoteMute: "隐藏转帖"
+renoteUnmute: "解除隐藏转帖"
+block: "屏蔽"
+unblock: "取消屏蔽"
+suspend: "冻结"
+unsuspend: "解除冻结"
+blockConfirm: "确定要屏蔽吗？"
+unblockConfirm: "确定要取消屏蔽吗？"
+suspendConfirm: "要冻结吗？"
+unsuspendConfirm: "要解除冻结吗？"
+selectList: "选择列表"
+editList: "编辑列表"
+selectChannel: "选择频道"
+selectAntenna: "选择天线"
+editAntenna: "编辑天线"
+createAntenna: "创建天线"
+selectWidget: "选择小工具"
+editWidgets: "编辑部件"
+editWidgetsExit: "完成编辑"
+customEmojis: "自定义表情符号"
+emoji: "表情符号"
+emojis: "表情符号"
+emojiName: "表情符号名称"
+emojiUrl: "emoji 地址"
+addEmoji: "添加表情符号"
+settingGuide: "推荐配置"
+cacheRemoteFiles: "缓存远程文件"
+cacheRemoteFilesDescription: "启用此设定时，将在此服务器上缓存远程文件。虽然可以加快图片显示的速度，但是相对的会消耗大量的服务器存储空间。用户角色内的网盘容量决定了这个远程用户能在服务器上保留多少缓存。当超出了这个限制时，旧的文件将从缓存中被删除，成为链接。当禁用此设定时，则是从一开始就将远程文件保留为链接。此时推荐将 default.yml 的 proxyRemoteFiles 设置为 true 以优化缩略图生成及保护用户隐私。"
+youCanCleanRemoteFilesCache: "可以使用文件管理的🗑️按钮来删除所有的缓存。"
+cacheRemoteSensitiveFiles: "缓存远程敏感媒体文件"
+cacheRemoteSensitiveFilesDescription: "如果禁用这项设定，远程服务器的敏感媒体将不会被缓存，而是直接链接。"
+flagAsBot: "这是一个机器人账号"
+flagAsBotDescription: "如果此账户由程序控制，请启用此项。启用后，此标志可以帮助其他开发人员防止机器人之间产生无限互动的行为，并让 Misskey 的内部系统将此账户识别为机器人。"
+flagAsCat: "喵！！！！！！！！！！！！"
+flagAsCatDescription: "喵喵喵？？"
+flagShowTimelineReplies: "在时间线上显示帖子的回复"
+flagShowTimelineRepliesDescription: "启用时，时间线除了显示用户的帖子外，还会显示其他用户对帖子的回复。"
+autoAcceptFollowed: "自动允许来自我关注的用户对我的关注请求"
+addAccount: "添加账户"
+reloadAccountsList: "更新账户列表"
+loginFailed: "登录失败"
+showOnRemote: "转到所在服务器显示"
+continueOnRemote: "转到所在服务器继续"
+chooseServerOnMisskeyHub: "从 Misskey Hub 选择服务器"
+specifyServerHost: "直接输入服务器域名"
+inputHostName: "请输入域名"
+general: "常规设置"
+wallpaper: "壁纸"
+setWallpaper: "设置壁纸"
+removeWallpaper: "移除壁纸"
+searchWith: "搜索:{q}"
+youHaveNoLists: "列表为空"
+followConfirm: "确定要关注 {name} 吗？"
+proxyAccount: "代理账户"
+proxyAccountDescription: "代理账户是在某些情况下替代用户进行远程关注用的账户。 例如说，当用户将一位远程用户放入一个列表中时，如果本地服务器上没有任何人关注这位远程用户，则这位远程用户的账户活动将不会被送到本地服务器上。作为替代，此时将使用代理账户进行关注。"
+host: "主机名"
+selectSelf: "选择自己"
+selectUser: "选择用户"
+recipient: "收件人"
+annotation: "注解"
+federation: "联合"
+instances: "服务器"
+registeredAt: "初次观测"
+latestRequestReceivedAt: "上次收到的请求"
+latestStatus: "最后状态"
+storageUsage: "已用存储"
+charts: "图表"
+perHour: "每小时"
+perDay: "每天"
+stopActivityDelivery: "停止发送活动"
+blockThisInstance: "屏蔽此服务器"
+silenceThisInstance: "静音此服务器"
+mediaSilenceThisInstance: "隐藏此服务器的媒体文件"
+operations: "操作"
+software: "软件"
+version: "版本"
+metadata: "元数据"
+withNFiles: "{n} 个文件"
+monitor: "服务器状态"
+jobQueue: "作业队列"
+cpuAndMemory: "CPU和内存"
+network: "网络"
+disk: "存储"
+instanceInfo: "服务器信息"
+statistics: "统计"
+clearQueue: "清除队列"
+clearQueueConfirmTitle: "确定要清除队列吗？"
+clearQueueConfirmText: "未送达的帖子将不会被投递。 通常无需执行此操作。"
+clearCachedFiles: "清除缓存"
+clearCachedFilesConfirm: "确定要清除所有缓存的远程文件吗？"
+blockedInstances: "被屏蔽的服务器"
+blockedInstancesDescription: "设定要屏蔽的服务器，以换行分隔。被屏蔽的服务器将无法与本服务器进行交换通讯。子域名也同样会被屏蔽。"
+silencedInstances: "被静音的服务器"
+silencedInstancesDescription: "设置要静音的服务器，以换行分隔。被静音的服务器内所有的账户将默认处于「静音」状态，仅能发送关注请求，并且在未关注状态下无法提及本地账户。被阻止的实例不受影响。"
+mediaSilencedInstances: "已隐藏媒体文件的服务器"
+mediaSilencedInstancesDescription: "设置要隐藏媒体文件的服务器，以换行分隔。被设置为隐藏媒体文件服务器内所有账号的文件均按照「敏感内容」处理，且将无法使用自定义表情符号。被阻止的实例不受影响。"
+federationAllowedHosts: "允许联合的服务器"
+federationAllowedHostsDescription: "设定允许联合的服务器，以换行分隔。"
+muteAndBlock: "隐藏和屏蔽"
+mutedUsers: "已隐藏用户"
+blockedUsers: "已屏蔽的用户"
+noUsers: "无用户"
+editProfile: "编辑资料"
+noteDeleteConfirm: "确定要删除该帖子吗？"
+pinLimitExceeded: "无法置顶更多了"
+intro: "Misskey 的部署结束啦！创建管理员账号吧！"
+done: "完成"
+processing: "正在处理"
+preview: "预览"
+default: "默认"
+defaultValueIs: "默认值: {value}"
+noCustomEmojis: "没有自定义表情符号"
+noJobs: "没有任务"
+federating: "联合中"
+blocked: "已屏蔽"
+suspended: "停止投递"
+all: "全部"
+subscribing: "已订阅"
+publishing: "投递中"
+notResponding: "没有响应"
+instanceFollowing: "关注服务器"
+instanceFollowers: "关注的服务器"
+instanceUsers: "服务器用户"
+changePassword: "修改密码"
+security: "安全"
+retypedNotMatch: "两次输入不一致！"
+currentPassword: "现在的密码"
+newPassword: "新密码"
+newPasswordRetype: "重新输入密码："
+attachFile: "插入附件"
+more: "更多！"
+featured: "热门"
+usernameOrUserId: "用户名或用户 ID"
+noSuchUser: "用户不存在"
+lookup: "查询"
+announcements: "公告"
+imageUrl: "图片 URL"
+remove: "删除"
+removed: "已删除"
+removeAreYouSure: "要删掉「{x}」吗？"
+deleteAreYouSure: "要删掉「{x}」吗？"
+resetAreYouSure: "恢复默认设置？"
+areYouSure: "你确定吗？"
+saved: "已保存"
+messaging: "聊天"
+upload: "本地上传"
+keepOriginalUploading: "保留原图"
+keepOriginalUploadingDescription: "上传图片时保留原始图片。关闭时，浏览器会在上传时生成一张用于web发布的图片。"
+fromDrive: "从网盘中"
+fromUrl: "从 URL"
+uploadFromUrl: "从网址上传"
+uploadFromUrlDescription: "输入文件的 URL"
+uploadFromUrlRequested: "请求上传"
+uploadFromUrlMayTakeTime: "上传可能需要一些时间完成。"
+explore: "发现"
+messageRead: "已读"
+noMoreHistory: "没有更多的历史记录"
+startMessaging: "添加聊天"
+nUsersRead: "{n} 人已读"
+agreeTo: "勾选则表示已阅读并同意 {0}"
+agree: "同意"
+agreeBelow: "同意以下内容"
+basicNotesBeforeCreateAccount: "基本注意事项"
+termsOfService: "服务条款"
+start: "开始"
+home: "首页"
+remoteUserCaution: "由于此用户来自其它服务器，显示的信息可能不完整。"
+activity: "活动"
+images: "图片"
+image: "图片"
+birthday: "生日"
+yearsOld: "{age}岁"
+registeredDate: "注册于"
+location: "位置"
+theme: "主题"
+themeForLightMode: "在浅色模式下使用的主题"
+themeForDarkMode: "在深色模式下使用的主题"
+light: "浅色"
+dark: "深色"
+lightThemes: "浅色主题"
+darkThemes: "深色主题"
+syncDeviceDarkMode: "将深色模式与设备设置同步"
+drive: "网盘"
+fileName: "文件名称"
+selectFile: "选择文件"
+selectFiles: "选择文件"
+selectFolder: "选择文件夹"
+selectFolders: "选择多个文件夹"
+fileNotSelected: "未选择文件"
+renameFile: "重命名文件"
+folderName: "文件夹名称"
+createFolder: "创建文件夹"
+renameFolder: "重命名文件夹"
+deleteFolder: "删除文件夹"
+folder: "文件夹"
+addFile: "添加文件"
+showFile: "显示文件"
+emptyDrive: "网盘中无文件"
+emptyFolder: "此文件夹中无文件"
+unableToDelete: "无法删除"
+inputNewFileName: "请输入新文件名"
+inputNewDescription: "请输入新标题"
+inputNewFolderName: "请输入新文件夹名"
+circularReferenceFolder: "目标文件夹是要移动的文件夹的子文件夹。"
+hasChildFilesOrFolders: "此文件夹中有文件，无法删除。"
+copyUrl: "复制链接"
+rename: "重命名"
+avatar: "头像"
+banner: "横幅"
+displayOfSensitiveMedia: "显示敏感媒体"
+whenServerDisconnected: "与服务器连接中断时"
+disconnectedFromServer: "已和服务器断开连接"
+reload: "重新加载"
+doNothing: "关闭"
+reloadConfirm: "确定要重新加载吗？"
+watch: "关注"
+unwatch: "取消关注"
+accept: "允许"
+reject: "拒绝"
+normal: "正常"
+instanceName: "服务器名称"
+instanceDescription: "服务器简介"
+maintainerName: "管理员名称"
+maintainerEmail: "管理员电子邮箱"
+tosUrl: "服务条款地址"
+thisYear: "今年"
+thisMonth: "本月"
+today: "今天"
+dayX: "{day}日"
+monthX: "{month}月"
+yearX: "{year}年"
+pages: "页面"
+integration: "关联"
+connectService: "连接"
+disconnectService: "断开连接"
+enableLocalTimeline: "启用本地时间线"
+enableGlobalTimeline: "启用全局时间线"
+disablingTimelinesInfo: "即使时间线功能被禁用，出于方便，管理员和监察员也可以继续使用。"
+registration: "注册"
+invite: "邀请"
+driveCapacityPerLocalAccount: "每个用户的网盘容量"
+driveCapacityPerRemoteAccount: "每个远程用户的网盘容量"
+inMb: "以兆字节(MegaByte)为单位"
+bannerUrl: "横幅 URL"
+backgroundImageUrl: "背景图 URL"
+basicInfo: "基本信息"
+pinnedUsers: "置顶用户"
+pinnedUsersDescription: "输入您想要固定到“发现”页面的用户，一行一个。"
+pinnedPages: "固定页面"
+pinnedPagesDescription: "输入您要固定到服务器首页的页面路径，一行一个。"
+pinnedClipId: "置顶的便签 ID"
+pinnedNotes: "已置顶的帖子"
+hcaptcha: "hCaptcha"
+enableHcaptcha: "启用 hCaptcha"
+hcaptchaSiteKey: "网站密钥"
+hcaptchaSecretKey: "hCaptcha 密钥(SecretKey)"
+mcaptcha: "mCaptcha"
+enableMcaptcha: "启用 mCaptcha"
+mcaptchaSiteKey: "网站密钥"
+mcaptchaSecretKey: "mCaptcha 密钥(SecretKey)"
+mcaptchaInstanceUrl: "mCaptcha 实例地址"
+recaptcha: "reCAPTCHA"
+enableRecaptcha: "启用 reCAPTCHA\n(请注意, 此功能在中国大陆不可用. 如果启用, 可能导致无法正常使用登录或注册等功能)"
+recaptchaSiteKey: "网站密钥"
+recaptchaSecretKey: "mCaptcha 密钥(SecretKey)"
+turnstile: "Turnstile"
+enableTurnstile: "启用 Turnstile"
+turnstileSiteKey: "网站密钥"
+turnstileSecretKey: "Turnstile 密钥(SecretKey)"
+avoidMultiCaptchaConfirm: "使用多个 Captcha 可能会互相干扰，您要禁用其它 Captcha 吗？您可以按“取消”按钮，继续保持启用多种验证方式。"
+antennas: "天线"
+manageAntennas: "天线管理"
+name: "名称"
+antennaSource: "接收来源"
+antennaKeywords: "包含关键字"
+antennaExcludeKeywords: "排除关键字"
+antennaExcludeBots: "排除机器人账户"
+antennaKeywordsDescription: "AND 条件用空格分隔，OR 条件用换行符分隔。"
+notifyAntenna: "开启通知"
+withFileAntenna: "仅带有附件的帖子"
+enableServiceworker: "启用 ServiceWorker"
+antennaUsersDescription: "指定用户名，一行一个"
+caseSensitive: "区分大小写"
+withReplies: "包括回复"
+connectedTo: "您的账号已连到接以下第三方账号"
+notesAndReplies: "帖子与回复"
+withFiles: "附件"
+silence: "禁言"
+silenceConfirm: "确认要禁言吗？"
+unsilence: "解除禁言"
+unsilenceConfirm: "要解除禁言吗？"
+popularUsers: "热门用户"
+recentlyUpdatedUsers: "最近投稿的用户"
+recentlyRegisteredUsers: "最近登录的用户"
+recentlyDiscoveredUsers: "最近发现的用户"
+exploreUsersCount: "有 {count} 个用户"
+exploreFediverse: "探索联邦宇宙"
+popularTags: "热门标签"
+userList: "列表"
+about: "关于"
+aboutMisskey: "关于 Misskey"
+administrator: "管理员"
+token: "Token (令牌)"
+2fa: "双因素认证"
+setupOf2fa: "设置双因素认证"
+totp: "验证器"
+totpDescription: "使用验证器输入一次性密码"
+moderator: "监察员"
+moderation: "管理"
+moderationNote: "管理笔记"
+moderationNoteDescription: "可以用来记录仅在管理员之间共享的笔记。"
+addModerationNote: "添加管理笔记"
+moderationLogs: "管理日志"
+nUsersMentioned: "{n} 被提到"
+securityKeyAndPasskey: "安全密钥或 Passkey"
+securityKey: "安全密钥"
+lastUsed: "最后使用："
+lastUsedAt: "最后使用: {t}"
+unregister: "删除账户"
+passwordLessLogin: "无密码登录"
+passwordLessLoginDescription: "不使用密码，仅使用安全密钥或 Passkey 登录"
+resetPassword: "重置密码"
+newPasswordIs: "新的密码是「{password}」"
+reduceUiAnimation: "减少UI动画"
+share: "分享"
+notFound: "未找到"
+notFoundDescription: "没有与指定 URL 对应的页面。"
+uploadFolder: "默认上传文件夹"
+markAsReadAllNotifications: "将所有通知标为已读"
+markAsReadAllUnreadNotes: "将所有帖子标记为已读"
+markAsReadAllTalkMessages: "将所有聊天标记为已读"
+help: "帮助"
+inputMessageHere: "在此键入信息"
+close: "关闭"
+invites: "邀请"
+members: "成员"
+transfer: "转让"
+title: "标题"
+text: "文本"
+enable: "启用"
+next: "下一个"
+retype: "重新输入"
+noteOf: "{user} 的帖子"
+quoteAttached: "已引用"
+quoteQuestion: "是否引用此链接内容？"
+attachAsFileQuestion: "剪贴板内的文字过长。要转换为文本文件并添加吗？"
+noMessagesYet: "现在没有新的聊天"
+newMessageExists: "新信息"
+onlyOneFileCanBeAttached: "只能添加一个附件"
+signinRequired: "请先登录"
+signinOrContinueOnRemote: "若要继续，需要转到您所使用的实例，或者在此服务器上注册或登录。"
+invitations: "邀请"
+invitationCode: "邀请码"
+checking: "正在确认"
+available: "可用"
+unavailable: "不可用"
+usernameInvalidFormat: "可使用大小写英文字母、数字和下划线。"
+tooShort: "过短"
+tooLong: "过长"
+weakPassword: "密码强度：弱"
+normalPassword: "密码强度：中等"
+strongPassword: "密码强度：强"
+passwordMatched: "密码一致"
+passwordNotMatched: "密码不一致"
+signinWith: "以{x}登录"
+signinFailed: "无法登录，请检查您的用户名和密码是否正确。"
+or: "或者"
+language: "语言"
+uiLanguage: "显示语言"
+aboutX: "关于 {x}"
+emojiStyle: "表情符号的样式"
+native: "原生"
+menuStyle: "菜单样式"
+style: "样式"
+drawer: "抽屉"
+popup: "弹窗"
+showNoteActionsOnlyHover: "仅在悬停时显示帖子操作"
+showReactionsCount: "显示帖子的回应数"
+noHistory: "没有历史记录"
+signinHistory: "登录历史"
+enableAdvancedMfm: "启用扩展 MFM"
+enableAnimatedMfm: "启用 MFM 动画"
+doing: "正在进行"
+category: "类别"
+tags: "标签"
+docSource: "文件来源"
+createAccount: "注册账户"
+existingAccount: "现有的账户"
+regenerate: "重新生成"
+fontSize: "字体大小"
+mediaListWithOneImageAppearance: "仅一张图片的媒体列表高度"
+limitTo: "上限为 {x}"
+noFollowRequests: "没有关注申请"
+openImageInNewTab: "在新标签页中打开图片"
+dashboard: "管理面板"
+local: "本地"
+remote: "远程"
+total: "总计"
+weekOverWeekChanges: "与前一周相比"
+dayOverDayChanges: "与前一日相比"
+appearance: "外观"
+clientSettings: "客户端设置"
+accountSettings: "账户设置"
+promotion: "推广"
+promote: "推广"
+numberOfDays: "天数"
+hideThisNote: "隐藏这条帖子"
+showFeaturedNotesInTimeline: "在时间线上显示热门推荐"
+objectStorage: "对象存储"
+useObjectStorage: "使用对象存储"
+objectStorageBaseUrl: "Base URL"
+objectStorageBaseUrlDesc: "用于参考的 URL，如果您正在使用 CDN 或 Proxy，请填入服务商提供的 URL；S3：“https://<bucket>.s3.amazonaws.com”；GCS：“https://storage.googleapis.com/<bucket>”"
+objectStorageBucket: "存储桶"
+objectStorageBucketDesc: "请指定使用的对象存储服务的存储桶名称。"
+objectStoragePrefix: "前缀"
+objectStoragePrefixDesc: "文件将存储在此前缀的目录下。"
+objectStorageEndpoint: "端点"
+objectStorageEndpointDesc: "如果你使用 AWS S3 请留空。否则请根据你使用的服务商的说明来进行设置，指定端点形式为“<host>”或“<host>:<port>”。"
+objectStorageRegion: "可用区"
+objectStorageRegionDesc: "指定一个可用区，例如“xx-east-1”。 如果您的对象存储服务没有可用区概念，请将其留空或填写“us-east-1”。如果引用 AWS 的配置文件或环境变量，则留空。"
+objectStorageUseSSL: "使用 SSL"
+objectStorageUseSSLDesc: "如果不使用 https 进行 API 连接，请关闭。"
+objectStorageUseProxy: "使用代理"
+objectStorageUseProxyDesc: "如果不使用代理进行 API 连接，请关闭。"
+objectStorageSetPublicRead: "上传时设置为 public-read"
+s3ForcePathStyleDesc: "启用 s3ForcePathStyle 会强制将存储桶名称指定为 URL 中路径的一部分，而不是主机名。使用自托管 Minio 等时可能需要启用。"
+serverLogs: "服务器日志"
+deleteAll: "全部删除"
+showFixedPostForm: "在时间线顶部显示发帖框"
+showFixedPostFormInChannel: "在时间线顶部显示发帖对话框（频道）"
+withRepliesByDefaultForNewlyFollowed: "在时间线中默认包含新关注用户的回复"
+newNoteRecived: "有新的帖子"
+sounds: "提示音"
+sound: "提示音"
+listen: "试听"
+none: "无"
+showInPage: "在页面中显示"
+popout: "弹窗"
+volume: "音量"
+masterVolume: "主音量"
+notUseSound: "静音"
+useSoundOnlyWhenActive: "仅在 Misskey 活跃时输出声音"
+details: "详情"
+renoteDetails: "转帖详情"
+chooseEmoji: "选择表情符号"
+unableToProcess: "操作无法完成"
+recentUsed: "最近使用"
+install: "安装"
+uninstall: "卸载"
+installedApps: "已授权的应用"
+nothing: "没有"
+installedDate: "授权日期"
+lastUsedDate: "最近使用"
+state: "状态"
+sort: "排序"
+ascendingOrder: "升序"
+descendingOrder: "降序"
+scratchpad: "AiScript 控制台"
+scratchpadDescription: "AiScript 控制台为 AiScript 提供了实验环境。您可以编写代码与 Misskey 交互，运行并查看结果。"
+uiInspector: "UI 检查器"
+uiInspectorDescription: "查看内存中所有由 UI 组件生成出的实例。UI 组件由 UI:C 系列函数所生成。"
+output: "输出"
+script: "脚本"
+disablePagesScript: "禁用页面脚本"
+updateRemoteUser: "更新远程用户信息"
+unsetUserAvatar: "清除头像"
+unsetUserAvatarConfirm: "要清除头像吗？"
+unsetUserBanner: "清除横幅"
+unsetUserBannerConfirm: "要清除横幅吗？"
+deleteAllFiles: "删除所有文件"
+deleteAllFilesConfirm: "要删除所有文件吗？"
+removeAllFollowing: "取消所有关注"
+removeAllFollowingDescription: "取消来自 {host} 的所有关注者。当服务器不再存在时执行。"
+userSuspended: "该用户已被冻结。"
+userSilenced: "该用户已被禁言。"
+yourAccountSuspendedTitle: "账户已被冻结"
+yourAccountSuspendedDescription: "由于违反了服务器的服务条款或其他原因，该账户已被冻结。 您可以与管理员联系以了解更多信息。 请不要创建一个新的账户。"
+tokenRevoked: "令牌无效"
+tokenRevokedDescription: "登录令牌已经失效。请重新登录。"
+accountDeleted: "帐户已删除"
+accountDeletedDescription: "此帐户已经被删除。"
+menu: "菜单"
+divider: "分割线"
+addItem: "添加项目"
+rearrange: "排序方式"
+relays: "中继"
+addRelay: "添加中继"
+inboxUrl: "Inbox URL"
+addedRelays: "已添加的中继"
+serviceworkerInfo: "您需要启用推送通知"
+deletedNote: "已删除的帖子"
+invisibleNote: "隐藏的帖子"
+enableInfiniteScroll: "启用自动滚动页面模式"
+visibility: "可见性"
+poll: "投票"
+useCw: "隐藏内容"
+enablePlayer: "打开播放器"
+disablePlayer: "关闭播放器"
+expandTweet: "展开帖子"
+themeEditor: "主题编辑器"
+description: "描述"
+describeFile: "添加描述"
+enterFileDescription: "输入标题"
+author: "作者"
+leaveConfirm: "存在未保存的更改。要放弃更改吗？"
+manage: "管理"
+plugins: "插件"
+preferencesBackups: "备份设置"
+deck: "Deck"
+undeck: "取消 Deck"
+useBlurEffectForModal: "对话框使用模糊效果"
+useFullReactionPicker: "使用全功能的回应工具栏"
+width: "宽度"
+height: "高度"
+large: "大"
+medium: "中"
+small: "小"
+generateAccessToken: "生成访问令牌"
+permission: "权限"
+adminPermission: "管理员权限"
+enableAll: "启用全部"
+disableAll: "禁用全部"
+tokenRequested: "允许访问账户"
+pluginTokenRequestedDescription: "此插件将能够拥有这里设置的权限"
+notificationType: "通知类型"
+edit: "编辑"
+emailServer: "邮件服务器"
+enableEmail: "启用发送邮件功能"
+emailConfigInfo: "用于确认电子邮件和密码重置"
+email: "邮箱"
+emailAddress: "电子邮件地址"
+smtpConfig: "SMTP 服务器设置"
+smtpHost: "主机名"
+smtpPort: "端口"
+smtpUser: "用户名"
+smtpPass: "密码"
+emptyToDisableSmtpAuth: "用户名和密码留空可以禁用 SMTP 验证"
+smtpSecure: "在 SMTP 连接中使用隐式 SSL / TLS"
+smtpSecureInfo: "使用 STARTTLS 时关闭。"
+testEmail: "邮件发送测试"
+wordMute: "隐藏关键词"
+wordMuteDescription: "折叠包含指定关键词的帖子。被折叠的帖子可单击展开。"
+hardWordMute: "隐藏硬关键词"
+showMutedWord: "显示已隐藏的关键词"
+hardWordMuteDescription: "隐藏包含指定关键词的帖子。与隐藏关键词不同，帖子将完全不会显示。"
+regexpError: "正则表达式错误"
+regexpErrorDescription: "{tab} 隐藏文字的第 {line} 行的正则表达式有错误："
+instanceMute: "已隐藏的服务器"
+userSaysSomething: "{name} 说了什么,但是被屏蔽词过滤了"
+userSaysSomethingAbout: "{name} 说了关于「{word}」的什么"
+makeActive: "启用"
+display: "显示"
+copy: "复制"
+copiedToClipboard: "已复制到剪贴板"
+metrics: "指标"
+overview: "概览"
+logs: "日志"
+delayed: "滞后"
+database: "数据库"
+channel: "频道"
+create: "创建"
+notificationSetting: "通知设置"
+notificationSettingDesc: "选择要显示的通知类型。"
+useGlobalSetting: "使用全局设置"
+useGlobalSettingDesc: "启用时，将使用账户通知设置。关闭时，则可以单独设置。"
+other: "其他"
+regenerateLoginToken: "重新生成登录令牌"
+regenerateLoginTokenDescription: "重新生成用于登录的内部令牌。通常您不需要这样做。重新生成后，您将在所有设备上登出。"
+theKeywordWhenSearchingForCustomEmoji: "这将是搜索自定义表情符号时的关键词。"
+setMultipleBySeparatingWithSpace: "您可以使用空格分隔多个项目。"
+fileIdOrUrl: "文件 ID 或者 URL"
+behavior: "行为"
+sample: "示例"
+abuseReports: "举报"
+reportAbuse: "举报"
+reportAbuseRenote: "举报转帖"
+reportAbuseOf: "举报 {name}"
+fillAbuseReportDescription: "请填写举报的详细原因。如果有对方发的帖子，请同时填写 URL 地址。"
+abuseReported: "内容已发送。感谢您提交信息。"
+reporter: "举报者"
+reporteeOrigin: "举报来源"
+reporterOrigin: "举报者来源"
+send: "发送"
+openInNewTab: "在新标签页中打开"
+openInSideView: "在侧边栏中打开"
+defaultNavigationBehaviour: "默认导航"
+editTheseSettingsMayBreakAccount: "编辑这些设置可以会损坏您的账号"
+instanceTicker: "帖子的服务器来源"
+waitingFor: "等待 {x}"
+random: "随机"
+system: "系统"
+switchUi: "切换界面"
+desktop: "桌面"
+clip: "便签"
+createNew: "新建"
+optional: "可选"
+createNewClip: "新建便签"
+unclip: "移除便签"
+confirmToUnclipAlreadyClippedNote: "本帖已包含在便签 \"{name}\" 里。您想要将本帖从该便签中移除吗？"
+public: "公开"
+private: "私密"
+i18nInfo: "Misskey 已经被志愿者们翻译成了各种语言。如果你也有兴趣，可以通过 {link} 帮助翻译。"
+manageAccessTokens: "管理访问令牌"
+accountInfo: "账户信息"
+notesCount: "帖子数量"
+repliesCount: "回复数量"
+renotesCount: "转帖数量"
+repliedCount: "回复数"
+renotedCount: "转发数"
+followingCount: "正在关注数量"
+followersCount: "关注者数量"
+sentReactionsCount: "发送回应数"
+receivedReactionsCount: "收到回应数"
+pollVotesCount: "问卷调查的投票数"
+pollVotedCount: "问卷调查的被投票数"
+yes: "是"
+no: "否"
+driveFilesCount: "网盘的文件数"
+driveUsage: "网盘的空间用量"
+noCrawle: "要求搜索引擎不索引该用户"
+noCrawleDescription: "要求搜索引擎不要收录（索引）您的用户页面，帖子，页面等。"
+lockedAccountInfo: "即使启用该功能，只要帖子可见范围不是「仅关注者」，任何人都可以看到您的帖子。"
+alwaysMarkSensitive: "默认将媒体文件标记为敏感内容"
+loadRawImages: "添加附件图像的缩略图时使用原始图像质量"
+disableShowingAnimatedImages: "不播放动画"
+highlightSensitiveMedia: "高亮显示敏感媒体"
+verificationEmailSent: "已发送确认电子邮件。请访问电子邮件中的链接以完成设置。"
+notSet: "未设置"
+emailVerified: "电子邮件地址已验证"
+noteFavoritesCount: "收藏的帖子数"
+pageLikesCount: "页面点赞次数"
+pageLikedCount: "页面被点赞次数"
+contact: "联系人"
+useSystemFont: "使用系统默认字体"
+clips: "便签"
+experimentalFeatures: "实验性功能"
+experimental: "实验性的"
+thisIsExperimentalFeature: "这是一项实验性功能。规范可能会变更，或者可能无法正常工作。"
+developer: "开发者"
+makeExplorable: "使账号可见。"
+makeExplorableDescription: "关闭时，账号不会显示在\"发现\"中。"
+showGapBetweenNotesInTimeline: "时间线上的帖子分开显示。"
+duplicate: "复制"
+left: "左"
+center: "中央"
+wide: "宽"
+narrow: "窄"
+reloadToApplySetting: "页面刷新后设置才会生效。是否现在刷新页面？"
+needReloadToApply: "重新载入后应用才会生效。"
+showTitlebar: "显示标题栏"
+clearCache: "清除缓存"
+onlineUsersCount: "{n} 人在线"
+nUsers: "{n} 用户"
+nNotes: "{n}  帖子"
+sendErrorReports: "发送错误报告"
+sendErrorReportsDescription: "启用后，如果出现问题，可以与 Misskey 共享详细的错误信息，从而帮助提高软件的质量。错误信息包括操作系统版本、浏览器类型、行为历史记录等。"
+myTheme: "我的主题"
+backgroundColor: "背景"
+accentColor: "强调色"
+textColor: "文本"
+saveAs: "另存为"
+advanced: "高级"
+advancedSettings: "高级设置"
+value: "值"
+createdAt: "创建日期"
+updatedAt: "更新时间"
+saveConfirm: "确定保存？"
+deleteConfirm: "确定删除?"
+invalidValue: "无效值。"
+registry: "注册表"
+closeAccount: "永久注销账户"
+currentVersion: "当前版本"
+latestVersion: "最新版本"
+youAreRunningUpToDateClient: "您所使用的客户端已经是最新的。"
+newVersionOfClientAvailable: "新版本的客户端可用。"
+usageAmount: "使用量"
+capacity: "容量"
+inUse: "已使用"
+editCode: "编辑代码"
+apply: "应用"
+receiveAnnouncementFromInstance: "从服务器接收通知"
+emailNotification: "邮件通知"
+publish: "发布"
+inChannelSearch: "频道内搜索"
+useReactionPickerForContextMenu: "单击右键打开回应工具栏"
+typingUsers: "{users} 正在输入"
+jumpToSpecifiedDate: "跳转到特定日期"
+showingPastTimeline: "显示过去的时间线"
+clear: "清除"
+markAllAsRead: "全部标记为已读"
+goBack: "返回"
+unlikeConfirm: "取消赞？"
+fullView: "全屏"
+quitFullView: "退出全屏"
+addDescription: "添加描述"
+userPagePinTip: "在帖子的菜单中选择“置顶”，即可显示该条帖子。"
+notSpecifiedMentionWarning: "有未指定的提及"
+info: "关于"
+userInfo: "用户信息"
+unknown: "未知"
+onlineStatus: "在线状态"
+hideOnlineStatus: "隐藏在线状态"
+hideOnlineStatusDescription: "隐藏在线状态后，可能会降低搜索等功能的便利性。"
+online: "在线"
+active: "活动"
+offline: "离线"
+notRecommended: "不推荐"
+botProtection: "Bot防御"
+instanceBlocking: "屏蔽/静音的服务器"
+selectAccount: "选择账户"
+switchAccount: "切换账户"
+enabled: "已启用"
+disabled: "已禁用 "
+quickAction: "快捷操作"
+user: "用户"
+administration: "管理"
+accounts: "账户"
+switch: "切换"
+noMaintainerInformationWarning: "尚未设置管理员信息。"
+noInquiryUrlWarning: "尚未设置联络地址。"
+noBotProtectionWarning: "尚未设置 Bot 防御。"
+configure: "设置"
+postToGallery: "发送到图库"
+postToHashtag: "投稿到这个标签"
+gallery: "图库"
+recentPosts: "最新发布"
+popularPosts: "热门投稿"
+shareWithNote: "在帖子中分享"
+ads: "广告"
+expiration: "截止时间"
+startingperiod: "开始时间"
+memo: "备注"
+priority: "优先级"
+high: "高"
+middle: "中"
+low: "低"
+emailNotConfiguredWarning: "尚未设置电子邮件地址。"
+ratio: "比率"
+previewNoteText: "预览文本"
+customCss: "自定义 CSS"
+customCssWarn: "这些设置必须有相关的基础知识，不当的配置可能导致客户端无法正常使用。"
+global: "全局"
+squareAvatars: "显示方形头像图标"
+sent: "发送"
+received: "收取"
+searchResult: "搜索结果"
+hashtags: "话题标签"
+troubleshooting: "故障排除"
+useBlurEffect: "在 UI 上使用模糊效果"
+learnMore: "更多信息"
+misskeyUpdated: "Misskey 更新完成！"
+whatIsNew: "显示更新信息"
+translate: "翻译"
+translatedFrom: "从 {x} 翻译"
+accountDeletionInProgress: "正在删除账户"
+usernameInfo: "在服务器上唯一标识您的帐户的名称。您可以使用字母 (a ~ z, A ~ Z)、数字 (0 ~ 9) 和下划线 (_)。用户名以后不能更改。"
+aiChanMode: "小蓝模式"
+devMode: "开发者模式"
+keepCw: "回复时维持隐藏内容"
+pubSub: "Pub/Sub 账户"
+lastCommunication: "最近通信"
+resolved: "已解决"
+unresolved: "未解决"
+breakFollow: "移除关注者"
+breakFollowConfirm: "你想取消关注吗？"
+itsOn: "已开启"
+itsOff: "已关闭"
+on: "开启"
+off: "关闭"
+emailRequiredForSignup: "注册账户需要电子邮件地址"
+unread: "未读"
+filter: "筛选"
+controlPanel: "控制面板"
+manageAccounts: "管理账户"
+makeReactionsPublic: "将回应设置为公开"
+makeReactionsPublicDescription: "将您发表过的回应设置成公开可见。"
+classic: "经典"
+muteThread: "隐藏帖子列表"
+unmuteThread: "取消隐藏帖子列表"
+followingVisibility: "关注的人的公开范围"
+followersVisibility: "关注者的公开范围"
+continueThread: "查看更多帖子"
+deleteAccountConfirm: "将要删除账户。是否确认？"
+incorrectPassword: "密码错误"
+incorrectTotp: "一次性密码不正确或已过期"
+voteConfirm: "确定投给 “{choice}” ？"
+hide: "隐藏"
+useDrawerReactionPickerForMobile: "在移动设备上使用抽屉显示"
+welcomeBackWithName: "欢迎回来，{name}"
+clickToFinishEmailVerification: "点击 [{ok}] 完成电子邮件地址认证。"
+overridedDeviceKind: "设备类型"
+smartphone: "智能手机"
+tablet: "平板"
+auto: "自动"
+themeColor: "主题颜色"
+size: "大小"
+numberOfColumn: "列数"
+searchByGoogle: "Google"
+instanceDefaultLightTheme: "服务器默认浅色主题"
+instanceDefaultDarkTheme: "服务器默认深色主题"
+instanceDefaultThemeDescription: "以对象格式输入主题代码"
+mutePeriod: "隐藏期限"
+period: "截止时间"
+indefinitely: "永久"
+tenMinutes: "10 分钟"
+oneHour: "1 小时"
+oneDay: "1 天"
+oneWeek: "1 周"
+oneMonth: "1 个月"
+threeMonths: "3 个月"
+oneYear: "1 年"
+threeDays: "3 天"
+reflectMayTakeTime: "可能需要一些时间才能体现出效果。"
+failedToFetchAccountInformation: "获取账户信息失败"
+rateLimitExceeded: "已超过速率限制"
+cropImage: "裁剪图像"
+cropImageAsk: "是否要裁剪图像？"
+cropYes: "去裁剪"
+cropNo: "就这样吧！"
+file: "文件"
+recentNHours: "最近 {n} 小时"
+recentNDays: "最近 {n} 天"
+noEmailServerWarning: "电子邮件服务器未设置。"
+thereIsUnresolvedAbuseReportWarning: "有未解决的报告"
+recommended: "推荐"
+check: "检查"
+driveCapOverrideLabel: "更改此用户的网盘容量上限"
+driveCapOverrideCaption: "设定为 0 以下则会解除此限制。"
+requireAdminForView: "需要使用管理员账户登录才能查看。"
+isSystemAccount: "该账号由系统自动创建和管理。"
+typeToConfirm: "输入 {x} 以确认操作。"
+deleteAccount: "删除账户"
+document: "文档"
+numberOfPageCache: "缓存页数"
+numberOfPageCacheDescription: "设置较高的值会更方便用户，但设备的负载和内存使用量会增加。"
+logoutConfirm: "是否确认登出？"
+lastActiveDate: "最后活跃时间"
+statusbar: "状态栏"
+pleaseSelect: "请选择"
+reverse: "翻转"
+colored: "彩色"
+refreshInterval: "刷新间隔"
+label: "标签"
+type: "类型"
+speed: "速度"
+slow: "慢"
+fast: "快"
+sensitiveMediaDetection: "检测到敏感媒体"
+localOnly: "仅限本地"
+remoteOnly: "仅远程"
+failedToUpload: "上传失败"
+cannotUploadBecauseInappropriate: "因为可能含有不适宜的内容，无法上传。"
+cannotUploadBecauseNoFreeSpace: "因为已无可用空间，无法上传。"
+cannotUploadBecauseExceedsFileSizeLimit: "无法上传文件，超过文件大小限制。"
+beta: "测试"
+enableAutoSensitive: "自动 NSFW 识别"
+enableAutoSensitiveDescription: "使用机器学习在可用时自动使用 NSFW 标记来标记媒体。即使您关闭此功能，根据服务器的不同，它仍然可能会自动设置。"
+activeEmailValidationDescription: "开启用户的电子邮件地址验证，判断它是一次性的电子邮件地址，还是可以实际通信的地址。关闭时，则只检查字符串是否正确。"
+navbar: "导航栏"
+shuffle: "随机"
+account: "账户"
+move: "移动"
+pushNotification: "推送通知"
+subscribePushNotification: "启用推送通知消息"
+unsubscribePushNotification: "停用推送通知消息"
+pushNotificationAlreadySubscribed: "推送通知消息已启用"
+pushNotificationNotSupported: "浏览器或服务器不支持推送通知消息"
+sendPushNotificationReadMessage: "删除已读推送通知消息"
+sendPushNotificationReadMessageCaption: "您终端设备的电池消耗可能会增加。"
+windowMaximize: "最大化"
+windowMinimize: "最小化"
+windowRestore: "还原"
+caption: "标题"
+loggedInAsBot: "以 Bot 账户登录"
+tools: "工具"
+cannotLoad: "无法加载"
+numberOfProfileView: "个人资料展示次数"
+like: "点赞！"
+unlike: "取消赞"
+numberOfLikes: "点赞数"
+show: "显示"
+neverShow: "不再显示"
+remindMeLater: "稍后提醒我"
+didYouLikeMisskey: "您喜欢 Misskey 吗？"
+pleaseDonate: "Misskey 是 {host} 所使用的免费软件。为了今后也能够维持 Misskey 的开发，请在有余力的情况下进行捐助！"
+correspondingSourceIsAvailable: "对应的源代码可在{anchor}找到"
+roles: "角色"
+role: "角色"
+noRole: "角色不存在"
+normalUser: "普通用户"
+undefined: "未定义"
+assign: "分配"
+unassign: "取消分配"
+color: "颜色"
+manageCustomEmojis: "管理自定义表情符号"
+manageAvatarDecorations: "管理头像挂件"
+youCannotCreateAnymore: "抱歉，您无法再创建更多了。"
+cannotPerformTemporary: "暂时不可用"
+cannotPerformTemporaryDescription: "因操作过于频繁，暂时不可用，请稍后再试。"
+invalidParamError: "参数错误"
+invalidParamErrorDescription: "请求参数出现问题。通常是因为 bug 造成的，但也可能是输入文字数量过多之类的原因。"
+permissionDeniedError: "操作被拒绝"
+permissionDeniedErrorDescription: "本账户没有执行该操作的权限。"
+preset: "预设值"
+selectFromPresets: "从预设值中选择"
+achievements: "成就"
+gotInvalidResponseError: "服务器无应答"
+gotInvalidResponseErrorDescription: "您的网络连接可能出现了问题, 或是远程服务器暂时不可用. 请稍后重试。"
+thisPostMayBeAnnoying: "这个帖子可能会让其他人感到困扰。"
+thisPostMayBeAnnoyingHome: "发到首页"
+thisPostMayBeAnnoyingCancel: "取消"
+thisPostMayBeAnnoyingIgnore: "就这样发布"
+collapseRenotes: "省略显示已经看过的转发内容"
+collapseRenotesDescription: "将回应过或转贴过的贴子折叠表示。"
+internalServerError: "内部服务器错误"
+internalServerErrorDescription: "内部服务器发生了预期外的错误"
+copyErrorInfo: "复制错误信息"
+joinThisServer: "在本服务器上注册"
+exploreOtherServers: "探索其他服务器"
+letsLookAtTimeline: "看看时间线"
+disableFederationConfirm: "确定要禁用联合？"
+disableFederationConfirmWarn: "禁用联合不会将帖子设为私有。在大多数情况下，不需要禁用联合。"
+disableFederationOk: "联合禁用"
+invitationRequiredToRegister: "此服务器目前只允许拥有邀请码的人注册。"
+emailNotSupported: "此服务器不支持发送邮件"
+postToTheChannel: "发布到频道"
+cannotBeChangedLater: "之后不能再更改。"
+reactionAcceptance: "接受表情回应"
+likeOnly: "仅点赞"
+likeOnlyForRemote: "远程仅点赞"
+nonSensitiveOnly: "仅限非敏感内容"
+nonSensitiveOnlyForLocalLikeOnlyForRemote: "仅限非敏感内容（远程仅点赞）"
+rolesAssignedToMe: "指派给自己的角色"
+resetPasswordConfirm: "确定重置密码？"
+sensitiveWords: "敏感词"
+sensitiveWordsDescription: "包含这些词的帖子将只在首页可见。可用换行来设定多个词。"
+sensitiveWordsDescription2: "AND 条件用空格分隔，正则表达式用斜线包裹。"
+prohibitedWords: "禁用词"
+prohibitedWordsDescription: "发布包含设定词汇的帖子时将出错。可用换行设定多个关键字。"
+prohibitedWordsDescription2: "AND 条件用空格分隔，正则表达式用斜线包裹。"
+hiddenTags: "隐藏标签"
+hiddenTagsDescription: "设定的标签将不会在时间线上显示。可使用换行来设置多个标签。"
+notesSearchNotAvailable: "帖子检索不可用"
+license: "许可信息"
+unfavoriteConfirm: "确定要取消收藏吗？"
+myClips: "我的便签"
+drivecleaner: "网盘整理"
+retryAllQueuesNow: "立刻重试所有队列"
+retryAllQueuesConfirmTitle: "要再尝试一次吗？"
+retryAllQueuesConfirmText: "可能会使服务器负荷在一定时间内增加"
+enableChartsForRemoteUser: "生成远程用户的图表"
+enableChartsForFederatedInstances: "生成远程服务器的图表"
+enableStatsForFederatedInstances: "获取远程服务器的信息"
+showClipButtonInNoteFooter: "在贴文下方显示便签按钮"
+reactionsDisplaySize: "回应显示大小"
+limitWidthOfReaction: "限制回应的最大宽度，并将其缩小显示"
+noteIdOrUrl: "帖子 ID 或 URL"
+video: "视频"
+videos: "视频"
+audio: "音频"
+audioFiles: "音频"
+dataSaver: "省流量模式"
+accountMigration: "账户迁移"
+accountMoved: "此用户已迁移账户"
+accountMovedShort: "此帐户已迁移"
+operationForbidden: "不允许此操作"
+forceShowAds: "总是显示广告"
+addMemo: "添加备注"
+editMemo: "编辑备注"
+reactionsList: "回应列表"
+renotesList: "转发列表"
+notificationDisplay: "显示通知"
+leftTop: "屏幕左上方"
+rightTop: "屏幕右上方"
+leftBottom: "屏幕左下方"
+rightBottom: "屏幕右下方"
+stackAxis: "堆叠方向"
+vertical: "纵向"
+horizontal: "横向"
+position: "位置"
+serverRules: "服务器规则"
+pleaseConfirmBelowBeforeSignup: "如果要在此服务器上注册，需要确认并同意以下内容。"
+pleaseAgreeAllToContinue: "必须全部勾选「同意」才能够继续。"
+continue: "继续"
+preservedUsernames: "保留的用户名"
+preservedUsernamesDescription: "列出需要保留的用户名，使用换行来作为分割。被指定的用户名在建立账户时无法使用，但由管理员所创建的账户不受该限制。此外，现有的账户也不会受到影响。"
+createNoteFromTheFile: "从文件创建帖子"
+archive: "归档"
+archived: "已归档"
+unarchive: "取消归档"
+channelArchiveConfirmTitle: "要将 {name} 归档吗？"
+channelArchiveConfirmDescription: "归档后，在频道列表与搜索结果中不会显示，也无法发布新的贴文。"
+thisChannelArchived: "该频道已被归档。"
+displayOfNote: "显示帖子"
+initialAccountSetting: "初始设置"
+youFollowing: "正在关注"
+preventAiLearning: "拒绝接受生成式 AI 的学习"
+preventAiLearningDescription: "要求文章生成 AI 或图像生成 AI 不能够以发布的帖子和图像等内容作为学习对象。这是通过在 HTML 响应中包含 noai 标志来实现的，这不能完全阻止 AI 学习你的发布内容，并不是所有 AI 都会遵守这类请求。"
+options: "选项"
+specifyUser: "用户指定"
+lookupConfirm: "确定查询？"
+openTagPageConfirm: "确定打开话题标签页面？"
+specifyHost: "指定主机名"
+failedToPreviewUrl: "无法预览"
+update: "更新"
+rolesThatCanBeUsedThisEmojiAsReaction: "可以使用表情作为回应的角色"
+rolesThatCanBeUsedThisEmojiAsReactionEmptyDescription: "在没有指定角色的情况下，任何人都可以使用表情作为回应。"
+rolesThatCanBeUsedThisEmojiAsReactionPublicRoleWarn: "角色必须是公开的。"
+cancelReactionConfirm: "要取消回应吗？"
+changeReactionConfirm: "要更改回应吗？"
+later: "一会再说"
+goToMisskey: "去往 Misskey"
+additionalEmojiDictionary: "表情符号追加字典"
+installed: "已安装"
+branding: "品牌"
+enableServerMachineStats: "公开服务器硬件统计信息"
+enableIdenticonGeneration: "启用生成用户 Identicon"
+turnOffToImprovePerformance: "关闭该选项可以提高性能。"
+createInviteCode: "生成邀请码"
+createWithOptions: "使用选项来创建"
+createCount: "发行数"
+inviteCodeCreated: "已生成邀请码"
+inviteLimitExceeded: "可供生成的邀请码已达上限。"
+createLimitRemaining: "可供生成的邀请码：剩余 {limit} 个"
+inviteLimitResetCycle: "可以在 {time} 内生成最多 {limit} 个邀请码。"
+expirationDate: "有效日期"
+noExpirationDate: "不设置有效日期"
+inviteCodeUsedAt: "邀请码被使用的日期和时间"
+registeredUserUsingInviteCode: "使用了邀请码的用户"
+waitingForMailAuth: "等待验证电子邮件"
+inviteCodeCreator: "生成邀请码的用户"
+usedAt: "使用时间"
+unused: "未使用"
+used: "已使用"
+expired: "已过期"
+doYouAgree: "你同意吗？"
+beSureToReadThisAsItIsImportant: "请好好阅读，这真的很重要。"
+iHaveReadXCarefullyAndAgree: "我已经仔细阅读并同意了「{x}」的内容。"
+dialog: "对话框"
+icon: "头像"
+forYou: "您的"
+currentAnnouncements: "现在的公告"
+pastAnnouncements: "过去的公告"
+youHaveUnreadAnnouncements: "您有未读的公告"
+useSecurityKey: "请根据浏览器或设备的提示，使用安全密钥或通行密钥。"
+replies: "回复"
+renotes: "转发"
+loadReplies: "查看回复"
+loadConversation: "查看对话"
+pinnedList: "已置顶的列表"
+keepScreenOn: "保持设备屏幕开启"
+verifiedLink: "已验证的链接"
+notifyNotes: "打开发帖通知"
+unnotifyNotes: "关闭发帖通知"
+authentication: "验证"
+authenticationRequiredToContinue: "要继续，请先进行验证"
+dateAndTime: "日期和时间"
+showRenotes: "显示转帖"
+edited: "已编辑"
+notificationRecieveConfig: "通知接收设置"
+mutualFollow: "互相关注"
+followingOrFollower: "关注中或关注者"
+fileAttachedOnly: "仅限媒体"
+showRepliesToOthersInTimeline: "在时间线中包含给别人的回复"
+hideRepliesToOthersInTimeline: "在时间线中隐藏给别人的回复"
+showRepliesToOthersInTimelineAll: "在时间线中显示所有现在关注的人的回复"
+hideRepliesToOthersInTimelineAll: "在时间线中隐藏所有现在关注的人的回复"
+confirmShowRepliesAll: "此操作不可撤销。确认要在时间线中显示所有现在关注的人的回复吗？"
+confirmHideRepliesAll: "此操作不可撤销。确认要在时间线中隐藏所有现在关注的人的回复吗？"
+externalServices: "外部服务"
+sourceCode: "源代码"
+sourceCodeIsNotYetProvided: "还未提供源代码。要解决此问题请联系管理员。"
+repositoryUrl: "仓库地址"
+repositoryUrlDescription: "若源代码所在的仓库是公开的，请填入对应的 URL。若并未追加或者修改 Misskey 的代码，请填入 https://github.com/misskey-dev/misskey。"
+repositoryUrlOrTarballRequired: "若仓库并未公开，则需要提供 tarball 作为替代。详情请看 .config/example.yml。"
+feedback: "反馈"
+feedbackUrl: "反馈地址"
+impressum: "运营商信息"
+impressumUrl: "运营商信息地址"
+impressumDescription: "德国等国家和地区有义务展示此类信息（Impressum）。"
+privacyPolicy: "隐私政策"
+privacyPolicyUrl: "隐私政策地址"
+tosAndPrivacyPolicy: "服务条款及隐私政策"
+avatarDecorations: "头像挂件"
+attach: "佩戴"
+detach: "卸下"
+detachAll: "全部卸下"
+angle: "角度"
+flip: "翻转"
+showAvatarDecorations: "显示头像挂件"
+releaseToRefresh: "松开以刷新"
+refreshing: "刷新中"
+pullDownToRefresh: "下拉以刷新"
+disableStreamingTimeline: "禁止实时更新时间线"
+useGroupedNotifications: "分组显示通知"
+signupPendingError: "确认电子邮件时出现错误。链接可能已过期。"
+cwNotationRequired: "在启用「隐藏内容」时必须输入注释"
+doReaction: "回应"
+code: "代码"
+reloadRequiredToApplySettings: "需要重新载入来使设置生效"
+remainingN: "剩余：{n}"
+overwriteContentConfirm: "将覆盖现有内容。确定吗？"
+seasonalScreenEffect: "符合当前季节的画面效果"
+decorate: "装饰"
+addMfmFunction: "添加装饰"
+enableQuickAddMfmFunction: "显示高级 MFM 选择器"
+bubbleGame: "泡泡游戏"
+sfx: "音效"
+soundWillBePlayed: "声音将会播放"
+showReplay: "观看回放"
+replay: "重播"
+replaying: "重播中"
+endReplay: "结束回放"
+copyReplayData: "复制回放数据"
+ranking: "排行榜"
+lastNDays: "最近 {n} 天"
+backToTitle: "返回标题"
+hemisphere: "居住地区"
+withSensitive: "显示包含敏感媒体的帖子"
+userSaysSomethingSensitive: "含 {name} 敏感文件的帖子"
+enableHorizontalSwipe: "滑动切换标签页"
+loading: "读取中"
+surrender: "取消"
+gameRetry: "重试"
+notUsePleaseLeaveBlank: "如不使用请留空"
+useTotp: "使用一次性代码"
+useBackupCode: "使用备用代码"
+launchApp: "启动应用"
+useNativeUIForVideoAudioPlayer: "使用浏览器的 UI 播放动画及音频"
+keepOriginalFilename: "保持原文件名"
+keepOriginalFilenameDescription: "若关闭此设置，上传文件时文件名将被替换为随机字符。"
+noDescription: "没有描述"
+alwaysConfirmFollow: "总是确认关注"
+inquiry: "联系我们"
+tryAgain: "请再试一次"
+confirmWhenRevealingSensitiveMedia: "显示敏感内容前需要确认"
+sensitiveMediaRevealConfirm: "这是敏感内容。是否显示？"
+createdLists: "已创建的列表"
+createdAntennas: "已创建的天线"
+fromX: "从 {x}"
+genEmbedCode: "生成嵌入代码"
+noteOfThisUser: "此用户的帖子"
+clipNoteLimitExceeded: "无法再往此便签内添加更多帖子"
+performance: "性能"
+modified: "有变更"
+discard: "取消"
+thereAreNChanges: "有 {n} 处更改"
+signinWithPasskey: "使用通行密钥登录"
+unknownWebAuthnKey: "此通行密钥未注册。"
+passkeyVerificationFailed: "验证通行密钥失败。"
+passkeyVerificationSucceededButPasswordlessLoginDisabled: "通行密钥验证成功，但账户未开启无密码登录。"
+messageToFollower: "给关注者的消息"
+target: "对象"
+testCaptchaWarning: "此功能为测试 CAPTCHA 用。<strong>请勿在正式环境中使用。</strong>"
+prohibitedWordsForNameOfUser: "用户名中禁止的词"
+prohibitedWordsForNameOfUserDescription: "更改用户名时，如果用户名中包含此列表里的词汇，用户的改名请求将被拒绝。持有管理员权限的用户不受此限制。"
+yourNameContainsProhibitedWords: "目标用户名包含违禁词"
+yourNameContainsProhibitedWordsDescription: "用户名内含有违禁词。若想使用此用户名，请联系服务器管理员。"
+thisContentsAreMarkedAsSigninRequiredByAuthor: "根据发帖者的设定，需要登录才能显示"
+lockdown: "锁定"
+pleaseSelectAccount: "请选择帐户"
+availableRoles: "可用角色"
+acknowledgeNotesAndEnable: "理解注意事项后再开启。"
+federationSpecified: "此服务器已开启联合白名单。只能与管理员指定的服务器通信。"
+federationDisabled: "此服务器已禁用联合。无法与其它服务器上的用户通信。"
+confirmOnReact: "发送回应前需要确认"
+reactAreYouSure: "要用「{emoji}」进行回应吗？"
+markAsSensitiveConfirm: "要将此媒体标记为敏感吗？"
+unmarkAsSensitiveConfirm: "要将此媒体解除敏感标记吗？"
+preferences: "设置"
+accessibility: "辅助功能"
+preferencesProfile: "设置的配置"
+copyPreferenceId: "复制设置 ID"
+resetToDefaultValue: "重置为默认值"
+overrideByAccount: "用账户覆盖"
+untitled: "未命名"
+noName: "没有名字"
+skip: "跳过"
+restore: "恢复"
+syncBetweenDevices: "设备间同步"
+preferenceSyncConflictTitle: "服务器上已存在设定值"
+preferenceSyncConflictText: "服务器上已有此设置的设定值。要覆盖哪个设定值？"
+preferenceSyncConflictChoiceServer: "服务器上的设定值"
+preferenceSyncConflictChoiceDevice: "设备上的设定值"
+preferenceSyncConflictChoiceCancel: "取消同步"
+paste: "粘贴"
+emojiPalette: "表情符号调色板"
+postForm: "投稿窗口"
+textCount: "字数"
+information: "关于"
+_emojiPalette:
+  palettes: "调色板"
+  enableSyncBetweenDevicesForPalettes: "启用调色板的设备间同步"
+  paletteForMain: "主调色板"
+  paletteForReaction: "回应用调色板"
+_settings:
+  driveBanner: "可在此管理和设置网盘、确认使用量及配置上传文件的设置。"
+  pluginBanner: "使用插件可以扩展客户端的功能。可以在此安装、单独管理插件。"
+  notificationsBanner: "可在此设置从服务器接收的通知的种类和范围，以及推送通知的设置。"
+  api: "API"
+  webhook: "Webhook"
+  serviceConnection: "连接服务"
+  serviceConnectionBanner: "可在此管理用于连接外部应用或服务的访问令牌及 Webhook。"
+  accountData: "账户数据"
+  accountDataBanner: "可在此导入或导出帐户数据的存档。"
+  muteAndBlockBanner: "可在此设置隐藏内容，或限制指定用户能进行的操作。"
+  accessibilityBanner: "可在此设置客户端的显示及动态效果等辅助设置。"
+  privacyBanner: "可在此设置如内容可见性、可发现性、批准关注请求等账户隐私设置。"
+  securityBanner: "可在此设置如密码、登入方式、验证器、Passkey 等账户安全性设置。"
+  preferencesBanner: "可在此设置客户端的整体运作行为。"
+  appearanceBanner: "可在此设置客户端的外观及显示方式。"
+  soundsBanner: "可在此设置客户端播放的声音。"
+  timelineAndNote: "时间线和帖子"
+  makeEveryTextElementsSelectable: "使所有的文字均可选择"
+  makeEveryTextElementsSelectable_description: "若开启，在某些情况下可能降低用户体验。"
+_preferencesProfile:
+  profileName: "配置名"
+  profileNameDescription: "请指定用于识别此设备的名称"
+  profileNameDescription2: "如「PC」、「手机」等"
+_preferencesBackup:
+  autoBackup: "自动备份"
+  restoreFromBackup: "从备份恢复"
+  noBackupsFoundTitle: "没有找到备份"
+  noBackupsFoundDescription: "没有找到自动备份。若有手动保存备份文件，可将其导入来恢复。"
+  selectBackupToRestore: "请选择要恢复的备份"
+  youNeedToNameYourProfileToEnableAutoBackup: "需指定配置名以开启自动备份。"
+  autoPreferencesBackupIsNotEnabledForThisDevice: "此设备未开启自动备份"
+  backupFound: "已找到备份"
 _accountSettings:
-  requireSigninToViewContents: 需要登录才能显示内容
-  requireSigninToViewContentsDescription1: 您发布的所有帖子将变成需要登入后才会显示。有望防止爬虫收集各种信息。
-  requireSigninToViewContentsDescription2: 没有 URL 预览（OGP）、内嵌网页、引用帖子的功能的服务器也将无法显示。
-  requireSigninToViewContentsDescription3: 这些限制可能不适用于联合到远程服务器的内容。
-  makeNotesFollowersOnlyBefore: 可将过去的帖子设为仅关注者可见
-  makeNotesFollowersOnlyBeforeDescription: 开启此设定时，超过设定的时间或日期后，帖子将变为仅关注者可见。关闭后帖子的公开状态将恢复成原本的设定。
-  makeNotesHiddenBefore: 将过去的帖子设为私密
-  makeNotesHiddenBeforeDescription: 开启此设定时，超过设定的时间或日期后，帖子将变为仅自己可见。关闭后帖子的公开状态将恢复成原本的设定。
-  mayNotEffectForFederatedNotes: 与远程服务器联合的帖子在远端可能会没有效果。
-  notesHavePassedSpecifiedPeriod: 超过指定时间的帖子
-  notesOlderThanSpecifiedDateAndTime: 指定日期前的帖子
+  requireSigninToViewContents: "需要登录才能显示内容"
+  requireSigninToViewContentsDescription1: "您发布的所有帖子将变成需要登入后才会显示。有望防止爬虫收集各种信息。"
+  requireSigninToViewContentsDescription2: "没有 URL 预览（OGP）、内嵌网页、引用帖子的功能的服务器也将无法显示。"
+  requireSigninToViewContentsDescription3: "这些限制可能不适用于联合到远程服务器的内容。"
+  makeNotesFollowersOnlyBefore: "可将过去的帖子设为仅关注者可见"
+  makeNotesFollowersOnlyBeforeDescription: "开启此设定时，超过设定的时间或日期后，帖子将变为仅关注者可见。关闭后帖子的公开状态将恢复成原本的设定。"
+  makeNotesHiddenBefore: "将过去的帖子设为私密"
+  makeNotesHiddenBeforeDescription: "开启此设定时，超过设定的时间或日期后，帖子将变为仅自己可见。关闭后帖子的公开状态将恢复成原本的设定。"
+  mayNotEffectForFederatedNotes: "与远程服务器联合的帖子在远端可能会没有效果。"
+  mayNotEffectSomeSituations: "此限制功能非常简单，在与远程服务器联合等情形时可能不适用。"
+  notesHavePassedSpecifiedPeriod: "超过指定时间的帖子"
+  notesOlderThanSpecifiedDateAndTime: "指定日期前的帖子"
 _abuseUserReport:
   forward: 转发
   forwardDescription: 目标是匿名系统账户，将把举报转发给远程服务器。
@@ -2008,35 +2064,36 @@ _instanceMute:
   title: 下面实例中的帖子将被隐藏。
   heading: 已隐藏的服务器
 _theme:
-  explore: 寻找主题
-  install: 安装主题
-  manage: 主题管理
-  code: 主题代码
-  description: 描述
-  installed: '{name} 已安装'
-  installedThemes: 已安装的主题
-  builtinThemes: 标准主题
-  alreadyInstalled: 此主题已经安装
-  invalid: 主题格式错误
-  make: 制作主题
-  base: 基于
-  addConstant: 添加常量
-  constant: 常量
-  defaultValue: 默认值
-  color: 颜色
-  refProp: 查看属性
-  refConst: 查看常量
-  key: 主要
-  func: 函数
-  funcKind: 功能类型
-  argument: 参数
-  basedProp: 基于的属性名称
-  alpha: 不透明度
-  darken: 深色
-  lighten: 浅色
-  inputConstantName: 请输入常量名称
-  importInfo: 您可以在此处粘贴主题代码，将其导入到编辑器中
-  deleteConstantConfirm: 确定要删除常量 {const} 吗?
+  explore: "寻找主题"
+  install: "安装主题"
+  manage: "主题管理"
+  code: "主题代码"
+  description: "描述"
+  installed: "{name} 已安装"
+  installedThemes: "已安装的主题"
+  builtinThemes: "标准主题"
+  instanceTheme: "服务器主题"
+  alreadyInstalled: "此主题已经安装"
+  invalid: "主题格式错误"
+  make: "制作主题"
+  base: "基于"
+  addConstant: "添加常量"
+  constant: "常量"
+  defaultValue: "默认值"
+  color: "颜色"
+  refProp: "查看属性"
+  refConst: "查看常量"
+  key: "主要"
+  func: "函数"
+  funcKind: "功能类型"
+  argument: "参数"
+  basedProp: "基于的属性名称"
+  alpha: "不透明度"
+  darken: "深色"
+  lighten: "浅色"
+  inputConstantName: "请输入常量名称"
+  importInfo: "您可以在此处粘贴主题代码，将其导入到编辑器中"
+  deleteConstantConfirm: "确定要删除常量 {const} 吗?"
   keys:
     accent: 强调色
     bg: 背景
@@ -2494,48 +2551,50 @@ _notification:
   createToken: "访问令牌已创建"
   createTokenDescription: "如果不明白其用途，请遵循「{text}」的指示删除访问令牌。"
   _types:
-    all: 全部
-    note: 用户的新帖子
-    follow: 关注中
-    mention: 提及
-    reply: 回复
-    renote: 转发
-    quote: 引用
-    reaction: 回应
-    pollEnded: 问卷调查结束
-    receiveFollowRequest: 收到关注请求
-    followRequestAccepted: 关注请求已通过
-    roleAssigned: 授予的角色
-    achievementEarned: 取得的成就
-    exportCompleted: 已完成导出
-    login: 登录
-    test: 测试通知
-    app: 关联应用的通知
+    all: "全部"
+    note: "用户的新帖子"
+    follow: "关注中"
+    mention: "提及"
+    reply: "回复"
+    renote: "转发"
+    quote: "引用"
+    reaction: "回应"
+    pollEnded: "问卷调查结束"
+    receiveFollowRequest: "收到关注请求"
+    followRequestAccepted: "关注请求已通过"
+    roleAssigned: "授予的角色"
+    achievementEarned: "取得的成就"
+    exportCompleted: "已完成导出"
+    login: "登录"
+    createToken: "创建访问令牌"
+    test: "测试通知"
+    app: "关联应用的通知"
   _actions:
     followBack: 回关
     reply: 回复
     renote: 转发
 _deck:
-  alwaysShowMainColumn: 总是显示主列
-  columnAlign: 列对齐
-  addColumn: 添加列
-  newNoteNotificationSettings: 新帖子通知设定
-  configureColumn: 列设置
-  swapLeft: 向左移动
-  swapRight: 向右移动
-  swapUp: 向上移动
-  swapDown: 向下移动
-  stackLeft: 向左折叠
-  popRight: 向右弹出
-  profile: 配置文件
-  newProfile: 新建配置文件
-  deleteProfile: 删除配置文件
-  introduction: 将各列进行组合以创建您自己的界面！
-  introduction2: 您可以随时通过屏幕右侧的 + 来添加列
-  widgetsIntroduction: 从列菜单中，选择“小工具编辑”来添加小工具
-  useSimpleUiForNonRootPages: 用简易UI表示非根页面
-  usedAsMinWidthWhenFlexible: 「自适应宽度」被启用的时候，这就是最小的宽度
-  flexible: 自适应宽度
+  alwaysShowMainColumn: "总是显示主列"
+  columnAlign: "列对齐"
+  addColumn: "添加列"
+  newNoteNotificationSettings: "新帖子通知设定"
+  configureColumn: "列设置"
+  swapLeft: "向左移动"
+  swapRight: "向右移动"
+  swapUp: "向上移动"
+  swapDown: "向下移动"
+  stackLeft: "向左折叠"
+  popRight: "向右弹出"
+  profile: "配置文件"
+  newProfile: "新建配置文件"
+  deleteProfile: "删除配置文件"
+  introduction: "将各列进行组合以创建您自己的界面！"
+  introduction2: "您可以随时通过屏幕右侧的 + 来添加列"
+  widgetsIntroduction: "从列菜单中，选择“小工具编辑”来添加小工具"
+  useSimpleUiForNonRootPages: "用简易UI表示非根页面"
+  usedAsMinWidthWhenFlexible: "「自适应宽度」被启用的时候，这就是最小的宽度"
+  flexible: "自适应宽度"
+  enableSyncBetweenDevicesForProfiles: "启用个人资料信息跨设备同步"
   _columns:
     main: 主列
     widgets: 小工具
@@ -2595,55 +2654,55 @@ _abuseReport:
     notifiedWebhook: 使用的 webhook
     deleteConfirm: 要删除通知吗？
 _moderationLogTypes:
-  createRole: 创建角色
-  deleteRole: 删除角色
-  updateRole: 更新角色
-  assignRole: 分配角色
-  unassignRole: 取消分配角色
-  suspend: 冻结
-  unsuspend: 解除冻结
-  addCustomEmoji: 添加自定义表情符号
-  updateCustomEmoji: 更新自定义表情符号
-  deleteCustomEmoji: 删除自定义表情符号
-  updateServerSettings: 更新服务器设置
-  updateUserNote: 更新管理笔记
-  deleteDriveFile: 删除文件
-  deleteNote: 删除帖子
-  createGlobalAnnouncement: 创建全体通知
-  createUserAnnouncement: 创建用户通知
-  updateGlobalAnnouncement: 更新全体通知
-  updateUserAnnouncement: 更新用户通知
-  deleteGlobalAnnouncement: 删除全体通知
-  deleteUserAnnouncement: 删除用户通知
-  resetPassword: 重置密码
-  suspendRemoteInstance: 停止远程服务器
-  unsuspendRemoteInstance: 恢复远程服务器
-  updateRemoteInstanceNote: 更新远程服务器的管理笔记
-  markSensitiveDriveFile: 标记网盘文件为敏感媒体
-  unmarkSensitiveDriveFile: 取消标记网盘文件为敏感媒体
-  resolveAbuseReport: 处理举报
-  forwardAbuseReport: 转发举报
-  updateAbuseReportNote: 更新举报用管理笔记
-  createInvitation: 生成邀请码
-  createAd: 创建了广告
-  deleteAd: 删除了广告
-  updateAd: 更新了广告
-  createAvatarDecoration: 新建头像挂件
-  updateAvatarDecoration: 更新头像挂件
-  deleteAvatarDecoration: 删除头像挂件
-  unsetUserAvatar: 清除用户头像
-  unsetUserBanner: 清除用户横幅
-  createSystemWebhook: 新建了 SystemWebhook
-  updateSystemWebhook: 更新了 SystemWebhook
-  deleteSystemWebhook: 删除了 SystemWebhook
-  createAbuseReportNotificationRecipient: 新建了举报通知
-  updateAbuseReportNotificationRecipient: 更新了举报通知
-  deleteAbuseReportNotificationRecipient: 删除了举报通知
-  deleteAccount: 删除了账户
-  deletePage: 删除了页面
-  deleteFlash: 删除了 Play
-  deleteGalleryPost: 删除了图库稿件
-  approve: 核准
+  createRole: "创建角色"
+  deleteRole: "删除角色"
+  updateRole: "更新角色"
+  assignRole: "分配角色"
+  unassignRole: "取消分配角色"
+  suspend: "冻结"
+  unsuspend: "解除冻结"
+  addCustomEmoji: "添加自定义表情符号"
+  updateCustomEmoji: "更新自定义表情符号"
+  deleteCustomEmoji: "删除自定义表情符号"
+  updateServerSettings: "更新服务器设置"
+  updateUserNote: "更新管理笔记"
+  deleteDriveFile: "删除文件"
+  deleteNote: "删除帖子"
+  createGlobalAnnouncement: "创建全体通知"
+  createUserAnnouncement: "创建用户通知"
+  updateGlobalAnnouncement: "更新全体通知"
+  updateUserAnnouncement: "更新用户通知"
+  deleteGlobalAnnouncement: "删除全体通知"
+  deleteUserAnnouncement: "删除用户通知"
+  resetPassword: "重置密码"
+  suspendRemoteInstance: "停止远程服务器"
+  unsuspendRemoteInstance: "恢复远程服务器"
+  updateRemoteInstanceNote: "更新远程服务器的管理笔记"
+  markSensitiveDriveFile: "标记网盘文件为敏感媒体"
+  unmarkSensitiveDriveFile: "取消标记网盘文件为敏感媒体"
+  resolveAbuseReport: "处理举报"
+  forwardAbuseReport: "转发举报"
+  updateAbuseReportNote: "更新举报用管理笔记"
+  createInvitation: "生成邀请码"
+  createAd: "创建了广告"
+  deleteAd: "删除了广告"
+  updateAd: "更新了广告"
+  createAvatarDecoration: "新建头像挂件"
+  updateAvatarDecoration: "更新头像挂件"
+  deleteAvatarDecoration: "删除头像挂件"
+  unsetUserAvatar: "清除用户头像"
+  unsetUserBanner: "清除用户横幅"
+  createSystemWebhook: "新建了 SystemWebhook"
+  updateSystemWebhook: "更新了 SystemWebhook"
+  deleteSystemWebhook: "删除了 SystemWebhook"
+  createAbuseReportNotificationRecipient: "新建了举报通知"
+  updateAbuseReportNotificationRecipient: "更新了举报通知"
+  deleteAbuseReportNotificationRecipient: "删除了举报通知"
+  deleteAccount: "删除了账户"
+  deletePage: "删除了页面"
+  deleteFlash: "删除了 Play"
+  deleteGalleryPost: "删除了图库稿件"
+  updateProxyAccountDescription: "更新代理账户的简介"
 _fileViewer:
   title: 文件信息
   type: 文件类型
@@ -2656,11 +2715,9 @@ _externalResourceInstaller:
   title: 从外部站点安装
   checkVendorBeforeInstall: 请在安装前确保来源可靠
   _plugin:
-    title: 要安装此插件吗？
-    metaTitle: 插件信息
+    title: "要安装此插件吗？"
   _theme:
-    title: 要安装此主题吗？
-    metaTitle: 主题信息
+    title: "要安装此主题吗？"
   _meta:
     base: 基本配色方案
   _vendorInfo:
@@ -2944,4 +3001,8 @@ _bootErrors:
 _search:
   searchScopeAll: "全部"
   searchScopeLocal: "本地"
-  searchScopeUser: "用户指定"
+  searchScopeServer: "指定服务器"
+  searchScopeUser: "指定用户"
+  pleaseEnterServerHost: "请填写服务器主机名"
+  pleaseSelectUser: "请选择用户"
+  serverHostPlaceholder: "如：misskey.example.com"
