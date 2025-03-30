@@ -9,7 +9,6 @@ import { In, DataSource, IsNull, LessThan } from 'typeorm';
 import * as Redis from 'ioredis';
 import RE2 from 're2';
 import { Inject, Injectable, OnApplicationShutdown } from '@nestjs/common';
-import { extractMentions } from '@/misc/extract-mentions.js';
 import { extractCustomEmojisFromMfm } from '@/misc/extract-custom-emojis-from-mfm.js';
 import { extractHashtags } from '@/misc/extract-hashtags.js';
 import type { IMentionedRemoteUsers } from '@/models/Note.js';
@@ -203,7 +202,6 @@ export class NoteCreateService implements OnApplicationShutdown {
 		private globalEventService: GlobalEventService,
 		private queueService: QueueService,
 		private fanoutTimelineService: FanoutTimelineService,
-		private noteReadService: NoteReadService,
 		private noteDraftService: NoteDraftService,
 		private notificationService: NotificationService,
 		private relayService: RelayService,
