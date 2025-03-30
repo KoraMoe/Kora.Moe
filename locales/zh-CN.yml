@@ -289,7 +289,6 @@ deleteAreYouSure: "要删掉「{x}」吗？"
 resetAreYouSure: "恢复默认设置？"
 areYouSure: "你确定吗？"
 saved: "已保存"
-messaging: "聊天"
 upload: "本地上传"
 keepOriginalUploading: "保留原图"
 keepOriginalUploadingDescription: "上传图片时保留原始图片。关闭时，浏览器会在上传时生成一张用于web发布的图片。"
@@ -302,7 +301,7 @@ uploadFromUrlMayTakeTime: "上传可能需要一些时间完成。"
 explore: "发现"
 messageRead: "已读"
 noMoreHistory: "没有更多的历史记录"
-startMessaging: "添加聊天"
+startChat: "开始聊天"
 nUsersRead: "{n} 人已读"
 agreeTo: "勾选则表示已阅读并同意 {0}"
 agree: "同意"
@@ -491,8 +490,6 @@ noteOf: "{user} 的帖子"
 quoteAttached: "已引用"
 quoteQuestion: "是否引用此链接内容？"
 attachAsFileQuestion: "剪贴板内的文字过长。要转换为文本文件并添加吗？"
-noMessagesYet: "现在没有新的聊天"
-newMessageExists: "新信息"
 onlyOneFileCanBeAttached: "只能添加一个附件"
 signinRequired: "请先登录"
 signinOrContinueOnRemote: "若要继续，需要转到您所使用的实例，或者在此服务器上注册或登录。"
@@ -1335,6 +1332,55 @@ emojiPalette: "表情符号调色板"
 postForm: "投稿窗口"
 textCount: "字数"
 information: "关于"
+chat: "聊天"
+migrateOldSettings: "迁移旧设置信息"
+migrateOldSettings_description: "通常设置信息将自动迁移。但如果由于某种原因迁移不成功，则可以手动触发迁移过程。当前的配置信息将被覆盖。"
+compress: "压缩"
+_chat:
+  noMessagesYet: "还没有消息"
+  newMessage: "新消息"
+  individualChat: "私聊"
+  individualChat_description: "可以与特定用户进行一对一聊天。"
+  roomChat: "群聊"
+  roomChat_description: "可以进行多人聊天。\n就算用户未允许私聊，只要接受了邀请，仍可以聊天。"
+  createRoom: "创建房间"
+  inviteUserToChat: "邀请用户来开始聊天"
+  yourRooms: "已创建的房间"
+  joiningRooms: "已加入的房间"
+  invitations: "邀请"
+  noInvitations: "没有邀请"
+  history: "历史"
+  noHistory: "没有历史记录"
+  noRooms: "没有房间"
+  inviteUser: "邀请用户"
+  sentInvitations: "已发送的邀请"
+  join: "加入"
+  ignore: "忽略"
+  leave: "退出房间"
+  members: "成员"
+  searchMessages: "搜索消息"
+  home: "首页"
+  send: "发送"
+  newline: "换行"
+  muteThisRoom: "静音此房间"
+  deleteRoom: "删除房间"
+  chatNotAvailableForThisAccountOrServer: "此服务器或者账户还未开启聊天功能。"
+  chatNotAvailableInOtherAccount: "对方账户目前处于无法使用聊天的状态。"
+  cannotChatWithTheUser: "无法与此用户聊天"
+  cannotChatWithTheUser_description: "可能现在无法使用聊天，或者对方未开启聊天。"
+  chatWithThisUser: "聊天"
+  thisUserAllowsChatOnlyFromFollowers: "此用户仅接受关注者发起的聊天。"
+  thisUserAllowsChatOnlyFromFollowing: "此用户仅接受关注的人发起的聊天。"
+  thisUserAllowsChatOnlyFromMutualFollowing: "此用户仅接受互相关注的人发起的聊天。"
+  thisUserNotAllowedChatAnyone: "此用户不接受任何人发起的聊天。"
+  chatAllowedUsers: "谁可以发起聊天"
+  chatAllowedUsers_note: "主动发起聊天时，对方将不受此设置限制。"
+  _chatAllowedUsers:
+    everyone: "任何人"
+    followers: "仅关注者"
+    following: "仅关注的人"
+    mutual: "仅相互关注"
+    none: "没有人"
 _emojiPalette:
   palettes: "调色板"
   enableSyncBetweenDevicesForPalettes: "启用调色板的设备间同步"
@@ -1360,6 +1406,13 @@ _settings:
   timelineAndNote: "时间线和帖子"
   makeEveryTextElementsSelectable: "使所有的文字均可选择"
   makeEveryTextElementsSelectable_description: "若开启，在某些情况下可能降低用户体验。"
+  useStickyIcons: "使图标跟随滚动"
+  showNavbarSubButtons: "在导航栏中显示副按钮"
+  ifOn: "启用时"
+  ifOff: "关闭时"
+  _chat:
+    showSenderName: "显示发送者的名字"
+    sendOnEnter: "回车键发送"
 _preferencesProfile:
   profileName: "配置名"
   profileNameDescription: "请指定用于识别此设备的名称"
@@ -1871,39 +1924,39 @@ _role:
     middle: 中
     high: 高
   _options:
-    gtlAvailable: 查看全局时间线
-    ltlAvailable: 查看本地时间线
-    canPublicNote: 允许公开发帖
-    canEditNote: 允许编辑帖子
-    mentionMax: 帖子内最多提及数
-    canInvite: 发放服务器邀请码
-    inviteLimit: 可生成邀请码的数量
-    inviteLimitCycle: 邀请码的发行间隔
-    inviteExpirationTime: 邀请码的有效日期
-    canManageCustomEmojis: 管理自定义表情符号
-    canManageAvatarDecorations: 管理头像挂件
-    driveCapacity: 网盘容量
-    alwaysMarkNsfw: 总是将文件标记为 NSFW
-    canUpdateBioMedia: 可以更新头像和横幅
-    pinMax: 帖子置顶数量限制
-    antennaMax: 可创建的最大天线数量
-    wordMuteMax: 隐藏词的字数限制
-    webhookMax: Webhook 创建数量限制
-    clipMax: 便签创建数量限制
-    noteEachClipsMax: 单个便签内的贴文数量限制
-    userListMax: 用户列表创建数量限制
-    userEachUserListsMax: 单个用户列表内用户数量限制
-    rateLimitFactor: 速率限制
-    descriptionOfRateLimitFactor: 值越小限制越少，值越大限制越多。
-    canHideAds: 可以隐藏广告
-    canSearchNotes: 是否可以搜索帖子
-    canUseTranslator: 使用翻译功能
-    avatarDecorationLimit: 可添加头像挂件的最大个数
-    canImportAntennas: 允许导入天线
-    canImportBlocking: 允许导入屏蔽列表
-    canImportFollowing: 允许导入关注列表
-    canImportMuting: 允许导入隐藏列表
-    canImportUserLists: 允许导入用户列表
+    gtlAvailable: "查看全局时间线"
+    ltlAvailable: "查看本地时间线"
+    canPublicNote: "允许公开发帖"
+    mentionMax: "帖子内最多提及数"
+    canInvite: "发放服务器邀请码"
+    inviteLimit: "可生成邀请码的数量"
+    inviteLimitCycle: "邀请码的发行间隔"
+    inviteExpirationTime: "邀请码的有效日期"
+    canManageCustomEmojis: "管理自定义表情符号"
+    canManageAvatarDecorations: "管理头像挂件"
+    driveCapacity: "网盘容量"
+    alwaysMarkNsfw: "总是将文件标记为 NSFW"
+    canUpdateBioMedia: "可以更新头像和横幅"
+    pinMax: "帖子置顶数量限制"
+    antennaMax: "可创建的最大天线数量"
+    wordMuteMax: "隐藏词的字数限制"
+    webhookMax: "Webhook 创建数量限制"
+    clipMax: "便签创建数量限制"
+    noteEachClipsMax: "单个便签内的贴文数量限制"
+    userListMax: "用户列表创建数量限制"
+    userEachUserListsMax: "单个用户列表内用户数量限制"
+    rateLimitFactor: "速率限制"
+    descriptionOfRateLimitFactor: "值越小限制越少，值越大限制越多。"
+    canHideAds: "可以隐藏广告"
+    canSearchNotes: "是否可以搜索帖子"
+    canUseTranslator: "使用翻译功能"
+    avatarDecorationLimit: "可添加头像挂件的最大个数"
+    canImportAntennas: "允许导入天线"
+    canImportBlocking: "允许导入屏蔽列表"
+    canImportFollowing: "允许导入关注列表"
+    canImportMuting: "允许导入隐藏列表"
+    canImportUserLists: "允许导入用户列表"
+    canChat: "允许聊天"
   _condition:
     roleAssignedTo: 已分配给手动角色
     isLocal: 是本地用户
@@ -2135,10 +2188,11 @@ _theme:
     accentLighten: 强调色(浅)
     fgHighlighted: 高亮显示文本
 _sfx:
-  note: 帖子
-  noteMy: 我的帖子
-  notification: 通知
-  reaction: 选择回应时
+  note: "帖子"
+  noteMy: "我的帖子"
+  notification: "通知"
+  reaction: "选择回应时"
+  chatMessage: "聊天信息"
 _soundSettings:
   driveFile: 使用网盘内的音频
   driveFileWarn: 选择网盘上的文件
@@ -2201,90 +2255,92 @@ _2fa:
   backupCodesExhaustedWarning: 已使用完所有的备用代码。若验证器无法使用，则无法再访问您的账户。请重置验证器。
   moreDetailedGuideHere: 此处为详细指南
 _permissions:
-  read:account: 查看账户信息
-  write:account: 更改帐户信息
-  read:blocks: 查看屏蔽列表
-  write:blocks: 编辑屏蔽列表
-  read:drive: 查看网盘
-  write:drive: 管理网盘文件
-  read:favorites: 查看收藏夹
-  write:favorites: 编辑收藏夹
-  read:following: 查看关注信息
-  write:following: 关注/取消关注
-  read:messaging: 查看消息
-  write:messaging: 撰写或删除消息
-  read:mutes: 查看隐藏列表
-  write:mutes: 编辑隐藏列表
-  write:notes: 撰写或删除帖子
-  read:notifications: 查看通知
-  write:notifications: 管理通知
-  read:reactions: 查看回应
-  write:reactions: 回应操作
-  write:votes: 投票
-  read:pages: 查看页面
-  write:pages: 操作页面
-  read:page-likes: 查看喜欢的页面
-  write:page-likes: 操作喜欢的页面
-  read:user-groups: 查看用户组
-  write:user-groups: 操作用户组
-  read:channels: 查看频道
-  write:channels: 管理频道
-  read:gallery: 浏览图库
-  write:gallery: 操作图库
-  read:gallery-likes: 读取喜欢的图片
-  write:gallery-likes: 操作喜欢的图片
-  read:flash: 查看 Play
-  write:flash: 编辑 Play
-  read:flash-likes: 查看 Play 的点赞
-  write:flash-likes: 编辑 Play 的点赞列表
-  read:admin:abuse-user-reports: 查看来自用户的举报
-  write:admin:delete-account: 删除用户账户
-  write:admin:delete-all-files-of-a-user: 删除用户所有的文件
-  read:admin:index-stats: 查看数据库索引相关的信息
-  read:admin:table-stats: 查看数据库表相关的信息
-  read:admin:user-ips: 查看用户 IP 地址
-  read:admin:meta: 查看实例的元数据
-  write:admin:reset-password: 重置用户密码
-  write:admin:resolve-abuse-user-report: 将来自用户的报告标记为「已解决」
-  write:admin:send-email: 发送邮件
-  read:admin:server-info: 查看服务器信息
-  read:admin:show-moderation-log: 查看管理日志
-  read:admin:show-user: 查看用户的非公开信息
-  write:admin:suspend-user: 冻结用户
-  write:admin:unset-user-avatar: 删除用户头像
-  write:admin:unset-user-banner: 删除用户横幅
-  write:admin:unsuspend-user: 解除用户冻结
-  write:admin:meta: 编辑实例元数据
-  write:admin:user-note: 编辑管理笔记
-  write:admin:roles: 编辑角色
-  read:admin:roles: 查看角色
-  write:admin:relays: 编辑中继
-  read:admin:relays: 查看中继
-  write:admin:invite-codes: 编辑邀请码
-  read:admin:invite-codes: 查看邀请码
-  write:admin:announcements: 编辑公告
-  read:admin:announcements: 查看公告
-  write:admin:avatar-decorations: 编辑头像挂件
-  read:admin:avatar-decorations: 查看头像挂件
-  write:admin:federation: 编辑联合相关信息
-  write:admin:account: 编辑用户账户
-  read:admin:account: 查看用户相关情报
-  write:admin:emoji: 编辑表情文字
-  read:admin:emoji: 查看表情文字
-  write:admin:queue: 编辑作业队列
-  read:admin:queue: 查看作业队列相关情报
-  write:admin:promo: 运营推广说明
-  write:admin:drive: 编辑用户网盘
-  read:admin:drive: 查看用户网盘相关情报
-  read:admin:stream: 使用管理员用的 Websocket API
-  write:admin:ad: 编辑广告
-  read:admin:ad: 查看广告
-  write:invite-codes: 生成邀请码
-  read:invite-codes: 获取已发行的邀请码
-  write:clip-favorite: 编辑便签的点赞
-  read:clip-favorite: 查看便签的点赞
-  read:federation: 查看联合相关信息
-  write:report-abuse: 举报用户
+  "read:account": "查看账户信息"
+  "write:account": "更改帐户信息"
+  "read:blocks": "查看屏蔽列表"
+  "write:blocks": "编辑屏蔽列表"
+  "read:drive": "查看网盘"
+  "write:drive": "管理网盘文件"
+  "read:favorites": "查看收藏夹"
+  "write:favorites": "编辑收藏夹"
+  "read:following": "查看关注信息"
+  "write:following": "关注/取消关注"
+  "read:messaging": "查看消息"
+  "write:messaging": "撰写或删除消息"
+  "read:mutes": "查看隐藏列表"
+  "write:mutes": "编辑隐藏列表"
+  "write:notes": "撰写或删除帖子"
+  "read:notifications": "查看通知"
+  "write:notifications": "管理通知"
+  "read:reactions": "查看回应"
+  "write:reactions": "回应操作"
+  "write:votes": "投票"
+  "read:pages": "查看页面"
+  "write:pages": "操作页面"
+  "read:page-likes": "查看喜欢的页面"
+  "write:page-likes": "操作喜欢的页面"
+  "read:user-groups": "查看用户组"
+  "write:user-groups": "操作用户组"
+  "read:channels": "查看频道"
+  "write:channels": "管理频道"
+  "read:gallery": "浏览图库"
+  "write:gallery": "操作图库"
+  "read:gallery-likes": "读取喜欢的图片"
+  "write:gallery-likes": "操作喜欢的图片"
+  "read:flash": "查看 Play"
+  "write:flash": "编辑 Play"
+  "read:flash-likes": "查看 Play 的点赞"
+  "write:flash-likes": "编辑 Play 的点赞列表"
+  "read:admin:abuse-user-reports": "查看来自用户的举报"
+  "write:admin:delete-account": "删除用户账户"
+  "write:admin:delete-all-files-of-a-user": "删除用户所有的文件"
+  "read:admin:index-stats": "查看数据库索引相关的信息"
+  "read:admin:table-stats": "查看数据库表相关的信息"
+  "read:admin:user-ips": "查看用户 IP 地址"
+  "read:admin:meta": "查看实例的元数据"
+  "write:admin:reset-password": "重置用户密码"
+  "write:admin:resolve-abuse-user-report": "将来自用户的报告标记为「已解决」"
+  "write:admin:send-email": "发送邮件"
+  "read:admin:server-info": "查看服务器信息"
+  "read:admin:show-moderation-log": "查看管理日志"
+  "read:admin:show-user": "查看用户的非公开信息"
+  "write:admin:suspend-user": "冻结用户"
+  "write:admin:unset-user-avatar": "删除用户头像"
+  "write:admin:unset-user-banner": "删除用户横幅"
+  "write:admin:unsuspend-user": "解除用户冻结"
+  "write:admin:meta": "编辑实例元数据"
+  "write:admin:user-note": "编辑管理笔记"
+  "write:admin:roles": "编辑角色"
+  "read:admin:roles": "查看角色"
+  "write:admin:relays": "编辑中继"
+  "read:admin:relays": "查看中继"
+  "write:admin:invite-codes": "编辑邀请码"
+  "read:admin:invite-codes": "查看邀请码"
+  "write:admin:announcements": "编辑公告"
+  "read:admin:announcements": "查看公告"
+  "write:admin:avatar-decorations": "编辑头像挂件"
+  "read:admin:avatar-decorations": "查看头像挂件"
+  "write:admin:federation": "编辑联合相关信息"
+  "write:admin:account": "编辑用户账户"
+  "read:admin:account": "查看用户相关情报"
+  "write:admin:emoji": "编辑表情文字"
+  "read:admin:emoji": "查看表情文字"
+  "write:admin:queue": "编辑作业队列"
+  "read:admin:queue": "查看作业队列相关情报"
+  "write:admin:promo": "运营推广说明"
+  "write:admin:drive": "编辑用户网盘"
+  "read:admin:drive": "查看用户网盘相关情报"
+  "read:admin:stream": "使用管理员用的 Websocket API"
+  "write:admin:ad": "编辑广告"
+  "read:admin:ad": "查看广告"
+  "write:invite-codes": "生成邀请码"
+  "read:invite-codes": "获取已发行的邀请码"
+  "write:clip-favorite": "编辑便签的点赞"
+  "read:clip-favorite": "查看便签的点赞"
+  "read:federation": "查看联合相关信息"
+  "write:report-abuse": "举报用户"
+  "write:chat": "撰写或删除消息"
+  "read:chat": "查看聊天"
 _auth:
   shareAccessTitle: 应用程序授权许可
   shareAccess: 您要授权允许 “{name}” 访问您的帐户吗？
@@ -2535,6 +2591,7 @@ _notification:
   newNote: "新的帖子"
   unreadAntennaNote: "天线 {name}"
   roleAssigned: "授予的角色"
+  chatRoomInvitationReceived: "受邀加入聊天室"
   emptyPushNotificationMessage: "推送通知已更新"
   achievementEarned: "获得成就"
   testNotification: "测试通知"
@@ -2563,6 +2620,7 @@ _notification:
     receiveFollowRequest: "收到关注请求"
     followRequestAccepted: "关注请求已通过"
     roleAssigned: "授予的角色"
+    chatRoomInvitationReceived: "受邀加入聊天室"
     achievementEarned: "取得的成就"
     exportCompleted: "已完成导出"
     login: "登录"
@@ -2702,6 +2760,7 @@ _moderationLogTypes:
   deletePage: "删除了页面"
   deleteFlash: "删除了 Play"
   deleteGalleryPost: "删除了图库稿件"
+  deleteChatRoom: "删除聊天室"
   updateProxyAccountDescription: "更新代理账户的简介"
 _fileViewer:
   title: 文件信息

@@ -48,6 +48,9 @@ SPDX-License-Identifier: AGPL-3.0-only
 			</MkA>
 		</div>
 		<div :class="$style.bottom">
+			<button v-if="showWidgetButton" class="_button" :class="[$style.widget]" @click="() => emit('widgetButtonClick')">
+				<i class="ti ti-apps ti-fw"></i>
+			</button>
 			<button v-tooltip.noDelay.right="i18n.ts.note" class="_button" :class="[$style.post]" data-cy-open-post-form @click="() => { os.post(); }">
 				<i class="ti ti-pencil ti-fw" :class="$style.postIcon"></i><span :class="$style.postText">{{ i18n.ts.note }}</span>
 			</button>
@@ -65,7 +68,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 	</svg>
 	-->
 
-	<div v-if="!forceIconOnly" :class="$style.subButtons">
+	<div v-if="!forceIconOnly && prefer.r.showNavbarSubButtons.value" :class="$style.subButtons">
 		<div :class="[$style.subButton, $style.menuEditButton]">
 			<svg viewBox="0 0 16 64" :class="$style.subButtonShape">
 				<g transform="matrix(0.333333,0,0,0.222222,0.000895785,21.3333)">
@@ -103,6 +106,14 @@ import { openAccountMenu as openAccountMenu_ } from '@/accounts.js';
 import { $i } from '@/i.js';
 
 const router = useRouter();
+
+const props = defineProps<{
+	showWidgetButton?: boolean;
+}>();
+
+const emit = defineEmits<{
+	(ev: 'widgetButtonClick'): void;
+}>();
 
 const forceIconOnly = ref(window.innerWidth <= 1279);
 const iconOnly = computed(() => {
@@ -558,6 +569,14 @@ function menuEdit() {
 		background: var(--nav-bg-transparent);
 		-webkit-backdrop-filter: var(--MI-blur, blur(8px));
 		backdrop-filter: var(--MI-blur, blur(8px));
+	}
+
+	.widget {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 52px;
+		text-align: center;
 	}
 
 	.post {

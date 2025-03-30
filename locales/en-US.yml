@@ -289,7 +289,6 @@ deleteAreYouSure: "Are you sure that you want to delete \"{x}\"?"
 resetAreYouSure: "Really reset?"
 areYouSure: "Are you sure?"
 saved: "Saved"
-messaging: "Chat"
 upload: "Upload"
 keepOriginalUploading: "Keep original image"
 keepOriginalUploadingDescription: "Saves the originally uploaded image as-is. If turned off, a version to display on the web will be generated on upload."
@@ -302,7 +301,7 @@ uploadFromUrlMayTakeTime: "It may take some time until the upload is complete."
 explore: "Explore"
 messageRead: "Read"
 noMoreHistory: "There is no further history"
-startMessaging: "Start a new chat"
+startChat: "Start chat"
 nUsersRead: "read by {n}"
 agreeTo: "I agree to {0}"
 agree: "Agree"
@@ -491,8 +490,6 @@ noteOf: "Note by {user}"
 quoteAttached: "Quote"
 quoteQuestion: "Append as quote?"
 attachAsFileQuestion: "The text in clipboard is long. Would you want to attach it as text file?"
-noMessagesYet: "No messages yet"
-newMessageExists: "There are new messages"
 onlyOneFileCanBeAttached: "You can only attach one file to a message"
 signinRequired: "Please register or sign in before continuing"
 signinOrContinueOnRemote: "To continue, you need to move your server or sign up / log in to this server."
@@ -1335,6 +1332,55 @@ emojiPalette: "Emoji palette"
 postForm: "Posting form"
 textCount: "Character count"
 information: "About"
+chat: "Chat"
+migrateOldSettings: "Migrate old client settings"
+migrateOldSettings_description: "This should be done automatically but if for some reason the migration was not successful, you can trigger the migration process yourself manually. The current configuration information will be overwritten."
+compress: "Compress"
+_chat:
+  noMessagesYet: "No messages yet"
+  newMessage: "New message"
+  individualChat: "Private Chat"
+  individualChat_description: "Have a private chat with another person."
+  roomChat: "Room Chat"
+  roomChat_description: "A chat room which can have multiple people.\nYou can also invite people who don't allow private chats if they accept the invite."
+  createRoom: "Create Room"
+  inviteUserToChat: "Invite users to start chatting"
+  yourRooms: "Created rooms"
+  joiningRooms: "Joined rooms"
+  invitations: "Invite"
+  noInvitations: "No invitations"
+  history: "History"
+  noHistory: "No history available"
+  noRooms: "No rooms found"
+  inviteUser: "Invite Users"
+  sentInvitations: "Sent Invites"
+  join: "Join"
+  ignore: "Ignore"
+  leave: "Leave room"
+  members: "Members"
+  searchMessages: "Search messages"
+  home: "Home"
+  send: "Send"
+  newline: "New line"
+  muteThisRoom: "Mute room"
+  deleteRoom: "Delete room"
+  chatNotAvailableForThisAccountOrServer: "Chat is not enabled on this server or for this account."
+  chatNotAvailableInOtherAccount: "The chat function is disabled for the other user."
+  cannotChatWithTheUser: "Cannot start a chat with this user"
+  cannotChatWithTheUser_description: "Chat is either unavailable or the other party has not enabled chat."
+  chatWithThisUser: "Chat with user"
+  thisUserAllowsChatOnlyFromFollowers: "This user accepts chats from followers only."
+  thisUserAllowsChatOnlyFromFollowing: "This user accepts chats only from users they follow."
+  thisUserAllowsChatOnlyFromMutualFollowing: "This user only accepts chats from users who are mutual followers."
+  thisUserNotAllowedChatAnyone: "This user is not accepting chats from anyone."
+  chatAllowedUsers: "Who to allow chatting with"
+  chatAllowedUsers_note: "You can chat with anyone to whom you have sent a chat message regardless of this setting."
+  _chatAllowedUsers:
+    everyone: "Everyone"
+    followers: "Only your followers"
+    following: "Only users you are following"
+    mutual: "Mutual followers only"
+    none: "Nobody"
 _emojiPalette:
   palettes: "Palette"
   enableSyncBetweenDevicesForPalettes: "Enable palette sync between devices"
@@ -1360,6 +1406,13 @@ _settings:
   timelineAndNote: "Timeline and note"
   makeEveryTextElementsSelectable: "Make all text elements selectable"
   makeEveryTextElementsSelectable_description: "Enabling this may reduce usability in some situations."
+  useStickyIcons: "Make icons follow while scrolling"
+  showNavbarSubButtons: "Show sub-buttons on the navigation bar"
+  ifOn: "When turned on"
+  ifOff: "When turned off"
+  _chat:
+    showSenderName: "Show sender's name"
+    sendOnEnter: "Press Enter to send"
 _preferencesProfile:
   profileName: "Profile name"
   profileNameDescription: "Set a name that identifies this device."
@@ -1397,14 +1450,12 @@ _flash:
   loadingFlashFile: Loading Flash file
   cspError: raw.esm.sh could not be accessed, meaning this instance's Content Security Policy is likely out of date. Please contact your instance administrators.
 _abuseUserReport:
-  forward: Forward
-  forwardDescription: Forward the report to a remote server as an anonymous system account.
-  resolve: Resolve
-  accept: Accept
-  reject: Reject
-  resolveTutorial: |-
-    If the report is legitimate in content, select "Accept" to mark the case as resolved in the affirmative.
-    If the content of the report is not legitimate, select "Reject" to mark the case as resolved in the negative.
+  forward: "Forward"
+  forwardDescription: "Forward the report to a remote server as an anonymous system account."
+  resolve: "Resolve"
+  accept: "Accept"
+  reject: "Reject"
+  resolveTutorial: "If the report's content is legitimate, select \"Accept\" to mark it as resolved.\nIf the report's content is illegitimate, select \"Reject\" to ignore it."
 _delivery:
   status: Delivery status
   stop: Suspended
@@ -1871,39 +1922,39 @@ _role:
     middle: Medium
     high: High
   _options:
-    gtlAvailable: Can view the global timeline
-    ltlAvailable: Can view the local timeline
-    canPublicNote: Can send public notes
-    canEditNote: Can edit notes
-    mentionMax: Maximum number of mentions in a note
-    canInvite: Can create instance invite codes
-    inviteLimit: Invite limit
-    inviteLimitCycle: Invite limit cooldown
-    inviteExpirationTime: Invite expiration interval
-    canManageCustomEmojis: Can manage custom emojis
-    canManageAvatarDecorations: Manage avatar decorations
-    driveCapacity: Drive capacity
-    alwaysMarkNsfw: Always mark files as NSFW
-    canUpdateBioMedia: Can edit an icon or a banner image
-    pinMax: Maximum number of pinned notes
-    antennaMax: Maximum number of antennas
-    wordMuteMax: Maximum number of characters allowed in word mutes
-    webhookMax: Maximum number of Webhooks
-    clipMax: Maximum number of Clips
-    noteEachClipsMax: Maximum number of notes within a clip
-    userListMax: Maximum number of user lists
-    userEachUserListsMax: Maximum number of users within a user list
-    rateLimitFactor: Rate limit
-    descriptionOfRateLimitFactor: 'Lower rate limits are less restrictive, higher ones more restrictive. '
-    canHideAds: Can hide ads
-    canSearchNotes: Usage of note search
-    canUseTranslator: Translator usage
-    avatarDecorationLimit: Maximum number of avatar decorations that can be applied
-    canImportAntennas: Allow importing antennas
-    canImportBlocking: Allow importing blocking
-    canImportFollowing: Allow importing following
-    canImportMuting: Allow importing muting
-    canImportUserLists: Allow importing lists
+    gtlAvailable: "Can view the global timeline"
+    ltlAvailable: "Can view the local timeline"
+    canPublicNote: "Can send public notes"
+    mentionMax: "Maximum number of mentions in a note"
+    canInvite: "Can create instance invite codes"
+    inviteLimit: "Invite limit"
+    inviteLimitCycle: "Invite limit cooldown"
+    inviteExpirationTime: "Invite expiration interval"
+    canManageCustomEmojis: "Can manage custom emojis"
+    canManageAvatarDecorations: "Manage avatar decorations"
+    driveCapacity: "Drive capacity"
+    alwaysMarkNsfw: "Always mark files as NSFW"
+    canUpdateBioMedia: "Can edit an icon or a banner image"
+    pinMax: "Maximum number of pinned notes"
+    antennaMax: "Maximum number of antennas"
+    wordMuteMax: "Maximum number of characters allowed in word mutes"
+    webhookMax: "Maximum number of Webhooks"
+    clipMax: "Maximum number of Clips"
+    noteEachClipsMax: "Maximum number of notes within a clip"
+    userListMax: "Maximum number of user lists"
+    userEachUserListsMax: "Maximum number of users within a user list"
+    rateLimitFactor: "Rate limit"
+    descriptionOfRateLimitFactor: "Lower rate limits are less restrictive, higher ones more restrictive. "
+    canHideAds: "Can hide ads"
+    canSearchNotes: "Usage of note search"
+    canUseTranslator: "Translator usage"
+    avatarDecorationLimit: "Maximum number of avatar decorations that can be applied"
+    canImportAntennas: "Allow importing antennas"
+    canImportBlocking: "Allow importing blocking"
+    canImportFollowing: "Allow importing following"
+    canImportMuting: "Allow importing muting"
+    canImportUserLists: "Allow importing lists"
+    canChat: "Allow Chat"
   _condition:
     roleAssignedTo: Assigned to manual roles
     isLocal: Local user
@@ -2135,10 +2186,11 @@ _theme:
     accentLighten: Accent (Lightened)
     fgHighlighted: Highlighted Text
 _sfx:
-  note: New note
-  noteMy: Own note
-  notification: Notifications
-  reaction: On choosing a reaction
+  note: "New note"
+  noteMy: "Own note"
+  notification: "Notifications"
+  reaction: "On choosing a reaction"
+  chatMessage: "Chat Messages"
 _soundSettings:
   driveFile: Use an audio file in Drive.
   driveFileWarn: Select an audio file from Drive.
@@ -2201,90 +2253,92 @@ _2fa:
   backupCodesExhaustedWarning: All backup codes have been used. Should you lose access to your two-factor authentification app, you will be unable to access this account. Please reconfigure two-factor authentification.
   moreDetailedGuideHere: Here is detailed guide
 _permissions:
-  read:account: View your account information
-  write:account: Edit your account information
-  read:blocks: View your list of blocked users
-  write:blocks: Edit your list of blocked users
-  read:drive: Access your Drive files and folders
-  write:drive: Edit or delete your Drive files and folders
-  read:favorites: View your list of favorites
-  write:favorites: Edit your list of favorites
-  read:following: View information on who you follow
-  write:following: Follow or unfollow other accounts
-  read:messaging: View your chats
-  write:messaging: Compose or delete chat messages
-  read:mutes: View your list of muted users
-  write:mutes: Edit your list of muted users
-  write:notes: Compose or delete notes
-  read:notifications: View your notifications
-  write:notifications: Manage your notifications
-  read:reactions: View your reactions
-  write:reactions: Edit your reactions
-  write:votes: Vote on a poll
-  read:pages: View your Pages
-  write:pages: Edit or delete your Pages
-  read:page-likes: View list of liked Pages
-  write:page-likes: Edit list of liked Pages
-  read:user-groups: View your user groups
-  write:user-groups: Edit or delete your user groups
-  read:channels: View your channels
-  write:channels: Edit your channels
-  read:gallery: View your gallery
-  write:gallery: Edit your gallery
-  read:gallery-likes: View your list of liked gallery posts
-  write:gallery-likes: Edit your list of liked gallery posts
-  read:flash: View Play
-  write:flash: Edit Plays
-  read:flash-likes: View list of liked Plays
-  write:flash-likes: Edit list of liked Plays
-  read:admin:abuse-user-reports: View user reports
-  write:admin:delete-account: Delete user account
-  write:admin:delete-all-files-of-a-user: Delete all files of a user
-  read:admin:index-stats: View database index stats
-  read:admin:table-stats: View database table stats
-  read:admin:user-ips: View user IP addresses
-  read:admin:meta: View instance metadata
-  write:admin:reset-password: Reset user password
-  write:admin:resolve-abuse-user-report: Resolve user report
-  write:admin:send-email: Send email
-  read:admin:server-info: View server info
-  read:admin:show-moderation-log: View moderation log
-  read:admin:show-user: View private user info
-  write:admin:suspend-user: Suspend user
-  write:admin:unset-user-avatar: Remove user avatar
-  write:admin:unset-user-banner: Remove user banner
-  write:admin:unsuspend-user: Unsuspend user
-  write:admin:meta: Manage instance metadata
-  write:admin:user-note: Manage moderation note
-  write:admin:roles: Manage roles
-  read:admin:roles: View roles
-  write:admin:relays: Manage relays
-  read:admin:relays: View relays
-  write:admin:invite-codes: Manage invite codes
-  read:admin:invite-codes: View invite codes
-  write:admin:announcements: Manage announcements
-  read:admin:announcements: View announcements
-  write:admin:avatar-decorations: Can manage avatar decorations
-  read:admin:avatar-decorations: View avatar decorations
-  write:admin:federation: Manage federation data
-  write:admin:account: Manage user account
-  read:admin:account: View user account
-  write:admin:emoji: Manage emoji
-  read:admin:emoji: View emoji
-  write:admin:queue: Manage job queue
-  read:admin:queue: View job queue info
-  write:admin:promo: Manage promotion notes
-  write:admin:drive: Manage user drive
-  read:admin:drive: View user drive info
-  read:admin:stream: Use WebSocket API for Admin
-  write:admin:ad: Manage ads
-  read:admin:ad: View ads
-  write:invite-codes: Create invite codes
-  read:invite-codes: Get invite codes
-  write:clip-favorite: Manage favorited clips
-  read:clip-favorite: View favorited clips
-  read:federation: Get federation data
-  write:report-abuse: Report violation
+  "read:account": "View your account information"
+  "write:account": "Edit your account information"
+  "read:blocks": "View your list of blocked users"
+  "write:blocks": "Edit your list of blocked users"
+  "read:drive": "Access your Drive files and folders"
+  "write:drive": "Edit or delete your Drive files and folders"
+  "read:favorites": "View your list of favorites"
+  "write:favorites": "Edit your list of favorites"
+  "read:following": "View information on who you follow"
+  "write:following": "Follow or unfollow other accounts"
+  "read:messaging": "View your chats"
+  "write:messaging": "Compose or delete chat messages"
+  "read:mutes": "View your list of muted users"
+  "write:mutes": "Edit your list of muted users"
+  "write:notes": "Compose or delete notes"
+  "read:notifications": "View your notifications"
+  "write:notifications": "Manage your notifications"
+  "read:reactions": "View your reactions"
+  "write:reactions": "Edit your reactions"
+  "write:votes": "Vote on a poll"
+  "read:pages": "View your Pages"
+  "write:pages": "Edit or delete your Pages"
+  "read:page-likes": "View list of liked Pages"
+  "write:page-likes": "Edit list of liked Pages"
+  "read:user-groups": "View your user groups"
+  "write:user-groups": "Edit or delete your user groups"
+  "read:channels": "View your channels"
+  "write:channels": "Edit your channels"
+  "read:gallery": "View your gallery"
+  "write:gallery": "Edit your gallery"
+  "read:gallery-likes": "View your list of liked gallery posts"
+  "write:gallery-likes": "Edit your list of liked gallery posts"
+  "read:flash": "View Play"
+  "write:flash": "Edit Plays"
+  "read:flash-likes": "View list of liked Plays"
+  "write:flash-likes": "Edit list of liked Plays"
+  "read:admin:abuse-user-reports": "View user reports"
+  "write:admin:delete-account": "Delete user account"
+  "write:admin:delete-all-files-of-a-user": "Delete all files of a user"
+  "read:admin:index-stats": "View database index stats"
+  "read:admin:table-stats": "View database table stats"
+  "read:admin:user-ips": "View user IP addresses"
+  "read:admin:meta": "View instance metadata"
+  "write:admin:reset-password": "Reset user password"
+  "write:admin:resolve-abuse-user-report": "Resolve user report"
+  "write:admin:send-email": "Send email"
+  "read:admin:server-info": "View server info"
+  "read:admin:show-moderation-log": "View moderation log"
+  "read:admin:show-user": "View private user info"
+  "write:admin:suspend-user": "Suspend user"
+  "write:admin:unset-user-avatar": "Remove user avatar"
+  "write:admin:unset-user-banner": "Remove user banner"
+  "write:admin:unsuspend-user": "Unsuspend user"
+  "write:admin:meta": "Manage instance metadata"
+  "write:admin:user-note": "Manage moderation note"
+  "write:admin:roles": "Manage roles"
+  "read:admin:roles": "View roles"
+  "write:admin:relays": "Manage relays"
+  "read:admin:relays": "View relays"
+  "write:admin:invite-codes": "Manage invite codes"
+  "read:admin:invite-codes": "View invite codes"
+  "write:admin:announcements": "Manage announcements"
+  "read:admin:announcements": "View announcements"
+  "write:admin:avatar-decorations": "Can manage avatar decorations"
+  "read:admin:avatar-decorations": "View avatar decorations"
+  "write:admin:federation": "Manage federation data"
+  "write:admin:account": "Manage user account"
+  "read:admin:account": "View user account"
+  "write:admin:emoji": "Manage emoji"
+  "read:admin:emoji": "View emoji"
+  "write:admin:queue": "Manage job queue"
+  "read:admin:queue": "View job queue info"
+  "write:admin:promo": "Manage promotion notes"
+  "write:admin:drive": "Manage user drive"
+  "read:admin:drive": "View user drive info"
+  "read:admin:stream": "Use WebSocket API for Admin"
+  "write:admin:ad": "Manage ads"
+  "read:admin:ad": "View ads"
+  "write:invite-codes": "Create invite codes"
+  "read:invite-codes": "Get invite codes"
+  "write:clip-favorite": "Manage favorited clips"
+  "read:clip-favorite": "View favorited clips"
+  "read:federation": "Get federation data"
+  "write:report-abuse": "Report violation"
+  "write:chat": "Compose or delete chat messages"
+  "read:chat": "Browse Chat"
 _auth:
   shareAccessTitle: Granting application permissions
   shareAccess: Would you like to authorize "{name}" to access this account?
@@ -2535,6 +2589,7 @@ _notification:
   newNote: "New note"
   unreadAntennaNote: "Antenna {name}"
   roleAssigned: "Role given"
+  chatRoomInvitationReceived: "You have been invited to a chat room"
   emptyPushNotificationMessage: "Push notifications have been updated"
   achievementEarned: "Achievement unlocked"
   testNotification: "Test notification"
@@ -2563,6 +2618,7 @@ _notification:
     receiveFollowRequest: "Received follow requests"
     followRequestAccepted: "Accepted follow requests"
     roleAssigned: "Role given"
+    chatRoomInvitationReceived: "Invited to chat room"
     achievementEarned: "Achievement unlocked"
     exportCompleted: "The export has been completed"
     login: "Sign In"
@@ -2640,9 +2696,9 @@ _webhookSettings:
   testRemarks: Click the button to the right of the switch to send a test Webhook with dummy data.
 _abuseReport:
   _notificationRecipient:
-    createRecipient: Add a recipient for reports
-    modifyRecipient: Edit a recipient for reports
-    recipientType: Notification type
+    createRecipient: "Add recipient for reports"
+    modifyRecipient: "Edit a recipient for reports"
+    recipientType: "Notification type"
     _recipientType:
       mail: Email
       webhook: Webhook
@@ -2702,6 +2758,7 @@ _moderationLogTypes:
   deletePage: "Page deleted"
   deleteFlash: "Play deleted"
   deleteGalleryPost: "Gallery post deleted"
+  deleteChatRoom: "Deleted Chat Room"
   updateProxyAccountDescription: "Update the description of the proxy account"
 _fileViewer:
   title: File details
@@ -2870,8 +2927,8 @@ _customEmojisManager:
     confirmImportEmojisTitle: Import Emojis
     confirmImportEmojisDescription: Import {count} Emoji(s) received from the remote server. Please pay close attention to the license of the Emoji. Are you sure to continue?
   _local:
-    tabTitleList: List of registered Emojis
-    tabTitleRegister: Emoji registration
+    tabTitleList: "Registered emojis"
+    tabTitleRegister: "Emoji registration"
     _list:
       emojisNothing: There are no registered Emojis.
       markAsDeleteTargetRows: Mark selected rows as a target to delete

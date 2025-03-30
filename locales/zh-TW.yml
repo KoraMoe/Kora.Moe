@@ -289,7 +289,6 @@ deleteAreYouSure: "確定要刪掉「{x}」嗎？"
 resetAreYouSure: "確定要重設嗎？"
 areYouSure: "是否確定？"
 saved: "已儲存"
-messaging: "聊天"
 upload: "上傳"
 keepOriginalUploading: "保留原圖"
 keepOriginalUploadingDescription: "上傳圖片時保留原始圖片。關閉時，瀏覽器會在上傳時生成適用於網路傳送的版本。"
@@ -302,7 +301,7 @@ uploadFromUrlMayTakeTime: "還需要一些時間才能完成上傳。"
 explore: "探索"
 messageRead: "已讀"
 noMoreHistory: "沒有更多歷史紀錄"
-startMessaging: "開始聊天"
+startChat: "開始聊天"
 nUsersRead: "{n} 人已讀"
 agreeTo: "我同意{0}"
 agree: "同意"
@@ -491,8 +490,6 @@ noteOf: "{user}的貼文"
 quoteAttached: "引用"
 quoteQuestion: "是否要引用？"
 attachAsFileQuestion: "剪貼簿的文字較長。請問是否要將其以文字檔的方式附加呢？"
-noMessagesYet: "沒有訊息"
-newMessageExists: "有新的訊息"
 onlyOneFileCanBeAttached: "只能加入一個附件"
 signinRequired: "請先登入"
 signinOrContinueOnRemote: "若要繼續，需前往您所在的伺服器，或者註冊並登入此伺服器"
@@ -1335,6 +1332,55 @@ emojiPalette: "表情符號調色盤"
 postForm: "發文視窗"
 textCount: "字數"
 information: "關於"
+chat: "聊天"
+migrateOldSettings: "遷移舊設定資訊"
+migrateOldSettings_description: "通常情況下，這會自動進行，但若因某些原因未能順利遷移，您可以手動觸發遷移處理。請注意，當前的設定資訊將會被覆寫。"
+compress: "壓縮"
+_chat:
+  noMessagesYet: "尚無訊息"
+  newMessage: "新訊息"
+  individualChat: "ㄧ對一聊天室"
+  individualChat_description: "可以與特定使用者進行一對一的聊天。"
+  roomChat: "多人聊天室"
+  roomChat_description: "可以進行多人聊天。\n此外，即使是未允許個人聊天的使用者，只要對方接受，也可以進行聊天。"
+  createRoom: "建立聊天室"
+  inviteUserToChat: "邀請使用者開始聊天"
+  yourRooms: "已建立的聊天室"
+  joiningRooms: "已加入的聊天室"
+  invitations: "邀請"
+  noInvitations: "沒有邀請"
+  history: "歷史紀錄"
+  noHistory: "沒有歷史紀錄"
+  noRooms: "沒有可用的聊天室"
+  inviteUser: "邀請使用者"
+  sentInvitations: "已傳送的邀請"
+  join: "加入"
+  ignore: "忽視"
+  leave: "退出聊天室"
+  members: "成員"
+  searchMessages: "搜尋聊天訊息"
+  home: "首頁"
+  send: "發送"
+  newline: "換行"
+  muteThisRoom: "此聊天室已靜音"
+  deleteRoom: "刪除聊天室"
+  chatNotAvailableForThisAccountOrServer: "這個伺服器或這個帳號的聊天功能尚未啟用。"
+  chatNotAvailableInOtherAccount: "對方的帳號無法使用聊天功能。"
+  cannotChatWithTheUser: "無法與此使用者聊天"
+  cannotChatWithTheUser_description: "聊天功能目前無法使用，或對方尚未開放聊天功能。"
+  chatWithThisUser: "聊天"
+  thisUserAllowsChatOnlyFromFollowers: "此使用者僅接受來自追隨者的聊天訊息。"
+  thisUserAllowsChatOnlyFromFollowing: "此使用者僅接受自己追隨的使用者傳送聊天訊息。"
+  thisUserAllowsChatOnlyFromMutualFollowing: "此使用者只接受互相追隨的使用者傳送聊天訊息。"
+  thisUserNotAllowedChatAnyone: "此使用者不接受來自任何人的聊天訊息。"
+  chatAllowedUsers: "允許聊天的對象"
+  chatAllowedUsers_note: "無論此設定為何，您仍可與自己曾發送過聊天訊息的對象進行聊天。"
+  _chatAllowedUsers:
+    everyone: "任何人"
+    followers: "追隨自己的使用者"
+    following: "只有您追隨的使用者"
+    mutual: "互相追隨"
+    none: "無"
 _emojiPalette:
   palettes: "調色盤"
   enableSyncBetweenDevicesForPalettes: "啟用裝置與裝置之間的調色盤同步化"
@@ -1360,6 +1406,13 @@ _settings:
   timelineAndNote: "時間軸及貼文"
   makeEveryTextElementsSelectable: "允許選取所有文字"
   makeEveryTextElementsSelectable_description: "啟用此功能後，可能會在某些情境下降低可用性。"
+  useStickyIcons: "使大頭貼跟隨捲動"
+  showNavbarSubButtons: "在導覽列顯示輔助按鈕"
+  ifOn: "開啟時"
+  ifOff: "關閉時"
+  _chat:
+    showSenderName: "顯示發送者的名稱"
+    sendOnEnter: "按下 Enter 發送訊息"
 _preferencesProfile:
   profileName: "設定檔案名稱"
   profileNameDescription: "設定一個名稱來識別此裝置。"
@@ -1876,6 +1929,7 @@ _role:
     canImportFollowing: "允許匯入追隨名單"
     canImportMuting: "允許匯入靜音名單"
     canImportUserLists: "允許匯入清單"
+    canChat: "允許聊天"
   _condition:
     roleAssignedTo: 手動指派角色完成
     isLocal: 本地使用者
@@ -2107,10 +2161,11 @@ _theme:
     accentLighten: 強調色（明亮）
     fgHighlighted: 突顯文字
 _sfx:
-  note: 貼文
-  noteMy: 我的貼文
-  notification: 通知
-  reaction: 選擇反應時
+  note: "貼文"
+  noteMy: "我的貼文"
+  notification: "通知"
+  reaction: "選擇反應時"
+  chatMessage: "聊天訊息"
 _soundSettings:
   driveFile: 使用雲端硬碟的音效檔案
   driveFileWarn: 請選擇雲端硬碟中的檔案
@@ -2173,90 +2228,92 @@ _2fa:
   backupCodesExhaustedWarning: "已使用所有備用驗證碼。如果無法使用驗證應用程式，則將無法再存取您的帳戶。請重新設定您的驗證應用程式。"
   moreDetailedGuideHere: "請點擊此處查看詳細說明。"
 _permissions:
-  read:account: 查看我的帳戶資訊
-  write:account: 更改我的帳戶資訊
-  read:blocks: 查看封鎖名單
-  write:blocks: 編輯封鎖名單
-  read:drive: 存取雲端硬碟
-  write:drive: 編輯雲端硬碟的檔案
-  read:favorites: 瀏覽我的最愛
-  write:favorites: 編輯我的最愛列表
-  read:following: 查看追隨中的使用者資訊
-  write:following: 追隨／解除追隨
-  read:messaging: 顯示訊息
-  write:messaging: 撰寫或刪除訊息
-  read:mutes: 顯示已靜音列表
-  write:mutes: 編輯已靜音列表
-  write:notes: 撰寫或刪除貼文
-  read:notifications: 查看通知
-  write:notifications: 編輯通知
-  read:reactions: 查看反應
-  write:reactions: 編輯反應
-  write:votes: 投票
-  read:pages: 顯示頁面
-  write:pages: 編輯頁面
-  read:page-likes: 顯示已按讚的頁面
-  write:page-likes: 編輯頁面上喜歡
-  read:user-groups: 顯示使用者群組
-  write:user-groups: 編輯使用者群組
-  read:channels: 已查看的頻道
-  write:channels: 編輯頻道
-  read:gallery: 瀏覽相簿
-  write:gallery: 編輯相簿
-  read:gallery-likes: 瀏覽相簿的讚
-  write:gallery-likes: 編輯相簿的讚
-  read:flash: 檢視 Play
-  write:flash: 編輯 Play
-  read:flash-likes: 檢視 Play 的讚
-  write:flash-likes: 編輯 Play 的讚
-  read:admin:abuse-user-reports: 查看來自使用者的檢舉
-  write:admin:delete-account: 刪除使用者帳戶
-  write:admin:delete-all-files-of-a-user: 刪除使用者的所有檔案
-  read:admin:index-stats: 查看資料庫索引的相關資訊
-  read:admin:table-stats: 查看資料庫表格的相關資訊
-  read:admin:user-ips: 查看使用者的 IP 位址
-  read:admin:meta: 查看實例的詮釋資料
-  write:admin:reset-password: 重設使用者的密碼
-  write:admin:resolve-abuse-user-report: 解決來自使用者的檢舉
-  write:admin:send-email: 發送郵件
-  read:admin:server-info: 查看伺服器的資訊
-  read:admin:show-moderation-log: 查看審查紀錄
-  read:admin:show-user: 查看使用者的私密資訊
-  write:admin:suspend-user: 凍結使用者
-  write:admin:unset-user-avatar: 刪除使用者的頭像
-  write:admin:unset-user-banner: 刪除使用者的橫幅
-  write:admin:unsuspend-user: 解除凍結使用者
-  write:admin:meta: 編輯實例的詮釋資料
-  write:admin:user-note: 編輯審查筆記
-  write:admin:roles: 編輯角色
-  read:admin:roles: 查看角色
-  write:admin:relays: 編輯中繼器
-  read:admin:relays: 查看中繼器
-  write:admin:invite-codes: 編輯邀請碼
-  read:admin:invite-codes: 查看邀請碼
-  write:admin:announcements: 編輯公告
-  read:admin:announcements: 查看公告
-  write:admin:avatar-decorations: 編輯頭像裝飾
-  read:admin:avatar-decorations: 查看頭像裝飾
-  write:admin:federation: 編輯站台聯邦的相關資訊
-  write:admin:account: 編輯使用者帳戶
-  read:admin:account: 查看使用者的相關資訊
-  write:admin:emoji: 編輯表情符號
-  read:admin:emoji: 查看表情符號
-  write:admin:queue: 編輯工作佇列
-  read:admin:queue: 查看工作佇列的相關資訊
-  write:admin:promo: 編輯推廣貼文
-  write:admin:drive: 編輯使用者的雲端硬碟
-  read:admin:drive: 查看使用者雲端硬碟的相關資訊
-  read:admin:stream: 使用管理員的 Websocket API
-  write:admin:ad: 編輯廣告
-  read:admin:ad: 查看廣告
-  write:invite-codes: 建立邀請碼
-  read:invite-codes: 取得邀請碼
-  write:clip-favorite: 編輯摘錄的讚
-  read:clip-favorite: 查看摘錄的讚
-  read:federation: 查看站台聯邦的相關資訊
-  write:report-abuse: 檢舉違規行為
+  "read:account": "查看我的帳戶資訊"
+  "write:account": "更改我的帳戶資訊"
+  "read:blocks": "查看封鎖名單"
+  "write:blocks": "編輯封鎖名單"
+  "read:drive": "存取雲端硬碟"
+  "write:drive": "編輯雲端硬碟的檔案"
+  "read:favorites": "瀏覽我的最愛"
+  "write:favorites": "編輯我的最愛列表"
+  "read:following": "查看追隨中的使用者資訊"
+  "write:following": "追隨／解除追隨"
+  "read:messaging": "顯示訊息"
+  "write:messaging": "撰寫或刪除訊息"
+  "read:mutes": "顯示已靜音列表"
+  "write:mutes": "編輯已靜音列表"
+  "write:notes": "撰寫或刪除貼文"
+  "read:notifications": "查看通知"
+  "write:notifications": "編輯通知"
+  "read:reactions": "查看反應"
+  "write:reactions": "編輯反應"
+  "write:votes": "投票"
+  "read:pages": "顯示頁面"
+  "write:pages": "編輯頁面"
+  "read:page-likes": "顯示已按讚的頁面"
+  "write:page-likes": "編輯頁面上喜歡"
+  "read:user-groups": "顯示使用者群組"
+  "write:user-groups": "編輯使用者群組"
+  "read:channels": "已查看的頻道"
+  "write:channels": "編輯頻道"
+  "read:gallery": "瀏覽相簿"
+  "write:gallery": "編輯相簿"
+  "read:gallery-likes": "瀏覽相簿的讚"
+  "write:gallery-likes": "編輯相簿的讚"
+  "read:flash": "檢視 Play"
+  "write:flash": "編輯 Play"
+  "read:flash-likes": "檢視 Play 的讚"
+  "write:flash-likes": "編輯 Play 的讚"
+  "read:admin:abuse-user-reports": "查看來自使用者的檢舉"
+  "write:admin:delete-account": "刪除使用者帳戶"
+  "write:admin:delete-all-files-of-a-user": "刪除使用者的所有檔案"
+  "read:admin:index-stats": "查看資料庫索引的相關資訊"
+  "read:admin:table-stats": "查看資料庫表格的相關資訊"
+  "read:admin:user-ips": "查看使用者的 IP 位址"
+  "read:admin:meta": "查看實例的詮釋資料"
+  "write:admin:reset-password": "重設使用者的密碼"
+  "write:admin:resolve-abuse-user-report": "解決來自使用者的檢舉"
+  "write:admin:send-email": "發送郵件"
+  "read:admin:server-info": "查看伺服器的資訊"
+  "read:admin:show-moderation-log": "查看審查紀錄"
+  "read:admin:show-user": "查看使用者的私密資訊"
+  "write:admin:suspend-user": "凍結使用者"
+  "write:admin:unset-user-avatar": "刪除使用者的頭像"
+  "write:admin:unset-user-banner": "刪除使用者的橫幅"
+  "write:admin:unsuspend-user": "解除凍結使用者"
+  "write:admin:meta": "編輯實例的詮釋資料"
+  "write:admin:user-note": "編輯審查筆記"
+  "write:admin:roles": "編輯角色"
+  "read:admin:roles": "查看角色"
+  "write:admin:relays": "編輯中繼器"
+  "read:admin:relays": "查看中繼器"
+  "write:admin:invite-codes": "編輯邀請碼"
+  "read:admin:invite-codes": "查看邀請碼"
+  "write:admin:announcements": "編輯公告"
+  "read:admin:announcements": "查看公告"
+  "write:admin:avatar-decorations": "編輯頭像裝飾"
+  "read:admin:avatar-decorations": "查看頭像裝飾"
+  "write:admin:federation": "編輯站台聯邦的相關資訊"
+  "write:admin:account": "編輯使用者帳戶"
+  "read:admin:account": "查看使用者的相關資訊"
+  "write:admin:emoji": "編輯表情符號"
+  "read:admin:emoji": "查看表情符號"
+  "write:admin:queue": "編輯工作佇列"
+  "read:admin:queue": "查看工作佇列的相關資訊"
+  "write:admin:promo": "編輯推廣貼文"
+  "write:admin:drive": "編輯使用者的雲端硬碟"
+  "read:admin:drive": "查看使用者雲端硬碟的相關資訊"
+  "read:admin:stream": "使用管理員的 Websocket API"
+  "write:admin:ad": "編輯廣告"
+  "read:admin:ad": "查看廣告"
+  "write:invite-codes": "建立邀請碼"
+  "read:invite-codes": "取得邀請碼"
+  "write:clip-favorite": "編輯摘錄的讚"
+  "read:clip-favorite": "查看摘錄的讚"
+  "read:federation": "查看站台聯邦的相關資訊"
+  "write:report-abuse": "檢舉違規行為"
+  "write:chat": "撰寫或刪除訊息"
+  "read:chat": "查看聊天訊息"
 _auth:
   shareAccessTitle: 應用程式的存取權限
   shareAccess: 要授權「“{name}”」存取您的帳戶嗎？
@@ -2507,6 +2564,7 @@ _notification:
   newNote: "新的貼文"
   unreadAntennaNote: "天線 {name}"
   roleAssigned: "已授予角色"
+  chatRoomInvitationReceived: "您被邀請加入聊天室"
   emptyPushNotificationMessage: "推送通知已更新"
   achievementEarned: "獲得成就"
   testNotification: "通知測試"
@@ -2535,6 +2593,7 @@ _notification:
     receiveFollowRequest: "已收到追隨請求"
     followRequestAccepted: "追隨請求已接受"
     roleAssigned: "已授予角色"
+    chatRoomInvitationReceived: "已被邀請加入聊天室"
     achievementEarned: "獲得成就"
     exportCompleted: "已完成匯出。"
     login: "登入"
@@ -2674,6 +2733,7 @@ _moderationLogTypes:
   deletePage: "刪除頁面"
   deleteFlash: "刪除 Play"
   deleteGalleryPost: "刪除相簿的貼文"
+  deleteChatRoom: "刪除聊天室"
   updateProxyAccountDescription: "更新代理帳戶的說明"
 _fileViewer:
   title: 檔案詳細資訊
