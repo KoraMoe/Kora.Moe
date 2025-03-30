@@ -69,6 +69,7 @@
 	"dependencies": {
 		"@aws-sdk/client-s3": "3.772.0",
 		"@aws-sdk/lib-storage": "3.772.0",
+		"@backrunner/url-cleaner": "0.1.0",
 		"@discordapp/twemoji": "15.1.0",
 		"@fastify/accepts": "5.0.2",
 		"@fastify/cookie": "11.0.2",
