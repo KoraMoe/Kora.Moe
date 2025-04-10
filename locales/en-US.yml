@@ -345,7 +345,7 @@ emptyDrive: "Your Drive is empty"
 emptyFolder: "This folder is empty"
 unableToDelete: "Unable to delete"
 inputNewFileName: "Enter a new filename"
-inputNewDescription: "Enter new caption"
+inputNewDescription: "Enter new alt text"
 inputNewFolderName: "Enter a new folder name"
 circularReferenceFolder: "The destination folder is a subfolder of the folder you wish to move."
 hasChildFilesOrFolders: "Since this folder is not empty, it can not be deleted."
@@ -424,6 +424,7 @@ antennaExcludeBots: "Exclude bot accounts"
 antennaKeywordsDescription: "Separate with spaces for an AND condition or with line breaks for an OR condition."
 notifyAntenna: "Notify about new notes"
 withFileAntenna: "Only notes with files"
+excludeNotesInSensitiveChannel: "Exclude notes from sensitive channels"
 enableServiceworker: "Enable Push-Notifications for your Browser"
 antennaUsersDescription: "List one username per line"
 caseSensitive: "Case sensitive"
@@ -643,8 +644,8 @@ disablePlayer: "Close video player"
 expandTweet: "Expand post"
 themeEditor: "Theme editor"
 description: "Description"
-describeFile: "Add caption"
-enterFileDescription: "Enter caption"
+describeFile: "Add alt text"
+enterFileDescription: "Enter alt text"
 author: "Author"
 leaveConfirm: "There are unsaved changes. Do you want to discard them?"
 manage: "Management"
@@ -1014,7 +1015,7 @@ sendPushNotificationReadMessageCaption: "This may increase the power consumption
 windowMaximize: "Maximize"
 windowMinimize: "Minimize"
 windowRestore: "Restore"
-caption: "Caption"
+caption: "Alt text"
 loggedInAsBot: "Currently logged in as bot"
 tools: "Tools"
 cannotLoad: "Unable to load"
@@ -1336,6 +1337,13 @@ chat: "Chat"
 migrateOldSettings: "Migrate old client settings"
 migrateOldSettings_description: "This should be done automatically but if for some reason the migration was not successful, you can trigger the migration process yourself manually. The current configuration information will be overwritten."
 compress: "Compress"
+right: "Right"
+bottom: "Bottom"
+top: "Top"
+embed: "Embed"
+settingsMigrating: "Settings are being migrated, please wait a moment... (You can also migrate manually later by going to Settings→Others→Migrate old settings)"
+readonly: "Read only"
+goToDeck: "Return to Deck"
 _chat:
   noMessagesYet: "No messages yet"
   newMessage: "New message"
@@ -1365,6 +1373,7 @@ _chat:
   muteThisRoom: "Mute room"
   deleteRoom: "Delete room"
   chatNotAvailableForThisAccountOrServer: "Chat is not enabled on this server or for this account."
+  chatIsReadOnlyForThisAccountOrServer: "Chat is read-only on this instance or this account. You cannot write new messages or create/join chat rooms."
   chatNotAvailableInOtherAccount: "The chat function is disabled for the other user."
   cannotChatWithTheUser: "Cannot start a chat with this user"
   cannotChatWithTheUser_description: "Chat is either unavailable or the other party has not enabled chat."
@@ -1410,6 +1419,7 @@ _settings:
   showNavbarSubButtons: "Show sub-buttons on the navigation bar"
   ifOn: "When turned on"
   ifOff: "When turned off"
+  enableSyncThemesBetweenDevices: "Synchronize installed themes across devices"
   _chat:
     showSenderName: "Show sender's name"
     sendOnEnter: "Press Enter to send"
@@ -1882,41 +1892,39 @@ _achievements:
       description: Two of the biggest objects in the bubble game at the same time
       flavor: You can fill a lunch box like this 🤯 🤯 a bit.
 _role:
-  new: New role
-  edit: Edit role
-  name: Role name
-  description: Role description
-  permission: Role permissions
-  descriptionOfPermission: |-
-    <b>Moderators</b> can perform basic moderation operations.
-    <b>Administrators</b> can change all settings of the instance.
-  assignTarget: Assignment type
-  descriptionOfAssignTarget: |-
-    <b>Manual</b> to manually change who is part of this role and who is not.
-    <b>Conditional</b> to have users be automatically assigned and removed from this role based on a condition.
-  manual: Manual
-  manualRoles: Manual roles
-  conditional: Conditional
-  conditionalRoles: Conditional roles
-  condition: Condition
-  isConditionalRole: This is a conditional role.
-  isPublic: Public role
-  descriptionOfIsPublic: This role will be displayed in the profiles of assigned users.
-  options: Options
-  policies: Policies
-  baseRole: Role template
-  useBaseValue: Use role template value
-  chooseRoleToAssign: Select the role to assign
-  iconUrl: Icon URL
-  asBadge: Show as badge
-  descriptionOfAsBadge: This role's icon will be displayed next to the username of users with this role if turned on.
-  isExplorable: Make role explorable
-  descriptionOfIsExplorable: This role's timeline and the list of users with this will be made public if enabled.
-  displayOrder: Position
-  descriptionOfDisplayOrder: The higher the number, the higher its UI position.
-  canEditMembersByModerator: Allow moderators to edit the list of members for this role
-  descriptionOfCanEditMembersByModerator: When turned on, moderators as well as administrators will be able to assign and unassign users to this role. When turned off, only administrators will be able to assign users.
-  priority: Priority
+  new: "New role"
+  edit: "Edit role"
+  name: "Role name"
+  description: "Role description"
+  permission: "Role permissions"
+  descriptionOfPermission: "<b>Moderators</b> can perform basic moderation operations.\n<b>Administrators</b> can change all settings of the instance."
+  assignTarget: "Assignment type"
+  descriptionOfAssignTarget: "<b>Manual</b> to manually change who is part of this role and who is not.\n<b>Conditional</b> to have users be automatically assigned and removed from this role based on a condition."
+  manual: "Manual"
+  manualRoles: "Manual roles"
+  conditional: "Conditional"
+  conditionalRoles: "Conditional roles"
+  condition: "Condition"
+  isConditionalRole: "This is a conditional role."
+  isPublic: "Public role"
+  descriptionOfIsPublic: "This role will be displayed in the profiles of assigned users."
+  options: "Options"
+  policies: "Policies"
+  baseRole: "Role template"
+  useBaseValue: "Use role template value"
+  chooseRoleToAssign: "Select the role to assign"
+  iconUrl: "Icon URL"
+  asBadge: "Show as badge"
+  descriptionOfAsBadge: "This role's icon will be displayed next to the username of users with this role if turned on."
+  isExplorable: "Make role explorable"
+  descriptionOfIsExplorable: "This role's timeline and the list of users with this will be made public if enabled."
+  displayOrder: "Position"
+  descriptionOfDisplayOrder: "The higher the number, the higher its UI position."
+  preserveAssignmentOnMoveAccount: "Preserve role assignment during migration"
+  preserveAssignmentOnMoveAccount_description: "When turned on, this role will be carried over to the destination account when an account with this role is migrated."
+  canEditMembersByModerator: "Allow moderators to edit the list of members for this role"
+  descriptionOfCanEditMembersByModerator: "When turned on, moderators as well as administrators will be able to assign and unassign users to this role. When turned off, only administrators will be able to assign users."
+  priority: "Priority"
   _priority:
     low: Low
     middle: Medium
@@ -1954,7 +1962,7 @@ _role:
     canImportFollowing: "Allow importing following"
     canImportMuting: "Allow importing muting"
     canImportUserLists: "Allow importing lists"
-    canChat: "Allow Chat"
+    chatAvailability: "Allow Chat"
   _condition:
     roleAssignedTo: Assigned to manual roles
     isLocal: Local user
@@ -2146,45 +2154,41 @@ _theme:
   importInfo: "If you enter theme code here, you can import it to the theme editor"
   deleteConstantConfirm: "Do you really want to delete the constant {const}?"
   keys:
-    accent: Accent
-    bg: Background
-    fg: Text
-    focus: Focus
-    indicator: Indicator
-    panel: Panel
-    shadow: Shadow
-    header: Header
-    navBg: Sidebar background
-    navFg: Sidebar text
-    navHoverFg: Sidebar text (Hover)
-    navActive: Sidebar text (Active)
-    navIndicator: Sidebar indicator
-    link: Link
-    hashtag: Hashtag
-    mention: Mention
-    mentionMe: Mentions (Me)
-    renote: Renote
-    modalBg: Modal background
-    divider: Divider
-    scrollbarHandle: Scrollbar handle
-    scrollbarHandleHover: Scrollbar handle (Hover)
-    dateLabelFg: Date label text
-    infoBg: Information background
-    infoFg: Information text
-    infoWarnBg: Warning background
-    infoWarnFg: Warning text
-    toastBg: Notification background
-    toastFg: Notification text
-    buttonBg: Button background
-    buttonHoverBg: Button background (Hover)
-    inputBorder: Input field border
-    driveFolderBg: Drive folder background
-    wallpaperOverlay: Wallpaper overlay
-    badge: Badge
-    messageBg: Chat background
-    accentDarken: Accent (Darkened)
-    accentLighten: Accent (Lightened)
-    fgHighlighted: Highlighted Text
+    accent: "Accent"
+    bg: "Background"
+    fg: "Text"
+    focus: "Focus"
+    indicator: "Indicator"
+    panel: "Panel"
+    shadow: "Shadow"
+    header: "Header"
+    navBg: "Sidebar background"
+    navFg: "Sidebar text"
+    navActive: "Sidebar text (Active)"
+    navIndicator: "Sidebar indicator"
+    link: "Link"
+    hashtag: "Hashtag"
+    mention: "Mention"
+    mentionMe: "Mentions (Me)"
+    renote: "Renote"
+    modalBg: "Modal background"
+    divider: "Divider"
+    scrollbarHandle: "Scrollbar handle"
+    scrollbarHandleHover: "Scrollbar handle (Hover)"
+    dateLabelFg: "Date label text"
+    infoBg: "Information background"
+    infoFg: "Information text"
+    infoWarnBg: "Warning background"
+    infoWarnFg: "Warning text"
+    toastBg: "Notification background"
+    toastFg: "Notification text"
+    buttonBg: "Button background"
+    buttonHoverBg: "Button background (Hover)"
+    inputBorder: "Input field border"
+    driveFolderBg: "Drive folder background"
+    badge: "Badge"
+    messageBg: "Chat background"
+    fgHighlighted: "Highlighted Text"
 _sfx:
   note: "New note"
   noteMy: "Own note"
@@ -2632,6 +2636,9 @@ _notification:
 _deck:
   alwaysShowMainColumn: "Always show main column"
   columnAlign: "Align columns"
+  columnGap: "Margin between columns"
+  deckMenuPosition: "Deck menu position"
+  navbarPosition: "Navigation bar position"
   addColumn: "Add column"
   newNoteNotificationSettings: "Notification setting for new notes"
   configureColumn: "Column settings"
@@ -2645,7 +2652,7 @@ _deck:
   newProfile: "New profile"
   deleteProfile: "Delete profile"
   introduction: "Create the perfect interface for you by arranging columns freely!"
-  introduction2: "Click on the + on the right of the screen to add new colums whenever you want."
+  introduction2: "Click on the + on the right of the screen to add new columns whenever you want."
   widgetsIntroduction: "Please select \"Edit widgets\" in the column menu and add a widget."
   useSimpleUiForNonRootPages: "Use simple UI for navigated pages"
   usedAsMinWidthWhenFlexible: "Minimum width will be used for this when the \"Auto-adjust width\" option is enabled"

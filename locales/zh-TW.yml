@@ -1336,6 +1336,12 @@ chat: "聊天"
 migrateOldSettings: "遷移舊設定資訊"
 migrateOldSettings_description: "通常情況下，這會自動進行，但若因某些原因未能順利遷移，您可以手動觸發遷移處理。請注意，當前的設定資訊將會被覆寫。"
 compress: "壓縮"
+right: "右"
+bottom: "下"
+top: "上"
+embed: "嵌入"
+settingsMigrating: "正在移轉設定。請稍候……（之後也可以到「設定 → 其他 → 舊設定資訊移轉」中手動進行移轉）"
+readonly: "唯讀"
 _chat:
   noMessagesYet: "尚無訊息"
   newMessage: "新訊息"
@@ -1365,6 +1371,7 @@ _chat:
   muteThisRoom: "此聊天室已靜音"
   deleteRoom: "刪除聊天室"
   chatNotAvailableForThisAccountOrServer: "這個伺服器或這個帳號的聊天功能尚未啟用。"
+  chatIsReadOnlyForThisAccountOrServer: "在此伺服器或此帳戶上的聊天是唯讀的。您無法發布新訊息、建立或加入聊天室。"
   chatNotAvailableInOtherAccount: "對方的帳號無法使用聊天功能。"
   cannotChatWithTheUser: "無法與此使用者聊天"
   cannotChatWithTheUser_description: "聊天功能目前無法使用，或對方尚未開放聊天功能。"
@@ -1410,6 +1417,7 @@ _settings:
   showNavbarSubButtons: "在導覽列顯示輔助按鈕"
   ifOn: "開啟時"
   ifOff: "關閉時"
+  enableSyncThemesBetweenDevices: "在裝置之間同步已安裝的主題"
   _chat:
     showSenderName: "顯示發送者的名稱"
     sendOnEnter: "按下 Enter 發送訊息"
@@ -1429,7 +1437,7 @@ _preferencesBackup:
 _accountSettings:
   requireSigninToViewContents: "須登入以顯示內容"
   requireSigninToViewContentsDescription1: "必須登入才會顯示您建立的貼文等內容。可望有效防止資訊被爬蟲蒐集。"
-  requireSigninToViewContentsDescription2: "來自不支援 URL 預覽 (OGP)、 網頁嵌入和引用貼文的伺服器，也將停止顯示。"
+  requireSigninToViewContentsDescription2: "針對您貼文的 URL 預覽 (OGP) 與網頁嵌入功能將會無法使用。而不支援引用貼文的伺服器，也將停止顯示。"
   requireSigninToViewContentsDescription3: "這些限制可能不適用於被聯邦發送至遠端伺服器的內容。"
   makeNotesFollowersOnlyBefore: "讓過去的貼文僅對追隨者顯示"
   makeNotesFollowersOnlyBeforeDescription: "啟用此功能後，超過設定的日期和時間或超過設定時間的貼文將僅對追隨者顯示。 如果您再次停用它，貼文的公開狀態也會恢復原狀。"
@@ -1857,41 +1865,39 @@ _achievements:
       description: 氣泡遊戲中最大的物體同時出現了兩個
       flavor: 這樣大小的便當盒，用　🤯　🤯　稍微裝滿一些吧
 _role:
-  new: 建立角色
-  edit: 編輯角色
-  name: 角色名稱
-  description: '角色描述 '
-  permission: 角色的權限
-  descriptionOfPermission: |-
-    <b>審查員</b>執行與審查相關的基本操作。
-    <b>管理員</b>能變更伺服器的全部設定。
-  assignTarget: 指派目標
-  descriptionOfAssignTarget: |-
-    <b>手動</b>是以手動管理這個角色包含的人員。
-    <b>符合條件</b>是設定條件以自動包含符合條件的使用者。
-  manual: 手動
-  manualRoles: 手動角色
-  conditional: 符合條件
-  conditionalRoles: 有條件的角色
-  condition: 條件
-  isConditionalRole: 這是條件角色。
-  isPublic: 角色為公開
-  descriptionOfIsPublic: 任何人都可以看到被指派了角色的使用者。此外，使用者的個人檔案將顯示這個角色。
-  options: 選項
-  policies: 政策
-  baseRole: 基本角色
-  useBaseValue: 使用基本角色的值
-  chooseRoleToAssign: 選擇要指派的角色
-  iconUrl: 圖示的 URL
-  asBadge: 顯示為徽章
-  descriptionOfAsBadge: 開啟的話，角色圖示會顯示在使用者名稱旁邊。
-  isExplorable: 讓使用者更容易找到您
-  descriptionOfIsExplorable: 若開啟則公開角色時間軸。若角色不是公開的，則無法公開時間軸。
-  displayOrder: 顯示順序
-  descriptionOfDisplayOrder: 數字越大，顯示在UI上的越上面。
-  canEditMembersByModerator: 允許編輯審查員的成員
-  descriptionOfCanEditMembersByModerator: 如果開啟，管理員與審查員都可以為使用者指派/解除指派該角色。如果關閉，則只有管理員可以執行。
-  priority: 優先級
+  new: "建立角色"
+  edit: "編輯角色"
+  name: "角色名稱"
+  description: "角色描述 "
+  permission: "角色的權限"
+  descriptionOfPermission: "<b>審查員</b>執行與審查相關的基本操作。\n<b>管理員</b>能變更伺服器的全部設定。"
+  assignTarget: "指派目標"
+  descriptionOfAssignTarget: "<b>手動</b>是以手動管理這個角色包含的人員。\n<b>符合條件</b>是設定條件以自動包含符合條件的使用者。"
+  manual: "手動"
+  manualRoles: "手動角色"
+  conditional: "符合條件"
+  conditionalRoles: "有條件的角色"
+  condition: "條件"
+  isConditionalRole: "這是條件角色。"
+  isPublic: "角色為公開"
+  descriptionOfIsPublic: "任何人都可以看到被指派了角色的使用者。此外，使用者的個人檔案將顯示這個角色。"
+  options: "選項"
+  policies: "政策"
+  baseRole: "基本角色"
+  useBaseValue: "使用基本角色的值"
+  chooseRoleToAssign: "選擇要指派的角色"
+  iconUrl: "圖示的 URL"
+  asBadge: "顯示為徽章"
+  descriptionOfAsBadge: "開啟的話，角色圖示會顯示在使用者名稱旁邊。"
+  isExplorable: "讓使用者更容易找到您"
+  descriptionOfIsExplorable: "若開啟則公開角色時間軸。若角色不是公開的，則無法公開時間軸。"
+  displayOrder: "顯示順序"
+  descriptionOfDisplayOrder: "數字越大，顯示在UI上的越上面。"
+  preserveAssignmentOnMoveAccount: "將指派狀態承接至轉移後的帳戶"
+  preserveAssignmentOnMoveAccount_description: "開啟此選項後，當具備此角色的帳戶被移轉時，該角色也會承接至轉移後的帳戶。"
+  canEditMembersByModerator: "允許編輯審查員的成員"
+  descriptionOfCanEditMembersByModerator: "如果開啟，管理員與審查員都可以為使用者指派/解除指派該角色。如果關閉，則只有管理員可以執行。"
+  priority: "優先級"
   _priority:
     low: 低
     middle: 中
@@ -1929,7 +1935,7 @@ _role:
     canImportFollowing: "允許匯入追隨名單"
     canImportMuting: "允許匯入靜音名單"
     canImportUserLists: "允許匯入清單"
-    canChat: "允許聊天"
+    chatAvailability: "允許聊天"
   _condition:
     roleAssignedTo: 手動指派角色完成
     isLocal: 本地使用者
@@ -2121,45 +2127,41 @@ _theme:
   importInfo: "您可以在此貼上佈景主題代碼，將其匯入編輯器中"
   deleteConstantConfirm: "確定要刪除常數{const}嗎？"
   keys:
-    accent: 重點色彩
-    bg: 背景
-    fg: 文本
-    focus: 聚焦
-    indicator: 指標
-    panel: 面板
-    shadow: 影子
-    header: 標題
-    navBg: '側邊欄的背景 '
-    navFg: 側邊欄的文字
-    navHoverFg: '側邊欄文字（懸浮） '
-    navActive: 側邊欄文字（活動）
-    navIndicator: 側邊欄指示符
-    link: 連結
-    hashtag: 標籤
-    mention: 提到
-    mentionMe: 提到了我
-    renote: 轉發貼文
-    modalBg: 對話框背景
-    divider: 分隔線
-    scrollbarHandle: 捲動條
-    scrollbarHandleHover: 捲動條（懸浮）
-    dateLabelFg: 日期標籤文字
-    infoBg: 資訊背景
-    infoFg: 資訊內容
-    infoWarnBg: 警告背景
-    infoWarnFg: 警告文字
-    toastBg: 通知背景
-    toastFg: 通知文本
-    buttonBg: 按鈕背景
-    buttonHoverBg: 按鈕背景 (漂浮)
-    inputBorder: 輸入框邊框
-    driveFolderBg: 雲端硬碟文件夾背景
-    wallpaperOverlay: 壁紙覆蓋層
-    badge: 徽章
-    messageBg: 私訊背景
-    accentDarken: 強調色（黑暗）
-    accentLighten: 強調色（明亮）
-    fgHighlighted: 突顯文字
+    accent: "重點色彩"
+    bg: "背景"
+    fg: "文本"
+    focus: "聚焦"
+    indicator: "指標"
+    panel: "面板"
+    shadow: "影子"
+    header: "標題"
+    navBg: "側邊欄的背景 "
+    navFg: "側邊欄的文字"
+    navActive: "側邊欄文字（活動）"
+    navIndicator: "側邊欄指示符"
+    link: "連結"
+    hashtag: "標籤"
+    mention: "提到"
+    mentionMe: "提到了我"
+    renote: "轉發貼文"
+    modalBg: "對話框背景"
+    divider: "分隔線"
+    scrollbarHandle: "捲動條"
+    scrollbarHandleHover: "捲動條（懸浮）"
+    dateLabelFg: "日期標籤文字"
+    infoBg: "資訊背景"
+    infoFg: "資訊內容"
+    infoWarnBg: "警告背景"
+    infoWarnFg: "警告文字"
+    toastBg: "通知背景"
+    toastFg: "通知文本"
+    buttonBg: "按鈕背景"
+    buttonHoverBg: "按鈕背景 (漂浮)"
+    inputBorder: "輸入框邊框"
+    driveFolderBg: "雲端硬碟文件夾背景"
+    badge: "徽章"
+    messageBg: "私訊背景"
+    fgHighlighted: "突顯文字"
 _sfx:
   note: "貼文"
   noteMy: "我的貼文"
@@ -2607,6 +2609,9 @@ _notification:
 _deck:
   alwaysShowMainColumn: "總是顯示主欄"
   columnAlign: "對齊欄位"
+  columnGap: "欄與欄之間的邊距"
+  deckMenuPosition: "多欄模式的選單位置"
+  navbarPosition: "導覽列位置"
   addColumn: "新增欄位"
   newNoteNotificationSettings: "新貼文通知的設定"
   configureColumn: "欄位的設定"

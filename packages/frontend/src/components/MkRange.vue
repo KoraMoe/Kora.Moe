@@ -213,7 +213,7 @@ function onMousedown(ev: MouseEvent | TouchEvent) {
 	> .caption {
 		font-size: 0.85em;
 		padding: 8px 0 0 0;
-		color: var(--MI_THEME-fgTransparentWeak);
+		color: color(from var(--MI_THEME-fg) srgb r g b / 0.75);
 
 		&:empty {
 			display: none;
@@ -287,7 +287,7 @@ function onMousedown(ev: MouseEvent | TouchEvent) {
 				border-radius: 999px;
 
 				&:hover {
-					background: var(--MI_THEME-accentLighten);
+					background: hsl(from var(--MI_THEME-accent) h s calc(l + 10));
 				}
 			}
 		}
