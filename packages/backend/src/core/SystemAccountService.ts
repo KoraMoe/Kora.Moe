@@ -113,6 +113,7 @@ export class SystemAccountService {
 				isLocked: true,
 				isExplorable: false,
 				isBot: true,
+				approved: true,
 				name: extra.name,
 			}).then(x => transactionalEntityManager.findOneByOrFail(MiUser, x.identifiers[0]));
 
