@@ -4,7 +4,13 @@ SPDX-License-Identifier: AGPL-3.0-only
 -->
 
 <template>
-<div :class="[$style.root, { [$style.modal]: modal, _popup: modal }]" @dragover.stop="onDragover" @dragenter="onDragenter" @dragleave="onDragleave" @drop.stop="onDrop">
+<div
+	:class="[$style.root, { [$style.modal]: modal, _popup: modal }]"
+	@dragover.stop="onDragover"
+	@dragenter="onDragenter"
+	@dragleave="onDragleave"
+	@drop.stop="onDrop"
+>
 	<header :class="$style.header">
 		<div :class="$style.headerRight">
 			<button v-click-anime class="_button" :class="$style.submit" :disabled="!canPost" data-cy-open-post-form-submit @click="post">
@@ -19,45 +25,46 @@ SPDX-License-Identifier: AGPL-3.0-only
 			</button>
 		</div>
 	</header>
-	<MkNoteSimple v-if="reply" :class="$style.targetNote" :note="reply"/>
-	<MkNoteSimple v-if="renote" :class="$style.targetNote" :note="renote"/>
-	<div v-if="quoteId" :class="$style.withQuote"><i class="ti ti-quote"></i>{{ i18n.ts.quoteAttached }}</div>
-	<input v-show="useCw" ref="cwInputEl" v-model="cw" :class="$style.cw" :placeholder="i18n.ts.annotation" @keydown="onKeydown">
-	<div :class="[$style.textOuter, { [$style.withCw]: useCw }]">
-		<div v-if="channel" :class="$style.colorBar" :style="{ background: channel.color }"></div>
-		<textarea ref="textareaEl" v-model="text" :class="[$style.text]" :disabled="posting || posted" :readonly="textAreaReadOnly" :placeholder="placeholder" data-cy-post-form-text @keydown="onKeydown" @paste="onPaste" @compositionupdate="onCompositionUpdate" @compositionend="onCompositionEnd"/>
-		<div v-if="maxTextLength - textLength < 100" :class="['_acrylic', $style.textCount, { [$style.textOver]: textLength > maxTextLength }]">{{ maxTextLength - textLength }}</div>
-	</div>
-	<input v-show="withHashtags" ref="hashtagsInputEl" v-model="hashtags" :class="$style.hashtags" :placeholder="i18n.ts.hashtags" list="hashtags">
-	<XPostFormAttaches v-model="files" @detach="detachFile" @changeSensitive="updateFileSensitive" @changeName="updateFileName" @replaceFile="replaceFile"/>
-	<MkPollEditor v-if="poll" v-model="poll" @destroyed="poll = null"/>
-	<MkNotePreview v-if="showPreview" :class="$style.preview" :text="text" :files="files" :poll="poll ?? undefined" :useCw="useCw" :cw="cw" :user="target.user"/>
-	<div v-if="showingOptions" style="padding: 8px 16px;">
-	</div>
-	<footer :class="$style.footer">
-		<div :class="$style.footerLeft">
-			<button v-tooltip="i18n.ts.attachFile" class="_button" :class="$style.footerButton" @click="chooseFileFrom"><i class="ti ti-photo-plus"></i></button>
-			<button v-tooltip="i18n.ts.poll" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: poll }]" @click="togglePoll"><i class="ti ti-chart-arrows"></i></button>
-			<button v-tooltip="i18n.ts.useCw" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: useCw }]" @click="useCw = !useCw"><i class="ti ti-eye-off"></i></button>
-			<button v-tooltip="i18n.ts.mention" class="_button" :class="$style.footerButton" @click="insertMention"><i class="ti ti-at"></i></button>
-			<button v-tooltip="i18n.ts.hashtags" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: withHashtags }]" @click="withHashtags = !withHashtags"><i class="ti ti-hash"></i></button>
-			<button v-if="postFormActions.length > 0" v-tooltip="i18n.ts.plugins" class="_button" :class="$style.footerButton" @click="showActions"><i class="ti ti-plug"></i></button>
-			<button v-tooltip="i18n.ts.emoji" :class="['_button', $style.footerButton]" @click="insertEmoji"><i class="ti ti-mood-happy"></i></button>
-			<button v-if="showAddMfmFunction" v-tooltip="i18n.ts.addMfmFunction" :class="['_button', $style.footerButton]" @click="insertMfmFunction"><i class="ti ti-palette"></i></button>
+	<section :class="$style.postFormMain">
+		<MkNoteSimple v-if="reply" :class="$style.targetNote" :note="reply"/>
+		<MkNoteSimple v-if="renote" :class="$style.targetNote" :note="renote"/>
+		<div v-if="quoteId" :class="$style.withQuote"><i class="ti ti-quote"></i>{{ i18n.ts.quoteAttached }}</div>
+		<input v-show="useCw" ref="cwInputEl" v-model="cw" :class="$style.cw" :placeholder="i18n.ts.annotation" @keydown="onKeydown">
+		<div :class="[$style.textOuter, { [$style.withCw]: useCw }]">
+			<div v-if="channel" :class="$style.colorBar" :style="{ background: channel.color }"></div>
+			<textarea ref="textareaEl" v-model="text" :class="[$style.text]" :disabled="posting || posted" :readonly="textAreaReadOnly" :placeholder="placeholder" data-cy-post-form-text @keydown="onKeydown" @paste="onPaste" @compositionupdate="onCompositionUpdate" @compositionend="onCompositionEnd"/>
+			<div v-if="maxTextLength - textLength < 100" :class="['_acrylic', $style.textCount, { [$style.textOver]: textLength > maxTextLength }]">{{ maxTextLength - textLength }}</div>
 		</div>
-		<div :class="$style.footerRight">
-			<button v-tooltip="i18n.ts.previewNoteText" class="_button" :class="[$style.footerButton, { [$style.previewButtonActive]: showPreview }]" @click="showPreview = !showPreview"><i class="ti ti-eye"></i></button>
-			<!--<button v-tooltip="i18n.ts.more" class="_button" :class="$style.footerButton" @click="showingOptions = !showingOptions"><i class="ti ti-dots"></i></button>-->
+		<input v-show="withHashtags" ref="hashtagsInputEl" v-model="hashtags" :class="$style.hashtags" :placeholder="i18n.ts.hashtags" list="hashtags">
+		<XPostFormAttaches v-model="files" @detach="detachFile" @changeSensitive="updateFileSensitive" @changeName="updateFileName" @replaceFile="replaceFile"/>
+		<MkPollEditor v-if="poll" v-model="poll" @destroyed="poll = null"/>
+		<MkNotePreview v-if="showPreview" :class="$style.preview" :text="text" :files="files" :poll="poll ?? undefined" :useCw="useCw" :cw="cw" :user="target.user"/>
+		<div v-if="showingOptions" style="padding: 8px 16px;">
 		</div>
-	</footer>
-	<datalist id="hashtags">
-		<option v-for="hashtag in recentHashtags" :key="hashtag" :value="hashtag"/>
-	</datalist>
+		<footer :class="$style.footer">
+			<div :class="$style.footerLeft">
+				<button v-tooltip="i18n.ts.attachFile" class="_button" :class="$style.footerButton" @click="chooseFileFrom"><i class="ti ti-photo-plus"></i></button>
+				<button v-tooltip="i18n.ts.poll" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: poll }]" @click="togglePoll"><i class="ti ti-chart-arrows"></i></button>
+				<button v-tooltip="i18n.ts.useCw" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: useCw }]" @click="useCw = !useCw"><i class="ti ti-eye-off"></i></button>
+				<button v-tooltip="i18n.ts.mention" class="_button" :class="$style.footerButton" @click="insertMention"><i class="ti ti-at"></i></button>
+				<button v-tooltip="i18n.ts.hashtags" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: withHashtags }]" @click="withHashtags = !withHashtags"><i class="ti ti-hash"></i></button>
+				<button v-if="postFormActions.length > 0" v-tooltip="i18n.ts.plugins" class="_button" :class="$style.footerButton" @click="showActions"><i class="ti ti-plug"></i></button>
+				<button v-tooltip="i18n.ts.emoji" :class="['_button', $style.footerButton]" @click="insertEmoji"><i class="ti ti-mood-happy"></i></button>
+				<button v-if="showAddMfmFunction" v-tooltip="i18n.ts.addMfmFunction" :class="['_button', $style.footerButton]" @click="insertMfmFunction"><i class="ti ti-palette"></i></button>
+			</div>
+			<div :class="$style.footerRight">
+				<button v-tooltip="i18n.ts.previewNoteText" class="_button" :class="[$style.footerButton, { [$style.previewButtonActive]: showPreview }]" @click="showPreview = !showPreview"><i class="ti ti-eye"></i></button>
+			</div>
+		</footer>
+		<datalist id="hashtags">
+			<option v-for="hashtag in recentHashtags" :key="hashtag" :value="hashtag"/>
+		</datalist>
+	</section>
 </div>
 </template>
 
 <script lang="ts" setup>
-import { inject, watch, nextTick, onMounted, provide, shallowRef, ref, computed } from 'vue';
+import { inject, watch, nextTick, onMounted, provide, ref, computed, useTemplateRef } from 'vue';
 import * as mfm from 'mfm-js';
 import * as Misskey from 'misskey-js';
 import autosize from 'autosize';
@@ -65,6 +72,7 @@ import insertTextAtCursor from 'insert-text-at-cursor';
 import { toASCII } from 'punycode.js';
 import { host, url } from '@@/js/config.js';
 import type { PollEditorModelValue } from '@/components/MkPollEditor.vue';
+import type { PostFormProps } from '@/types/post-form';
 import MkNoteSimple from '@/components/MkNoteSimple.vue';
 import MkNotePreview from '@/components/MkNotePreview.vue';
 import XPostFormAttaches from '@/components/MkPostFormAttaches.vue';
@@ -88,24 +96,14 @@ import { claimAchievement } from '@/utility/achievements.js';
 import { emojiPicker } from '@/utility/emoji-picker.js';
 import { mfmFunctionPicker } from '@/utility/mfm-function-picker.js';
 import { getPluginHandlers } from '@/plugin.js';
+import { DI } from '@/di.js';
 
 const $i = ensureSignin();
 
-const modal = inject('modal');
+const modal = inject(DI.inModal, false);
 
-const props = withDefaults(defineProps<{
+const props = withDefaults(defineProps<PostFormProps & {
 	target: Misskey.entities.Note;
-	reply?: Misskey.entities.Note;
-	renote?: Misskey.entities.Note;
-	channel?: Misskey.entities.Channel; // TODO
-	mention?: Misskey.entities.User;
-	specified?: Misskey.entities.UserDetailed;
-	initialText?: string;
-	initialCw?: string;
-	initialFiles?: Misskey.entities.DriveFile[];
-	initialLocalOnly?: boolean;
-	initialVisibleUsers?: Misskey.entities.UserDetailed[];
-	instant?: boolean;
 	fixed?: boolean;
 	autofocus?: boolean;
 	freezeAfterPosted?: boolean;
@@ -117,7 +115,7 @@ const props = withDefaults(defineProps<{
 	initialLocalOnly: undefined,
 });
 
-provide('mock', props.mock);
+provide(DI.mock, props.mock);
 
 const emit = defineEmits<{
 	(ev: 'posted'): void;
@@ -128,9 +126,9 @@ const emit = defineEmits<{
 	(ev: 'fileChangeSensitive', fileId: string, to: boolean): void;
 }>();
 
-const textareaEl = shallowRef<HTMLTextAreaElement | null>(null);
-const cwInputEl = shallowRef<HTMLInputElement | null>(null);
-const hashtagsInputEl = shallowRef<HTMLInputElement | null>(null);
+const textareaEl = useTemplateRef('textareaEl');
+const cwInputEl = useTemplateRef('cwInputEl');
+const hashtagsInputEl = useTemplateRef('hashtagsInputEl');
 
 const posting = ref(false);
 const posted = ref(false);
@@ -201,6 +199,12 @@ const maxTextLength = computed((): number => {
 	return instance ? instance.maxNoteTextLength : 1000;
 });
 
+const cwTextLength = computed((): number => {
+	return cw.value?.length ?? 0;
+});
+
+const maxCwTextLength = 100;
+
 const canPost = computed((): boolean => {
 	return !props.mock && !posting.value && !posted.value &&
 		(
@@ -211,6 +215,13 @@ const canPost = computed((): boolean => {
 			(props.reply != null && quoteId.value != null)
 		) &&
 		(textLength.value <= maxTextLength.value) &&
+		(
+			useCw.value ?
+				(
+					cw.value != null && cw.value.trim() !== '' &&
+					cwTextLength.value <= maxCwTextLength
+				) : true
+		) &&
 		(!poll.value || poll.value.choices.length >= 2);
 });
 
@@ -736,6 +747,8 @@ defineExpose({
 	&.modal {
 		width: 100%;
 		max-width: 520px;
+		overflow-x: clip;
+		overflow-y: auto;
 	}
 }
 
@@ -950,10 +963,32 @@ html[data-color-scheme=light] .preview {
 	}
 }
 
+.cwOuter {
+	width: 100%;
+	position: relative;
+}
+
 .cw {
 	z-index: 1;
 	padding-bottom: 8px;
 	border-bottom: solid 0.5px var(--MI_THEME-divider);
+}
+
+.cwTextCount {
+	position: absolute;
+	top: 0;
+	right: 2px;
+	padding: 2px 6px;
+	font-size: .9em;
+	color: var(--MI_THEME-warn);
+	border-radius: 6px;
+	max-width: 100%;
+	min-width: 1.6em;
+	text-align: center;
+
+	&.cwTextOver {
+		color: #ff2a2a;
+	}
 }
 
 .hashtags {
@@ -961,6 +996,11 @@ html[data-color-scheme=light] .preview {
 	padding-top: 8px;
 	padding-bottom: 8px;
 	border-top: solid 0.5px var(--MI_THEME-divider);
+}
+
+.postFormMain {
+	max-height: 85vh;
+	overflow-y: auto;
 }
 
 .textOuter {

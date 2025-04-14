@@ -4,28 +4,35 @@ SPDX-License-Identifier: AGPL-3.0-only
 -->
 
 <template>
-<MkModal ref="modal" :preferType="'dialog'" @click="modal?.close()" @closed="onModalClosed()" @esc="modal?.close()">
-	<MkEditForm ref="form" :class="$style.form" v-bind="props" autofocus freezeAfterPosted @posted="onPosted" @cancel="modal?.close()" @esc="modal?.close()"/>
+<MkModal
+	ref="modal"
+	:preferType="'dialog'"
+	@click="modal?.close()"
+	@closed="onModalClosed()"
+	@esc="modal?.close()"
+>
+	<MkEditForm
+		ref="form"
+		:class="$style.form"
+		v-bind="props"
+		autofocus
+		freezeAfterPosted
+		@posted="onPosted"
+		@cancel="modal?.close()"
+		@esc="modal?.close()"
+	/>
 </MkModal>
 </template>
 
 <script lang="ts" setup>
-import { shallowRef } from 'vue';
+import { useTemplateRef } from 'vue';
 import * as Misskey from 'misskey-js';
+import type { PostFormProps } from '@/types/post-form';
 import MkModal from '@/components/MkModal.vue';
 import MkEditForm from '@/components/MkEditForm.vue';
 
-const props = withDefaults(defineProps<{
+const props = withDefaults(defineProps<PostFormProps & {
 	target: Misskey.entities.Note;
-	reply?: Misskey.entities.Note;
-	renote?: Misskey.entities.Note;
-	channel?: any; // TODO
-	mention?: Misskey.entities.User;
-	specified?: Misskey.entities.UserDetailed;
-	initialText?: string;
-	initialCw?: string;
-	initialFiles?: Misskey.entities.DriveFile[];
-	initialVisibleUsers?: Misskey.entities.UserDetailed[];
 	instant?: boolean;
 	fixed?: boolean;
 	autofocus?: boolean;
@@ -37,8 +44,7 @@ const emit = defineEmits<{
 	(ev: 'closed'): void;
 }>();
 
-const modal = shallowRef<InstanceType<typeof MkModal>>();
-const form = shallowRef<InstanceType<typeof MkEditForm>>();
+const modal = useTemplateRef('modal');
 
 function onPosted() {
 	modal.value?.close({
