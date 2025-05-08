@@ -96,9 +96,6 @@ importers:
       '@backrunner/url-cleaner':
         specifier: 0.1.0
         version: 0.1.0
-      '@bull-board/api':
-        specifier: 6.9.1
-        version: 6.9.1(@bull-board/ui@6.9.1)
       '@discordapp/twemoji':
         specifier: 15.1.0
         version: 15.1.0
@@ -1908,14 +1905,6 @@ packages:
   '@bcoe/v8-coverage@1.0.2':
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
     engines: {node: '>=18'}
-
-  '@bull-board/api@6.9.1':
-    resolution: {integrity: sha512-t9aByYT4jErvFO7Kgkdkolu4eqPO609Vm/JaND/oM9x4Rr4rVi1srgvocvH1VRo4MO5QRI2ubwvTthb+BSu1ew==}
-    peerDependencies:
-      '@bull-board/ui': 6.9.1
-
-  '@bull-board/ui@6.9.1':
-    resolution: {integrity: sha512-m4ZLy/IXjE0Cnyupg6ANVGHeYV8K2mc3HFutkp/yNH8nY9RIz6y3I9ewLhkb6Y4UHAlAAAsN+JFkod+nfqBYDg==}
 
   '@bundled-es-modules/cookie@2.0.1':
     resolution: {integrity: sha512-8o+5fRPLNbjbdGRRmJj3h6Hh1AQJf2dk3qQ/5ZFb+PXkRNiSoMGGUKlsgLfrxneb72axVJyIYji64E2+nNfYyw==}
@@ -11936,15 +11925,6 @@ snapshots:
   '@bcoe/v8-coverage@0.2.3': {}
 
   '@bcoe/v8-coverage@1.0.2': {}
-
-  '@bull-board/api@6.9.1(@bull-board/ui@6.9.1)':
-    dependencies:
-      '@bull-board/ui': 6.9.1
-      redis-info: 3.1.0
-
-  '@bull-board/ui@6.9.1':
-    dependencies:
-      '@bull-board/api': 6.9.1(@bull-board/ui@6.9.1)
 
   '@bundled-es-modules/cookie@2.0.1':
     dependencies:

@@ -70,7 +70,6 @@
 		"@aws-sdk/client-s3": "3.797.0",
 		"@aws-sdk/lib-storage": "3.797.0",
 		"@backrunner/url-cleaner": "0.1.0",
-		"@bull-board/api": "6.9.1",
 		"@discordapp/twemoji": "15.1.0",
 		"@fastify/accepts": "5.0.2",
 		"@fastify/cookie": "11.0.2",
