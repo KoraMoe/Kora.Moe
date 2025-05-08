@@ -8,6 +8,7 @@ import cors from '@fastify/cors';
 import multipart from '@fastify/multipart';
 import { ModuleRef } from '@nestjs/core';
 import { AuthenticationResponseJSON } from '@simplewebauthn/types';
+import Logger from '@/logger.js';
 import type { Config } from '@/config.js';
 import type { InstancesRepository, AccessTokensRepository } from '@/models/_.js';
 import { DI } from '@/di-symbols.js';
@@ -19,6 +20,8 @@ import { SignupApiService } from './SignupApiService.js';
 import { SigninApiService } from './SigninApiService.js';
 import { SigninWithPasskeyApiService } from './SigninWithPasskeyApiService.js';
 import type { FastifyInstance, FastifyPluginOptions } from 'fastify';
+
+const logger = new Logger('ApiServerService', 'cyan');
 
 @Injectable()
 export class ApiServerService {
@@ -180,6 +183,7 @@ export class ApiServerService {
 		// because otherwise ClientServerService will return the base client HTML
 		// page with HTTP 200.
 		fastify.get('/*', (request, reply) => {
+			logger.warn(`Unknown API endpoint: ${request.url}`);
 			reply.code(404);
 			// Mock ApiCallService.send's error handling
 			reply.send({
