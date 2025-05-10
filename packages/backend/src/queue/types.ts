@@ -61,6 +61,7 @@ export type DbJobMap = {
 	importUserLists: DbUserImportJobData;
 	importCustomEmojis: DbUserImportJobData;
 	deleteAccount: DbUserDeleteJobData;
+	'prune-federated-data': PruneFederatedDataJobData;
 };
 
 export type DbJobDataWithUser = {
@@ -132,4 +133,11 @@ export type UserWebhookDeliverJobData<T extends WebhookEventTypes = WebhookEvent
 
 export type ThinUser = {
 	id: MiUser['id'];
+};
+
+export type PruneFederatedDataJobData = {
+	daysToKeep: number;
+	pruneNotes?: boolean;
+	pruneUsers?: boolean;
+	pruneFiles?: boolean;
 };

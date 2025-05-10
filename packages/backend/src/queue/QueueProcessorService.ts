@@ -43,6 +43,7 @@ import { CheckExpiredMutingsProcessorService } from './processors/CheckExpiredMu
 import { BakeBufferedReactionsProcessorService } from './processors/BakeBufferedReactionsProcessorService.js';
 import { CleanProcessorService } from './processors/CleanProcessorService.js';
 import { AggregateRetentionProcessorService } from './processors/AggregateRetentionProcessorService.js';
+import { PruneFederatedDataProcessorService } from './processors/PruneFederatedDataProcessorService.js';
 import { QueueLoggerService } from './QueueLoggerService.js';
 import { QUEUE, baseWorkerOptions } from './const.js';
 
@@ -123,6 +124,7 @@ export class QueueProcessorService implements OnApplicationShutdown {
 		private bakeBufferedReactionsProcessorService: BakeBufferedReactionsProcessorService,
 		private checkModeratorsActivityProcessorService: CheckModeratorsActivityProcessorService,
 		private cleanProcessorService: CleanProcessorService,
+		private pruneFederatedDataProcessorService: PruneFederatedDataProcessorService,
 	) {
 		this.logger = this.queueLoggerService.logger;
 
@@ -221,6 +223,7 @@ export class QueueProcessorService implements OnApplicationShutdown {
 					case 'importCustomEmojis': return this.importCustomEmojisProcessorService.process(job);
 					case 'importAntennas': return this.importAntennasProcessorService.process(job);
 					case 'deleteAccount': return this.deleteAccountProcessorService.process(job);
+					case 'prune-federated-data': return this.pruneFederatedDataProcessorService.process(job);
 					default: throw new Error(`unrecognized job type ${job.name} for db`);
 				}
 			};

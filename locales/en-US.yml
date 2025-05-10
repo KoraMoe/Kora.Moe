@@ -65,7 +65,7 @@ copyFileId: "Copy file ID"
 copyFolderId: "Copy folder ID"
 copyProfileUrl: "Copy profile URL"
 searchUser: "Search for a user"
-searchThisUsersNotes: "Search this user’s notes"
+searchThisUsersNotes: "Search this user's notes"
 reply: "Reply"
 loadMore: "Load more"
 showMore: "Show more"
@@ -863,7 +863,7 @@ administration: "Management"
 accounts: "Accounts"
 switch: "Switch"
 noMaintainerInformationWarning: "Maintainer information is not configured."
-noInquiryUrlWarning: "Inquiry URL isn’t set"
+noInquiryUrlWarning: "Inquiry URL isn't set"
 noBotProtectionWarning: "Bot protection is not configured."
 configure: "Configure"
 postToGallery: "Create new gallery post"
@@ -2895,7 +2895,7 @@ _urlPreviewSetting:
   title: URL preview settings
   enable: Enable URL preview
   timeout: Time out when getting preview (ms)
-  timeoutDescription: If it takes longer than this value to get the preview, the preview won’t be generated.
+  timeoutDescription: If it takes longer than this value to get the preview, the preview won't be generated.
   maximumContentLength: Maximum Content-Length (bytes)
   maximumContentLengthDescription: If Content-Length is higher than this value, the preview won't be generated.
   requireContentLength: Generate the preview only if you could get Content-Length
@@ -3070,3 +3070,23 @@ _search:
   pleaseEnterServerHost: "Enter the server host"
   pleaseSelectUser: "Select user"
   serverHostPlaceholder: "Example: misskey.example.com"
+
+# Add these new translations at the end of the file
+databaseSummary: "Database Summary"
+totalDatabaseSize: "Total Database Size"
+estimatedCacheSize: "Estimated Cached/Federated Data Size"
+estimatedLocalDataSize: "Estimated Local Data Size"
+tableStats: "Table Statistics"
+federatedDataCleanupDescription: "You can clean up old remote/federated data to free up database space."
+daysToKeepRemoteData: "Days to Keep"
+startCleanup: "Start Cleanup"
+dataCleanup: "Data Cleanup"
+dataTypesToClean: "Data types to clean"
+confirmDataCleanupTitle: "Confirm Federated Data Cleanup"
+confirmDataCleanupText: "This will permanently delete remote data older than {0} days. This action cannot be undone. Do you want to continue?"
+cleanupInProgress: "Cleanup in progress. This may take some time..."
+cleanupError: "An error occurred during cleanup."
+errorFetchingDbSummary: "Error fetching database summary."
+pruneRemoteNotes: "Clean remote notes"
+pruneRemoteUsers: "Clean inactive remote users"
+pruneRemoteFiles: "Clean orphaned remote files"

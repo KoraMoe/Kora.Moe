@@ -154,6 +154,7 @@ import { ApQuestionService } from './activitypub/models/ApQuestionService.js';
 import { QueueModule } from './QueueModule.js';
 import { QueueService } from './QueueService.js';
 import { LoggerService } from './LoggerService.js';
+import { DataRetentionService } from './DataRetentionService.js';
 import type { Provider } from '@nestjs/common';
 
 //#region 文字列ベースでのinjection用(循環参照対応のため)
@@ -303,6 +304,7 @@ const $ApMentionService: Provider = { provide: 'ApMentionService', useExisting: 
 const $ApNoteService: Provider = { provide: 'ApNoteService', useExisting: ApNoteService };
 const $ApPersonService: Provider = { provide: 'ApPersonService', useExisting: ApPersonService };
 const $ApQuestionService: Provider = { provide: 'ApQuestionService', useExisting: ApQuestionService };
+const $DataRetentionService: Provider = { provide: 'DataRetentionService', useExisting: DataRetentionService };
 //#endregion
 
 @Module({
@@ -323,6 +325,7 @@ const $ApQuestionService: Provider = { provide: 'ApQuestionService', useExisting
 		AvatarDecorationService,
 		CaptchaService,
 		CustomEmojiService,
+		DataRetentionService,
 		DeleteAccountService,
 		DownloadService,
 		DriveService,
@@ -605,6 +608,7 @@ const $ApQuestionService: Provider = { provide: 'ApQuestionService', useExisting
 		$ApNoteService,
 		$ApPersonService,
 		$ApQuestionService,
+		$DataRetentionService,
 		//#endregion
 	],
 	exports: [
@@ -622,6 +626,7 @@ const $ApQuestionService: Provider = { provide: 'ApQuestionService', useExisting
 		AvatarDecorationService,
 		CaptchaService,
 		CustomEmojiService,
+		DataRetentionService,
 		DeleteAccountService,
 		DownloadService,
 		DriveService,
@@ -901,6 +906,7 @@ const $ApQuestionService: Provider = { provide: 'ApQuestionService', useExisting
 		$ApNoteService,
 		$ApPersonService,
 		$ApQuestionService,
+		$DataRetentionService,
 		//#endregion
 	],
 })
