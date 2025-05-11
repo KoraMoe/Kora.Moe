@@ -34,6 +34,7 @@ export * as 'admin/avatar-decorations/update' from './endpoints/admin/avatar-dec
 export * as 'admin/captcha/current' from './endpoints/admin/captcha/current.js';
 export * as 'admin/captcha/save' from './endpoints/admin/captcha/save.js';
 export * as 'admin/delete-account' from './endpoints/admin/delete-account.js';
+export * as 'admin/hard-delete-remote-user' from './endpoints/admin/hard-delete-remote-user.js';
 export * as 'admin/delete-all-files-of-a-user' from './endpoints/admin/delete-all-files-of-a-user.js';
 export * as 'admin/database-summary' from './endpoints/admin/database-summary.js';
 export * as 'admin/prune-federated-data' from './endpoints/admin/prune-federated-data.js';

@@ -131,6 +131,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 							<MkButton v-if="iAmModerator" inline danger @click="unsetUserBanner"><i class="ti ti-photo"></i> {{ i18n.ts.unsetUserBanner }}</MkButton>
 						</div>
 						<MkButton v-if="$i.isAdmin" inline danger @click="deleteAccount">{{ i18n.ts.deleteAccount }}</MkButton>
+						<MkButton v-if="$i.isAdmin && user.host != null" inline danger @click="hardDeleteRemoteUser"><i class="ti ti-refresh"></i> {{ "Hard Delete & Refetch" }}</MkButton>
 					</div>
 				</FormSection>
 			</div>
@@ -415,6 +416,40 @@ async function deleteAccount() {
 	if (typed.result === user.value?.username) {
 		await os.apiWithDialog('admin/delete-account', {
 			userId: user.value.id,
+		});
+	} else {
+		os.alert({
+			type: 'error',
+			text: 'input not match',
+		});
+	}
+}
+
+async function hardDeleteRemoteUser() {
+	if (!user.value?.host) return; // Only for remote users
+
+	const confirm = await os.confirm({
+		type: 'warning',
+		title: i18n.ts.deleteAccount,
+		text: 'This will HARD DELETE this remote user account completely, allowing you to re-fetch their data. Continue?',
+	});
+	if (confirm.canceled) return;
+
+	const typed = await os.inputText({
+		text: i18n.tsx.typeToConfirm({ x: user.value.username }),
+	});
+	if (typed.canceled) return;
+
+	if (typed.result === user.value.username) {
+		const withRefetch = await os.confirm({
+			type: 'question',
+			title: 'Refetch user data?',
+			text: 'Would you like to re-fetch this user\'s data after deletion?',
+		});
+
+		await os.apiWithDialog('admin/hard-delete-remote-user', {
+			userId: user.value.id,
+			refetch: !withRefetch.canceled,
 		});
 	} else {
 		os.alert({
