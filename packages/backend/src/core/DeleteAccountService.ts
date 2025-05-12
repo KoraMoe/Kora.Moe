@@ -15,6 +15,10 @@ import { ApRendererService } from '@/core/activitypub/ApRendererService.js';
 import { ModerationLogService } from '@/core/ModerationLogService.js';
 import { SystemAccountService } from '@/core/SystemAccountService.js';
 
+export interface DeleteAccountOptions {
+	hardDelete?: boolean;
+}
+
 @Injectable()
 export class DeleteAccountService {
 	constructor(
@@ -40,7 +44,7 @@ export class DeleteAccountService {
 	public async deleteAccount(user: {
 		id: string;
 		host: string | null;
-	}, moderator?: MiUser): Promise<void> {
+	}, moderator?: MiUser, options?: DeleteAccountOptions): Promise<void> {
 		if (this.meta.rootUserId === user.id) throw new Error('cannot delete a root account');
 
 		const _user = await this.usersRepository.findOneByOrFail({ id: user.id });
@@ -88,7 +92,7 @@ export class DeleteAccountService {
 		} else {
 			// リモートユーザーの削除は、完全にDBから物理削除してしまうと再度連合してきてアカウントが復活する可能性があるため、soft指定する
 			this.queueService.createDeleteAccountJob(user, {
-				soft: true,
+				soft: options?.hardDelete !== true,
 			});
 		}
 
