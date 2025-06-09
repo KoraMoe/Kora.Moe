@@ -153,6 +153,13 @@ function realtimeSubscribe(props: {
 				globalEvents.emit('noteDeleted', id);
 				break;
 			}
+
+			case 'edited': {
+				Object.entries(body.note).forEach(([key, value]) => {
+					note[key] = value;
+				});
+				break;
+			}
 		}
 	}
 
