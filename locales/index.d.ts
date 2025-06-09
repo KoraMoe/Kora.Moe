@@ -239,6 +239,10 @@ export interface Locale extends ILocale {
      */
     "deleteAndEditConfirm": string;
     /**
+     * アカウントを完全に削除
+     */
+    "deleteAccountHard": string;
+    /**
      * リストに追加
      */
     "addToList": string;
