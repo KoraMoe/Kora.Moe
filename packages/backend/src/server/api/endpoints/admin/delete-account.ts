@@ -21,6 +21,7 @@ export const paramDef = {
 	type: 'object',
 	properties: {
 		userId: { type: 'string', format: 'misskey:id' },
+		hardDelete: { type: 'boolean', default: false },
 	},
 	required: ['userId'],
 } as const;
@@ -39,7 +40,9 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 				return;
 			}
 
-			await this.deleteAccountService.deleteAccount(user, me);
+			await this.deleteAccountService.deleteAccount(user, me, {
+				hardDelete: ps.hardDelete,
+			});
 		});
 	}
 }
