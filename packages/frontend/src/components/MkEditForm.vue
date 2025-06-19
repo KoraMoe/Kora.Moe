@@ -97,6 +97,7 @@ import { mfmFunctionPicker } from '@/utility/mfm-function-picker.js';
 import { getPluginHandlers } from '@/plugin.js';
 import { DI } from '@/di.js';
 import { checkDragDataType, getDragData } from '@/drag-and-drop.js';
+import { globalEvents } from '@/events';
 
 const $i = ensureSignin();
 
@@ -572,6 +573,9 @@ async function post(ev?: MouseEvent) {
 		} else {
 			clear();
 		}
+
+		globalEvents.emit('noteUpdated', postData);
+
 		nextTick(() => {
 			deleteDraft();
 			emit('posted');
