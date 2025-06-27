@@ -614,7 +614,7 @@ async function post(ev?: MouseEvent) {
 			clear();
 		}
 
-		globalEvents.emit('noteUpdated', postData);
+		globalEvents.emit('notePosted', postData);
 
 		nextTick(() => {
 			deleteDraft();
