@@ -88,7 +88,6 @@ import { Config } from '@/config.js';
 import MisskeyLogger from '@/logger.js';
 import { bindThis } from '@/decorators.js';
 import { MiSystemAccount } from './models/SystemAccount.js';
-import { MiNoteDraft } from './models/NoteDraft.js';
 import { MiNoteHistory } from './models/NoteHistory.js';
 
 pg.types.setTypeParser(20, Number);
@@ -216,7 +215,6 @@ export const entities = [
 	MiNoteFavorite,
 	MiNoteReaction,
 	MiNoteThreadMuting,
-	MiNoteDraft,
 	MiPage,
 	MiPageLike,
 	MiGalleryPost,

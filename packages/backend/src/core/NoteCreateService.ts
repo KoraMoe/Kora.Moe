@@ -57,7 +57,6 @@ import { IdentifiableError } from '@/misc/identifiable-error.js';
 import { CollapsedQueue } from '@/misc/collapsed-queue.js';
 import { CacheService } from '@/core/CacheService.js';
 import { cleanLink } from '@/misc/link-cleaner.js';
-import { NoteDraftService } from './NoteDraftService.js';
 
 const FAST_URL_TESTER = new RE2('https?:\\/\\/');
 
@@ -202,7 +201,6 @@ export class NoteCreateService implements OnApplicationShutdown {
 		private globalEventService: GlobalEventService,
 		private queueService: QueueService,
 		private fanoutTimelineService: FanoutTimelineService,
-		private noteDraftService: NoteDraftService,
 		private notificationService: NotificationService,
 		private relayService: RelayService,
 		private federatedInstanceService: FederatedInstanceService,
@@ -529,11 +527,6 @@ export class NoteCreateService implements OnApplicationShutdown {
 					}
 				});
 			}
-		}
-
-		// Delete draft
-		if (!this.userEntityService.isRemoteUser(user)) {
-			this.noteDraftService.deleteDraft(user as MiUser);
 		}
 
 		// ハッシュタグ更新

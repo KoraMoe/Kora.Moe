@@ -108,6 +108,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 import { inject, watch, nextTick, onMounted, defineAsyncComponent, provide, shallowRef, ref, computed, useTemplateRef } from 'vue';
 import * as mfm from 'mfm-js';
 import * as Misskey from 'misskey-js';
+import autosize from 'autosize';
 import insertTextAtCursor from 'insert-text-at-cursor';
 import { toASCII } from 'punycode.js';
 import { host, url } from '@@/js/config.js';
@@ -213,6 +214,20 @@ const targetChannel = shallowRef(props.channel);
 
 const serverDraftId = ref<string | null>(null);
 const postFormActions = getPluginHandlers('post_form_action');
+
+const isResizing = ref(false);
+
+function autoResizeTextarea() {
+	if (isResizing.value) return;
+
+	isResizing.value = true;
+	nextTick(() => {
+		if (textareaEl.value) {
+			autosize.update(textareaEl.value);
+		}
+		isResizing.value = false;
+	});
+}
 
 const uploader = useUploader({
 	multiple: true,
@@ -658,6 +673,8 @@ function onKeydown(ev: KeyboardEvent) {
 	// justEndedComposition.value is for Safari, which keyDown occurs after compositionend.
 	// ev.isComposing is for another browsers.
 	if (ev.key === 'Escape' && !justEndedComposition.value && !ev.isComposing) emit('esc');
+
+	autoResizeTextarea();
 }
 
 function onKeyup(ev: KeyboardEvent) {
@@ -666,6 +683,7 @@ function onKeyup(ev: KeyboardEvent) {
 
 function onCompositionUpdate(ev: CompositionEvent) {
 	imeText.value = ev.data;
+	autoResizeTextarea();
 }
 
 function onCompositionEnd(ev: CompositionEvent) {
@@ -1214,7 +1232,10 @@ onMounted(() => {
 	}
 
 	// TODO: detach when unmount
-	if (textareaEl.value) new Autocomplete(textareaEl.value, text);
+	if (textareaEl.value) {
+		new Autocomplete(textareaEl.value, text);
+		autosize(textareaEl.value);
+	}
 	if (cwInputEl.value) new Autocomplete(cwInputEl.value, cw);
 	if (hashtagsInputEl.value) new Autocomplete(hashtagsInputEl.value, hashtags);
 
@@ -1267,6 +1288,8 @@ onMounted(() => {
 			quoteId.value = renoteTargetNote.value ? renoteTargetNote.value.id : null;
 			reactionAcceptance.value = init.reactionAcceptance;
 		}
+
+		autoResizeTextarea();
 
 		nextTick(() => watchForDraft());
 	});
@@ -1576,6 +1599,9 @@ html[data-color-scheme=light] .preview {
 	width: 100%;
 	min-height: 90px;
 	height: 100%;
+	max-height: 75vh;
+	overflow-x: hidden !important;
+	resize: none;
 }
 
 .textCount {

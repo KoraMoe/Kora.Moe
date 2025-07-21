@@ -46,7 +46,6 @@ import { NoteDeleteService } from './NoteDeleteService.js';
 import { NoteDraftService } from './NoteDraftService.js';
 import { NoteEditService } from './NoteEditService.js';
 import { NotePiningService } from './NotePiningService.js';
-import { NoteDraftService } from './NoteDraftService.js';
 import { NotificationService } from './NotificationService.js';
 import { PollService } from './PollService.js';
 import { PushNotificationService } from './PushNotificationService.js';
@@ -192,7 +191,6 @@ const $NoteDeleteService: Provider = { provide: 'NoteDeleteService', useExisting
 const $NoteDraftService: Provider = { provide: 'NoteDraftService', useExisting: NoteDraftService };
 const $NoteEditService: Provider = { provide: 'NoteEditService', useExisting: NoteEditService };
 const $NotePiningService: Provider = { provide: 'NotePiningService', useExisting: NotePiningService };
-const $NoteDraftService: Provider = { provide: 'NoteDraftService', useExisting: NoteDraftService };
 const $NotificationService: Provider = { provide: 'NotificationService', useExisting: NotificationService };
 const $PollService: Provider = { provide: 'PollService', useExisting: PollService };
 const $SystemAccountService: Provider = { provide: 'SystemAccountService', useExisting: SystemAccountService };
@@ -498,7 +496,6 @@ const $ApQuestionService: Provider = { provide: 'ApQuestionService', useExisting
 		$NoteDraftService,
 		$NoteEditService,
 		$NotePiningService,
-		$NoteDraftService,
 		$NotificationService,
 		$PollService,
 		$SystemAccountService,
@@ -800,7 +797,6 @@ const $ApQuestionService: Provider = { provide: 'ApQuestionService', useExisting
 		$NoteDraftService,
 		$NoteEditService,
 		$NotePiningService,
-		$NoteDraftService,
 		$NotificationService,
 		$PollService,
 		$SystemAccountService,
