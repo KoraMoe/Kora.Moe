@@ -12,6 +12,10 @@ SPDX-License-Identifier: AGPL-3.0-only
 	@drop.stop="onDrop"
 >
 	<header :class="$style.header">
+		<div :class="$style.headerLeft">
+			<button v-if="!fixed" :class="$style.cancel" class="_button" @click="cancel"><i class="ti ti-x"></i></button>
+			<button v-if="$i.policies.noteDraftLimit > 0" v-tooltip="i18n.ts.draft" class="_button" :class="$style.draftButton" @click="showDraftMenu"><i class="ti ti-pencil-minus"></i></button>
+		</div>
 		<div :class="$style.headerRight">
 			<button v-click-anime class="_button" :class="$style.submit" :disabled="!canPost" data-cy-open-post-form-submit @click="post">
 				<div :class="$style.submitInner">
@@ -25,53 +29,51 @@ SPDX-License-Identifier: AGPL-3.0-only
 			</button>
 		</div>
 	</header>
-	<section :class="$style.postFormMain">
-		<MkNoteSimple v-if="reply" :class="$style.targetNote" :note="reply"/>
-		<MkNoteSimple v-if="renote" :class="$style.targetNote" :note="renote"/>
-		<div v-if="quoteId" :class="$style.withQuote"><i class="ti ti-quote"></i>{{ i18n.ts.quoteAttached }}</div>
-		<input v-show="useCw" ref="cwInputEl" v-model="cw" :class="$style.cw" :placeholder="i18n.ts.annotation" @keydown="onKeydown">
-		<div :class="[$style.textOuter, { [$style.withCw]: useCw }]">
-			<div v-if="channel" :class="$style.colorBar" :style="{ background: channel.color }"></div>
-			<textarea ref="textareaEl" v-model="text" :class="[$style.text]" :disabled="posting || posted" :readonly="textAreaReadOnly" :placeholder="placeholder" data-cy-post-form-text @keydown="onKeydown" @paste="onPaste" @compositionupdate="onCompositionUpdate" @compositionend="onCompositionEnd"/>
-			<div v-if="maxTextLength - textLength < 100" :class="['_acrylic', $style.textCount, { [$style.textOver]: textLength > maxTextLength }]">{{ maxTextLength - textLength }}</div>
+	<MkNoteSimple v-if="reply" :class="$style.targetNote" :note="reply"/>
+	<MkNoteSimple v-if="renote" :class="$style.targetNote" :note="renote"/>
+	<div v-if="quoteId" :class="$style.withQuote"><i class="ti ti-quote"></i>{{ i18n.ts.quoteAttached }}</div>
+	<input v-show="useCw" ref="cwInputEl" v-model="cw" :class="$style.cw" :placeholder="i18n.ts.annotation" @keydown="onKeydown">
+	<div :class="[$style.textOuter, { [$style.withCw]: useCw }]">
+		<div v-if="channel" :class="$style.colorBar" :style="{ background: channel.color }"></div>
+		<textarea ref="textareaEl" v-model="text" :class="[$style.text]" :disabled="posting || posted" :readonly="textAreaReadOnly" :placeholder="placeholder" data-cy-post-form-text @keydown="onKeydown" @paste="onPaste" @compositionupdate="onCompositionUpdate" @compositionend="onCompositionEnd"/>
+		<div v-if="maxTextLength - textLength < 100" :class="['_acrylic', $style.textCount, { [$style.textOver]: textLength > maxTextLength }]">{{ maxTextLength - textLength }}</div>
+	</div>
+	<input v-show="withHashtags" ref="hashtagsInputEl" v-model="hashtags" :class="$style.hashtags" :placeholder="i18n.ts.hashtags" list="hashtags">
+	<XPostFormAttaches v-model="files" @detach="detachFile" @changeSensitive="updateFileSensitive" @changeName="updateFileName"/>
+	<div v-if="uploader.items.value.length > 0" style="padding: 12px;">
+		<MkTip k="postFormUploader">
+			{{ i18n.ts._postForm.uploaderTip }}
+		</MkTip>
+		<MkUploaderItems :items="uploader.items.value" @showMenu="(item, ev) => showPerUploadItemMenu(item, ev)" @showMenuViaContextmenu="(item, ev) => showPerUploadItemMenuViaContextmenu(item, ev)"/>
+	</div>
+	<MkPollEditor v-if="poll" v-model="poll" @destroyed="poll = null"/>
+	<MkNotePreview v-if="showPreview" :class="$style.preview" :text="text" :files="files" :poll="poll ?? undefined" :useCw="useCw" :cw="cw" :user="$i"/>
+	<div v-if="showingOptions" style="padding: 8px 16px;">
+	</div>
+	<footer :class="$style.footer">
+		<div :class="$style.footerLeft">
+			<button v-tooltip="i18n.ts.attachFile + ' (' + i18n.ts.upload + ')'" class="_button" :class="$style.footerButton" @click="chooseFileFromPc"><i class="ti ti-photo-plus"></i></button>
+			<button v-tooltip="i18n.ts.attachFile + ' (' + i18n.ts.fromDrive + ')'" class="_button" :class="$style.footerButton" @click="chooseFileFromDrive"><i class="ti ti-cloud-download"></i></button>
+			<button v-tooltip="i18n.ts.poll" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: poll }]" @click="togglePoll"><i class="ti ti-chart-arrows"></i></button>
+			<button v-tooltip="i18n.ts.useCw" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: useCw }]" @click="useCw = !useCw"><i class="ti ti-eye-off"></i></button>
+			<button v-tooltip="i18n.ts.hashtags" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: withHashtags }]" @click="withHashtags = !withHashtags"><i class="ti ti-hash"></i></button>
+			<button v-tooltip="i18n.ts.mention" class="_button" :class="$style.footerButton" @click="insertMention"><i class="ti ti-at"></i></button>
+			<button v-if="showAddMfmFunction" v-tooltip="i18n.ts.addMfmFunction" :class="['_button', $style.footerButton]" @click="insertMfmFunction"><i class="ti ti-palette"></i></button>
+			<button v-if="postFormActions.length > 0" v-tooltip="i18n.ts.plugins" class="_button" :class="$style.footerButton" @click="showActions"><i class="ti ti-plug"></i></button>
 		</div>
-		<input v-show="withHashtags" ref="hashtagsInputEl" v-model="hashtags" :class="$style.hashtags" :placeholder="i18n.ts.hashtags" list="hashtags">
-		<XPostFormAttaches v-model="files" @detach="detachFile" @changeSensitive="updateFileSensitive" @changeName="updateFileName"/>
-		<div v-if="uploader.items.value.length > 0" style="padding: 12px;">
-			<MkTip k="postFormUploader">
-				{{ i18n.ts._postForm.uploaderTip }}
-			</MkTip>
-			<MkUploaderItems :items="uploader.items.value" @showMenu="(item, ev) => showPerUploadItemMenu(item, ev)" @showMenuViaContextmenu="(item, ev) => showPerUploadItemMenuViaContextmenu(item, ev)"/>
+		<div :class="$style.footerRight">
+			<button v-tooltip="i18n.ts.emoji" :class="['_button', $style.footerButton]" @click="insertEmoji"><i class="ti ti-mood-happy"></i></button>
+			<button v-tooltip="i18n.ts.previewNoteText" class="_button" :class="[$style.footerButton, { [$style.previewButtonActive]: showPreview }]" @click="showPreview = !showPreview"><i class="ti ti-eye"></i></button>
 		</div>
-		<MkPollEditor v-if="poll" v-model="poll" @destroyed="poll = null"/>
-		<MkNotePreview v-if="showPreview" :class="$style.preview" :text="text" :files="files" :poll="poll ?? undefined" :useCw="useCw" :cw="cw" :user="target.user"/>
-		<div v-if="showingOptions" style="padding: 8px 16px;">
-		</div>
-		<footer :class="$style.footer">
-			<div :class="$style.footerLeft">
-				<button v-tooltip="i18n.ts.attachFile + ' (' + i18n.ts.upload + ')'" class="_button" :class="$style.footerButton" @click="chooseFileFromPc"><i class="ti ti-photo-plus"></i></button>
-				<button v-tooltip="i18n.ts.attachFile + ' (' + i18n.ts.fromDrive + ')'" class="_button" :class="$style.footerButton" @click="chooseFileFromDrive"><i class="ti ti-cloud-download"></i></button>
-				<button v-tooltip="i18n.ts.poll" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: poll }]" @click="togglePoll"><i class="ti ti-chart-arrows"></i></button>
-				<button v-tooltip="i18n.ts.useCw" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: useCw }]" @click="useCw = !useCw"><i class="ti ti-eye-off"></i></button>
-				<button v-tooltip="i18n.ts.hashtags" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: withHashtags }]" @click="withHashtags = !withHashtags"><i class="ti ti-hash"></i></button>
-				<button v-tooltip="i18n.ts.mention" class="_button" :class="$style.footerButton" @click="insertMention"><i class="ti ti-at"></i></button>
-				<button v-if="showAddMfmFunction" v-tooltip="i18n.ts.addMfmFunction" :class="['_button', $style.footerButton]" @click="insertMfmFunction"><i class="ti ti-palette"></i></button>
-				<button v-if="postFormActions.length > 0" v-tooltip="i18n.ts.plugins" class="_button" :class="$style.footerButton" @click="showActions"><i class="ti ti-plug"></i></button>
-			</div>
-			<div :class="$style.footerRight">
-				<button v-tooltip="i18n.ts.emoji" :class="['_button', $style.footerButton]" @click="insertEmoji"><i class="ti ti-mood-happy"></i></button>
-				<button v-tooltip="i18n.ts.previewNoteText" class="_button" :class="[$style.footerButton, { [$style.previewButtonActive]: showPreview }]" @click="showPreview = !showPreview"><i class="ti ti-eye"></i></button>
-			</div>
-		</footer>
-		<datalist id="hashtags">
-			<option v-for="hashtag in recentHashtags" :key="hashtag" :value="hashtag"/>
-		</datalist>
-	</section>
+	</footer>
+	<datalist id="hashtags">
+		<option v-for="hashtag in recentHashtags" :key="hashtag" :value="hashtag"/>
+	</datalist>
 </div>
 </template>
 
 <script lang="ts" setup>
-import { inject, watch, nextTick, onMounted, provide, ref, computed, useTemplateRef } from 'vue';
+import { inject, watch, nextTick, onMounted, provide, ref, computed, useTemplateRef, defineAsyncComponent } from 'vue';
 import * as mfm from 'mfm-js';
 import * as Misskey from 'misskey-js';
 import autosize from 'autosize';
@@ -97,6 +99,7 @@ import { store } from '@/store.js';
 import { i18n } from '@/i18n.js';
 import { instance } from '@/instance.js';
 import { ensureSignin, notesCount, incNotesCount } from '@/i.js';
+
 import { deepClone } from '@/utility/clone.js';
 import MkRippleEffect from '@/components/MkRippleEffect.vue';
 import { miLocalStorage } from '@/local-storage.js';
@@ -111,7 +114,7 @@ import { useUploader } from '@/composables/use-uploader.js';
 
 const $i = ensureSignin();
 
-const modal = inject(DI.inModal, false);
+const modal = inject(DI.inModal, true);
 
 const props = withDefaults(defineProps<PostFormProps & {
 	target: Misskey.entities.Note;
@@ -124,6 +127,7 @@ const props = withDefaults(defineProps<PostFormProps & {
 	autofocus: true,
 	mock: false,
 	initialLocalOnly: undefined,
+	fixed: false,
 });
 
 provide(DI.mock, props.mock);
@@ -151,6 +155,11 @@ const showPreview = ref(store.s.showPreview);
 watch(showPreview, () => store.set('showPreview', showPreview.value));
 const showAddMfmFunction = ref(store.s.enableQuickAddMfmFunction);
 watch(showAddMfmFunction, () => store.set('enableQuickAddMfmFunction', showAddMfmFunction.value));
+
+// 为了与 MkPostForm 兼容，添加这些引用
+const reply = computed(() => props.reply);
+const renote = computed(() => props.renote);
+const channel = computed(() => props.channel);
 const cw = ref<string | null>(props.initialCw ?? null);
 const draghover = ref(false);
 const quoteId = ref<string | null>(null);
@@ -232,8 +241,8 @@ const canPost = computed((): boolean => {
 			1 <= files.value.length ||
 			1 <= uploader.items.value.length ||
 			poll.value != null ||
-			props.renote != null ||
-			(props.reply != null && quoteId.value != null)
+			renote.value != null ||
+			(reply.value != null && quoteId.value != null)
 		) &&
 		(textLength.value <= maxTextLength.value) &&
 		(
@@ -243,6 +252,7 @@ const canPost = computed((): boolean => {
 					cwTextLength.value <= maxCwTextLength
 				) : true
 		) &&
+		(files.value.length <= 16) &&
 		(!poll.value || poll.value.choices.length >= 2);
 });
 
@@ -598,10 +608,8 @@ async function post(ev?: MouseEvent) {
 		}
 	}
 
-	let token: string | undefined = undefined;
-
 	posting.value = true;
-	misskeyApi('notes/update', postData, token).then(() => {
+	misskeyApi('notes/update', postData).then(() => {
 		if (props.freezeAfterPosted) {
 			posted.value = true;
 		} else {
@@ -745,6 +753,55 @@ function showPerUploadItemMenuViaContextmenu(item: UploaderItem, ev: MouseEvent)
 	os.contextMenu(menu, ev);
 }
 
+function showDraftMenu(ev: MouseEvent) {
+	function showDraftsDialog() {
+		const { dispose } = os.popup(defineAsyncComponent(() => import('@/components/MkNoteDraftsDialog.vue')), {}, {
+			restore: async (draft: Misskey.entities.NoteDraft) => {
+				text.value = draft.text ?? '';
+				useCw.value = draft.cw != null;
+				cw.value = draft.cw ?? null;
+				files.value = draft.files ?? [];
+				if (draft.poll) {
+					poll.value = null;
+					nextTick(() => {
+						poll.value = {
+							choices: draft.poll!.choices,
+							multiple: draft.poll!.multiple,
+							expiresAt: draft.poll!.expiresAt ? (new Date(draft.poll!.expiresAt)).getTime() : null,
+							expiredAfter: null,
+						};
+					});
+				}
+				quoteId.value = draft.renoteId ?? null;
+			},
+			cancel: () => {},
+			closed: () => {
+				dispose();
+			},
+		});
+	}
+
+	os.popupMenu([{
+		type: 'button',
+		text: i18n.ts._drafts.saveToDraft,
+		icon: 'ti ti-cloud-upload',
+		action: async () => {
+			saveDraft();
+			os.alert({
+				type: 'info',
+				text: i18n.ts._drafts.draftSaved,
+			});
+		},
+	}, {
+		type: 'button',
+		text: i18n.ts._drafts.listDrafts,
+		icon: 'ti ti-cloud-download',
+		action: () => {
+			showDraftsDialog();
+		},
+	}], (ev.currentTarget ?? ev.target ?? undefined) as HTMLElement | undefined);
+}
+
 onMounted(() => {
 	if (props.autofocus) {
 		focus();
@@ -841,27 +898,29 @@ defineExpose({
 
 .headerLeft {
 	display: flex;
-	flex: 0 1 100px;
+	flex: 1;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 6px;
+	padding-left: 12px;
 }
 
 .cancel {
-	padding: 0;
-	font-size: 1em;
-	height: 100%;
-	flex: 0 1 50px;
+	padding: 8px;
 }
 
-.account {
-	height: 100%;
-	display: inline-flex;
-	vertical-align: bottom;
-	flex: 0 1 50px;
-}
+.draftButton {
+	padding: 8px;
+	font-size: 90%;
+	border-radius: 6px;
 
-.avatar {
-	width: 28px;
-	height: 28px;
-	margin: auto;
+	&:hover {
+		background: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+	}
+
+	&:disabled {
+		background: none;
+	}
 }
 
 .headerRight {
@@ -937,7 +996,7 @@ defineExpose({
 	border-radius: 6px;
 
 	&:hover {
-		background: var(--X5);
+		background: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
 	}
 
 	&:disabled {
@@ -960,7 +1019,7 @@ defineExpose({
 	max-width: 210px;
 
 	&:enabled {
-		>.headerRightButtonText {
+		> .headerRightButtonText {
 			opacity: 0.8;
 		}
 	}
@@ -1010,7 +1069,7 @@ html[data-color-scheme=light] .preview {
 	margin-right: 14px;
 	padding: 8px 0 8px 8px;
 	border-radius: 8px;
-	background: var(--X4);
+	background: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
 }
 
 .hasNotSpecifiedMentions {
@@ -1074,11 +1133,6 @@ html[data-color-scheme=light] .preview {
 	padding-top: 8px;
 	padding-bottom: 8px;
 	border-top: solid 0.5px var(--MI_THEME-divider);
-}
-
-.postFormMain {
-	max-height: 85vh;
-	overflow-y: auto;
 }
 
 .textOuter {
@@ -1151,7 +1205,7 @@ html[data-color-scheme=light] .preview {
 	border-radius: 6px;
 
 	&:hover {
-		background: var(--MI_THEME-X5);
+		background: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
 	}
 
 	&.footerButtonActive {
