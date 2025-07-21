@@ -156,7 +156,6 @@ watch(showPreview, () => store.set('showPreview', showPreview.value));
 const showAddMfmFunction = ref(store.s.enableQuickAddMfmFunction);
 watch(showAddMfmFunction, () => store.set('enableQuickAddMfmFunction', showAddMfmFunction.value));
 
-// 为了与 MkPostForm 兼容，添加这些引用
 const reply = computed(() => props.reply);
 const renote = computed(() => props.renote);
 const channel = computed(() => props.channel);
