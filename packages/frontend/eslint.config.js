@@ -42,6 +42,7 @@ export default [
 			},
 		},
 		rules: {
+			'@typescript-eslint/no-unused-vars': 'off',
 			'@typescript-eslint/no-empty-interface': ['error', {
 				allowSingleExtends: true,
 			}],
@@ -153,6 +154,9 @@ export default [
 				autofix: true,
 			}],
 			'vue/attribute-hyphenation': ['error', 'never'],
+			'vue/no-mutating-props': ['error', {
+				shallowOnly: true,
+			}],
 		},
 	},
 ];

@@ -17,10 +17,11 @@ SPDX-License-Identifier: AGPL-3.0-only
 			<button v-click-anime v-tooltip="i18n.ts.switchAccount" :class="$style.account" class="_button" @click="openAccountMenu">
 				<MkAvatar :user="postAccount ?? $i" :class="$style.avatar"/>
 			</button>
+			<button v-if="$i.policies.noteDraftLimit > 0" v-tooltip="(postAccount != null && postAccount.id !== $i.id) ? null : i18n.ts.draft" class="_button" :class="$style.draftButton" :disabled="postAccount != null && postAccount.id !== $i.id" @click="showDraftMenu"><i class="ti ti-pencil-minus"></i></button>
 		</div>
 		<div :class="$style.headerRight">
-			<template v-if="!(channel != null && fixed)">
-				<button v-if="channel == null" ref="visibilityButton" v-tooltip="i18n.ts.visibility" :class="['_button', $style.headerRightItem, $style.visibility]" @click="setVisibility">
+			<template v-if="!(targetChannel != null && fixed)">
+				<button v-if="targetChannel == null" ref="visibilityButton" v-tooltip="i18n.ts.visibility" :class="['_button', $style.headerRightItem, $style.visibility]" @click="setVisibility">
 					<span v-if="visibility === 'public'"><i class="ti ti-world"></i></span>
 					<span v-if="visibility === 'home'"><i class="ti ti-home"></i></span>
 					<span v-if="visibility === 'followers'"><i class="ti ti-lock"></i></span>
@@ -29,10 +30,10 @@ SPDX-License-Identifier: AGPL-3.0-only
 				</button>
 				<button v-else class="_button" :class="[$style.headerRightItem, $style.visibility]" disabled>
 					<span><i class="ti ti-device-tv"></i></span>
-					<span :class="$style.headerRightButtonText">{{ channel.name }}</span>
+					<span :class="$style.headerRightButtonText">{{ targetChannel.name }}</span>
 				</button>
 			</template>
-			<button v-tooltip="i18n.ts._visibility.disableFederation" class="_button" :class="[$style.headerRightItem, { [$style.danger]: localOnly }]" :disabled="channel != null || visibility === 'specified'" @click="toggleLocalOnly">
+			<button v-tooltip="i18n.ts._visibility.disableFederation" class="_button" :class="[$style.headerRightItem, { [$style.danger]: localOnly }]" :disabled="targetChannel != null || visibility === 'specified'" @click="toggleLocalOnly">
 				<span v-if="!localOnly"><i class="ti ti-rocket"></i></span>
 				<span v-else><i class="ti ti-rocket-off"></i></span>
 			</button>
@@ -42,77 +43,74 @@ SPDX-License-Identifier: AGPL-3.0-only
 					<template v-if="posted"></template>
 					<template v-else-if="posting"><MkEllipsis/></template>
 					<template v-else>{{ submitText }}</template>
-					<i style="margin-left: 6px;" :class="posted ? 'ti ti-check' : reply ? 'ti ti-arrow-back-up' : renoteTargetNote ? 'ti ti-quote' : 'ti ti-send'"></i>
+					<i style="margin-left: 6px;" :class="posted ? 'ti ti-check' : replyTargetNote ? 'ti ti-arrow-back-up' : renoteTargetNote ? 'ti ti-quote' : 'ti ti-send'"></i>
 				</div>
 			</button>
 		</div>
 	</header>
-	<section :class="$style.postFormMain">
-		<MkNoteSimple v-if="reply" :class="$style.targetNote" :note="reply"/>
-		<MkNoteSimple v-if="renoteTargetNote" :class="$style.targetNote" :note="renoteTargetNote"/>
-		<div v-if="quoteId" :class="$style.withQuote"><i class="ti ti-quote"></i> {{ i18n.ts.quoteAttached }}<button @click="quoteId = null; renoteTargetNote = null;"><i class="ti ti-x"></i></button></div>
-		<div v-if="visibility === 'specified'" :class="$style.toSpecified">
-			<span style="margin-right: 8px;">{{ i18n.ts.recipient }}</span>
-			<div :class="$style.visibleUsers">
-				<span v-for="u in visibleUsers" :key="u.id" :class="$style.visibleUser">
-					<MkAcct :user="u"/>
-					<button class="_button" style="padding: 4px 8px;" @click="removeVisibleUser(u)"><i class="ti ti-x"></i></button>
-				</span>
-				<button class="_buttonPrimary" style="padding: 4px; border-radius: 8px;" @click="addVisibleUser"><i class="ti ti-plus ti-fw"></i></button>
-			</div>
+	<MkNoteSimple v-if="replyTargetNote" :class="$style.targetNote" :note="replyTargetNote"/>
+	<MkNoteSimple v-if="renoteTargetNote" :class="$style.targetNote" :note="renoteTargetNote"/>
+	<div v-if="quoteId" :class="$style.withQuote"><i class="ti ti-quote"></i> {{ i18n.ts.quoteAttached }}<button @click="quoteId = null; renoteTargetNote = null;"><i class="ti ti-x"></i></button></div>
+	<div v-if="visibility === 'specified'" :class="$style.toSpecified">
+		<span style="margin-right: 8px;">{{ i18n.ts.recipient }}</span>
+		<div :class="$style.visibleUsers">
+			<span v-for="u in visibleUsers" :key="u.id" :class="$style.visibleUser">
+				<MkAcct :user="u"/>
+				<button class="_button" style="padding: 4px 8px;" @click="removeVisibleUser(u)"><i class="ti ti-x"></i></button>
+			</span>
+			<button class="_buttonPrimary" style="padding: 4px; border-radius: 8px;" @click="addVisibleUser"><i class="ti ti-plus ti-fw"></i></button>
 		</div>
-		<MkInfo v-if="hasNotSpecifiedMentions" warn :class="$style.hasNotSpecifiedMentions">{{ i18n.ts.notSpecifiedMentionWarning }} - <button class="_textButton" @click="addMissingMention()">{{ i18n.ts.add }}</button></MkInfo>
-		<div v-show="useCw" :class="$style.cwOuter">
-			<input ref="cwInputEl" v-model="cw" :class="$style.cw" :placeholder="i18n.ts.annotation" @keydown="onKeydown" @keyup="onKeyup" @compositionend="onCompositionEnd">
-			<div v-if="maxCwTextLength - cwTextLength < 20" :class="['_acrylic', $style.cwTextCount, { [$style.cwTextOver]: cwTextLength > maxCwTextLength }]">{{ maxCwTextLength - cwTextLength }}</div>
+	</div>
+	<MkInfo v-if="hasNotSpecifiedMentions" warn :class="$style.hasNotSpecifiedMentions">{{ i18n.ts.notSpecifiedMentionWarning }} - <button class="_textButton" @click="addMissingMention()">{{ i18n.ts.add }}</button></MkInfo>
+	<div v-show="useCw" :class="$style.cwOuter">
+		<input ref="cwInputEl" v-model="cw" :class="$style.cw" :placeholder="i18n.ts.annotation" @keydown="onKeydown" @keyup="onKeyup" @compositionend="onCompositionEnd">
+		<div v-if="maxCwTextLength - cwTextLength < 20" :class="['_acrylic', $style.cwTextCount, { [$style.cwTextOver]: cwTextLength > maxCwTextLength }]">{{ maxCwTextLength - cwTextLength }}</div>
+	</div>
+	<div :class="[$style.textOuter, { [$style.withCw]: useCw }]">
+		<div v-if="targetChannel" :class="$style.colorBar" :style="{ background: targetChannel.color }"></div>
+		<textarea ref="textareaEl" v-model="text" :class="[$style.text]" :disabled="posting || posted" :readonly="textAreaReadOnly" :placeholder="placeholder" data-cy-post-form-text @keydown="onKeydown" @keyup="onKeyup" @paste="onPaste" @compositionupdate="onCompositionUpdate" @compositionend="onCompositionEnd"/>
+		<div v-if="maxTextLength - textLength < 100" :class="['_acrylic', $style.textCount, { [$style.textOver]: textLength > maxTextLength }]">{{ maxTextLength - textLength }}</div>
+	</div>
+	<input v-show="withHashtags" ref="hashtagsInputEl" v-model="hashtags" :class="$style.hashtags" :placeholder="i18n.ts.hashtags" list="hashtags">
+	<XPostFormAttaches v-model="files" @detach="detachFile" @changeSensitive="updateFileSensitive" @changeName="updateFileName"/>
+	<div v-if="uploader.items.value.length > 0" style="padding: 12px;">
+		<MkTip k="postFormUploader">
+			{{ i18n.ts._postForm.uploaderTip }}
+		</MkTip>
+		<MkUploaderItems :items="uploader.items.value" @showMenu="(item, ev) => showPerUploadItemMenu(item, ev)" @showMenuViaContextmenu="(item, ev) => showPerUploadItemMenuViaContextmenu(item, ev)"/>
+	</div>
+	<MkPollEditor v-if="poll" v-model="poll" @destroyed="poll = null"/>
+	<MkNotePreview v-if="showPreview" :class="$style.preview" :text="text" :files="files" :poll="poll ?? undefined" :useCw="useCw" :cw="cw" :user="postAccount ?? $i"/>
+	<div v-if="showingOptions" style="padding: 8px 16px;">
+	</div>
+	<footer :class="$style.footer">
+		<div :class="$style.footerLeft">
+			<button v-tooltip="i18n.ts.attachFile + ' (' + i18n.ts.upload + ')'" class="_button" :class="$style.footerButton" @click="chooseFileFromPc"><i class="ti ti-photo-plus"></i></button>
+			<button v-tooltip="i18n.ts.attachFile + ' (' + i18n.ts.fromDrive + ')'" class="_button" :class="$style.footerButton" @click="chooseFileFromDrive"><i class="ti ti-cloud-download"></i></button>
+			<button v-tooltip="i18n.ts.poll" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: poll }]" @click="togglePoll"><i class="ti ti-chart-arrows"></i></button>
+			<button v-tooltip="i18n.ts.useCw" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: useCw }]" @click="useCw = !useCw"><i class="ti ti-eye-off"></i></button>
+			<button v-tooltip="i18n.ts.hashtags" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: withHashtags }]" @click="withHashtags = !withHashtags"><i class="ti ti-hash"></i></button>
+			<button v-tooltip="i18n.ts.mention" class="_button" :class="$style.footerButton" @click="insertMention"><i class="ti ti-at"></i></button>
+			<button v-if="showAddMfmFunction" v-tooltip="i18n.ts.addMfmFunction" :class="['_button', $style.footerButton]" @click="insertMfmFunction"><i class="ti ti-palette"></i></button>
+			<button v-if="postFormActions.length > 0" v-tooltip="i18n.ts.plugins" class="_button" :class="$style.footerButton" @click="showActions"><i class="ti ti-plug"></i></button>
 		</div>
-		<div :class="[$style.textOuter, { [$style.withCw]: useCw }]">
-			<div v-if="channel" :class="$style.colorBar" :style="{ background: channel.color }"></div>
-			<textarea ref="textareaEl" v-model="text" :class="[$style.text]" :disabled="posting || posted" :readonly="textAreaReadOnly" :placeholder="placeholder" data-cy-post-form-text @keydown="onKeydown" @keyup="onKeyup" @paste="onPaste" @compositionupdate="onCompositionUpdate" @compositionend="onCompositionEnd"/>
-			<div v-if="maxTextLength - textLength < 100" :class="['_acrylic', $style.textCount, { [$style.textOver]: textLength > maxTextLength }]">{{ maxTextLength - textLength }}</div>
+		<div :class="$style.footerRight">
+			<button v-tooltip="i18n.ts.emoji" :class="['_button', $style.footerButton]" @click="insertEmoji"><i class="ti ti-mood-happy"></i></button>
 		</div>
-		<input v-show="withHashtags" ref="hashtagsInputEl" v-model="hashtags" :class="$style.hashtags" :placeholder="i18n.ts.hashtags" list="hashtags">
-		<XPostFormAttaches v-model="files" @detach="detachFile" @changeSensitive="updateFileSensitive" @changeName="updateFileName"/>
-		<div v-if="uploader.items.value.length > 0" style="padding: 12px;">
-			<MkTip k="postFormUploader">
-				{{ i18n.ts._postForm.uploaderTip }}
-			</MkTip>
-			<MkUploaderItems :items="uploader.items.value" @showMenu="(item, ev) => showPerUploadItemMenu(item, ev)" @showMenuViaContextmenu="(item, ev) => showPerUploadItemMenuViaContextmenu(item, ev)"/>
-		</div>
-		<MkPollEditor v-if="poll" v-model="poll" @destroyed="poll = null"/>
-		<MkNotePreview v-if="showPreview" :class="$style.preview" :text="text" :files="files" :poll="poll ?? undefined" :useCw="useCw" :cw="cw" :user="postAccount ?? $i"/>
-		<div v-if="showingOptions" style="padding: 8px 16px;"></div>
-		<footer :class="$style.footer">
-			<div :class="$style.footerLeft">
-				<button v-tooltip="i18n.ts.attachFile + ' (' + i18n.ts.upload + ')'" class="_button" :class="$style.footerButton" @click="chooseFileFromPc"><i class="ti ti-photo-plus"></i></button>
-				<button v-tooltip="i18n.ts.attachFile + ' (' + i18n.ts.fromDrive + ')'" class="_button" :class="$style.footerButton" @click="chooseFileFromDrive"><i class="ti ti-cloud-download"></i></button>
-				<button v-tooltip="i18n.ts.poll" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: poll }]" @click="togglePoll"><i class="ti ti-chart-arrows"></i></button>
-				<button v-tooltip="i18n.ts.useCw" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: useCw }]" @click="useCw = !useCw"><i class="ti ti-eye-off"></i></button>
-				<button v-tooltip="i18n.ts.hashtags" class="_button" :class="[$style.footerButton, { [$style.footerButtonActive]: withHashtags }]" @click="withHashtags = !withHashtags"><i class="ti ti-hash"></i></button>
-				<button v-tooltip="i18n.ts.mention" class="_button" :class="$style.footerButton" @click="insertMention"><i class="ti ti-at"></i></button>
-				<button v-if="showAddMfmFunction" v-tooltip="i18n.ts.addMfmFunction" :class="['_button', $style.footerButton]" @click="insertMfmFunction"><i class="ti ti-palette"></i></button>
-				<button v-if="postFormActions.length > 0" v-tooltip="i18n.ts.plugins" class="_button" :class="$style.footerButton" @click="showActions"><i class="ti ti-plug"></i></button>
-			</div>
-			<div :class="$style.footerRight">
-				<button v-tooltip="i18n.ts.emoji" :class="['_button', $style.footerButton]" @click="insertEmoji"><i class="ti ti-mood-happy"></i></button>
-			</div>
-		</footer>
-		<datalist id="hashtags">
-			<option v-for="hashtag in recentHashtags" :key="hashtag" :value="hashtag"/>
-		</datalist>
-	</section>
+	</footer>
+	<datalist id="hashtags">
+		<option v-for="hashtag in recentHashtags" :key="hashtag" :value="hashtag"/>
+	</datalist>
 </div>
 </template>
 
 <script lang="ts" setup>
-import { inject, watch, nextTick, onMounted, defineAsyncComponent, provide, shallowRef, ref, computed, onUnmounted, onBeforeUnmount, useTemplateRef } from 'vue';
+import { inject, watch, nextTick, onMounted, defineAsyncComponent, provide, shallowRef, ref, computed, useTemplateRef } from 'vue';
 import * as mfm from 'mfm-js';
 import * as Misskey from 'misskey-js';
-import autosize from 'autosize';
 import insertTextAtCursor from 'insert-text-at-cursor';
 import { toASCII } from 'punycode.js';
 import { host, url } from '@@/js/config.js';
-import { throttle } from 'throttle-debounce';
 import MkUploaderItems from './MkUploaderItems.vue';
 import type { ShallowRef } from 'vue';
 import type { PostFormProps } from '@/types/post-form.js';
@@ -129,7 +127,7 @@ import { extractMentions } from '@/utility/extract-mentions.js';
 import { formatTimeString } from '@/utility/format-time-string.js';
 import { Autocomplete } from '@/utility/autocomplete.js';
 import * as os from '@/os.js';
-import { misskeyApi, misskeyApiGet } from '@/utility/misskey-api.js';
+import { misskeyApi } from '@/utility/misskey-api.js';
 import { chooseDriveFile } from '@/utility/drive.js';
 import { store } from '@/store.js';
 import MkInfo from '@/components/MkInfo.vue';
@@ -201,7 +199,6 @@ if (props.initialVisibleUsers) {
 	props.initialVisibleUsers.forEach(u => pushVisibleUser(u));
 }
 const reactionAcceptance = ref(store.s.reactionAcceptance);
-const autocomplete = ref<Autocomplete[]>([]);
 const draghover = ref(false);
 const quoteId = ref<string | null>(null);
 const hasNotSpecifiedMentions = ref(false);
@@ -211,6 +208,10 @@ const showingOptions = ref(false);
 const textAreaReadOnly = ref(false);
 const justEndedComposition = ref(false);
 const renoteTargetNote: ShallowRef<PostFormProps['renote'] | null> = shallowRef(props.renote);
+const replyTargetNote: ShallowRef<PostFormProps['reply'] | null> = shallowRef(props.reply);
+const targetChannel = shallowRef(props.channel);
+
+const serverDraftId = ref<string | null>(null);
 const postFormActions = getPluginHandlers('post_form_action');
 
 const uploader = useUploader({
@@ -222,16 +223,13 @@ uploader.events.on('itemUploaded', ctx => {
 	uploader.removeItem(ctx.item);
 });
 
-const hasDraftOnServer = ref(false);
-const isLoadingDraft = ref(false);
-
 const draftKey = computed((): string => {
-	let key = props.channel ? `channel:${props.channel.id}` : '';
+	let key = targetChannel.value ? `channel:${targetChannel.value.id}` : '';
 
 	if (renoteTargetNote.value) {
 		key += `renote:${renoteTargetNote.value.id}`;
-	} else if (props.reply) {
-		key += `reply:${props.reply.id}`;
+	} else if (replyTargetNote.value) {
+		key += `reply:${replyTargetNote.value.id}`;
 	} else {
 		key += `note:${$i.id}`;
 	}
@@ -242,9 +240,9 @@ const draftKey = computed((): string => {
 const placeholder = computed((): string => {
 	if (renoteTargetNote.value) {
 		return i18n.ts._postForm.quotePlaceholder;
-	} else if (props.reply) {
+	} else if (replyTargetNote.value) {
 		return i18n.ts._postForm.replyPlaceholder;
-	} else if (props.channel) {
+	} else if (targetChannel.value) {
 		return i18n.ts._postForm.channelPlaceholder;
 	} else {
 		const xs = [
@@ -262,7 +260,7 @@ const placeholder = computed((): string => {
 const submitText = computed((): string => {
 	return renoteTargetNote.value
 		? i18n.ts.quote
-		: props.reply
+		: replyTargetNote.value
 			? i18n.ts.reply
 			: i18n.ts.note;
 });
@@ -303,6 +301,11 @@ const canPost = computed((): boolean => {
 		(!poll.value || poll.value.choices.length >= 2);
 });
 
+// cannot save pure renote as draft
+const canSaveAsServerDraft = computed((): boolean => {
+	return canPost.value && (textLength.value > 0 || files.value.length > 0 || poll.value != null);
+});
+
 const withHashtags = computed(store.makeGetterSetter('postFormWithHashtags'));
 const hashtags = computed(store.makeGetterSetter('postFormHashtags'));
 
@@ -325,13 +328,13 @@ if (props.mention) {
 	text.value += ' ';
 }
 
-if (props.reply && (props.reply.user.username !== $i.username || (props.reply.user.host != null && props.reply.user.host !== host))) {
-	text.value = `@${props.reply.user.username}${props.reply.user.host != null ? '@' + toASCII(props.reply.user.host) : ''} `;
+if (replyTargetNote.value && (replyTargetNote.value.user.username !== $i.username || (replyTargetNote.value.user.host != null && replyTargetNote.value.user.host !== host))) {
+	text.value = `@${replyTargetNote.value.user.username}${replyTargetNote.value.user.host != null ? '@' + toASCII(replyTargetNote.value.user.host) : ''} `;
 }
 
-if (props.reply && props.reply.text != null) {
-	const ast = mfm.parse(props.reply.text);
-	const otherHost = props.reply.user.host;
+if (replyTargetNote.value && replyTargetNote.value.text != null) {
+	const ast = mfm.parse(replyTargetNote.value.text);
+	const otherHost = replyTargetNote.value.user.host;
 
 	for (const x of extractMentions(ast)) {
 		const mention = x.host ?
@@ -354,32 +357,32 @@ if ($i.isSilenced && visibility.value === 'public') {
 	visibility.value = 'home';
 }
 
-if (props.channel) {
+if (targetChannel.value) {
 	visibility.value = 'public';
 	localOnly.value = true; // TODO: チャンネルが連合するようになった折には消す
 }
 
 // 公開以外へのリプライ時は元の公開範囲を引き継ぐ
-if (props.reply && ['home', 'followers', 'specified'].includes(props.reply.visibility)) {
-	if (props.reply.visibility === 'home' && visibility.value === 'followers') {
+if (replyTargetNote.value && ['home', 'followers', 'specified'].includes(replyTargetNote.value.visibility)) {
+	if (replyTargetNote.value.visibility === 'home' && visibility.value === 'followers') {
 		visibility.value = 'followers';
-	} else if (['home', 'followers'].includes(props.reply.visibility) && visibility.value === 'specified') {
+	} else if (['home', 'followers'].includes(replyTargetNote.value.visibility) && visibility.value === 'specified') {
 		visibility.value = 'specified';
 	} else {
-		visibility.value = props.reply.visibility;
+		visibility.value = replyTargetNote.value.visibility;
 	}
 
 	if (visibility.value === 'specified') {
-		if (props.reply.visibleUserIds) {
+		if (replyTargetNote.value.visibleUserIds) {
 			misskeyApi('users/show', {
-				userIds: props.reply.visibleUserIds.filter(uid => uid !== $i.id && uid !== props.reply?.userId),
+				userIds: replyTargetNote.value.visibleUserIds.filter(uid => uid !== $i.id && uid !== replyTargetNote.value?.userId),
 			}).then(users => {
 				users.forEach(u => pushVisibleUser(u));
 			});
 		}
 
-		if (props.reply.userId !== $i.id) {
-			misskeyApi('users/show', { userId: props.reply.userId }).then(user => {
+		if (replyTargetNote.value.userId !== $i.id) {
+			misskeyApi('users/show', { userId: replyTargetNote.value.userId }).then(user => {
 				pushVisibleUser(user);
 			});
 		}
@@ -392,9 +395,9 @@ if (props.specified) {
 }
 
 // keep cw when reply
-if (prefer.s.keepCw && props.reply && props.reply.cw) {
+if (prefer.s.keepCw && replyTargetNote.value && replyTargetNote.value.cw) {
 	useCw.value = true;
-	cw.value = props.reply.cw;
+	cw.value = replyTargetNote.value.cw;
 }
 
 function watchForDraft() {
@@ -492,7 +495,7 @@ function updateFileName(file, name) {
 }
 
 function setVisibility() {
-	if (props.channel) {
+	if (targetChannel.value) {
 		visibility.value = 'public';
 		localOnly.value = true; // TODO: チャンネルが連合するようになった折には消す
 		return;
@@ -502,8 +505,8 @@ function setVisibility() {
 		currentVisibility: visibility.value,
 		isSilenced: $i.isSilenced,
 		localOnly: localOnly.value,
-		anchorElement: visibilityButton.value ?? undefined,
-		...(props.reply ? { isReplyVisibilitySpecified: props.reply.visibility === 'specified' } : {}),
+		anchorElement: visibilityButton.value,
+		...(replyTargetNote.value ? { isReplyVisibilitySpecified: replyTargetNote.value.visibility === 'specified' } : {}),
 	}, {
 		changeVisibility: v => {
 			visibility.value = v;
@@ -516,7 +519,7 @@ function setVisibility() {
 }
 
 async function toggleLocalOnly() {
-	if (props.channel) {
+	if (targetChannel.value) {
 		visibility.value = 'public';
 		localOnly.value = true; // TODO: チャンネルが連合するようになった折には消す
 		return;
@@ -642,27 +645,11 @@ function removeVisibleUser(user) {
 	visibleUsers.value = erase(user, visibleUsers.value);
 }
 
-const isResizing = ref(false);
-
-function autoResizeTextarea() {
-	if (isResizing.value) return;
-
-	isResizing.value = true;
-	nextTick(() => {
-		if (textareaEl.value) {
-			autosize.update(textareaEl.value);
-		}
-		isResizing.value = false;
-	});
-}
-
 function clear() {
 	text.value = '';
 	files.value = [];
 	poll.value = null;
 	quoteId.value = null;
-
-	autoResizeTextarea();
 }
 
 function onKeydown(ev: KeyboardEvent) {
@@ -671,8 +658,6 @@ function onKeydown(ev: KeyboardEvent) {
 	// justEndedComposition.value is for Safari, which keyDown occurs after compositionend.
 	// ev.isComposing is for another browsers.
 	if (ev.key === 'Escape' && !justEndedComposition.value && !ev.isComposing) emit('esc');
-
-	autoResizeTextarea();
 }
 
 function onKeyup(ev: KeyboardEvent) {
@@ -681,15 +666,11 @@ function onKeyup(ev: KeyboardEvent) {
 
 function onCompositionUpdate(ev: CompositionEvent) {
 	imeText.value = ev.data;
-
-	autoResizeTextarea();
 }
 
 function onCompositionEnd(ev: CompositionEvent) {
 	imeText.value = '';
 	justEndedComposition.value = true;
-
-	autoResizeTextarea();
 }
 
 const pastedFileName = 'yyyy-MM-dd HH-mm-ss [{{number}}]';
@@ -712,9 +693,7 @@ async function onPaste(ev: ClipboardEvent) {
 	}
 	if (pastedFiles.length > 0) {
 		ev.preventDefault();
-		os.launchUploader(pastedFiles, {}).then(driveFiles => {
-			files.value.push(...driveFiles);
-		});
+		uploader.addFiles(pastedFiles);
 		return;
 	}
 
@@ -749,13 +728,9 @@ async function onPaste(ev: ClipboardEvent) {
 
 			const fileName = formatTimeString(new Date(), pastedFileName).replace(/{{number}}/g, '0');
 			const file = new File([paste], `${fileName}.txt`, { type: 'text/plain' });
-			os.launchUploader([file], {}).then(driveFiles => {
-				files.value.push(...driveFiles);
-			});
+			uploader.addFiles([file]);
 		});
 	}
-
-	autoResizeTextarea();
 }
 
 function onDragover(ev) {
@@ -797,9 +772,7 @@ function onDrop(ev: DragEvent): void {
 	// ファイルだったら
 	if (ev.dataTransfer && ev.dataTransfer.files.length > 0) {
 		ev.preventDefault();
-		os.launchUploader(Array.from(ev.dataTransfer.files), {}).then(driveFiles => {
-			files.value.push(...driveFiles);
-		});
+		uploader.addFiles(Array.from(ev.dataTransfer.files));
 		return;
 	}
 
@@ -814,64 +787,28 @@ function onDrop(ev: DragEvent): void {
 	//#endregion
 }
 
-const saveDraftToServer = throttle(5000, async (draftData) => {
-	const toSubmit = draftData;
-	if (toSubmit.files) {
-		toSubmit.files = JSON.stringify(toSubmit.files);
-	}
-	if (toSubmit.poll) {
-		toSubmit.poll = JSON.stringify(toSubmit.poll);
-	}
-	try {
-		await misskeyApi('notes/drafts/save', toSubmit);
-	} catch (error) {
-		console.error('Failed to save draft to server:', error);
-	}
-});
-
 function saveDraft() {
 	if (props.instant || props.mock) return;
 
-	// no text, no cw text, no files, no poll, no cw text
-	if (!text.value && !files.value.length && !poll.value) {
-		if (useCw.value && cw.value) {
-			deleteDraft();
-			return;
-		} else if (!useCw.value) {
-			deleteDraft();
-			return;
-		}
-	}
+	const draftData = JSON.parse(miLocalStorage.getItem('drafts') ?? '{}');
 
-	const draftData = {
-		text: text.value,
-		useCw: useCw.value,
-		cw: cw.value,
-		visibility: visibility.value,
-		localOnly: localOnly.value,
-		files: files.value,
-		poll: poll.value,
-		visibleUserIds: visibility.value === 'specified' ? visibleUsers.value.map(x => x.id) : undefined,
-		quoteId: quoteId.value,
-		reactionAcceptance: reactionAcceptance.value,
-	};
-
-	const draftDataForLocalStorage = JSON.parse(miLocalStorage.getItem('drafts') ?? '{}');
-	draftDataForLocalStorage[draftKey.value] = {
+	draftData[draftKey.value] = {
 		updatedAt: new Date(),
-		data: draftData,
+		data: {
+			text: text.value,
+			useCw: useCw.value,
+			cw: cw.value,
+			visibility: visibility.value,
+			localOnly: localOnly.value,
+			files: files.value,
+			poll: poll.value,
+			...( visibleUsers.value.length > 0 ? { visibleUserIds: visibleUsers.value.map(x => x.id) } : {}),
+			quoteId: quoteId.value,
+			reactionAcceptance: reactionAcceptance.value,
+		},
 	};
-	miLocalStorage.setItem('drafts', JSON.stringify(draftDataForLocalStorage));
 
-	saveDraftToServer(draftData);
-}
-
-async function deleteRemoteDraft() {
-	try {
-		await misskeyApi('notes/drafts/delete');
-	} catch (error) {
-		console.error('Failed to delete remote draft:', error);
-	}
+	miLocalStorage.setItem('drafts', JSON.stringify(draftData));
 }
 
 function deleteDraft() {
@@ -880,64 +817,32 @@ function deleteDraft() {
 	delete draftData[draftKey.value];
 
 	miLocalStorage.setItem('drafts', JSON.stringify(draftData));
-
-	try {
-		saveDraftToServer.cancel();
-	} catch (error) {
-		console.error('Failed to cancel saving draft to server:', error);
-	}
-	deleteRemoteDraft();
 }
 
-async function checkServerDraft() {
-	if (props.reply ?? props.renote) return;
-
-	isLoadingDraft.value = true;
-	try {
-		const draft = await misskeyApiGet('notes/drafts/get', {
-			i: $i.token,
-		});
-		if (draft) {
-			hasDraftOnServer.value = true;
-			os.confirm({
-				type: 'info',
-				text: i18n.ts._postForm.draftFoundOnOtherDevice,
-				okText: i18n.ts._postForm.useDraft,
-				cancelText: i18n.ts.cancel,
-			}).then(({ canceled }) => {
-				if (!canceled) {
-					text.value = draft.text ?? '';
-					useCw.value = !!draft.useCw;
-					if (draft.useCw && draft.cw) {
-						cw.value = draft.cw;
-					}
-					visibility.value = draft.visibility;
-					localOnly.value = draft.localOnly;
-					if (draft.files) {
-						files.value = JSON.parse(draft.files);
-					}
-					if (draft.poll) {
-						poll.value = JSON.parse(draft.poll);
-					}
-					if (draft.visibleUserIds) {
-						draft.visibleUserIds.forEach(userId => {
-							misskeyApi('users/show', { userId }).then(user => {
-								pushVisibleUser(user);
-							});
-						});
-					}
-					if (draft.reactionAcceptance) {
-						reactionAcceptance.value = draft.reactionAcceptance;
-					}
-					autoResizeTextarea();
-				}
-			});
+async function saveServerDraft(clearLocal = false) {
+	return await os.apiWithDialog(serverDraftId.value == null ? 'notes/drafts/create' : 'notes/drafts/update', {
+		...(serverDraftId.value == null ? {} : { draftId: serverDraftId.value }),
+		text: text.value,
+		useCw: useCw.value,
+		cw: cw.value,
+		visibility: visibility.value,
+		localOnly: localOnly.value,
+		hashtag: hashtags.value,
+		...(files.value.length > 0 ? { fileIds: files.value.map(f => f.id) } : {}),
+		poll: poll.value,
+		...(visibleUsers.value.length > 0 ? { visibleUserIds: visibleUsers.value.map(x => x.id) } : {}),
+		renoteId: renoteTargetNote.value ? renoteTargetNote.value.id : undefined,
+		replyId: replyTargetNote.value ? replyTargetNote.value.id : undefined,
+		quoteId: quoteId.value,
+		channelId: targetChannel.value ? targetChannel.value.id : undefined,
+		reactionAcceptance: reactionAcceptance.value,
+	}).then(() => {
+		if (clearLocal) {
+			clear();
+			deleteDraft();
 		}
-	} catch (error) {
-		console.error('Failed to fetch draft from server:', error);
-	} finally {
-		isLoadingDraft.value = false;
-	}
+	}).catch((err) => {
+	});
 }
 
 function isAnnoying(text: string): boolean {
@@ -1007,9 +912,9 @@ async function post(ev?: MouseEvent) {
 	let postData = {
 		text: text.value === '' ? null : text.value,
 		fileIds: files.value.length > 0 ? files.value.map(f => f.id) : undefined,
-		replyId: props.reply ? props.reply.id : undefined,
+		replyId: replyTargetNote.value ? replyTargetNote.value.id : undefined,
 		renoteId: renoteTargetNote.value ? renoteTargetNote.value.id : quoteId.value ? quoteId.value : undefined,
-		channelId: props.channel ? props.channel.id : undefined,
+		channelId: targetChannel.value ? targetChannel.value.id : undefined,
 		poll: poll.value,
 		cw: useCw.value ? cw.value ?? '' : null,
 		localOnly: localOnly.value,
@@ -1049,7 +954,7 @@ async function post(ev?: MouseEvent) {
 
 	if (postAccount.value) {
 		const storedAccounts = await getAccounts();
-		token = storedAccounts.find(x => x.id === postAccount.value?.id)?.token ?? undefined;
+		token = storedAccounts.find(x => x.id === postAccount.value?.id)?.token;
 	}
 
 	posting.value = true;
@@ -1113,6 +1018,10 @@ async function post(ev?: MouseEvent) {
 			}
 			if (m === 0 && s === 0) {
 				claimAchievement('postedAt0min0sec');
+			}
+
+			if (serverDraftId.value != null) {
+				misskeyApi('notes/drafts/delete', { draftId: serverDraftId.value });
 			}
 		});
 	}).catch(err => {
@@ -1201,7 +1110,7 @@ function openAccountMenu(ev: MouseEvent) {
 			if (account.id === $i.id) {
 				postAccount.value = null;
 			} else {
-				postAccount.value = account as Misskey.entities.UserDetailed;
+				postAccount.value = account;
 			}
 		},
 	}, ev);
@@ -1217,6 +1126,84 @@ function showPerUploadItemMenuViaContextmenu(item: UploaderItem, ev: MouseEvent)
 	os.contextMenu(menu, ev);
 }
 
+function showDraftMenu(ev: MouseEvent) {
+	function showDraftsDialog() {
+		const { dispose } = os.popup(defineAsyncComponent(() => import('@/components/MkNoteDraftsDialog.vue')), {}, {
+			restore: async (draft: Misskey.entities.NoteDraft) => {
+				text.value = draft.text ?? '';
+				useCw.value = draft.cw != null;
+				cw.value = draft.cw ?? null;
+				visibility.value = draft.visibility;
+				localOnly.value = draft.localOnly ?? false;
+				files.value = draft.files ?? [];
+				hashtags.value = draft.hashtag ?? '';
+				if (draft.hashtag) withHashtags.value = true;
+				if (draft.poll) {
+					// 投票を一時的に空にしないと反映されないため
+					poll.value = null;
+					nextTick(() => {
+						poll.value = {
+							choices: draft.poll!.choices,
+							multiple: draft.poll!.multiple,
+							expiresAt: draft.poll!.expiresAt ? (new Date(draft.poll!.expiresAt)).getTime() : null,
+							expiredAfter: null,
+						};
+					});
+				}
+				if (draft.visibleUserIds) {
+					misskeyApi('users/show', { userIds: draft.visibleUserIds }).then(users => {
+						users.forEach(u => pushVisibleUser(u));
+					});
+				}
+				quoteId.value = draft.renoteId ?? null;
+				renoteTargetNote.value = draft.renote;
+				replyTargetNote.value = draft.reply;
+				reactionAcceptance.value = draft.reactionAcceptance;
+				if (draft.channel) targetChannel.value = draft.channel as unknown as Misskey.entities.Channel;
+
+				visibleUsers.value = [];
+				draft.visibleUserIds?.forEach(uid => {
+					if (!visibleUsers.value.some(u => u.id === uid)) {
+						misskeyApi('users/show', { userId: uid }).then(user => {
+							pushVisibleUser(user);
+						});
+					}
+				});
+
+				serverDraftId.value = draft.id;
+			},
+			cancel: () => {
+
+			},
+			closed: () => {
+				dispose();
+			},
+		});
+	}
+
+	os.popupMenu([{
+		type: 'button',
+		text: i18n.ts._drafts.saveToDraft,
+		icon: 'ti ti-cloud-upload',
+		action: async () => {
+			if (!canSaveAsServerDraft.value) {
+				return os.alert({
+					type: 'error',
+					text: i18n.ts._drafts.cannotCreateDraft,
+				});
+			}
+			saveServerDraft();
+		},
+	}, {
+		type: 'button',
+		text: i18n.ts._drafts.listDrafts,
+		icon: 'ti ti-cloud-download',
+		action: () => {
+			showDraftsDialog();
+		},
+	}], (ev.currentTarget ?? ev.target ?? undefined) as HTMLElement | undefined);
+}
+
 onMounted(() => {
 	if (props.autofocus) {
 		focus();
@@ -1227,16 +1214,9 @@ onMounted(() => {
 	}
 
 	// TODO: detach when unmount
-	if (textareaEl.value) {
-		autocomplete.value.push(new Autocomplete(textareaEl.value, text));
-		autosize(textareaEl.value);
-	}
-	if (cwInputEl.value) {
-		autocomplete.value.push(new Autocomplete(cwInputEl.value, cw));
-	}
-	if (hashtagsInputEl.value) {
-		autocomplete.value.push(new Autocomplete(hashtagsInputEl.value, hashtags));
-	}
+	if (textareaEl.value) new Autocomplete(textareaEl.value, text);
+	if (cwInputEl.value) new Autocomplete(cwInputEl.value, cw);
+	if (hashtagsInputEl.value) new Autocomplete(hashtagsInputEl.value, hashtags);
 
 	nextTick(() => {
 		// 書きかけの投稿を復元
@@ -1259,10 +1239,6 @@ onMounted(() => {
 				}
 				quoteId.value = draft.data.quoteId;
 				reactionAcceptance.value = draft.data.reactionAcceptance;
-
-				autoResizeTextarea();
-			} else {
-				checkServerDraft();
 			}
 		}
 
@@ -1306,19 +1282,9 @@ async function canClose() {
 		});
 		if (canceled) return false;
 	}
+
 	return true;
 }
-
-onBeforeUnmount(() => {
-	autocomplete.value.forEach(ac => ac.detach());
-	if (textareaEl.value) {
-		autosize.destroy(textareaEl.value);
-	}
-});
-
-onUnmounted(() => {
-	saveDraftToServer.cancel();
-});
 
 defineExpose({
 	clear,
@@ -1350,27 +1316,38 @@ defineExpose({
 
 .headerLeft {
 	display: flex;
-	flex: 0 1 100px;
+	flex: 1;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 6px;
+	padding-left: 12px;
 }
 
 .cancel {
-	padding: 0;
-	font-size: 1em;
-	height: 100%;
-	flex: 0 1 50px;
+	padding: 8px;
 }
 
 .account {
-	height: 100%;
-	display: inline-flex;
-	vertical-align: bottom;
-	flex: 0 1 50px;
 }
 
 .avatar {
 	width: 28px;
 	height: 28px;
 	margin: auto;
+}
+
+.draftButton {
+	padding: 8px;
+	font-size: 90%;
+	border-radius: 6px;
+
+	&:hover {
+		background: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+	}
+
+	&:disabled {
+		background: none;
+	}
 }
 
 .headerRight {
@@ -1584,11 +1561,6 @@ html[data-color-scheme=light] .preview {
 	border-top: solid 0.5px var(--MI_THEME-divider);
 }
 
-.postFormMain {
-	max-height: 85vh;
-	overflow-y: auto;
-}
-
 .textOuter {
 	width: 100%;
 	position: relative;
@@ -1604,9 +1576,6 @@ html[data-color-scheme=light] .preview {
 	width: 100%;
 	min-height: 90px;
 	height: 100%;
-	max-height: 75vh;
-	overflow-x: hidden !important;
-	resize: none;
 }
 
 .textCount {
