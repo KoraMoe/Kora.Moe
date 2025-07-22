@@ -17,6 +17,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 			<button v-if="$i.policies.noteDraftLimit > 0" v-tooltip="i18n.ts.draft" class="_button" :class="$style.draftButton" @click="showDraftMenu"><i class="ti ti-pencil-minus"></i></button>
 		</div>
 		<div :class="$style.headerRight">
+			<button ref="otherSettingsButton" v-tooltip="i18n.ts.other" class="_button" :class="$style.headerRightItem" @click="showOtherSettings"><i class="ti ti-dots"></i></button>
 			<button v-click-anime class="_button" :class="$style.submit" :disabled="!canPost" data-cy-open-post-form-submit @click="post">
 				<div :class="$style.submitInner">
 					<template v-if="posted"></template>
@@ -63,7 +64,6 @@ SPDX-License-Identifier: AGPL-3.0-only
 		</div>
 		<div :class="$style.footerRight">
 			<button v-tooltip="i18n.ts.emoji" :class="['_button', $style.footerButton]" @click="insertEmoji"><i class="ti ti-mood-happy"></i></button>
-			<button v-tooltip="i18n.ts.previewNoteText" class="_button" :class="[$style.footerButton, { [$style.previewButtonActive]: showPreview }]" @click="showPreview = !showPreview"><i class="ti ti-eye"></i></button>
 		</div>
 	</footer>
 	<datalist id="hashtags">
@@ -84,6 +84,7 @@ import MkUploaderItems from './MkUploaderItems.vue';
 import type { UploaderItem } from '@/composables/use-uploader.js';
 import type { PollEditorModelValue } from '@/components/MkPollEditor.vue';
 import type { PostFormProps } from '@/types/post-form';
+import type { MenuItem } from '@/types/menu.js';
 import MkNoteSimple from '@/components/MkNoteSimple.vue';
 import MkNotePreview from '@/components/MkNotePreview.vue';
 import XPostFormAttaches from '@/components/MkPostFormAttaches.vue';
@@ -130,6 +131,7 @@ const props = withDefaults(defineProps<PostFormProps & {
 	fixed: false,
 });
 
+// eslint-disable-next-line vue/no-setup-props-reactivity-loss
 provide(DI.mock, props.mock);
 
 const emit = defineEmits<{
@@ -144,6 +146,7 @@ const emit = defineEmits<{
 const textareaEl = useTemplateRef('textareaEl');
 const cwInputEl = useTemplateRef('cwInputEl');
 const hashtagsInputEl = useTemplateRef('hashtagsInputEl');
+const otherSettingsButton = useTemplateRef('otherSettingsButton');
 
 const posting = ref(false);
 const posted = ref(false);
@@ -167,6 +170,8 @@ const imeText = ref('');
 const showingOptions = ref(false);
 const textAreaReadOnly = ref(false);
 const postFormActions = getPluginHandlers('post_form_action');
+
+const serverDraftId = ref<string | null>(null);
 
 const uploader = useUploader({
 	multiple: true,
@@ -253,6 +258,11 @@ const canPost = computed((): boolean => {
 		) &&
 		(files.value.length <= 16) &&
 		(!poll.value || poll.value.choices.length >= 2);
+});
+
+// cannot save pure renote as draft
+const canSaveAsServerDraft = computed((): boolean => {
+	return canPost.value && (textLength.value > 0 || files.value.length > 0 || poll.value != null);
 });
 
 const withHashtags = computed(store.makeGetterSetter('postFormWithHashtags'));
@@ -535,6 +545,28 @@ function deleteDraft() {
 	miLocalStorage.setItem('drafts', JSON.stringify(draftData));
 }
 
+async function saveServerDraft(clearLocal = false) {
+	return await os.apiWithDialog(serverDraftId.value == null ? 'notes/drafts/create' : 'notes/drafts/update', {
+		...(serverDraftId.value == null ? {} : { draftId: serverDraftId.value }),
+		text: text.value,
+		useCw: useCw.value,
+		cw: cw.value,
+		hashtag: hashtags.value,
+		...(files.value.length > 0 ? { fileIds: files.value.map(f => f.id) } : {}),
+		poll: poll.value,
+		quoteId: quoteId.value,
+		replyId: reply.value ? reply.value.id : undefined,
+		renoteId: renote.value ? renote.value.id : undefined,
+		channelId: channel.value ? channel.value.id : undefined,
+	}).then(() => {
+		if (clearLocal) {
+			clear();
+			deleteDraft();
+		}
+	}).catch((err) => {
+	});
+}
+
 async function uploadFiles() {
 	await uploader.upload();
 
@@ -608,14 +640,14 @@ async function post(ev?: MouseEvent) {
 	}
 
 	posting.value = true;
-	misskeyApi('notes/update', postData).then(() => {
+	misskeyApi('notes/update', postData).then((res) => {
 		if (props.freezeAfterPosted) {
 			posted.value = true;
 		} else {
 			clear();
 		}
 
-		globalEvents.emit('notePosted', postData);
+		globalEvents.emit('noteUpdated', { noteId: props.target.id });
 
 		nextTick(() => {
 			deleteDraft();
@@ -654,7 +686,7 @@ async function post(ev?: MouseEvent) {
 				claimAchievement('brainDiver');
 			}
 
-			if (props.renote && (props.renote.userId === $i.id) && text.length > 0) {
+			if (renote.value && (renote.value.userId === $i.id) && text.length > 0) {
 				claimAchievement('selfQuote');
 			}
 
@@ -667,6 +699,10 @@ async function post(ev?: MouseEvent) {
 			}
 			if (m === 0 && s === 0) {
 				claimAchievement('postedAt0min0sec');
+			}
+
+			if (serverDraftId.value != null) {
+				misskeyApi('notes/drafts/delete', { draftId: serverDraftId.value });
 			}
 		});
 	}).catch(err => {
@@ -742,6 +778,31 @@ function showActions(ev: MouseEvent) {
 	})), ev.currentTarget ?? ev.target);
 }
 
+function showOtherSettings() {
+	const menuItems = [{
+		type: 'switch' as const,
+		icon: 'ti ti-eye',
+		text: i18n.ts.preview,
+		ref: showPreview,
+	}, {
+		type: 'button' as const,
+		icon: 'ti ti-trash',
+		text: i18n.ts.reset,
+		danger: true,
+		action: async () => {
+			if (props.mock) return;
+			const { canceled } = await os.confirm({
+				type: 'question',
+				text: i18n.ts.resetAreYouSure,
+			});
+			if (canceled) return;
+			clear();
+		},
+	}] satisfies MenuItem[];
+
+	os.popupMenu(menuItems, otherSettingsButton.value);
+}
+
 function showPerUploadItemMenu(item: UploaderItem, ev: MouseEvent) {
 	const menu = uploader.getMenu(item);
 	os.popupMenu(menu, ev.currentTarget ?? ev.target);
@@ -772,6 +833,8 @@ function showDraftMenu(ev: MouseEvent) {
 					});
 				}
 				quoteId.value = draft.renoteId ?? null;
+
+				serverDraftId.value = draft.id;
 			},
 			cancel: () => {},
 			closed: () => {
@@ -781,18 +844,20 @@ function showDraftMenu(ev: MouseEvent) {
 	}
 
 	os.popupMenu([{
-		type: 'button',
+		type: 'button' as const,
 		text: i18n.ts._drafts.saveToDraft,
 		icon: 'ti ti-cloud-upload',
 		action: async () => {
-			saveDraft();
-			os.alert({
-				type: 'info',
-				text: i18n.ts._drafts.draftSaved,
-			});
+			if (!canSaveAsServerDraft.value) {
+				return os.alert({
+					type: 'error',
+					text: i18n.ts._drafts.cannotCreateDraft,
+				});
+			}
+			saveServerDraft();
 		},
 	}, {
-		type: 'button',
+		type: 'button' as const,
 		text: i18n.ts._drafts.listDrafts,
 		icon: 'ti ti-cloud-download',
 		action: () => {
