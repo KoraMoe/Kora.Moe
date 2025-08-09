@@ -23,10 +23,10 @@ SPDX-License-Identifier: AGPL-3.0-only
 import { computed, shallowRef } from 'vue';
 import MkPagination from '@/components/MkPagination.vue';
 import MkApprovalUser from '@/components/MkApprovalUser.vue';
+import { definePage } from '@/page.js';
 import { i18n } from '@/i18n.js';
-import { definePage } from '@/page';
 
-let paginationComponent = shallowRef<InstanceType<typeof MkPagination>>();
+let paginationComponent = shallowRef<any>();
 
 const pagination = {
 	endpoint: 'admin/show-users' as const,
@@ -49,10 +49,10 @@ const headerActions = computed(() => []);
 
 const headerTabs = computed(() => []);
 
-definePage(computed(() => ({
+definePage(() => ({
 	title: i18n.ts.signupPendingApprovals,
 	icon: 'ti ti-user-check',
-})));
+}));
 </script>
 
 <style lang="scss" module>

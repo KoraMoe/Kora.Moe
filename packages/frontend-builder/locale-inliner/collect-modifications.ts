@@ -165,7 +165,7 @@ export function collectModifications(sourceCode: string, fileName: string, fileL
 				if (parent.type === 'MemberExpression' && !parent.computed && property === 'property') return; // we don't care 'id' part of { id: expr }
 				if (parent.type === 'ExportSpecifier' && property === 'exported') return; // we don't care 'id' part of { id: expr }
 				if (node.name === localI18nIdentifier) {
-					fileLogger.error(`${lineCol(sourceCode, node)}: Using i18n identifier "${localI18nIdentifier}" directly. Skipping inlining.`);
+					fileLogger.warn(`${lineCol(sourceCode, node)}: Using i18n identifier "${localI18nIdentifier}" directly. Skipping inlining.`);
 					preserveI18nImport = true;
 				}
 			} else if (node.type === 'MemberExpression') {
