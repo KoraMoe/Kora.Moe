@@ -1239,7 +1239,6 @@ releaseToRefresh: "離したらリロード"
 refreshing: "リロードしとる"
 pullDownToRefresh: "引っ張ってリロードするで"
 useGroupedNotifications: "通知をグループ分けして出すで"
-signupPendingError: "メアド確認してたらなんか変なことなったわ。リンクの期限切れてるかもしれん。"
 cwNotationRequired: "「内容を隠す」んやったら注釈書かなアカンで。"
 doReaction: "ツッコむで"
 code: "コード"
@@ -3020,6 +3019,13 @@ _watermarkEditor:
   angle: "角度"
 _imageEffector:
   discardChangesConfirm: "変更をせんで終わるか？"
+  _fxProps:
+    angle: "角度"
+    scale: "大きさ"
+    size: "大きさ"
+    color: "色"
+    opacity: "不透明度"
+    lightness: "明るさ"
 _drafts:
   cannotCreateDraftAnymore: "下書きはこれ以上は作れへんな。"
   cannotCreateDraft: "この内容で下書きは作れへんな。"
