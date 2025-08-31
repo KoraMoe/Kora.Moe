@@ -63,6 +63,8 @@ function generateDummyUser(override?: Partial<MiUser>): MiUser {
 		uri: null,
 		followersUri: null,
 		token: null,
+		approved: true,
+		signupReason: null,
 		...override,
 	};
 }
@@ -70,6 +72,7 @@ function generateDummyUser(override?: Partial<MiUser>): MiUser {
 function generateDummyNote(override?: Partial<MiNote>): MiNote {
 	return {
 		id: 'dummy-note-1',
+		updatedAt: new Date(Date.now() - oneDayMillis),
 		replyId: null,
 		reply: null,
 		renoteId: null,

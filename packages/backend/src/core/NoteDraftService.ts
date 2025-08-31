@@ -95,6 +95,8 @@ export class NoteDraftService {
 
 		appliedDraft.id = this.idService.gen();
 		appliedDraft.userId = me.id;
+		appliedDraft.createdAt = new Date();
+		appliedDraft.updatedAt = null;
 		const draft = this.noteDraftsRepository.save(appliedDraft);
 
 		return draft;
@@ -122,6 +124,7 @@ export class NoteDraftService {
 		}
 
 		const appliedDraft = await this.checkAndSetDraftNoteOptions(me, draft, data);
+		appliedDraft.updatedAt = new Date();
 
 		return await this.noteDraftsRepository.save(appliedDraft);
 	}
@@ -152,6 +155,23 @@ export class NoteDraftService {
 		}
 
 		return draft;
+	}
+
+	@bindThis
+	public async saveDraft(me: MiLocalUser, data: NoteDraftOptions & { id?: string | null, useCw?: boolean, files?: string | null, poll?: string | null, quoteId?: string | null }): Promise<MiNoteDraft> {
+		// Convert string parameters to proper types
+		const draftData: NoteDraftOptions = {
+			...data,
+			fileIds: data.files && data.files !== null ? JSON.parse(data.files) : undefined,
+			poll: data.poll && data.poll !== null ? JSON.parse(data.poll) : undefined,
+			renoteId: data.quoteId && data.quoteId !== null ? data.quoteId : undefined,
+		};
+
+		if (data.id && data.id !== null) {
+			return this.update(me, data.id, draftData);
+		} else {
+			return this.create(me, draftData);
+		}
 	}
 
 	// 関連エンティティを取得し紐づける部分を共通化する
@@ -292,6 +312,7 @@ export class NoteDraftService {
 		appliedDraft = {
 			...appliedDraft,
 			visibility: data.visibility,
+			useCw: Boolean(data.cw),
 			cw: data.cw ?? null,
 			fileIds: fileIds ?? [],
 			replyId: data.replyId ?? null,

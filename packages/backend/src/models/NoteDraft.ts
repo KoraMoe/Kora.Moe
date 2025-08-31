@@ -18,6 +18,23 @@ export class MiNoteDraft {
 	@PrimaryColumn(id())
 	public id: string;
 
+	@Index()
+	@Column('timestamp with time zone', {
+		comment: 'The created date of the Note Draft.',
+	})
+	public createdAt: Date;
+
+	@Column('timestamp with time zone', {
+		nullable: true,
+		comment: 'The updated date of the Note Draft.',
+	})
+	public updatedAt: Date | null;
+
+	@Column('boolean', {
+		default: false,
+	})
+	public useCw: boolean;
+
 	@Index('IDX_NOTE_DRAFT_REPLY_ID')
 	@Column({
 		...id(),
