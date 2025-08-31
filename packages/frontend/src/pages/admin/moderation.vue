@@ -201,7 +201,7 @@ import MkSelect from '@/components/MkSelect.vue';
 
 const meta = await misskeyApi('admin/meta');
 
-const approvalRequiredSignup = ref(meta.approvalRequiredForSignup);
+const approvalRequiredForSignup = ref(meta.approvalRequiredForSignup);
 const enableRegistration = ref(!meta.disableRegistration);
 const emailRequiredForSignup = ref(meta.emailRequiredForSignup);
 const ugcVisibilityForVisitor = ref(meta.ugcVisibilityForVisitor);
