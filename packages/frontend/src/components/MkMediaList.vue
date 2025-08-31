@@ -102,6 +102,8 @@ const isFlash = (file: Misskey.entities.DriveFile): boolean => {
 onMounted(() => {
 	calcAspectRatio();
 
+	if (gallery.value == null) return; // TSを黙らすため
+
 	lightbox = new PhotoSwipeLightbox({
 		dataSource: props.mediaList
 			.filter(media => {
