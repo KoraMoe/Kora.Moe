@@ -256,9 +256,8 @@ const user = ref(result.user);
 const info = ref(result.info);
 const ips = ref(result.ips);
 const ap = ref<any>(null);
-const moderator = ref(info.value.isModerator);
-const silenced = ref(info.value.isSilenced);
 const approved = ref(info.value.approved);
+const moderator = ref(info.value.isModerator);
 const suspended = ref(info.value.isSuspended);
 const isSystem = ref(user.value.host == null && user.value.username.includes('.'));
 const moderationNote = ref(info.value.moderationNote);
@@ -304,9 +303,9 @@ async function refreshUser() {
 	user.value = result.user;
 	info.value = result.info;
 	ips.value = result.ips;
+	approved.value = info.value.approved;
 	moderator.value = info.value.isModerator;
 	silenced.value = info.value.isSilenced;
-	approved.value = info.value.approved;
 	suspended.value = info.value.isSuspended;
 	isSystem.value = user.value.host == null && user.value.username.includes('.');
 	moderationNote.value = info.value.moderationNote;
@@ -638,17 +637,6 @@ definePage(() => ({
 	}
 }
 
-.casdwq {
-	.silenced {
-		color: var(--warn);
-		border-color: var(--warn);
-	}
-
-	.moderator {
-		color: var(--success);
-		border-color: var(--success);
-	}
-}
 </style>
 
 <style lang="scss" module>
