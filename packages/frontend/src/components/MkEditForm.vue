@@ -647,7 +647,7 @@ async function post(ev?: MouseEvent) {
 			clear();
 		}
 
-		globalEvents.emit('noteUpdated', { noteId: props.target.id });
+		globalEvents.emit('noteUpdated', props.target.id);
 
 		nextTick(() => {
 			deleteDraft();

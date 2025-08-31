@@ -345,6 +345,20 @@ useGlobalEvent('noteDeleted', (noteId) => {
 	}
 });
 
+useGlobalEvent('noteUpdated', (noteId) => {
+	if (noteId === note.id || noteId === appearNote.id) {
+		// Reload the note data
+		misskeyApi('notes/show', { noteId: note.id }).then((updatedNote) => {
+			// Update the note properties
+			Object.assign(note, updatedNote);
+			Object.assign(appearNote, getAppearNote(updatedNote) ?? updatedNote);
+		}).catch(() => {
+			// If note fetch fails, it might have been deleted
+			isDeleted.value = true;
+		});
+	}
+});
+
 const pleaseLoginContext = computed<OpenOnRemoteOptions>(() => ({
 	type: 'lookup',
 	url: `https://${host}/notes/${appearNote.id}`,
