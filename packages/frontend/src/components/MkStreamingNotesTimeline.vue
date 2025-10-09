@@ -77,6 +77,7 @@ import { i18n } from '@/i18n.js';
 import { globalEvents, useGlobalEvent } from '@/events.js';
 import { isSeparatorNeeded, getSeparatorInfo } from '@/utility/timeline-date-separate.js';
 import { Paginator } from '@/utility/paginator.js';
+import { misskeyApi } from '@/utility/misskey-api.js';
 
 const props = withDefaults(defineProps<{
 	src: BasicTimelineType | 'mentions' | 'directs' | 'list' | 'antenna' | 'channel' | 'role';
@@ -270,10 +271,14 @@ useGlobalEvent('noteDeleted', (noteId) => {
 	paginator.removeItem(noteId);
 });
 
-useGlobalEvent('noteUpdated', (noteId) => {
-	paginator.fetchNewer({
-		toQueue: !isTop() || isPausingUpdate,
-	});
+useGlobalEvent('noteUpdated', async (noteId) => {
+	// Fetch the updated note and replace it in the timeline
+	try {
+		const updatedNote = await misskeyApi('notes/show', { noteId });
+		paginator.updateItem(noteId, () => updatedNote);
+	} catch (e) {
+		console.error('Failed to fetch updated note:', e);
+	}
 });
 
 function releaseQueue() {
