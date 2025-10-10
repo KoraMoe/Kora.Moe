@@ -18,11 +18,6 @@ export class MiNoteDraft {
 	@PrimaryColumn(id())
 	public id: string;
 
-	@Column('boolean', {
-		default: false,
-	})
-	public useCw: boolean;
-
 	@Index('IDX_NOTE_DRAFT_REPLY_ID')
 	@Column({
 		...id(),
