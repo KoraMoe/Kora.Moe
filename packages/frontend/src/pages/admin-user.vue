@@ -426,16 +426,29 @@ async function deleteAccount() {
 	});
 	if (typed.canceled) return;
 
-	if (typed.result === user.value?.username) {
-		await os.apiWithDialog('admin/delete-account', {
-			userId: user.value.id,
-		});
-	} else {
+	if (typed.result !== user.value?.username) {
 		os.alert({
 			type: 'error',
 			text: 'input not match',
 		});
+		return;
 	}
+
+	let hardDelete = false;
+	if (user.value.host != null && $i.isAdmin) {
+		const hard = await os.confirm({
+			type: 'warning',
+			text: '远程用户：是否直接硬删除（从数据库移除记录，便于后续重新抓取）？取消则进行软删除。',
+			okText: '硬删除',
+			cancelText: '软删除',
+		});
+		hardDelete = !hard.canceled;
+	}
+
+	await os.apiWithDialog('admin/delete-account', {
+		userId: user.value.id,
+		hardDelete,
+	});
 }
 
 async function assignRole() {

@@ -7,7 +7,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 	<PageWithHeader :actions="headerActions" :tabs="headerTabs">
 		<div class="_spacer" style="--MI_SPACER-w: 900px;">
 			<div class="_gaps_m">
-				<MkPagination ref="paginationComponent" :pagination="pagination">
+				<MkPagination :paginator="paginator">
 					<template #default="{ items }">
 						<div class="_gaps_s">
 							<MkApprovalUser v-for="item in items" :key="item.id" :user="(item as any)" :onDeleted="deleted" />
@@ -20,29 +20,25 @@ SPDX-License-Identifier: AGPL-3.0-only
 </template>
 
 <script lang="ts" setup>
-import { computed, shallowRef } from 'vue';
+import { computed, markRaw } from 'vue';
 import MkPagination from '@/components/MkPagination.vue';
 import MkApprovalUser from '@/components/MkApprovalUser.vue';
 import { definePage } from '@/page.js';
 import { i18n } from '@/i18n.js';
+import { Paginator } from '@/utility/paginator.js';
 
-let paginationComponent = shallowRef<any>();
-
-const pagination = {
-	endpoint: 'admin/show-users' as const,
+const paginator = markRaw(new Paginator('admin/show-users', {
 	limit: 10,
-	params: computed(() => ({
+	computedParams: computed(() => ({
 		sort: '+createdAt',
 		state: 'approved',
 		origin: 'local',
 	})),
 	offsetMode: true,
-};
+}));
 
 function deleted(id: string) {
-	if (paginationComponent.value) {
-		paginationComponent.value.items.delete(id);
-	}
+	paginator.items.value = paginator.items.value.filter(item => item.id !== id);
 }
 
 const headerActions = computed(() => []);

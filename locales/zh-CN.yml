@@ -3377,3 +3377,6 @@ _qr:
   scanFile: "扫描设备上的图像"
   raw: "文本"
   mfm: "MFM"
+
+signupPendingApprovals: "注册审批"
+pendingUserApprovals: "有用户等待审批"

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-import { randomUUID } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import * as fs from 'node:fs';
 import { Inject, Injectable } from '@nestjs/common';
 import sharp from 'sharp';
@@ -887,6 +887,23 @@ export class DriveService {
 		requestIp = null,
 		requestHeaders = null,
 	}: UploadFromUrlArgs): Promise<MiDriveFile> {
+		// When remote file caching is disabled, avoid downloading link-only remote files to save bandwidth.
+		if (isLink && !this.meta.cacheRemoteFiles) {
+			this.downloaderLogger.info(`Skip download (link-only, cacheRemoteFiles disabled): ${url}`);
+			return await this.addLinkWithoutDownload({
+				url,
+				user,
+				folderId,
+				uri,
+				sensitive,
+				force,
+				isLink,
+				comment,
+				requestIp,
+				requestHeaders,
+			});
+		}
+
 		// Create temp file
 		const [path, cleanup] = await createTemp();
 
@@ -911,6 +928,155 @@ export class DriveService {
 			throw err;
 		} finally {
 			cleanup();
+		}
+	}
+
+	@bindThis
+	private async addLinkWithoutDownload({
+		url,
+		user,
+		folderId = null,
+		uri = null,
+		sensitive = false,
+		force = false,
+		comment = null,
+		requestIp = null,
+		requestHeaders = null,
+	}: UploadFromUrlArgs): Promise<MiDriveFile> {
+		const ext = this.guessExtFromUrl(url);
+		const mime = this.guessMimeFromExt(ext);
+		const nameFromUrl = this.getFilenameFromUrl(url);
+		const detectedName = correctFilename(nameFromUrl, ext ?? undefined);
+		const uriOrUrl = uri ?? url;
+		const md5 = createHash('md5').update(uriOrUrl).digest('hex');
+
+		if (user && !force) {
+			const existing = await this.driveFilesRepository.findOneBy({
+				uri: uriOrUrl,
+				userId: user.id,
+			});
+			if (existing) {
+				if (sensitive && !existing.isSensitive) {
+					await this.driveFilesRepository.update({ id: existing.id }, { isSensitive: true });
+					existing.isSensitive = true;
+				}
+				return existing;
+			}
+		}
+
+		const profile = user ? await this.userProfilesRepository.findOneBy({ userId: user.id }) : null;
+
+		let isSensitive = user
+			? this.userEntityService.isLocalUser(user) && profile!.alwaysMarkNsfw ? true :
+			sensitive ?? false
+			: false;
+
+		if (user && this.utilityService.isMediaSilencedHost(this.meta.mediaSilencedHosts, user.host)) isSensitive = true;
+		if (sensitive && profile?.autoSensitive) isSensitive = true;
+		if (sensitive && this.meta.setSensitiveFlagAutomatically) isSensitive = true;
+
+		let file = new MiDriveFile();
+		file.id = this.idService.gen();
+		file.userId = user ? user.id : null;
+		file.userHost = user ? user.host : null;
+		file.folderId = null;
+		file.comment = comment;
+		file.properties = {};
+		file.blurhash = null;
+		file.isLink = true;
+		file.requestIp = requestIp;
+		file.requestHeaders = requestHeaders;
+		file.maybeSensitive = sensitive;
+		file.maybePorn = false;
+		file.isSensitive = isSensitive;
+		file.src = url;
+		file.url = url;
+		file.uri = uriOrUrl;
+		file.size = 0;
+		file.md5 = md5;
+		file.name = detectedName;
+		file.type = mime;
+		file.storedInternal = false;
+		file.thumbnailUrl = null;
+		file.webpublicUrl = null;
+		file.webpublicType = null;
+		file.accessKey = randomUUID();
+		file.thumbnailAccessKey = 'thumbnail-' + randomUUID();
+		file.webpublicAccessKey = 'webpublic-' + randomUUID();
+
+		try {
+			file = await this.driveFilesRepository.insertOne(file);
+		} catch (err) {
+			if (isDuplicateKeyValueError(err)) {
+				this.registerLogger.info(`already registered ${file.uri}`);
+
+				file = await this.driveFilesRepository.findOneBy({
+					uri: file.uri!,
+					userId: user ? user.id : IsNull(),
+				}) as MiDriveFile;
+			} else {
+				this.registerLogger.error(err as Error);
+				throw err;
+			}
+		}
+
+		this.registerLogger.succ(`drive file has been created ${file.id}`);
+
+		if (user) {
+			this.driveFileEntityService.pack(file, { self: true }).then(packedFile => {
+				this.globalEventService.publishMainStream(user.id, 'driveFileCreated', packedFile);
+				this.globalEventService.publishDriveStream(user.id, 'fileCreated', packedFile);
+			});
+		}
+
+		this.driveChart.update(file, true);
+		if (file.userHost == null) {
+			this.perUserDriveChart.update(file, true);
+		} else {
+			if (this.meta.enableChartsForFederatedInstances) {
+				this.instanceChart.updateDrive(file, true);
+			}
+		}
+
+		return file;
+	}
+
+	@bindThis
+	private guessExtFromUrl(url: string): string | null {
+		try {
+			const pathname = new URL(url).pathname;
+			const match = pathname.match(/\.([A-Za-z0-9]+)$/);
+			return match ? match[1].toLowerCase() : null;
+		} catch {
+			return null;
+		}
+	}
+
+	@bindThis
+	private guessMimeFromExt(ext: string | null): string {
+		switch (ext) {
+		case 'jpg':
+		case 'jpeg': return 'image/jpeg';
+		case 'png': return 'image/png';
+		case 'gif': return 'image/gif';
+		case 'webp': return 'image/webp';
+		case 'avif': return 'image/avif';
+		case 'svg': return 'image/svg+xml';
+		case 'mp4': return 'video/mp4';
+		case 'webm': return 'video/webm';
+		default: return 'application/octet-stream';
+		}
+	}
+
+	@bindThis
+	private getFilenameFromUrl(url: string): string {
+		try {
+			const pathname = new URL(url).pathname;
+			const name = pathname.split('/').pop();
+			if (!name || name.trim() === '') return 'untitled';
+			return name;
+		} catch {
+			return 'untitled';
 		}
 	}
 }
