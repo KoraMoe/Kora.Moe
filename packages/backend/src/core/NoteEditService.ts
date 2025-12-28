@@ -391,6 +391,11 @@ export class NoteEditService implements OnApplicationShutdown {
 			// Pack the note
 			const noteObj = await this.noteEntityService.pack(note, null, { skipHide: true, withReactionAndUserPairCache: true });
 
+			// Publish edited event to notify clients
+			this.globalEventService.publishNoteStream(note.id, 'edited', {
+				note: note,
+			});
+
 			this.userWebhookService.getActiveWebhooks().then(webhooks => {
 				webhooks = webhooks.filter(x => x.userId === user.id && x.on.includes('note'));
 				for (const webhook of webhooks) {

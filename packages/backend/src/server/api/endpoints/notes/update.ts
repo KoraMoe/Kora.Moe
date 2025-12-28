@@ -11,7 +11,6 @@ import { Endpoint } from '@/server/api/endpoint-base.js';
 import type { DriveFilesRepository, PollsRepository, UsersRepository } from '@/models/_.js';
 import { NoteEditService } from '@/core/NoteEditService.js';
 import { GetterService } from '@/server/api/GetterService.js';
-import { GlobalEventService } from '@/core/GlobalEventService.js';
 import { MAX_NOTE_TEXT_LENGTH } from '@/const.js';
 import { RoleService } from '@/core/RoleService.js';
 import { DI } from '@/di-symbols.js';
@@ -136,7 +135,6 @@ export default class extends Endpoint<typeof meta, typeof paramDef> {
 		private pollsRepository: PollsRepository,
 
 		private getterService: GetterService,
-		private globalEventService: GlobalEventService,
 		private noteEditService: NoteEditService,
 		private roleService: RoleService,
 	) {
@@ -177,17 +175,13 @@ export default class extends Endpoint<typeof meta, typeof paramDef> {
 			}
 
 			try {
-				const targetNote = await this.noteEditService.edit(
+				await this.noteEditService.edit(
 					await this.usersRepository.findOneByOrFail({ id: note.userId }),
 					note.id,
 					newEditData,
 					undefined,
 					me,
 				);
-
-				this.globalEventService.publishNoteStream(note.id, 'edited', {
-					note: targetNote,
-				});
 			} catch (e) {
 				if (e instanceof NoteEditService.ContainsProhibitedWordsError) {
 					throw new ApiError(meta.errors.containsProhibitedWords);

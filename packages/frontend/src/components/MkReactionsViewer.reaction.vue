@@ -106,7 +106,6 @@ async function toggleReaction() {
 					reaction: props.reaction,
 				}).then(() => {
 					const emoji = customEmojisMap.get(emojiName.value);
-					if (emoji == null) return;
 					noteEvents.emit(`reacted:${props.noteId}`, {
 						userId: me.id,
 						reaction: props.reaction,
@@ -138,7 +137,6 @@ async function toggleReaction() {
 			reaction: props.reaction,
 		}).then(() => {
 			const emoji = customEmojisMap.get(emojiName.value);
-			if (emoji == null) return;
 
 			noteEvents.emit(`reacted:${props.noteId}`, {
 				userId: me.id,
