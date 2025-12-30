@@ -9,7 +9,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 	<template #default="{ items: notes }">
 		<div :class="[$style.root, { [$style.noGap]: noGap, '_gaps': !noGap }]">
-			<template v-for="(note, i) in notes" :key="note.id">
+			<template v-for="(note, i) in notes" :key="`${note.id}-${note.updatedAt ?? ''}`">
 				<div
 					v-if="i > 0 && isSeparatorNeeded(paginator.items.value[i - 1].createdAt, note.createdAt)"
 					:data-scroll-anchor="note.id"
