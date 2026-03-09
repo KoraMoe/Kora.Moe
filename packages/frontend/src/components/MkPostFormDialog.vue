@@ -53,9 +53,10 @@ function onPosted() {
 }
 
 async function _close() {
-	const canClose = await form.value?.canClose();
+	if (!form.value?.canClose) return;
+	const canClose = await form.value.canClose();
 	if (!canClose) return;
-	form.value?.abortUploader();
+	form.value.abortUploader();
 	modal.value?.close();
 }
 

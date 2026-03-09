@@ -250,21 +250,27 @@ const uploader = useUploader({
 	multiple: true,
 });
 
-onUnmounted(() => {
-	uploader.dispose();
-});
-
 onBeforeUnmount(() => {
 	uploader.abortAll();
+	if (textareaEl.value) {
+		autosize.destroy(textareaEl.value);
+	}
 	if (textAutocomplete) {
 		textAutocomplete.detach();
+		textAutocomplete = null;
 	}
 	if (cwAutocomplete) {
 		cwAutocomplete.detach();
+		cwAutocomplete = null;
 	}
 	if (hashtagAutocomplete) {
 		hashtagAutocomplete.detach();
+		hashtagAutocomplete = null;
 	}
+});
+
+onUnmounted(() => {
+	uploader.dispose();
 });
 
 uploader.events.on('itemUploaded', ctx => {
@@ -376,6 +382,30 @@ watch(visibleUsers, () => {
 	checkMissingMention();
 }, {
 	deep: true,
+});
+
+// Watch for useCw changes to initialize/cleanup cwAutocomplete
+watch(useCw, (newValue) => {
+	nextTick(() => {
+		if (newValue && cwInputEl.value && !cwAutocomplete) {
+			cwAutocomplete = new Autocomplete(cwInputEl.value, cw);
+		} else if (!newValue && cwAutocomplete) {
+			cwAutocomplete.detach();
+			cwAutocomplete = null;
+		}
+	});
+});
+
+// Watch for withHashtags changes to initialize/cleanup hashtagAutocomplete
+watch(withHashtags, (newValue) => {
+	nextTick(() => {
+		if (newValue && hashtagsInputEl.value && !hashtagAutocomplete) {
+			hashtagAutocomplete = new Autocomplete(hashtagsInputEl.value, hashtags);
+		} else if (!newValue && hashtagAutocomplete) {
+			hashtagAutocomplete.detach();
+			hashtagAutocomplete = null;
+		}
+	});
 });
 
 if (props.mention) {
@@ -1395,13 +1425,19 @@ onMounted(() => {
 		});
 	}
 
-	// TODO: detach when unmount
-	if (textareaEl.value) {
-		textAutocomplete = new Autocomplete(textareaEl.value, text);
-		autosize(textareaEl.value);
-	}
-	if (cwInputEl.value) cwAutocomplete = new Autocomplete(cwInputEl.value, cw);
-	if (hashtagsInputEl.value) hashtagAutocomplete = new Autocomplete(hashtagsInputEl.value, hashtags);
+	nextTick(() => {
+		// Initialize autocomplete after DOM is ready
+		if (textareaEl.value) {
+			textAutocomplete = new Autocomplete(textareaEl.value, text);
+			autosize(textareaEl.value);
+		}
+		if (useCw.value && cwInputEl.value) {
+			cwAutocomplete = new Autocomplete(cwInputEl.value, cw);
+		}
+		if (withHashtags.value && hashtagsInputEl.value) {
+			hashtagAutocomplete = new Autocomplete(hashtagsInputEl.value, hashtags);
+		}
+	});
 
 	nextTick(() => {
 		// 書きかけの投稿を復元
