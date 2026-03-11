@@ -14,6 +14,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 	<MkPostForm
 		ref="form"
 		:class="$style.form"
+		class="_popup"
 		v-bind="props"
 		autofocus
 		freezeAfterPosted
@@ -52,9 +53,10 @@ function onPosted() {
 }
 
 async function _close() {
-	const canClose = await form.value?.canClose();
+	if (!form.value?.canClose) return;
+	const canClose = await form.value.canClose();
 	if (!canClose) return;
-	form.value?.abortUploader();
+	form.value.abortUploader();
 	modal.value?.close();
 }
 
@@ -73,7 +75,8 @@ function onModalClosed() {
 
 <style lang="scss" module>
 .form {
-	max-height: 100%;
+	width: 100%;
+	max-width: 520px;
 	margin: 0 auto auto auto;
 }
 </style>

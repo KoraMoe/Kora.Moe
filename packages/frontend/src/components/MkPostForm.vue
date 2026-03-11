@@ -5,7 +5,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 <template>
 <div
-	:class="[$style.root, { [$style.modal]: modal, _popup: modal }]"
+	:class="[$style.root]"
 	@dragover.stop="onDragover"
 	@dragenter="onDragenter"
 	@dragleave="onDragleave"
@@ -114,7 +114,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 </template>
 
 <script lang="ts" setup>
-import { inject, watch, nextTick, onMounted, defineAsyncComponent, provide, shallowRef, ref, computed, useTemplateRef, onUnmounted } from 'vue';
+import { watch, nextTick, onMounted, defineAsyncComponent, provide, shallowRef, ref, computed, useTemplateRef, onUnmounted, onBeforeUnmount } from 'vue';
 import * as mfm from 'mfm-js';
 import * as Misskey from 'misskey-js';
 import autosize from 'autosize';
@@ -161,8 +161,6 @@ import { startTour } from '@/utility/tour.js';
 import { closeTip } from '@/tips.js';
 
 const $i = ensureSignin();
-
-const modal = inject(DI.inModal, false);
 
 const props = withDefaults(defineProps<PostFormProps & {
 	fixed?: boolean;
@@ -230,6 +228,10 @@ const targetChannel = shallowRef(props.channel);
 const serverDraftId = ref<string | null>(null);
 const postFormActions = getPluginHandlers('post_form_action');
 
+let textAutocomplete: Autocomplete | null = null;
+let cwAutocomplete: Autocomplete | null = null;
+let hashtagAutocomplete: Autocomplete | null = null;
+
 const isResizing = ref(false);
 
 function autoResizeTextarea() {
@@ -246,6 +248,25 @@ function autoResizeTextarea() {
 
 const uploader = useUploader({
 	multiple: true,
+});
+
+onBeforeUnmount(() => {
+	uploader.abortAll();
+	if (textareaEl.value) {
+		autosize.destroy(textareaEl.value);
+	}
+	if (textAutocomplete) {
+		textAutocomplete.detach();
+		textAutocomplete = null;
+	}
+	if (cwAutocomplete) {
+		cwAutocomplete.detach();
+		cwAutocomplete = null;
+	}
+	if (hashtagAutocomplete) {
+		hashtagAutocomplete.detach();
+		hashtagAutocomplete = null;
+	}
 });
 
 onUnmounted(() => {
@@ -346,8 +367,8 @@ const canSaveAsServerDraft = computed((): boolean => {
 	return canPost.value && (textLength.value > 0 || files.value.length > 0 || poll.value != null);
 });
 
-const withHashtags = computed(store.makeGetterSetter('postFormWithHashtags'));
-const hashtags = computed(store.makeGetterSetter('postFormHashtags'));
+const withHashtags = store.model('postFormWithHashtags');
+const hashtags = store.model('postFormHashtags');
 
 watch(text, () => {
 	checkMissingMention();
@@ -361,6 +382,30 @@ watch(visibleUsers, () => {
 	checkMissingMention();
 }, {
 	deep: true,
+});
+
+// Watch for useCw changes to initialize/cleanup cwAutocomplete
+watch(useCw, (newValue) => {
+	nextTick(() => {
+		if (newValue && cwInputEl.value && !cwAutocomplete) {
+			cwAutocomplete = new Autocomplete(cwInputEl.value, cw);
+		} else if (!newValue && cwAutocomplete) {
+			cwAutocomplete.detach();
+			cwAutocomplete = null;
+		}
+	});
+});
+
+// Watch for withHashtags changes to initialize/cleanup hashtagAutocomplete
+watch(withHashtags, (newValue) => {
+	nextTick(() => {
+		if (newValue && hashtagsInputEl.value && !hashtagAutocomplete) {
+			hashtagAutocomplete = new Autocomplete(hashtagsInputEl.value, hashtags);
+		} else if (!newValue && hashtagAutocomplete) {
+			hashtagAutocomplete.detach();
+			hashtagAutocomplete = null;
+		}
+	});
 });
 
 if (props.mention) {
@@ -623,11 +668,30 @@ async function toggleReactionAcceptance() {
 //#region その他の設定メニューpopup
 function showOtherSettings() {
 	let reactionAcceptanceIcon = 'ti ti-icons';
+	let reactionAcceptanceCaption = '';
 
-	if (reactionAcceptance.value === 'likeOnly') {
-		reactionAcceptanceIcon = 'ti ti-heart _love';
-	} else if (reactionAcceptance.value === 'likeOnlyForRemote') {
-		reactionAcceptanceIcon = 'ti ti-heart-plus';
+	switch (reactionAcceptance.value) {
+		case 'likeOnly':
+			reactionAcceptanceIcon = 'ti ti-heart _love';
+			reactionAcceptanceCaption = i18n.ts.likeOnly;
+			break;
+
+		case 'likeOnlyForRemote':
+			reactionAcceptanceIcon = 'ti ti-heart-plus';
+			reactionAcceptanceCaption = i18n.ts.likeOnlyForRemote;
+			break;
+
+		case 'nonSensitiveOnly':
+			reactionAcceptanceCaption = i18n.ts.nonSensitiveOnly;
+			break;
+
+		case 'nonSensitiveOnlyForLocalLikeOnlyForRemote':
+			reactionAcceptanceCaption = i18n.ts.nonSensitiveOnlyForLocalLikeOnlyForRemote;
+			break;
+
+		default:
+			reactionAcceptanceCaption = i18n.ts.all;
+			break;
 	}
 
 	const menuItems = [{
@@ -639,6 +703,7 @@ function showOtherSettings() {
 	}, { type: 'divider' }, {
 		icon: reactionAcceptanceIcon,
 		text: i18n.ts.reactionAcceptance,
+		caption: reactionAcceptanceCaption,
 		action: () => {
 			toggleReactionAcceptance();
 		},
@@ -707,6 +772,7 @@ function removeVisibleUser(user) {
 
 function clear() {
 	text.value = '';
+	cw.value = null;
 	files.value = [];
 	poll.value = null;
 	quoteId.value = null;
@@ -1359,13 +1425,19 @@ onMounted(() => {
 		});
 	}
 
-	// TODO: detach when unmount
-	if (textareaEl.value) {
-		new Autocomplete(textareaEl.value, text);
-		autosize(textareaEl.value);
-	}
-	if (cwInputEl.value) new Autocomplete(cwInputEl.value, cw);
-	if (hashtagsInputEl.value) new Autocomplete(hashtagsInputEl.value, hashtags);
+	nextTick(() => {
+		// Initialize autocomplete after DOM is ready
+		if (textareaEl.value) {
+			textAutocomplete = new Autocomplete(textareaEl.value, text);
+			autosize(textareaEl.value);
+		}
+		if (useCw.value && cwInputEl.value) {
+			cwAutocomplete = new Autocomplete(cwInputEl.value, cw);
+		}
+		if (withHashtags.value && hashtagsInputEl.value) {
+			hashtagAutocomplete = new Autocomplete(hashtagsInputEl.value, hashtags);
+		}
+	});
 
 	nextTick(() => {
 		// 書きかけの投稿を復元
@@ -1449,13 +1521,6 @@ defineExpose({
 .root {
 	position: relative;
 	container-type: inline-size;
-
-	&.modal {
-		width: 100%;
-		max-width: 520px;
-		overflow-x: clip;
-		overflow-y: auto;
-	}
 }
 
 //#region header
@@ -1728,6 +1793,7 @@ html[data-color-scheme=light] .preview {
 	max-height: 75vh;
 	overflow-x: hidden !important;
 	resize: none;
+	field-sizing: content;
 }
 
 .textCount {

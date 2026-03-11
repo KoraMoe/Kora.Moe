@@ -88,7 +88,7 @@ function setPosition() {
 	bodyEl.value.style.top = data.top + 'px';
 }
 
-let loopHandler;
+let loopHandler: number | null = null;
 
 onMounted(() => {
 	nextTick(() => {
@@ -104,13 +104,17 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-	window.cancelAnimationFrame(loopHandler);
+	if (loopHandler != null) window.cancelAnimationFrame(loopHandler);
 });
 </script>
 
 <style lang="scss" module>
 .root {
-	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .bg {
