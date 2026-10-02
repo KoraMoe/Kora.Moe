@@ -14,14 +14,14 @@ import type { Locale } from 'i18n';
 class SwLang {
 	public cacheName = `mk-cache-${_VERSION_}`;
 
-	public lang: Promise<string> = get('lang').then(async prelang => {
+	public lang: Promise<string> = get('lang').catch(() => null).then(async prelang => {
 		if (!prelang) return 'en-US';
 		return prelang;
 	});
 
-	public setLang(newLang: string): Promise<I18n<Locale>> {
+	public async setLang(newLang: string): Promise<I18n<Locale>> {
 		this.lang = Promise.resolve(newLang);
-		set('lang', newLang);
+		await set('lang', newLang).catch(() => {});
 		return this.fetchLocale();
 	}
 
@@ -34,7 +34,14 @@ class SwLang {
 	private async _fetch(): Promise<I18n<Locale>> {
 		// Service Workerは何度も起動しそのたびにlocaleを読み込むので、CacheStorageを使う
 		const localeUrl = `/assets/locales/${await this.lang}.${_VERSION_}.json`;
-		let localeRes = await caches.match(localeUrl);
+		let cache: Cache | undefined;
+		let localeRes: Response | undefined;
+		try {
+			cache = await caches.open(this.cacheName);
+			localeRes = await cache.match(localeUrl);
+		} catch {
+			// CacheStorage may be unavailable in Safari.
+		}
 
 		// _DEV_がtrueの場合は常に最新化
 		if (!localeRes || _DEV_) {
@@ -46,10 +53,9 @@ class SwLang {
 			try {
 				localeRes = await fetch(localeUrl, { signal: controller.signal });
 
-				const clone = localeRes.clone();
-				if (!clone.clone().ok) throw new Error('locale fetching error');
+				if (!localeRes.ok) throw new Error('locale fetching error');
 
-				caches.open(this.cacheName).then(cache => cache.put(localeUrl, clone));
+				await cache?.put(localeUrl, localeRes.clone()).catch(() => {});
 			} finally {
 				globalThis.clearTimeout(timeout);
 			}

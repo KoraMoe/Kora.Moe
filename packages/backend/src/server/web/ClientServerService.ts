@@ -371,8 +371,9 @@ export class ClientServerService {
 
 		// ServiceWorker
 		fastify.get('/sw.js', async (request, reply) => {
+			reply.header('Cache-Control', 'no-cache, max-age=0, must-revalidate');
 			return await reply.sendFile('/sw.js', this.swAssets, {
-				maxAge: ms('10 minutes'),
+				maxAge: 0,
 			});
 		});
 
@@ -458,7 +459,13 @@ export class ClientServerService {
 				requireSigninToViewContents: false,
 			});
 
-			return user && (await this.feedService.packFeed(user));
+			if (user == null) return null;
+
+			if (this.meta.ugcVisibilityForVisitor === 'none' || (this.meta.ugcVisibilityForVisitor === 'local' && user.host != null)) {
+				return null;
+			}
+
+			return await this.feedService.packFeed(user);
 		};
 
 		// Atom

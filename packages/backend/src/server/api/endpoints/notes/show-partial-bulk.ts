@@ -111,7 +111,7 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 				}
 			}
 
-			return await this.noteEntityService.fetchDiffs(visibleNoteIds);
+			return await this.noteEntityService.fetchDiffs(visibleNoteIds, me?.id ?? null);
 		});
 	}
 }

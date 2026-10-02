@@ -51,94 +51,82 @@ async function offlineContentHTML() {
 	}
 
 	const messages = {
-		title: i18n.ts?._offlineScreen.title ?? 'Offline - Could not connect to server',
-		header: i18n.ts?._offlineScreen.header ?? 'Could not connect to server',
+		title: i18n.ts?._offlineScreen?.title ?? 'Offline - Could not connect to server',
+		header: i18n.ts?._offlineScreen?.header ?? 'Could not connect to server',
 		reload: i18n.ts?.reload ?? 'Reload',
 	};
 
 	return `<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta content="width=device-width,initial-scale=1"name="viewport"><title>${messages.title}</title><style>body{background-color:#0c1210;color:#dee7e4;font-family:Hiragino Maru Gothic Pro,BIZ UDGothic,Roboto,HelveticaNeue,Arial,sans-serif;line-height:1.35;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:24px;box-sizing:border-box}.icon{max-width:120px;width:100%;height:auto;margin-bottom:20px;}.message{text-align:center;font-size:20px;font-weight:700;margin-bottom:20px}.version{text-align:center;font-size:90%;margin-bottom:20px}button{padding:7px 14px;min-width:100px;font-weight:700;font-family:Hiragino Maru Gothic Pro,BIZ UDGothic,Roboto,HelveticaNeue,Arial,sans-serif;line-height:1.35;border-radius:99rem;background-color:#b4e900;color:#192320;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent}button:hover{background-color:#c6ff03}</style></head><body><svg class="icon"fill="none"height="24"stroke="currentColor"stroke-linecap="round"stroke-linejoin="round"stroke-width="2"viewBox="0 0 24 24"width="24"xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z"fill="none"stroke="none"/><path d="M9.58 5.548c.24 -.11 .492 -.207 .752 -.286c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.913 0 3.464 1.56 3.464 3.486c0 .957 -.383 1.824 -1.003 2.454m-2.997 1.033h-11.343c-2.572 -.004 -4.657 -2.011 -4.657 -4.487c0 -2.475 2.085 -4.482 4.657 -4.482c.13 -.582 .37 -1.128 .7 -1.62"/><path d="M3 3l18 18"/></svg><div class="message">${messages.header}</div><div class="version">v${_VERSION_}</div><button onclick="reloadPage()">${messages.reload}</button><script>function reloadPage(){location.reload(!0)}</script></body></html>`;
 }
 
-const STATIC_CACHE_NAME = `misskey-static-${_VERSION_}`;
-const PATHS_TO_CACHE = ['/assets/', '/emoji/', '/twemoji/', '/fluent-emoji/', '/vite/'];
+const STATIC_CACHE_NAME = `misskey-static-v2-${_VERSION_}`;
 
-async function cacheWithFallback(cache, paths) {
-	for (const path of paths) {
-		try {
-			await cache.add(new Request(path, { credentials: 'same-origin' }));
-		} catch (error) {
-			console.error('Failed to cache with fallback:', error);
-		}
-	}
+function isImmutableAsset(request: Request): boolean {
+	const url = new URL(request.url);
+	// Only content-hashed build output is safe to serve cache-first across deployments.
+	return request.method === 'GET' && url.origin === globalThis.location.origin &&
+		/^\/vite\/(scripts|assets|[a-z]{2,3}-[A-Z]{2,3})\/[^/]+-[\w-]{8}\.[\w.]+$/.test(url.pathname);
 }
 
-globalThis.addEventListener('install', (ev) => {
-    // 次の問題が発生するため、ServiceWorkerAutoPreload をオプトアウトする必要がある
-	// https://issues.chromium.org/issues/466790291
-	if ('addRoutes' in ev) {
-		// doc: https://developer.mozilla.org/en-US/docs/Web/API/InstallEvent/addRoutes
-		// @ts-expect-error 実験的なAPIなので型定義がない
+async function respondToAsset(request: Request): Promise<Response> {
+	let cache: Cache | undefined;
+	try {
+		cache = await caches.open(STATIC_CACHE_NAME);
+		const cached = await cache.match(request);
+		if (cached) return cached;
+	} catch {
+		// Safari can deny or evict CacheStorage. Network requests must still work.
+	}
+
+	const response = await fetch(request);
+	if (cache && response.ok && response.type === 'basic') {
+		try {
+			await cache.put(request, response.clone());
+		} catch {
+			// A full or unavailable cache must not turn a successful fetch into an error.
+		}
+	}
+	return response;
+}
+
+globalThis.addEventListener('install', ev => {
+	// Opt out of Chromium ServiceWorkerAutoPreload (issues.chromium.org/466790291).
+	if ('addRoutes' in ev && 'URLPattern' in globalThis) {
+		// @ts-expect-error Experimental API is not in the worker type definitions.
 		ev.addRoutes({
 			condition: {
-				// doc: https://developer.mozilla.org/ja/docs/Web/API/URLPattern
-				// @ts-expect-error 実験的なAPIなので型定義がない
+				// @ts-expect-error Experimental API is not in the worker type definitions.
 				urlPattern: new URLPattern({}),
 			},
 			source: 'fetch-event',
 		});
 	}
-	ev.waitUntil((async () => {
-		const cache = await caches.open(STATIC_CACHE_NAME);
-		await cacheWithFallback(cache, PATHS_TO_CACHE);
-		await globalThis.skipWaiting();
-	})());
+	// Do not skipWaiting: a breaking worker update must not take over running clients.
 });
 
 globalThis.addEventListener('activate', ev => {
-	ev.waitUntil(
-		caches.keys()
-			.then(cacheNames => Promise.all(
-				cacheNames
-					.filter((v) => v !== swLang.cacheName && !v.startsWith('misskey-static-'))
-					.map(name => caches.delete(name)),
-			))
-			.then(() => globalThis.clients.claim()),
-	);
+	ev.waitUntil((async () => {
+		try {
+			const cacheNames = await caches.keys();
+			await Promise.all(cacheNames
+				.filter(name => (name.startsWith('misskey-static-') || name.startsWith('mk-cache-')) &&
+					name !== STATIC_CACHE_NAME && name !== swLang.cacheName)
+				.map(name => caches.delete(name)));
+		} catch {
+			// CacheStorage is optional; activation must succeed without it.
+		}
+		await globalThis.clients.claim();
+	})());
 });
 
 globalThis.addEventListener('fetch', ev => {
-	const shouldCache = PATHS_TO_CACHE.some(path => ev.request.url.includes(path));
-
-	if (shouldCache) {
-		ev.respondWith(
-			caches.match(ev.request)
-				.then(response => {
-					if (response) return response;
-
-					return fetch(ev.request).then(response => {
-						if (!response || response.status !== 200 || response.type !== 'basic') return response;
-						const responseToCache = response.clone();
-						caches.open(STATIC_CACHE_NAME)
-							.then(cache => {
-								cache.put(ev.request, responseToCache);
-							});
-						return response;
-					});
-				}),
-		);
+	if (isImmutableAsset(ev.request)) {
+		ev.respondWith(respondToAsset(ev.request));
 		return;
 	}
 
-	let isHTMLRequest = false;
-	if (ev.request.headers.get('sec-fetch-dest') === 'document') {
-		isHTMLRequest = true;
-	} else if (ev.request.headers.get('accept')?.includes('/html')) {
-		isHTMLRequest = true;
-	} else if (ev.request.url.endsWith('/')) {
-		isHTMLRequest = true;
-	}
-
-	if (!isHTMLRequest) return;
+	// Safari need not expose Sec-Fetch-Dest. Request.mode identifies real navigations.
+	if (ev.request.mode !== 'navigate') return;
 	ev.respondWith(respondToNavigation(ev.request));
 });
 
@@ -292,7 +280,7 @@ globalThis.addEventListener('message', (ev: ServiceWorkerGlobalScopeEventMap['me
 
 			if (otype === 'object') {
 				if (ev.data.msg === 'initialize') {
-					swLang.setLang(ev.data.lang);
+					await swLang.setLang(ev.data.lang);
 				}
 			}
 		}
