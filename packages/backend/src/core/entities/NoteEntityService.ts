@@ -169,6 +169,9 @@ export class NoteEntityService implements OnModuleInit {
 		if (meId === packedNote.userId) return false;
 		// TODO: isVisibleForMe を使うようにしても良さそう(型違うけど)
 
+		// TODO: ugcVisibilityForVisitor が local の場合も、付随するリモートのノートをリンクだけ残して内容を隠せるようにする
+		if (meId == null && this.meta.ugcVisibilityForVisitor === 'none') return true;
+
 		if (packedNote.user.requireSigninToViewContents && meId == null) {
 			return true;
 		}
@@ -327,7 +330,7 @@ export class NoteEntityService implements OnModuleInit {
 				return false;
 			} else if (meId === note.userId) {
 				return true;
-			} else if (note.reply && (meId === note.reply.userId)) {
+			} else if (note.replyUserId && (meId === note.replyUserId)) {
 				// 自分の投稿に対するリプライ
 				return true;
 			} else if (note.mentions && note.mentions.some(id => meId === id)) {
@@ -355,6 +358,30 @@ export class NoteEntityService implements OnModuleInit {
 				*/
 				return following > 0 || (note.userHost != null && user.host != null);
 			}
+		}
+
+		return true;
+	}
+
+	@bindThis
+	public async isNoteContentVisibleByUserPolicy(note: MiNote, meId: MiUser['id'] | null): Promise<boolean> {
+		if (meId === note.userId) return true;
+		if (note.user == null) throw new Error('Note author relation is required to check content visibility.');
+
+		if (note.user.requireSigninToViewContents && meId == null) return false;
+
+		const createdAt = this.idService.parse(note.id).date;
+		if (shouldHideNoteByTime(note.user.makeNotesHiddenBefore, createdAt)) return false;
+
+		if (
+			(note.visibility === 'public' || note.visibility === 'home') &&
+			shouldHideNoteByTime(note.user.makeNotesFollowersOnlyBefore, createdAt)
+		) {
+			if (meId == null) return false;
+			if (note.replyUserId === meId || note.mentions.some(id => id === meId)) return true;
+
+			const followings = await this.cacheService.userFollowingsCache.fetch(meId);
+			return Object.hasOwn(followings, note.userId);
 		}
 
 		return true;
@@ -499,7 +526,7 @@ export class NoteEntityService implements OnModuleInit {
 
 		this.treatVisibility(packed);
 
-		if (!opts.skipHide && await this.shouldHideNote(packed, meId)) {
+		if (!opts.skipHide && (await this.shouldHideNote(packed, meId))) {
 			this.hideNote(packed);
 		}
 
@@ -626,7 +653,11 @@ export class NoteEntityService implements OnModuleInit {
 	private findNoteOrFail(id: string): Promise<MiNote> {
 		return this.notesRepository.findOneOrFail({
 			where: { id },
-			relations: ['user', 'renote', 'reply'],
+			relations: {
+				user: true,
+				renote: true,
+				reply: true,
+			},
 		});
 	}
 
@@ -657,23 +688,38 @@ export class NoteEntityService implements OnModuleInit {
 		);
 
 		return mentionedUsers;
-    }
-    
-    @bindThis
-	public async fetchDiffs(noteIds: MiNote['id'][]) {
-		if (noteIds.length === 0) return [];
+	}
 
-		const notes = await this.notesRepository.find({
+	@bindThis
+	public async fetchDiffs(noteIds: MiNote['id'][], meId: MiUser['id'] | null = null) {
+		if (noteIds.length === 0) return [];
+		// TODO: ugcVisibilityForVisitor が local の場合の扱いを shouldHideNote と揃える
+		if (meId == null && this.meta.ugcVisibilityForVisitor === 'none') return [];
+
+		const fetched = await this.notesRepository.find({
 			where: {
 				id: In(noteIds),
 			},
 			select: {
 				id: true,
+				updatedAt: true,
+				userId: true,
 				userHost: true,
+				visibility: true,
+				visibleUserIds: true,
+				mentions: true,
+				replyUserId: true,
 				reactions: true,
 				reactionAndUserPairCache: true,
 			},
 		});
+
+		const notes: MiNote[] = [];
+		for (const note of fetched) {
+			if (await this.isVisibleForMe(note, meId)) {
+				notes.push(note);
+			}
+		}
 
 		const bufferedReactionsMap = this.meta.enableReactionsBuffering ? await this.reactionsBufferingService.getMany(noteIds) : null;
 
@@ -689,6 +735,7 @@ export class NoteEntityService implements OnModuleInit {
 
 			return this.customEmojiService.populateEmojis(reactionEmojiNames, note.userHost).then(reactionEmojis => ({
 				id: note.id,
+				updatedAt: note.updatedAt?.toISOString() ?? null,
 				reactions,
 				reactionEmojis,
 			}));

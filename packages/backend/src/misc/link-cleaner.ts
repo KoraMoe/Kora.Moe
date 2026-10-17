@@ -1,12 +1,38 @@
-import URLCleaner from '@backrunner/url-cleaner';
+/*
+ * SPDX-FileCopyrightText: syuilo and misskey-project
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
 
-// Create a URL cleaner instance with default filter lists and redirect handling
-const urlCleaner = new URLCleaner({
-	useDefaultLists: true, // Use default filter lists
-	handleRedirects: true, // Enable automatic redirect handling
-	redirectTimeout: 5000, // Set timeout for redirect requests to 5 seconds
-	enableWASM: true, // Enable WebAssembly for better performance
-});
+type URLCleanerInstance = {
+	cleanURLsInText(text: string): Promise<string>;
+};
+
+type URLCleanerConstructor = new (options: {
+	useDefaultLists: boolean;
+	handleRedirects: boolean;
+	redirectTimeout: number;
+	enableWASM: boolean;
+}) => URLCleanerInstance;
+
+let urlCleanerPromise: Promise<URLCleanerInstance> | null = null;
+
+async function getURLCleaner(): Promise<URLCleanerInstance> {
+	if (urlCleanerPromise == null) {
+		urlCleanerPromise = import('@backrunner/url-cleaner')
+			.then(({ default: URLCleaner }) => new (URLCleaner as URLCleanerConstructor)({
+				useDefaultLists: true,
+				handleRedirects: true,
+				redirectTimeout: 5000,
+				enableWASM: true,
+			}))
+			.catch((err) => {
+				urlCleanerPromise = null;
+				throw err;
+			});
+	}
+
+	return await urlCleanerPromise;
+}
 
 /**
  * Clean links in text
@@ -15,10 +41,9 @@ const urlCleaner = new URLCleaner({
  */
 export const cleanLink = async (text: string): Promise<string> => {
 	try {
-		// Use cleanURLsInText method to directly clean all URLs in the text
-		return await urlCleaner.cleanURLsInText(text);
+		return await (await getURLCleaner()).cleanURLsInText(text);
 	} catch (error) {
 		console.error('Failed to clean links in text:', error);
-		return text; // Return original text on error
+		return text;
 	}
 };

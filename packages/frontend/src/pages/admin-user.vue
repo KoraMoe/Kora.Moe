@@ -98,6 +98,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 					<div>
 						<MkButton v-if="user.host == null" inline style="margin-right: 8px;" @click="resetPassword"><i class="ti ti-key"></i> {{ i18n.ts.resetPassword }}</MkButton>
+						<MkButton v-if="user.host == null" inline @click="unsetMfa"><i class="ti ti-shield"></i> {{ i18n.ts.unsetMfa }}</MkButton>
 					</div>
 
 					<MkFolder>
@@ -127,7 +128,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 						<MkButton v-if="iAmModerator" inline danger style="margin-right: 8px;" @click="unsetUserAvatar"><i class="ti ti-user-circle"></i> {{ i18n.ts.unsetUserAvatar }}</MkButton>
 						<MkButton v-if="iAmModerator" inline danger @click="unsetUserBanner"><i class="ti ti-photo"></i> {{ i18n.ts.unsetUserBanner }}</MkButton>
 					</div>
-					<MkButton v-if="$i.isAdmin" inline danger @click="deleteAccount">{{ i18n.ts.deleteAccount }}</MkButton>
+					<MkButton v-if="$i.isAdmin" inline danger @click="deleteAccount()">{{ i18n.ts.deleteAccount }}</MkButton>
+					<MkButton v-if="$i.isAdmin" inline danger @click="deleteAccount({ hardDelete: true })">{{ i18n.ts.deleteAccountHard }}</MkButton>
 				</div>
 			</FormSection>
 		</div>
@@ -334,12 +336,26 @@ async function resetPassword() {
 	if (confirm.canceled) {
 		return;
 	} else {
-		const { password } = await misskeyApi('admin/reset-password', {
+		const { password } = await os.apiWithDialog('admin/reset-password', {
 			userId: user.value.id,
 		});
 		os.alert({
 			type: 'success',
 			text: i18n.tsx.newPasswordIs({ password }),
+		});
+	}
+}
+
+async function unsetMfa() {
+	const confirm = await os.confirm({
+		type: 'warning',
+		text: i18n.ts.unsetMfaConfirm,
+	});
+	if (confirm.canceled) {
+		return;
+	} else {
+		await os.apiWithDialog('admin/unset-mfa', {
+			userId: user.value.id,
 		});
 	}
 }
@@ -414,7 +430,7 @@ async function deleteAllFiles() {
 	await refreshUser();
 }
 
-async function deleteAccount() {
+async function deleteAccount({ hardDelete = false }: { hardDelete?: boolean } = {}) {
 	const confirm = await os.confirm({
 		type: 'warning',
 		text: i18n.ts.deleteAccountConfirm,
@@ -426,29 +442,18 @@ async function deleteAccount() {
 	});
 	if (typed.canceled) return;
 
-	if (typed.result !== user.value?.username) {
+	if (typed.result === user.value?.username) {
+		await os.apiWithDialog('admin/delete-account', {
+			userId: user.value.id,
+			hardDelete,
+		});
+	} else {
 		os.alert({
 			type: 'error',
 			text: 'input not match',
 		});
 		return;
 	}
-
-	let hardDelete = false;
-	if (user.value.host != null && $i.isAdmin) {
-		const hard = await os.confirm({
-			type: 'warning',
-			text: '远程用户：是否直接硬删除（从数据库移除记录，便于后续重新抓取）？取消则进行软删除。',
-			okText: '硬删除',
-			cancelText: '软删除',
-		});
-		hardDelete = !hard.canceled;
-	}
-
-	await os.apiWithDialog('admin/delete-account', {
-		userId: user.value.id,
-		hardDelete,
-	});
 }
 
 async function assignRole() {

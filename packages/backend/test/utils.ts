@@ -9,13 +9,13 @@ import { basename, isAbsolute } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { inspect } from 'node:util';
 import WebSocket, { ClientOptions } from 'ws';
-import fetch, { File, RequestInit, type Headers } from 'node-fetch';
+import fetch, { Blob, FormData } from 'node-fetch';
+import type { RequestInit, Headers, Response } from 'node-fetch';
 import * as htmlParser from 'node-html-parser';
 import { DataSource } from 'typeorm';
-import { type Response } from 'node-fetch';
 import Fastify from 'fastify';
-import { entities } from '../src/postgres.js';
-import { loadConfig } from '../src/config.js';
+import { entities } from '@/postgres.js';
+import { loadConfig } from '@/config.js';
 import type * as misskey from 'misskey-js';
 import { DEFAULT_POLICIES } from '@/core/RoleService.js';
 import { validateContentTypeSetAsActivityPub } from '@/core/activitypub/misc/validator.js';
@@ -42,7 +42,7 @@ export const port = config.port;
 export const origin = config.url;
 export const host = new URL(config.url).host;
 
-export const WEBHOOK_HOST = 'http://localhost:15080';
+export const WEBHOOK_HOST = 'http://127.0.0.1:15080';
 export const WEBHOOK_PORT = 15080;
 
 export type ApiRequest<E extends keyof misskey.Endpoints, P extends misskey.Endpoints[E]['req'] = misskey.Endpoints[E]['req']> = {

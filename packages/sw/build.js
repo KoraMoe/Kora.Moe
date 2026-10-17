@@ -28,7 +28,8 @@ const buildOptions = {
 		_VERSION_: JSON.stringify(meta.version),
 	},
 	entryPoints: [`${__dirname}/src/sw.ts`],
-	format: 'esm',
+	format: 'iife',
+	target: ['safari18.2', 'chrome130', 'firefox132'],
 	loader: {
 		'.ts': 'ts',
 	},

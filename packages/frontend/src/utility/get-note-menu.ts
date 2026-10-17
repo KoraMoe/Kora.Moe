@@ -33,7 +33,7 @@ const isInBrowserTranslationAvailable = (
 
 export async function getNoteClipMenu(props: {
 	note: Misskey.entities.Note;
-	currentClip?: Misskey.entities.Clip;
+	currentClip?: Misskey.entities.Clip | null;
 }) {
 	function getClipName(clip: Misskey.entities.Clip) {
 		if ($i && clip.userId === $i.id && clip.notesCount != null) {
@@ -181,7 +181,8 @@ export function getNoteMenu(props: {
 	note: Misskey.entities.Note;
 	translation: Ref<Misskey.entities.NotesTranslateResponse | null>;
 	translating: Ref<boolean>;
-	currentClip?: Misskey.entities.Clip;
+	currentClip?: Misskey.entities.Clip | null;
+	currentAntenna?: Misskey.entities.Antenna | null;
 }) {
 	const appearNote = getAppearNote(props.note) ?? props.note;
 	const link = appearNote.url ?? appearNote.uri;
@@ -266,6 +267,19 @@ export function getNoteMenu(props: {
 		os.apiWithDialog('clips/remove-note', { clipId: props.currentClip.id, noteId: appearNote.id });
 	}
 
+	async function removeFromAntenna(): Promise<void> {
+		if (!props.currentAntenna) return;
+
+		const { canceled } = await os.confirm({
+			type: 'warning',
+			text: i18n.tsx.removeNoteFromAntennaConfirm({ name: props.currentAntenna.name }),
+		});
+		if (canceled) return;
+
+		await os.apiWithDialog('antennas/remove-note', { antennaId: props.currentAntenna.id, noteId: appearNote.id });
+		globalEvents.emit('noteRemovedFromAntenna', props.currentAntenna.id, appearNote.id);
+	}
+
 	async function _promote(): Promise<void> {
 		const { canceled, result: days } = await os.inputNumber({
 			title: i18n.ts.numberOfDays,
@@ -293,12 +307,18 @@ export function getNoteMenu(props: {
 
 	async function translate(): Promise<void> {
 		if (props.translation.value != null) return;
-		if (prefer.s['experimental.enableWebTranslatorApi'] && isInBrowserTranslationAvailable && appearNote.text != null) {
+
+		let text = appearNote.text ?? '';
+		if (appearNote.cw != null) {
+			text = `${appearNote.cw}\n-----\n${text}`;
+		}
+
+		if (prefer.s['experimental.enableWebTranslatorApi'] && isInBrowserTranslationAvailable && text.trim() !== '') {
 			props.translating.value = true;
 			try {
 				// @ts-expect-error 実験的なAPIなので型定義がない
 				const detector = await LanguageDetector.create();
-				const langResult = await detector.detect(appearNote.text);
+				const langResult = await detector.detect(text);
 				let localStorageLang = miLocalStorage.getItem('lang');
 				if (localStorageLang != null) {
 					localStorageLang = localStorageLang.split('-')[0];
@@ -308,7 +328,7 @@ export function getNoteMenu(props: {
 				if (langResult[0]?.detectedLanguage === localStorageLang || langResult[0]?.detectedLanguage === navigator.language) {
 					props.translation.value = {
 						sourceLang: langResult[0]?.detectedLanguage ?? 'unknown',
-						text: appearNote.text,
+						text: text,
 					};
 					return;
 				}
@@ -318,7 +338,7 @@ export function getNoteMenu(props: {
 					sourceLanguage: langResult[0]?.detectedLanguage,
 					targetLanguage: localStorageLang ?? navigator.language,
 				});
-				const translated = await translator.translate(appearNote.text);
+				const translated = await translator.translate(text);
 				props.translation.value = {
 					sourceLang: langResult[0]?.detectedLanguage ?? 'unknown',
 					text: translated,
@@ -499,7 +519,10 @@ export function getNoteMenu(props: {
 
 		if (appearNote.userId === $i.id || $i.isModerator || $i.isAdmin) {
 			menuItems.push({ type: 'divider' });
-			if ($i.policies.canEditNote || $i.isModerator || $i.isAdmin) {
+			const canEdit = appearNote.userId === $i.id
+				? $i.policies.canEditNote || $i.isModerator || $i.isAdmin
+				: appearNote.user.host == null && ($i.isModerator || $i.isAdmin);
+			if (canEdit) {
 				menuItems.push({
 					icon: 'ti ti-edit',
 					text: i18n.ts.edit,
@@ -513,11 +536,27 @@ export function getNoteMenu(props: {
 					action: delEdit,
 				});
 			}
+			if (props.currentAntenna != null) {
+				menuItems.push({
+					icon: 'ti ti-trash',
+					text: i18n.ts.removeFromAntenna,
+					danger: true,
+					action: removeFromAntenna,
+				});
+			}
 			menuItems.push({
 				icon: 'ti ti-trash',
 				text: i18n.ts.delete,
 				danger: true,
 				action: del,
+			});
+		} else if (props.currentAntenna != null) {
+			menuItems.push({ type: 'divider' });
+			menuItems.push({
+				icon: 'ti ti-trash',
+				text: i18n.ts.removeFromAntenna,
+				danger: true,
+				action: removeFromAntenna,
 			});
 		}
 	} else {
