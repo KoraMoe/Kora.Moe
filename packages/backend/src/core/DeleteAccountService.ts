@@ -54,7 +54,7 @@ export class DeleteAccountService {
 		}
 
 		if (moderator != null) {
-			this.moderationLogService.log(moderator, 'deleteAccount', {
+			await this.moderationLogService.log(moderator, 'deleteAccount', {
 				userId: user.id,
 				userUsername: _user.username,
 				userHost: user.host,
@@ -73,7 +73,10 @@ export class DeleteAccountService {
 					{ followerSharedInbox: Not(IsNull()) },
 					{ followeeSharedInbox: Not(IsNull()) },
 				],
-				select: ['followerSharedInbox', 'followeeSharedInbox'],
+				select: {
+					followerSharedInbox: true,
+					followeeSharedInbox: true,
+				},
 			});
 
 			const inboxes = followings.map(x => x.followerSharedInbox ?? x.followeeSharedInbox);

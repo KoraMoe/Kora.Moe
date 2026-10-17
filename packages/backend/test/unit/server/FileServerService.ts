@@ -7,11 +7,11 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import fastifyStatic from '@fastify/static';
 import Fastify, { type FastifyInstance } from 'fastify';
-import { describe, expect, test } from '@jest/globals';
+import { describe, expect, test, beforeAll, afterAll, afterEach, vi } from 'vitest';
 import sharp from 'sharp';
 import { DataSource, type Repository } from 'typeorm';
 import { initTestDb, randomString } from '../../utils.js';
-import type { AiService } from '@/core/AiService.js';
+import type { SensitiveMediaDetectionService } from '@/core/SensitiveMediaDetectionService.js';
 import { DownloadService } from '@/core/DownloadService.js';
 import { FileInfoService } from '@/core/FileInfoService.js';
 import { HttpRequestService } from '@/core/HttpRequestService.js';
@@ -21,14 +21,17 @@ import { IdService } from '@/core/IdService.js';
 import { LoggerService } from '@/core/LoggerService.js';
 import { VideoProcessingService } from '@/core/VideoProcessingService.js';
 import { loadConfig, type Config } from '@/config.js';
+import { getProxySign } from '@/misc/media-proxy.js';
 import { MiDriveFile } from '@/models/DriveFile.js';
 import { FileServerService } from '@/server/FileServerService.js';
+import { FileServerFileResolver } from '@/server/file/FileServerFileResolver.js';
 
 const dummyPath = path.resolve('test/resources/dummy-for-file-server-service.png');
 const dummySize = fs.statSync(dummyPath).size;
 const dummyBuffer = fs.readFileSync(dummyPath);
 const svgBuffer = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"></svg>', 'utf8');
 const textBuffer = Buffer.from('dummy text', 'utf8');
+const externalMediaProxyKey = 'test-media-proxy-key';
 
 async function createRemoteFileServer() {
 	const flatPngBuffer = await sharp({
@@ -79,7 +82,9 @@ describe('FileServerService', () => {
 	let internalStorageService: InternalStorageService;
 	let idService: IdService;
 	let config: Config;
+	let externalConfig: Config;
 	let fileServerService: FileServerService;
+	let fileResolver: FileServerFileResolver;
 	let externalFileServerService: FileServerService;
 	let remoteServer: FastifyInstance;
 	let remotePngUrl: string;
@@ -90,11 +95,22 @@ describe('FileServerService', () => {
 	let createdFallbackAssets = false;
 	let fallbackAssetsDir = '';
 
-	function writeInternalFile(key: string) {
+	function writeInternalFile(key: string, data: Buffer = dummyBuffer) {
 		const dest = internalStorageService.resolvePath(key);
 		fs.mkdirSync(path.dirname(dest), { recursive: true });
-		fs.copyFileSync(dummyPath, dest);
+		fs.writeFileSync(dest, data);
 		storedPaths.push(dest);
+	}
+
+	function signedProxyUrl(targetUrl: string, params: Record<string, string> = {}) {
+		const searchParams = new URLSearchParams({
+			url: targetUrl,
+			...params,
+			...(config.mediaProxyKey != null ? {
+				sign: getProxySign(targetUrl, config.mediaProxyKey, config.url),
+			} : {}),
+		});
+		return `/proxy/any?${searchParams.toString()}`;
 	}
 
 	async function insertDriveFile(params: {
@@ -147,15 +163,17 @@ describe('FileServerService', () => {
 		driveFilesRepository = db.getRepository(MiDriveFile);
 
 		const loggerService = new LoggerService();
-		const aiService = {
+		const sensitiveMediaDetectionService = {
 			detectSensitive: async () => null,
-		} as unknown as AiService;
-		const fileInfoService = new FileInfoService(aiService, loggerService);
+			detectSensitiveMany: async (sources: Buffer[]) => sources.map(() => null),
+		} as unknown as SensitiveMediaDetectionService;
+		const fileInfoService = new FileInfoService(sensitiveMediaDetectionService, loggerService);
 		const httpRequestService = new HttpRequestService(config);
 		const downloadService = new DownloadService(config, httpRequestService, loggerService);
 		const imageProcessingService = new ImageProcessingService();
 		const videoProcessingService = new VideoProcessingService(config, imageProcessingService);
 		internalStorageService = new InternalStorageService(config);
+		fileResolver = new FileServerFileResolver(driveFilesRepository as any, fileInfoService, downloadService, internalStorageService);
 		idService = new IdService(config);
 		fileServerService = new FileServerService(
 			config,
@@ -176,11 +194,12 @@ describe('FileServerService', () => {
 		fileServerService.createServer(fastify, {}, () => {});
 		await fastify.ready();
 
-		const externalConfig = {
+		externalConfig = {
 			...config,
 			mediaProxy: 'https://media-proxy.test',
+			mediaProxyKey: externalMediaProxyKey,
 			externalMediaProxyEnabled: true,
-		} as Config;
+		};
 		externalFileServerService = new FileServerService(
 			externalConfig,
 			driveFilesRepository as any,
@@ -287,6 +306,16 @@ describe('FileServerService', () => {
 	});
 
 	describe('GET /files/:key', () => {
+		test.each(['../../sentinel.txt', 'nested/file.png', '..\\file.png', '..'])('resolver は DB 一致済みでも内蔵ストレージの %s をパス解決せず拒否する', async (accessKey) => {
+			await insertDriveFile({ accessKey, storedInternal: true, isLink: false });
+			const resolvePath = vi.spyOn(internalStorageService, 'resolvePath');
+
+			const result = await fileResolver.resolveFileByAccessKey(accessKey);
+
+			expect(result).toEqual({ kind: 'not-found' });
+			expect(resolvePath).not.toHaveBeenCalled();
+		});
+
 		test('GET /files/:key 404 のときダミー画像を返す', async () => {
 			const accessKey = randomString();
 
@@ -296,7 +325,7 @@ describe('FileServerService', () => {
 			});
 
 			expect(res.statusCode).toBe(404);
-			expect(res.headers['cache-control']).toBe('max-age=86400');
+			expect(res.headers['cache-control']).toBe('public, max-age=0');
 		});
 
 		test('GET /files/:key 画像配信ヘッダを検証する', async () => {
@@ -318,6 +347,7 @@ describe('FileServerService', () => {
 			expect(res.headers['cache-control']).toBe('max-age=31536000, immutable');
 			expect(res.headers['content-type']).toBe('image/png');
 			expect(res.headers['content-length']).toBe(String(dummySize));
+			expect(res.headers['accept-ranges']).toBe('bytes');
 			expect(res.headers['content-disposition'] ?? '').toMatch(/^inline;/);
 		});
 
@@ -369,10 +399,14 @@ describe('FileServerService', () => {
 			expect(res.headers['content-length']).toBe(String(dummySize));
 		});
 
+		/** Content-Range の総量と範囲は、応答対象のサムネイルのバイト列に基づく。 */
 		test('GET /files/:key thumbnail の Range で部分配信する', async () => {
 			const accessKey = randomString();
 			const thumbnailKey = randomString();
-			writeInternalFile(thumbnailKey);
+			const thumbnailBuffer = await sharp(dummyBuffer).resize(1, 1).png().toBuffer();
+			expect(thumbnailBuffer.length).not.toBe(dummySize);
+			writeInternalFile(accessKey);
+			writeInternalFile(thumbnailKey, thumbnailBuffer);
 			await insertDriveFile({
 				accessKey,
 				thumbnailAccessKey: thumbnailKey,
@@ -390,17 +424,22 @@ describe('FileServerService', () => {
 			});
 
 			expect(res.statusCode).toBe(206);
-			expect(res.headers['content-range']).toBe(`bytes 0-3/${dummySize}`);
+			expect(res.headers['content-range']).toBe(`bytes 0-3/${thumbnailBuffer.length}`);
 			expect(res.headers['accept-ranges']).toBe('bytes');
 			expect(res.headers['content-length']).toBe('4');
 			expect(res.headers['content-type']).toBe('image/png');
 			expect(res.headers['cache-control']).toBe('max-age=31536000, immutable');
+			expect(res.rawPayload).toEqual(thumbnailBuffer.subarray(0, 4));
 		});
 
-		test('GET /files/:key thumbnail のファイル名を整形する', async () => {
+		/** Content-Length は、内蔵ストレージに保存したサムネイルのバイト数と一致する。 */
+		test('GET /files/:key thumbnail のファイル名と配信サイズを検証する', async () => {
 			const accessKey = randomString();
 			const thumbnailKey = randomString();
-			writeInternalFile(thumbnailKey);
+			const thumbnailBuffer = await sharp(dummyBuffer).resize(1, 1).png().toBuffer();
+			expect(thumbnailBuffer.length).not.toBe(dummySize);
+			writeInternalFile(accessKey);
+			writeInternalFile(thumbnailKey, thumbnailBuffer);
 			await insertDriveFile({
 				accessKey,
 				thumbnailAccessKey: thumbnailKey,
@@ -418,12 +457,18 @@ describe('FileServerService', () => {
 			expect(res.headers['content-type']).toBe('image/png');
 			expect(res.headers['cache-control']).toBe('max-age=31536000, immutable');
 			expect(res.headers['content-disposition'] ?? '').toContain('sample-thumb.png');
+			expect(res.rawPayload).toEqual(thumbnailBuffer);
+			expect(res.headers['content-length']).toBe(String(thumbnailBuffer.length));
 		});
 
-		test('GET /files/:key webpublic のファイル名を整形する', async () => {
+		/** Content-Length は、Web公開用に変換して内蔵ストレージに保存した画像のバイト数と一致する。 */
+		test('GET /files/:key webpublic のファイル名と配信サイズを検証する', async () => {
 			const accessKey = randomString();
 			const webpublicKey = randomString();
-			writeInternalFile(webpublicKey);
+			const webpublicBuffer = await sharp(dummyBuffer).resize(1, 1).png().toBuffer();
+			expect(webpublicBuffer.length).not.toBe(dummySize);
+			writeInternalFile(accessKey);
+			writeInternalFile(webpublicKey, webpublicBuffer);
 			await insertDriveFile({
 				accessKey,
 				webpublicAccessKey: webpublicKey,
@@ -441,6 +486,8 @@ describe('FileServerService', () => {
 			expect(res.headers['content-type']).toBe('image/png');
 			expect(res.headers['cache-control']).toBe('max-age=31536000, immutable');
 			expect(res.headers['content-disposition'] ?? '').toContain('sample-web.png');
+			expect(res.rawPayload).toEqual(webpublicBuffer);
+			expect(res.headers['content-length']).toBe(String(webpublicBuffer.length));
 		});
 
 		test('GET /files/:key browsersafe でない MIME は octet-stream になる', async () => {
@@ -522,7 +569,7 @@ describe('FileServerService', () => {
 			expect(res.statusCode).toBe(206);
 			expect(res.headers['content-range']).toBe(`bytes 0-3/${dummyBuffer.length}`);
 			expect(res.headers['accept-ranges']).toBe('bytes');
-			expect(res.headers['content-length']).toBe(String(dummyBuffer.length));
+			expect(res.headers['content-length']).toBe('4');
 			expect(res.headers['content-type']).toBe('image/png');
 			expect(res.headers['cache-control']).toBe('max-age=31536000, immutable');
 		});
@@ -599,7 +646,21 @@ describe('FileServerService', () => {
 			expect(res.headers.location).toContain('https://media-proxy.test/');
 			expect(res.headers.location).toContain('url=https%3A%2F%2Fexample.com%2Fimg.png');
 			expect(res.headers.location).toContain('static=1');
+			expect(new URL(res.headers.location!).searchParams.get('sign')).toBe(getProxySign('https://example.com/img.png', externalMediaProxyKey, externalConfig.url));
 			expect(res.headers['content-security-policy']).toBe('default-src \'none\'; img-src \'self\'; media-src \'self\'; style-src \'unsafe-inline\'');
+		});
+
+		test('GET /proxy/:url* 不正な署名を拒否する', async () => {
+			const res = await externalFastify.inject({
+				method: 'GET',
+				url: `/proxy/any?url=${encodeURIComponent(remotePngUrl)}&origin=1&sign=invalid`,
+				headers: {
+					'user-agent': 'Mozilla/5.0',
+				},
+			});
+
+			expect(res.statusCode).toBe(400);
+			expect(res.headers['x-error-message']).toBe('Invalid signature');
 		});
 
 		test('GET /proxy/:url* misskey User-Agent を拒否する', async () => {
@@ -633,7 +694,7 @@ describe('FileServerService', () => {
 		test('GET /proxy/:url* emoji 指定で非画像は 404 を返す', async () => {
 			const res = await fastify.inject({
 				method: 'GET',
-				url: `/proxy/any?url=${encodeURIComponent(remoteTextUrl)}&emoji=1`,
+				url: signedProxyUrl(remoteTextUrl, { emoji: '1' }),
 				headers: {
 					'user-agent': 'Mozilla/5.0',
 				},
@@ -646,7 +707,7 @@ describe('FileServerService', () => {
 		test('GET /proxy/:url* 非画像は 403 を返す', async () => {
 			const res = await fastify.inject({
 				method: 'GET',
-				url: `/proxy/any?url=${encodeURIComponent(remoteTextUrl)}`,
+				url: signedProxyUrl(remoteTextUrl),
 				headers: {
 					'user-agent': 'Mozilla/5.0',
 				},
@@ -659,7 +720,7 @@ describe('FileServerService', () => {
 		test('GET /proxy/:url* emoji static で webp を返す', async () => {
 			const res = await fastify.inject({
 				method: 'GET',
-				url: `/proxy/any?url=${encodeURIComponent(remotePngUrl)}&emoji=1&static=1`,
+				url: signedProxyUrl(remotePngUrl, { emoji: '1', static: '1' }),
 				headers: {
 					'user-agent': 'Mozilla/5.0',
 				},
@@ -674,7 +735,7 @@ describe('FileServerService', () => {
 		test('GET /proxy/:url* avatar static で webp を返す', async () => {
 			const res = await fastify.inject({
 				method: 'GET',
-				url: `/proxy/any?url=${encodeURIComponent(remotePngUrl)}&avatar=1&static=1`,
+				url: signedProxyUrl(remotePngUrl, { avatar: '1', static: '1' }),
 				headers: {
 					'user-agent': 'Mozilla/5.0',
 				},
@@ -689,7 +750,7 @@ describe('FileServerService', () => {
 		test('GET /proxy/:url* static で webp を返す', async () => {
 			const res = await fastify.inject({
 				method: 'GET',
-				url: `/proxy/any?url=${encodeURIComponent(remotePngUrl)}&static=1`,
+				url: signedProxyUrl(remotePngUrl, { static: '1' }),
 				headers: {
 					'user-agent': 'Mozilla/5.0',
 				},
@@ -704,7 +765,7 @@ describe('FileServerService', () => {
 		test('GET /proxy/:url* preview で webp を返す', async () => {
 			const res = await fastify.inject({
 				method: 'GET',
-				url: `/proxy/any?url=${encodeURIComponent(remotePngUrl)}&preview=1`,
+				url: signedProxyUrl(remotePngUrl, { preview: '1' }),
 				headers: {
 					'user-agent': 'Mozilla/5.0',
 				},
@@ -719,7 +780,7 @@ describe('FileServerService', () => {
 		test('GET /proxy/:url* svg を webp に変換する', async () => {
 			const res = await fastify.inject({
 				method: 'GET',
-				url: `/proxy/any?url=${encodeURIComponent(remoteSvgUrl)}`,
+				url: signedProxyUrl(remoteSvgUrl),
 				headers: {
 					'user-agent': 'Mozilla/5.0',
 				},
@@ -734,7 +795,7 @@ describe('FileServerService', () => {
 		test('GET /proxy/:url* badge で低エントロピー画像は 404 を返す', async () => {
 			const res = await fastify.inject({
 				method: 'GET',
-				url: `/proxy/any?url=${encodeURIComponent(remoteFlatPngUrl)}&badge=1`,
+				url: signedProxyUrl(remoteFlatPngUrl, { badge: '1' }),
 				headers: {
 					'user-agent': 'Mozilla/5.0',
 				},
@@ -755,7 +816,7 @@ describe('FileServerService', () => {
 
 			const res = await fastify.inject({
 				method: 'GET',
-				url: `/proxy/any?url=${encodeURIComponent(`${config.url}/files/${accessKey}`)}&origin=1`,
+				url: signedProxyUrl(`${config.url}/files/${accessKey}`, { origin: '1' }),
 				headers: {
 					'user-agent': 'Mozilla/5.0',
 				},

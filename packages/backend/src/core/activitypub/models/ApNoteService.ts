@@ -183,6 +183,7 @@ export class ApNoteService {
 			throw new IdentifiableError('85ab9bd7-3a41-4530-959d-f07073900109', 'actor has been suspended');
 		}
 
+		const apMentionRawCount = new Set(this.apMentionService.extractApMentionObjects(note.tag).map(x => x.href)).size;
 		const apMentions = await this.apMentionService.extractApMentions(note.tag, resolver);
 		const apHashtags = extractApHashtags(note.tag);
 
@@ -330,6 +331,7 @@ export class ApNoteService {
 				visibility,
 				visibleUsers,
 				apMentions,
+				apMentionRawCount,
 				apHashtags,
 				apEmojis,
 				poll,
@@ -350,7 +352,7 @@ export class ApNoteService {
 	}
 
 	@bindThis
-	public async updateNote(value: string | IObject, resolver?: Resolver, silent = false) {
+	public async updateNote(value: string | IObject, actor?: MiRemoteUser, resolver?: Resolver, silent = false) {
 		const uri = typeof value === 'string' ? value : value.id;
 		if (uri == null) throw new Error('uri is null');
 
@@ -362,12 +364,12 @@ export class ApNoteService {
 		//#endregion
 
 		// eslint-disable-next-line no-param-reassign
-		resolver ??= this.apResolverService.createResolver();
+		if (resolver == null) resolver = await this.apResolverService.createResolver();
 
 		const object = await resolver.resolve(value);
 
 		const entryUri = getApId(value);
-		const err = this.validateNote(object, entryUri);
+		const err = this.validateNote(object, entryUri, actor);
 		if (err) {
 			this.logger.error(err.message, {
 				resolver: { history: resolver.getHistory() },
@@ -398,23 +400,26 @@ export class ApNoteService {
 			throw new Error('invalid note.attributedTo: ' + note.attributedTo);
 		}
 
-		const actor = await this.apPersonService.resolvePerson(getOneApId(note.attributedTo), resolver) as MiRemoteUser;
+		actor ??= await this.apPersonService.resolvePerson(getOneApId(note.attributedTo), resolver) as MiRemoteUser;
+		if (targetNote.userId !== actor.id) {
+			throw new Error('The Update actor is not the note author');
+		}
+		if (typeof note.updated !== 'string') {
+			throw new Error('invalid note.updated: ' + note.updated);
+		}
+		const updatedAt = new Date(note.updated);
+		if (Number.isNaN(updatedAt.getTime())) {
+			throw new Error('invalid note.updated: ' + note.updated);
+		}
+		const currentTimestamp = targetNote.updatedAt ?? this.idService.parse(targetNote.id).date;
+		if (updatedAt <= currentTimestamp) {
+			this.logger.info(`Skipping an outdated Note Update: ${note.id}`);
+			return targetNote;
+		}
 
 		// 投稿者が凍結されていたらスキップ
 		if (actor.isSuspended) {
 			throw new Error('actor has been suspended');
-		}
-
-		const noteAudience = await this.apAudienceService.parseAudience(actor, note.to, note.cc, resolver);
-		let visibility = noteAudience.visibility;
-		const visibleUsers = noteAudience.visibleUsers;
-
-		// Audience (to, cc) が指定されてなかった場合
-		if (visibility === 'specified' && visibleUsers.length === 0) {
-			if (typeof value === 'string') {	// 入力がstringならばresolverでGETが発生している
-				// こちらから匿名GET出来たものならばpublic
-				visibility = 'public';
-			}
 		}
 
 		const apMentions = await this.apMentionService.extractApMentions(note.tag, resolver);
@@ -521,7 +526,7 @@ export class ApNoteService {
 		const poll = await this.apQuestionService.extractPollFromQuestion(note, resolver).catch(() => undefined);
 
 		return await this.noteEditService.edit(actor, targetNote.id, {
-			publishedAt: note.updated ? new Date(note.updated) : new Date(),
+			publishedAt: updatedAt,
 			files,
 			reply,
 			renote: quote,
@@ -534,7 +539,7 @@ export class ApNoteService {
 			poll,
 			uri: note.id,
 			url: url,
-		}, silent);
+		}, silent, actor, { skipRolePolicyCheck: true });
 	}
 
 	/**

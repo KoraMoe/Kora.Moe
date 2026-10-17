@@ -249,7 +249,7 @@ async function generateApiClientJSDoc(
 
 		endpointOutputLine.push(
 			'    /**',
-			`     * ${endpoint.description.split('\n').join('\n     * ')}`,
+			endpoint.description.split('\n').map(line => line === '' ? '     *' : `     * ${line}`).join('\n'),
 			'     */',
 			`    request<E extends '${endpoint.path}', P extends Endpoints[E][\'req\']>(`,
 			'      endpoint: E,',
@@ -414,7 +414,7 @@ async function main() {
 	await generateEndpoints(openApiDocs, typeFileName, entitiesFileName, endpointFileName);
 
 	const apiClientWarningFileName = `${generatePath}/apiClientJSDoc.ts`;
-	await generateApiClientJSDoc(openApiDocs, '../api.ts', endpointFileName, apiClientWarningFileName);
+	await generateApiClientJSDoc(openApiDocs, '../api.ts', '../api.types.ts', apiClientWarningFileName);
 }
 
 main();

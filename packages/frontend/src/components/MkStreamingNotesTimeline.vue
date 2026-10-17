@@ -29,7 +29,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 			:moveClass="$style.transition_x_move"
 			tag="div"
 		>
-			<template v-for="(note, i) in paginator.items.value" :key="note.id">
+			<template v-for="(note, i) in paginator.items.value" :key="getTimelineNoteKey(note)">
 				<div v-if="i > 0 && isSeparatorNeeded(paginator.items.value[i -1].createdAt, note.createdAt)" :data-scroll-anchor="note.id">
 					<div :class="$style.date">
 						<span><i class="ti ti-chevron-up"></i> {{ getSeparatorInfo(paginator.items.value[i -1].createdAt, note.createdAt)?.prevText }}</span>
@@ -74,10 +74,12 @@ import { store } from '@/store.js';
 import MkNote from '@/components/MkNote.vue';
 import MkButton from '@/components/MkButton.vue';
 import { i18n } from '@/i18n.js';
+import { DI } from '@/di.js';
 import { globalEvents, useGlobalEvent } from '@/events.js';
 import { isSeparatorNeeded, getSeparatorInfo } from '@/utility/timeline-date-separate.js';
 import { Paginator } from '@/utility/paginator.js';
-import { misskeyApi } from '@/utility/misskey-api.js';
+import { fetchLatestNote } from '@/utility/note-refresh.js';
+import { getTimelineNoteKey, updateNoteInTimeline } from '@/utility/update-note-in-timeline.js';
 
 const props = withDefaults(defineProps<{
 	src: BasicTimelineType | 'mentions' | 'directs' | 'list' | 'antenna' | 'channel' | 'role';
@@ -102,7 +104,7 @@ const props = withDefaults(defineProps<{
 
 provide('inTimeline', true);
 provide('tl_withSensitive', computed(() => props.withSensitive));
-provide('inChannel', computed(() => props.src === 'channel'));
+provide(DI.inChannel, computed(() => props.src === 'channel' ? props.channel ?? null : null));
 
 let paginator: IPaginator<Misskey.entities.Note>;
 
@@ -272,12 +274,17 @@ useGlobalEvent('noteDeleted', (noteId) => {
 });
 
 useGlobalEvent('noteUpdated', async (noteId) => {
-	// Fetch the updated note and replace it in the timeline
 	try {
-		const updatedNote = await misskeyApi('notes/show', { noteId });
-		paginator.updateItem(noteId, () => updatedNote);
+		const updatedNote = await fetchLatestNote(noteId);
+		updateNoteInTimeline(paginator, updatedNote);
 	} catch (e) {
 		console.error('Failed to fetch updated note:', e);
+	}
+});
+
+useGlobalEvent('noteRemovedFromAntenna', (antennaId, noteId) => {
+	if (props.src === 'antenna' && props.antenna === antennaId) {
+		paginator.removeItem(noteId);
 	}
 });
 

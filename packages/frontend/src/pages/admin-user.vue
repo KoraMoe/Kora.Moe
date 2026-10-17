@@ -98,6 +98,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 					<div>
 						<MkButton v-if="user.host == null" inline style="margin-right: 8px;" @click="resetPassword"><i class="ti ti-key"></i> {{ i18n.ts.resetPassword }}</MkButton>
+						<MkButton v-if="user.host == null" inline @click="unsetMfa"><i class="ti ti-shield"></i> {{ i18n.ts.unsetMfa }}</MkButton>
 					</div>
 
 					<MkFolder>
@@ -127,7 +128,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 						<MkButton v-if="iAmModerator" inline danger style="margin-right: 8px;" @click="unsetUserAvatar"><i class="ti ti-user-circle"></i> {{ i18n.ts.unsetUserAvatar }}</MkButton>
 						<MkButton v-if="iAmModerator" inline danger @click="unsetUserBanner"><i class="ti ti-photo"></i> {{ i18n.ts.unsetUserBanner }}</MkButton>
 					</div>
-					<MkButton v-if="$i.isAdmin" inline danger @click="deleteAccount">{{ i18n.ts.deleteAccount }}</MkButton>
+					<MkButton v-if="$i.isAdmin" inline danger @click="deleteAccount()">{{ i18n.ts.deleteAccount }}</MkButton>
+					<MkButton v-if="$i.isAdmin" inline danger @click="deleteAccount({ hardDelete: true })">{{ i18n.ts.deleteAccountHard }}</MkButton>
 				</div>
 			</FormSection>
 		</div>
@@ -334,12 +336,26 @@ async function resetPassword() {
 	if (confirm.canceled) {
 		return;
 	} else {
-		const { password } = await misskeyApi('admin/reset-password', {
+		const { password } = await os.apiWithDialog('admin/reset-password', {
 			userId: user.value.id,
 		});
 		os.alert({
 			type: 'success',
 			text: i18n.tsx.newPasswordIs({ password }),
+		});
+	}
+}
+
+async function unsetMfa() {
+	const confirm = await os.confirm({
+		type: 'warning',
+		text: i18n.ts.unsetMfaConfirm,
+	});
+	if (confirm.canceled) {
+		return;
+	} else {
+		await os.apiWithDialog('admin/unset-mfa', {
+			userId: user.value.id,
 		});
 	}
 }
