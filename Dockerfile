@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1.23
 
-ARG NODE_VERSION=26.4.0-trixie
+ARG NODE_VERSION=26.12.1-trixie
 
 # build assets & compile TypeScript
 
@@ -40,7 +40,8 @@ RUN --mount=type=cache,target=/root/.local/share/pnpm/store,sharing=locked \
 
 COPY --link . ./
 
-RUN pnpm build
+ARG BUILD_NODE_OPTIONS="--max-old-space-size=2048"
+RUN NODE_OPTIONS="${BUILD_NODE_OPTIONS}" pnpm build
 RUN rm -rf .git/
 
 # build native dependencies for target platform
